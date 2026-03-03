@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Sign In — Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Tokens ── */
+    :root {
+      --navy:   #1a2744;
+      --navy-d: #0f1729;
+      --gold:   #c9a84c;
+      --gold-l: #e2c57a;
+      --cream:  #faf8f3;
+      --cream-d:#f0ede4;
+      --ink:    #1a2744;
+      --muted:  #6b7280;
+      --error:  #d63031;
+      --font-b: 'EB Garamond', Georgia, serif;
+      --font-d: 'Playfair Display', Georgia, serif;
+    }
+
+    /* ── Base ── */
+    html, body { min-height: 100vh; }
+
+    body {
+      background: var(--navy);
+      color: var(--cream);
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* ── Page layout ── */
+    .page-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* ── Wordmark ── */
+    .wordmark {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+    }
+
+    .wordmark-text {
+      font-family: var(--font-d);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .wordmark-sub {
+      font-family: var(--font-b);
+      font-size: 0.85rem;
+      color: rgba(250,248,243,0.55);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      width: 1px;
+      height: 32px;
+      background: var(--gold);
+      opacity: 0.4;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--cream);
+      color: var(--ink);
+      border-radius: 4px;
+      width: 100%;
+      max-width: 460px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    }
+
+    .card-header {
+      background: var(--navy-d);
+      padding: 1.5rem 2rem;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .card-header h1 {
+      font-family: var(--font-d);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+
+    .card-header p {
+      font-size: 0.9rem;
+      color: rgba(250,248,243,0.65);
+      margin-top: 0.35rem;
+      font-family: var(--font-b);
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    /* ── Tabs ── */
+    .tab-row {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1.75rem;
+      border-bottom: 2px solid var(--cream-d);
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 0.6rem 1rem;
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      cursor: pointer;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .tab-btn.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── Form ── */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 3px;
+      font-family: var(--font-b);
+      font-size: 1rem;
+      color: var(--ink);
+      background: #fff;
+      transition: border-color 0.15s;
+      outline: none;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: var(--gold);
+    }
+
+    /* ── Button ── */
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 3px;
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s, transform 0.1s;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primary:hover { background: var(--gold-l); }
+    .btn-primary:active { transform: scale(0.99); }
+    .btn-primary:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+    /* ── Message ── */
+    .msg {
+      padding: 0.65rem 0.9rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .msg-error {
+      background: #fff0f0;
+      color: var(--error);
+      border-left: 3px solid var(--error);
+    }
+
+    .msg-success {
+      background: #f0fff4;
+      color: #166534;
+      border-left: 3px solid #22c55e;
+    }
+
+    /* ── Checkout view ── */
+    .checkout-card {
+      width: 100%;
+      max-width: 820px;
+    }
+
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+    }
+
+    @media (max-width: 640px) {
+      .checkout-layout { grid-template-columns: 1fr; }
+    }
+
+    .checkout-info {
+      background: var(--navy-d);
+      padding: 2.5rem 2rem;
+      border-right: 1px solid rgba(201,168,76,0.25);
+    }
+
+    .checkout-info h2 {
+      font-family: var(--font-d);
+      font-size: 1.4rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .checkout-info .price {
+      font-size: 2.2rem;
+      font-family: var(--font-d);
+      font-weight: 700;
+      color: var(--gold);
+      margin: 0.75rem 0 0.25rem;
+    }
+
+    .checkout-info .price-sub {
+      font-size: 0.85rem;
+      color: rgba(250,248,243,0.5);
+      margin-bottom: 1.75rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .feature-list li {
+      padding: 0.45rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: rgba(250,248,243,0.85);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .feature-list li:last-child { border-bottom: none; }
+
+    .feature-check {
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .checkout-form-wrap {
+      background: #fff;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #stripe-checkout {
+      flex: 1;
+    }
+
+    .checkout-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      color: var(--muted);
+      font-size: 0.9rem;
+      gap: 0.5rem;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #e5e7eb;
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: rgba(250,248,243,0.35);
+      text-align: center;
+    }
+
+    .page-footer a {
+      color: rgba(201,168,76,0.6);
+      text-decoration: none;
+    }
+
+    /* ── Hidden ── */
+    .hidden { display: none !important; }
+
+    /* ── Checking overlay ── */
+    #checking {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: rgba(250,248,243,0.5);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- Wordmark -->
+  <a href="index.html" class="wordmark">
+    <span class="wordmark-text">Caerus Latin</span>
+    <span class="divider"></span>
+    <span class="wordmark-sub">CE Preparation</span>
+  </a>
+
+  <!-- Checking auth state -->
+  <div id="checking">
+    <div class="spinner"></div>
+    <span>Loading&hellip;</span>
+  </div>
+
+  <!-- ── View 1: Authentication ── -->
+  <div id="view-auth" class="card hidden">
+    <div class="card-header">
+      <h1>Sign in to Caerus Latin</h1>
+      <p>Access vocabulary, grammar, exercises, and practice papers</p>
+    </div>
+    <div class="card-body">
+
+      <div class="tab-row">
+        <button class="tab-btn active" id="tab-signin" onclick="switchTab('signin')">Sign in</button>
+        <button class="tab-btn" id="tab-signup" onclick="switchTab('signup')">Create account</button>
+      </div>
+
+      <div id="msg-auth" class="msg hidden"></div>
+
+      <!-- Sign in form -->
+      <form id="form-signin" onsubmit="handleSignIn(event)">
+        <div class="form-group">
+          <label for="si-email">Email address</label>
+          <input type="email" id="si-email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="si-password">Password</label>
+          <input type="password" id="si-password" required placeholder="Your password" autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn-primary" id="btn-signin">Sign in &rarr;</button>
+      </form>
+
+      <!-- Sign up form -->
+      <form id="form-signup" class="hidden" onsubmit="handleSignUp(event)">
+        <div class="form-group">
+          <label for="su-email">Email address</label>
+          <input type="email" id="su-email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="su-password">Password</label>
+          <input type="password" id="su-password" required placeholder="Choose a password (min 8 chars)" minlength="8" autocomplete="new-password">
+        </div>
+        <button type="submit" class="btn-primary" id="btn-signup">Create account &rarr;</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ── View 2: Checkout (no active access) ── -->
+  <div id="view-checkout" class="card checkout-card hidden">
+    <div class="card-header">
+      <h1>Enrol in Caerus Latin</h1>
+      <p>Annual access &mdash; one payment, full year</p>
+    </div>
+    <div class="checkout-layout">
+
+      <!-- Left: product info -->
+      <div class="checkout-info">
+        <h2>What&rsquo;s included</h2>
+        <div class="price">&pound;29.99</div>
+        <div class="price-sub">Annual access &middot; one payment</div>
+
+        <ul class="feature-list">
+          <li>
+            <span class="feature-check">&#10003;</span>
+            <span>Full ISEB CE vocabulary list — browse, search, and test</span>
+          </li>
+          <li>
+            <span class="feature-check">&#10003;</span>
+            <span>Complete grammar tables — all declensions and conjugations</span>
+          </li>
+          <li>
+            <span class="feature-check">&#10003;</span>
+            <span>Interactive exercises — flashcards, quizzes, and translation drills</span>
+          </li>
+          <li>
+            <span class="feature-check">&#10003;</span>
+            <span>Original practice papers at Levels 1, 2, and 3 with mark schemes</span>
+          </li>
+          <li>
+            <span class="feature-check">&#10003;</span>
+            <span>Works offline — install as an app on any device</span>
+          </li>
+          <li>
+            <span class="feature-check">&#10003;</span>
+            <span>Built on R.C. Bass (Nova Latina) methodology &middot; reviewed by Heads of Classics</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: Stripe embedded checkout -->
+      <div class="checkout-form-wrap">
+        <div class="checkout-loading" id="checkout-loading">
+          <div class="spinner"></div>
+          <span>Loading secure checkout&hellip;</span>
+        </div>
+        <div id="stripe-checkout"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <a href="https://caerusrevision.co.uk">caerusrevision.co.uk</a>
+    &nbsp;&middot;&nbsp;
+    Payments secured by Stripe
+    &nbsp;&middot;&nbsp;
+    <a href="index.html">Back to site</a>
+  </footer>
+
+</div>
+
+<script>
+  var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+  var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+  var STRIPE_PK     = 'pk_test_51T6rA4E6TNgvV6CC7B3kzApC2nYqqJZUKqtscB126hIykxB0s5LfFvC9vxYGpQDYOR0vkoWxdvRGAXneycquuIV100ljceuFjR';
+  var EDGE_FN_URL   = SUPABASE_URL + '/functions/v1/create-checkout';
+
+  var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+  var stripeInstance = Stripe(STRIPE_PK);
+
+  // Where to redirect after successful login/purchase
+  var nextPage = (new URLSearchParams(location.search).get('next')) || 'index.html';
+
+  /* ─── Boot: check auth state ─── */
+  client.auth.getSession().then(function(result) {
+    var session = result.data.session;
+    if (!session) {
+      show('view-auth');
+      return;
+    }
+    checkAccess(session.user, session.access_token);
+  });
+
+  function checkAccess(user, token) {
+    client.from('access_grants')
+      .select('id, valid_until')
+      .eq('user_id', user.id)
+      .eq('product', 'latin')
+      .gt('valid_until', new Date().toISOString())
+      .limit(1)
+      .then(function(result) {
+        if (result.data && result.data.length > 0) {
+          window.location.href = nextPage;
+        } else {
+          show('view-checkout');
+          initStripeCheckout(token);
+        }
+      });
+  }
+
+  /* ─── Tab switching ─── */
+  function switchTab(tab) {
+    document.getElementById('form-signin').classList.toggle('hidden', tab !== 'signin');
+    document.getElementById('form-signup').classList.toggle('hidden', tab !== 'signup');
+    document.getElementById('tab-signin').classList.toggle('active', tab === 'signin');
+    document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
+    clearMsg();
+  }
+
+  /* ─── Sign In ─── */
+  function handleSignIn(e) {
+    e.preventDefault();
+    var btn = document.getElementById('btn-signin');
+    btn.disabled = true;
+    btn.textContent = 'Signing in\u2026';
+    clearMsg();
+
+    var email    = document.getElementById('si-email').value.trim();
+    var password = document.getElementById('si-password').value;
+
+    client.auth.signInWithPassword({ email: email, password: password })
+      .then(function(result) {
+        btn.disabled = false;
+        btn.textContent = 'Sign in \u2192';
+        if (result.error) {
+          showMsg(result.error.message, 'error');
+          return;
+        }
+        checkAccess(result.data.user, result.data.session.access_token);
+      });
+  }
+
+  /* ─── Sign Up ─── */
+  function handleSignUp(e) {
+    e.preventDefault();
+    var btn = document.getElementById('btn-signup');
+    btn.disabled = true;
+    btn.textContent = 'Creating account\u2026';
+    clearMsg();
+
+    var email    = document.getElementById('su-email').value.trim();
+    var password = document.getElementById('su-password').value;
+
+    client.auth.signUp({ email: email, password: password })
+      .then(function(result) {
+        btn.disabled = false;
+        btn.textContent = 'Create account \u2192';
+        if (result.error) {
+          showMsg(result.error.message, 'error');
+          return;
+        }
+        // Check if email confirmation is required
+        if (result.data.user && !result.data.session) {
+          showMsg('Check your email to confirm your account, then sign in.', 'success');
+          switchTab('signin');
+          return;
+        }
+        checkAccess(result.data.user, result.data.session.access_token);
+      });
+  }
+
+  /* ─── Stripe Embedded Checkout ─── */
+  function initStripeCheckout(token) {
+    var mounted = false;
+
+    stripeInstance.initEmbeddedCheckout({
+      fetchClientSecret: function() {
+        return fetch(EDGE_FN_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+          },
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (data.alreadyGranted) {
+            window.location.href = nextPage;
+            return '';
+          }
+          if (!data.clientSecret) {
+            throw new Error(data.error || 'Could not load checkout');
+          }
+          return data.clientSecret;
+        });
+      },
+    }).then(function(checkout) {
+      document.getElementById('checkout-loading').style.display = 'none';
+      checkout.mount('#stripe-checkout');
+      mounted = true;
+    }).catch(function(err) {
+      document.getElementById('checkout-loading').innerHTML =
+        '<span style="color:#d63031">Could not load checkout. Please refresh or <a href="https://caerusrevision.co.uk#contact" style="color:#d63031">contact us</a>.</span>';
+      console.error(err);
+    });
+  }
+
+  /* ─── Helpers ─── */
+  function show(id) {
+    document.getElementById('checking').classList.add('hidden');
+    ['view-auth', 'view-checkout'].forEach(function(v) {
+      document.getElementById(v).classList.toggle('hidden', v !== id);
+    });
+  }
+
+  function showMsg(text, type) {
+    var el = document.getElementById('msg-auth');
+    el.textContent = text;
+    el.className = 'msg msg-' + type;
+  }
+
+  function clearMsg() {
+    var el = document.getElementById('msg-auth');
+    el.className = 'msg hidden';
+  }
+</script>
+</body>
+</html>

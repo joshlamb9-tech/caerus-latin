@@ -19,6 +19,77 @@ const SRS = (() => {
     }
   }
 
+  // ── Supabase sync ──────────────────────────────────────────────
+  let _syncClient = null;
+  let _syncUserId = null;
+  let _syncPending = {};
+  let _syncTimer   = null;
+  const SYNC_DEBOUNCE = 3000; // ms
+
+  function initSync(client, userId) {
+    _syncClient = client;
+    _syncUserId = userId;
+    // Load cloud state on first init
+    _loadFromSupabase();
+  }
+
+  function _loadFromSupabase() {
+    if (!_syncClient || !_syncUserId) return;
+    _syncClient
+      .from('user_progress')
+      .select('word_id, score, correct, seen, last_seen')
+      .eq('user_id', _syncUserId)
+      .eq('product', 'latin')
+      .then(function (result) {
+        if (result.error || !result.data) return;
+        const local = load();
+        result.data.forEach(function (row) {
+          const existing = local[row.word_id];
+          // Cloud wins unless local has a higher score (offline progress)
+          if (!existing || row.score >= (existing.score || 0)) {
+            local[row.word_id] = {
+              score:   row.score,
+              correct: row.correct,
+              seen:    row.seen,
+              last:    row.last_seen,
+            };
+          }
+        });
+        save(local);
+      });
+  }
+
+  function _queueSync(wordId, entry) {
+    if (!_syncClient || !_syncUserId) return;
+    _syncPending[wordId] = entry;
+    clearTimeout(_syncTimer);
+    _syncTimer = setTimeout(_flushSync, SYNC_DEBOUNCE);
+  }
+
+  function _flushSync() {
+    if (!_syncClient || !_syncUserId || Object.keys(_syncPending).length === 0) return;
+    const rows = Object.entries(_syncPending).map(function ([wordId, entry]) {
+      return {
+        user_id:   _syncUserId,
+        product:   'latin',
+        word_id:   wordId,
+        score:     entry.score   || 0,
+        correct:   entry.correct || 0,
+        seen:      entry.seen    || 0,
+        last_seen: entry.last    || null,
+        updated_at: new Date().toISOString(),
+      };
+    });
+    _syncPending = {};
+    _syncClient
+      .from('user_progress')
+      .upsert(rows, { onConflict: 'user_id,product,word_id' })
+      .then(function (result) {
+        if (result.error) console.warn('SRS sync error:', result.error.message);
+      });
+  }
+  // ──────────────────────────────────────────────────────────────
+
   // wordId: string (matches vocabulary all.json id field)
   // rating: 'know' | 'learning' | 'dont-know'
   function rate(wordId, rating) {
@@ -39,6 +110,7 @@ const SRS = (() => {
 
     state[wordId] = entry;
     save(state);
+    _queueSync(wordId, entry);
     return entry;
   }
 
@@ -86,5 +158,15 @@ const SRS = (() => {
     save({});
   }
 
-  return { rate, level, summary, prioritise, unmastered, reset, resetAll, load };
+  // Listen for auth context from login wall
+  document.addEventListener('cr-auth', function (e) {
+    initSync(e.detail.client, e.detail.userId);
+  });
+
+  // Also pick up auth context if already set before srs.js loaded
+  if (window.CR_AUTH) {
+    initSync(window.CR_AUTH.client, window.CR_AUTH.userId);
+  }
+
+  return { rate, level, summary, prioritise, unmastered, reset, resetAll, load, initSync };
 })();
