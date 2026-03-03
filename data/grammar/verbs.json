@@ -1,0 +1,352 @@
+{
+  "conjugations": [
+    {
+      "conjugation": 1,
+      "name": "First Conjugation",
+      "example_verb": "porto",
+      "example_infinitive": "portare",
+      "example_meaning": "to carry",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "stem: porta-",
+          "singular": {
+            "1st": "porto",
+            "2nd": "portas",
+            "3rd": "portat"
+          },
+          "plural": {
+            "1st": "portamus",
+            "2nd": "portatis",
+            "3rd": "portant"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "stem + ba-",
+          "singular": {
+            "1st": "portabam",
+            "2nd": "portabas",
+            "3rd": "portabat"
+          },
+          "plural": {
+            "1st": "portabamus",
+            "2nd": "portabatis",
+            "3rd": "portabant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "perfect stem portav- + perfect endings",
+          "singular": {
+            "1st": "portavi",
+            "2nd": "portavisti",
+            "3rd": "portavit"
+          },
+          "plural": {
+            "1st": "portavimus",
+            "2nd": "portavistis",
+            "3rd": "portaverunt"
+          }
+        }
+      }
+    },
+    {
+      "conjugation": 2,
+      "name": "Second Conjugation",
+      "example_verb": "moneo",
+      "example_infinitive": "monere",
+      "example_meaning": "to warn",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "stem: mone-",
+          "singular": {
+            "1st": "moneo",
+            "2nd": "mones",
+            "3rd": "monet"
+          },
+          "plural": {
+            "1st": "monemus",
+            "2nd": "monetis",
+            "3rd": "monent"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "stem + ba-",
+          "singular": {
+            "1st": "monebam",
+            "2nd": "monebas",
+            "3rd": "monebat"
+          },
+          "plural": {
+            "1st": "monebamus",
+            "2nd": "monebatis",
+            "3rd": "monebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "perfect stem monu- + perfect endings",
+          "singular": {
+            "1st": "monui",
+            "2nd": "monuisti",
+            "3rd": "monuit"
+          },
+          "plural": {
+            "1st": "monuimus",
+            "2nd": "monuistis",
+            "3rd": "monuerunt"
+          }
+        }
+      }
+    },
+    {
+      "conjugation": 3,
+      "name": "Third Conjugation",
+      "example_verb": "duco",
+      "example_infinitive": "ducere",
+      "example_meaning": "to lead",
+      "note": "3rd conjugation verbs have a short vowel stem — watch the endings carefully, especially 3rd plural: ducunt (not ducant)",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "stem: duc-",
+          "singular": {
+            "1st": "duco",
+            "2nd": "ducis",
+            "3rd": "ducit"
+          },
+          "plural": {
+            "1st": "ducimus",
+            "2nd": "ducitis",
+            "3rd": "ducunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "stem + eba-",
+          "singular": {
+            "1st": "ducebam",
+            "2nd": "ducebas",
+            "3rd": "ducebat"
+          },
+          "plural": {
+            "1st": "ducebamus",
+            "2nd": "ducebatis",
+            "3rd": "ducebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "perfect stem dux- + perfect endings",
+          "singular": {
+            "1st": "duxi",
+            "2nd": "duxisti",
+            "3rd": "duxit"
+          },
+          "plural": {
+            "1st": "duximus",
+            "2nd": "duxistis",
+            "3rd": "duxerunt"
+          }
+        }
+      }
+    },
+    {
+      "conjugation": 4,
+      "name": "Fourth Conjugation",
+      "example_verb": "audio",
+      "example_infinitive": "audire",
+      "example_meaning": "to hear",
+      "note": "4th conjugation verbs have a long -i- stem — note 3rd plural present: audiunt",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "stem: audi-",
+          "singular": {
+            "1st": "audio",
+            "2nd": "audis",
+            "3rd": "audit"
+          },
+          "plural": {
+            "1st": "audimus",
+            "2nd": "auditis",
+            "3rd": "audiunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "stem + eba-",
+          "singular": {
+            "1st": "audiebam",
+            "2nd": "audiebas",
+            "3rd": "audiebat"
+          },
+          "plural": {
+            "1st": "audiebamus",
+            "2nd": "audiebatis",
+            "3rd": "audiebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "perfect stem audiv- + perfect endings",
+          "singular": {
+            "1st": "audivi",
+            "2nd": "audivisti",
+            "3rd": "audivit"
+          },
+          "plural": {
+            "1st": "audivimus",
+            "2nd": "audivistis",
+            "3rd": "audiverunt"
+          }
+        }
+      }
+    }
+  ],
+  "irregular": [
+    {
+      "verb": "sum",
+      "infinitive": "esse",
+      "meaning": "to be",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "singular": {
+            "1st": "sum",
+            "2nd": "es",
+            "3rd": "est"
+          },
+          "plural": {
+            "1st": "sumus",
+            "2nd": "estis",
+            "3rd": "sunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "singular": {
+            "1st": "eram",
+            "2nd": "eras",
+            "3rd": "erat"
+          },
+          "plural": {
+            "1st": "eramus",
+            "2nd": "eratis",
+            "3rd": "erant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "singular": {
+            "1st": "fui",
+            "2nd": "fuisti",
+            "3rd": "fuit"
+          },
+          "plural": {
+            "1st": "fuimus",
+            "2nd": "fuistis",
+            "3rd": "fuerunt"
+          }
+        }
+      }
+    },
+    {
+      "verb": "fero",
+      "infinitive": "ferre",
+      "meaning": "to carry, bring, bear",
+      "note": "fero has irregular forms in the present tense — no connecting vowel before personal endings",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "singular": {
+            "1st": "fero",
+            "2nd": "fers",
+            "3rd": "fert"
+          },
+          "plural": {
+            "1st": "ferimus",
+            "2nd": "fertis",
+            "3rd": "ferunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "singular": {
+            "1st": "ferebam",
+            "2nd": "ferebas",
+            "3rd": "ferebat"
+          },
+          "plural": {
+            "1st": "ferebamus",
+            "2nd": "ferebatis",
+            "3rd": "ferebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "singular": {
+            "1st": "tuli",
+            "2nd": "tulisti",
+            "3rd": "tulit"
+          },
+          "plural": {
+            "1st": "tulimus",
+            "2nd": "tulistis",
+            "3rd": "tulerunt"
+          }
+        }
+      }
+    },
+    {
+      "verb": "volo",
+      "infinitive": "velle",
+      "meaning": "to want, wish",
+      "note": "volo is highly irregular in the present tense — learn each form individually",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "singular": {
+            "1st": "volo",
+            "2nd": "vis",
+            "3rd": "vult"
+          },
+          "plural": {
+            "1st": "volumus",
+            "2nd": "vultis",
+            "3rd": "volunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "singular": {
+            "1st": "volebam",
+            "2nd": "volebas",
+            "3rd": "volebat"
+          },
+          "plural": {
+            "1st": "volebamus",
+            "2nd": "volebatis",
+            "3rd": "volebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "singular": {
+            "1st": "volui",
+            "2nd": "voluisti",
+            "3rd": "voluit"
+          },
+          "plural": {
+            "1st": "voluimus",
+            "2nd": "voluistis",
+            "3rd": "voluerunt"
+          }
+        }
+      }
+    }
+  ]
+}
