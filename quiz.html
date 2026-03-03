@@ -11,6 +11,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function(){
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      try {
+        var sid = sessionStorage.getItem('cr_sid');
+        if (!sid) { sid = Math.random().toString(36).slice(2); sessionStorage.setItem('cr_sid', sid); }
+        var payload = JSON.stringify({ page: location.pathname.split('/').pop() || 'index.html', referrer: document.referrer || null, session_id: sid });
+        fetch(SUPABASE_URL + '/rest/v1/page_views', { method:'POST', headers:{ 'Content-Type':'application/json', 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON, 'Prefer': 'return=minimal' }, body: payload, keepalive: true }).catch(function(){});
+      } catch(e){}
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
