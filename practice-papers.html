@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caerus Latin practice papers — original CE-style passages for all three levels">
+  <meta name="theme-color" content="#1a2744">
+  <title>Practice Papers &mdash; Caerus Latin</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    /* ---- Page-level layout ---- */
+
+    .pp-intro {
+      font-style: italic;
+      color: var(--color-stone-light);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .pp-level-nav {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .pp-level-btn {
+      padding: 0.35rem 1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: 2rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-stone);
+      background: var(--color-parchment-dark);
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .pp-level-btn:hover,
+    .pp-level-btn:focus {
+      background: var(--color-terracotta);
+      border-color: var(--color-terracotta);
+      color: var(--color-parchment);
+    }
+
+    /* ---- Paper block ---- */
+
+    .pp-paper {
+      margin-bottom: 4rem;
+      border-top: 3px solid var(--color-border);
+      padding-top: 2rem;
+    }
+
+    .pp-paper-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .pp-paper-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-terracotta);
+    }
+
+    .pp-paper-meta {
+      font-size: 0.85rem;
+      color: var(--color-stone-light);
+      font-style: italic;
+    }
+
+    .pp-paper-story {
+      font-size: 0.9rem;
+      color: var(--color-stone-light);
+      margin-bottom: 1.75rem;
+      font-style: italic;
+    }
+
+    /* ---- Section headings inside a paper ---- */
+
+    .pp-section {
+      margin-bottom: 2rem;
+    }
+
+    .pp-section-head {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-terracotta);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    /* ---- Passage block ---- */
+
+    .pp-passage {
+      background: var(--color-parchment-dark);
+      border: 1.5px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+      line-height: 2.1;
+    }
+
+    .pp-passage p {
+      margin: 0;
+    }
+
+    .pp-passage .pp-line {
+      display: block;
+    }
+
+    /* ---- Vocabulary box ---- */
+
+    .pp-vocab-box {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+    }
+
+    .pp-vocab-box-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--color-stone-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .pp-vocab-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 1.5rem;
+    }
+
+    .pp-vocab-list li {
+      min-width: 160px;
+    }
+
+    .pp-vocab-latin {
+      font-weight: 700;
+    }
+
+    /* ---- Questions ---- */
+
+    .pp-questions ol {
+      padding-left: 1.5rem;
+      margin: 0;
+    }
+
+    .pp-questions li {
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .pp-mark {
+      font-size: 0.82rem;
+      color: var(--color-stone-light);
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .pp-q-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .pp-q-text {
+      flex: 1;
+    }
+
+    /* ---- Translation passage ---- */
+
+    .pp-translation-passage {
+      background: var(--color-parchment-dark);
+      border: 1.5px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+      line-height: 2.1;
+    }
+
+    .pp-translation-instruction {
+      font-size: 0.9rem;
+      color: var(--color-stone-light);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ---- Mark scheme (collapsible) ---- */
+
+    .pp-ms-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-parchment-dark);
+      border: 1.5px solid var(--color-border);
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-stone);
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      transition: background 0.15s;
+      margin-bottom: 0;
+    }
+
+    .pp-ms-toggle:hover {
+      background: var(--color-parchment);
+    }
+
+    .pp-ms-toggle[aria-expanded="true"] {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: none;
+    }
+
+    .pp-ms-toggle-arrow {
+      margin-left: auto;
+      transition: transform 0.2s;
+      font-size: 0.8rem;
+    }
+
+    .pp-ms-toggle[aria-expanded="true"] .pp-ms-toggle-arrow {
+      transform: rotate(180deg);
+    }
+
+    .pp-ms-body {
+      display: none;
+      background: #fff;
+      border: 1.5px solid var(--color-border);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+    }
+
+    .pp-ms-body.open {
+      display: block;
+    }
+
+    .pp-ms-body ol {
+      padding-left: 1.5rem;
+      margin: 0 0 1rem;
+    }
+
+    .pp-ms-body li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .pp-ms-section-head {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--color-stone-light);
+      margin: 1rem 0 0.5rem;
+    }
+
+    .pp-ms-award {
+      font-size: 0.8rem;
+      color: var(--color-stone-light);
+      font-style: italic;
+    }
+
+    .pp-ms-note {
+      background: var(--color-parchment-dark);
+      border-left: 3px solid var(--color-border);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.88rem;
+      color: var(--color-stone-light);
+      font-style: italic;
+      margin-top: 1rem;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* ---- Total marks strip ---- */
+
+    .pp-total {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-stone-light);
+      margin-top: 1rem;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vocabulary.html">Vocabulary</a></li>
+          <li><a href="grammar.html">Grammar</a></li>
+          <li><a href="quiz.html">Exercises</a></li>
+          <li><a href="papers.html">Past Papers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app">
+    <h1>Practice Papers</h1>
+    <p class="pp-intro">Original CE-style practice passages for all three levels. Complete each paper under timed conditions before checking the mark scheme.</p>
+
+    <div class="pp-level-nav">
+      <a href="#level1" class="pp-level-btn">Level 1 &mdash; 45 minutes</a>
+      <a href="#level2" class="pp-level-btn">Level 2 &mdash; 60 minutes</a>
+      <a href="#level3" class="pp-level-btn">Level 3 &mdash; 75 minutes</a>
+    </div>
+
+
+    <!-- ============================================================
+         LEVEL 1 — ROMULUS AND REMUS
+         ============================================================ -->
+
+    <section class="pp-paper" id="level1">
+
+      <div class="pp-paper-header">
+        <span class="pp-paper-title">Practice Paper A &mdash; Level 1</span>
+        <span class="pp-paper-meta">45 minutes &middot; No dictionary</span>
+      </div>
+      <p class="pp-paper-story">Story: Romulus and Remus</p>
+
+      <!-- Q1: COMPREHENSION -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 1 &mdash; Comprehension (15 marks)</div>
+
+        <p style="font-size:0.9rem; color:var(--color-stone-light); margin-bottom:0.75rem;">Read the following passage carefully and then answer the questions below in English. Complete sentences are not required.</p>
+
+        <div class="pp-passage">
+          <span class="pp-line">Romulus et Remus in Italia habitant. pueri in silva saepe ludunt.</span>
+          <span class="pp-line">olim Romulus ad silvam ambulat. ibi lupos videt et timet.</span>
+          <span class="pp-line">Romulus clamat: &ldquo;Reme! lupi adsunt! fuge!&rdquo;</span>
+          <span class="pp-line">Remus quoque timet. pueri ad villam suam currunt.</span>
+          <span class="pp-line">mater pueros spectat. pueri fessi sunt et aquam petunt.</span>
+          <span class="pp-line">&ldquo;nolite timere,&rdquo; inquit mater. &ldquo;tuti estis.&rdquo;</span>
+          <span class="pp-line">Romulus autem iratus est. &ldquo;lupi meos agnos necaverunt,&rdquo; inquit.</span>
+          <span class="pp-line">&ldquo;cras lupos superabimus!&rdquo;</span>
+        </div>
+
+        <div class="pp-vocab-box">
+          <div class="pp-vocab-box-label">Vocabulary</div>
+          <ul class="pp-vocab-list">
+            <li><span class="pp-vocab-latin">ludo, ludere</span> &mdash; play</li>
+            <li><span class="pp-vocab-latin">lupus, -i</span> (m) &mdash; wolf</li>
+            <li><span class="pp-vocab-latin">adsum, adesse</span> &mdash; be present, be here</li>
+            <li><span class="pp-vocab-latin">fuge!</span> &mdash; run away!</li>
+            <li><span class="pp-vocab-latin">quoque</span> &mdash; also, too</li>
+            <li><span class="pp-vocab-latin">peto, petere</span> &mdash; ask for, seek</li>
+            <li><span class="pp-vocab-latin">inquit</span> &mdash; he/she says, said</li>
+            <li><span class="pp-vocab-latin">nolite timere</span> &mdash; do not be afraid</li>
+            <li><span class="pp-vocab-latin">autem</span> &mdash; however, but</li>
+            <li><span class="pp-vocab-latin">agnus, -i</span> (m) &mdash; lamb</li>
+            <li><span class="pp-vocab-latin">cras</span> &mdash; tomorrow</li>
+            <li><span class="pp-vocab-latin">supero, -are</span> &mdash; overcome, defeat</li>
+          </ul>
+        </div>
+
+        <div class="pp-questions">
+          <ol>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">Where do Romulus and Remus live? <em>(1)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">What do the boys often do in the wood? <em>(1)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">What does Romulus see in the wood that frightens him? <em>(1)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">What does Romulus shout to Remus? Give two details. <em>(2)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">Where do the boys run? <em>(1)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">How does their mother know the boys are tired? <em>(1)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">What does their mother say to reassure them? <em>(2)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">Why is Romulus angry? <em>(2)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">What does Romulus plan to do the next day? <em>(1)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">From the passage, give the Latin for: (a) &ldquo;they are safe&rdquo; (b) &ldquo;they are tired&rdquo;. <em>(2)</em></span>
+              </div>
+            </li>
+            <li>
+              <div class="pp-q-line">
+                <span class="pp-q-text">Give one detail from the passage that shows Romulus is brave as well as frightened. <em>(1)</em></span>
+              </div>
+            </li>
+          </ol>
+          <div class="pp-total">Total: 15 marks</div>
+        </div>
+      </div>
+
+      <!-- Q2: TRANSLATION -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 2 &mdash; Translation (30 marks)</div>
+
+        <p class="pp-translation-instruction">Translate the following passage into English.</p>
+
+        <div class="pp-translation-passage">
+          <span class="pp-line">postridie Romulus Remumque ad silvam duxit. gladios portabant.</span>
+          <span class="pp-line">in silva lupi erant. Romulus validus erat et non timebat.</span>
+          <span class="pp-line">Remus autem lupos vidit et fugere volebat.</span>
+          <span class="pp-line">&ldquo;sta!&rdquo; clamavit Romulus. &ldquo;lupi nostros agnos necaverunt.&rdquo;</span>
+          <span class="pp-line">Romulus lupum magnum hasta percussit. lupus terram petivit.</span>
+          <span class="pp-line">Remus quoque fortiter pugnavit et alium lupum necavit.</span>
+          <span class="pp-line">tandem lupi fugerunt. fratres laeti erant et domum reverterunt.</span>
+          <span class="pp-line">mater &ldquo;filii mei,&rdquo; inquit, &ldquo;fortes estis!&rdquo;</span>
+        </div>
+
+        <div class="pp-vocab-box">
+          <div class="pp-vocab-box-label">Vocabulary</div>
+          <ul class="pp-vocab-list">
+            <li><span class="pp-vocab-latin">postridie</span> &mdash; the next day</li>
+            <li><span class="pp-vocab-latin">-que</span> &mdash; and (attached to word)</li>
+            <li><span class="pp-vocab-latin">volo, velle</span> &mdash; want, wish</li>
+            <li><span class="pp-vocab-latin">sta!</span> &mdash; stop! stand!</li>
+            <li><span class="pp-vocab-latin">percutio, percutere</span> &mdash; strike, hit</li>
+            <li><span class="pp-vocab-latin">alius, alia, aliud</span> &mdash; another, other</li>
+            <li><span class="pp-vocab-latin">frater, fratris</span> (m) &mdash; brother</li>
+            <li><span class="pp-vocab-latin">domum</span> &mdash; homeward, home</li>
+            <li><span class="pp-vocab-latin">revertor, reverti</span> &mdash; return</li>
+            <li><span class="pp-vocab-latin">fortis, forte</span> &mdash; brave, strong</li>
+          </ul>
+        </div>
+
+        <div class="pp-total">Total: 30 marks</div>
+      </div>
+
+      <!-- MARK SCHEME L1 -->
+
+      <button class="pp-ms-toggle" aria-expanded="false" aria-controls="ms-l1">
+        Mark Scheme &mdash; Level 1 Paper A
+        <span class="pp-ms-toggle-arrow">&#9660;</span>
+      </button>
+      <div class="pp-ms-body" id="ms-l1">
+
+        <div class="pp-ms-section-head">Question 1 &mdash; Comprehension</div>
+        <ol>
+          <li>In Italy / in Italia. <span class="pp-ms-award">(1)</span></li>
+          <li>They play / they often play. <span class="pp-ms-award">(1)</span></li>
+          <li>Wolves. <span class="pp-ms-award">(1)</span></li>
+          <li>Any two from: the wolves are here / there are wolves / run away. <span class="pp-ms-award">(2)</span></li>
+          <li>To their villa / home. <span class="pp-ms-award">(1)</span></li>
+          <li>She watches / looks at them (she sees them arrive). <span class="pp-ms-award">(1)</span></li>
+          <li>Do not be afraid / you are safe. Award 1 mark per detail. <span class="pp-ms-award">(2)</span></li>
+          <li>The wolves killed his lambs. Award 1 mark per detail (wolves / killed lambs). <span class="pp-ms-award">(2)</span></li>
+          <li>He will defeat/overcome the wolves. <span class="pp-ms-award">(1)</span></li>
+          <li>(a) <em>tuti estis</em> &mdash; (b) <em>fessi sunt</em>. Award 1 each. <span class="pp-ms-award">(2)</span></li>
+          <li>He plans to go back and fight / defeat the wolves (despite being frightened). Accept any reasonable inference from the text. <span class="pp-ms-award">(1)</span></li>
+        </ol>
+
+        <div class="pp-ms-section-head">Question 2 &mdash; Translation</div>
+        <p style="font-size:0.88rem; margin-bottom:0.5rem;">Award marks for sense-units. Accept any natural English that captures the Latin. Do not penalise for word order. Key points below.</p>
+        <ol>
+          <li><em>postridie Romulus Remumque ad silvam duxit</em> &mdash; The next day Romulus led Remus to the wood. <span class="pp-ms-award">(3)</span></li>
+          <li><em>gladios portabant</em> &mdash; They were carrying swords. <span class="pp-ms-award">(2)</span></li>
+          <li><em>in silva lupi erant</em> &mdash; In the wood there were wolves. <span class="pp-ms-award">(2)</span></li>
+          <li><em>Romulus validus erat et non timebat</em> &mdash; Romulus was strong and was not afraid. <span class="pp-ms-award">(3)</span></li>
+          <li><em>Remus autem lupos vidit et fugere volebat</em> &mdash; But Remus saw the wolves and wanted to flee. <span class="pp-ms-award">(4)</span></li>
+          <li><em>&ldquo;sta!&rdquo; clamavit Romulus. &ldquo;lupi nostros agnos necaverunt.&rdquo;</em> &mdash; &ldquo;Stop!&rdquo; shouted Romulus. &ldquo;The wolves have killed our lambs.&rdquo; <span class="pp-ms-award">(4)</span></li>
+          <li><em>Romulus lupum magnum hasta percussit</em> &mdash; Romulus struck the large wolf with a spear. <span class="pp-ms-award">(3)</span></li>
+          <li><em>lupus terram petivit</em> &mdash; The wolf fell to the ground / sought the ground. <span class="pp-ms-award">(2)</span></li>
+          <li><em>Remus quoque fortiter pugnavit et alium lupum necavit</em> &mdash; Remus also fought bravely and killed another wolf. <span class="pp-ms-award">(4)</span></li>
+          <li><em>tandem lupi fugerunt. fratres laeti erant et domum reverterunt</em> &mdash; Finally the wolves fled. The brothers were happy and returned home. <span class="pp-ms-award">(3)</span></li>
+        </ol>
+        <div class="pp-ms-note">Total for Q2: 30 marks. Markers have discretion over part-marks for near-correct translations. Accept alternative correct renderings throughout.</div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         LEVEL 2 — JULIUS CAESAR IN BRITAIN
+         ============================================================ -->
+
+    <section class="pp-paper" id="level2">
+
+      <div class="pp-paper-header">
+        <span class="pp-paper-title">Practice Paper A &mdash; Level 2</span>
+        <span class="pp-paper-meta">60 minutes &middot; No dictionary</span>
+      </div>
+      <p class="pp-paper-story">Story: Caesar in Britain</p>
+
+      <!-- Q1: COMPREHENSION -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 1 &mdash; Comprehension (15 marks)</div>
+
+        <p style="font-size:0.9rem; color:var(--color-stone-light); margin-bottom:0.75rem;">Read the following passage carefully and then answer the questions below in English. Complete sentences are not required.</p>
+
+        <div class="pp-passage">
+          <span class="pp-line">Caesar, dux Romanorum clarissimus, copias suas trans mare duxit.</span>
+          <span class="pp-line">Britanni in litore stabant et Romanos spectabant. rex Britannorum,</span>
+          <span class="pp-line">nomine Cassivelaunus, milites suos ad pugnam paraverat.</span>
+          <span class="pp-line">Caesar e navibus descendit et milites hortatus est: &ldquo;Romani,</span>
+          <span class="pp-line">fortiter pugnandum est. Britanni feroces sunt, sed nos fortiores sumus.&rdquo;</span>
+          <span class="pp-line">milites Romani clamorem magnum fecerunt et in terram cucurrerunt.</span>
+          <span class="pp-line">equites Britanni primum impetum fecerunt, sed Romani eos pepulerunt.</span>
+          <span class="pp-line">Cassivelaunus, ubi suos victos vidit, in silvas fugiebat.</span>
+        </div>
+
+        <div class="pp-vocab-box">
+          <div class="pp-vocab-box-label">Vocabulary</div>
+          <ul class="pp-vocab-list">
+            <li><span class="pp-vocab-latin">copiae, -arum</span> (f pl) &mdash; forces, troops</li>
+            <li><span class="pp-vocab-latin">mare, maris</span> (n) &mdash; sea</li>
+            <li><span class="pp-vocab-latin">litus, litoris</span> (n) &mdash; shore, beach</li>
+            <li><span class="pp-vocab-latin">nomine</span> &mdash; by name, named</li>
+            <li><span class="pp-vocab-latin">descendo, descendere</span> &mdash; come down, disembark</li>
+            <li><span class="pp-vocab-latin">hortor, hortari</span> &mdash; encourage, urge</li>
+            <li><span class="pp-vocab-latin">pugnandum est</span> &mdash; we must fight</li>
+            <li><span class="pp-vocab-latin">ferox, ferocis</span> &mdash; fierce, ferocious</li>
+            <li><span class="pp-vocab-latin">clamor, clamoris</span> (m) &mdash; shout, battle-cry</li>
+            <li><span class="pp-vocab-latin">eques, equitis</span> (m) &mdash; horseman, cavalryman</li>
+            <li><span class="pp-vocab-latin">impetus, -us</span> (m) &mdash; attack, charge</li>
+            <li><span class="pp-vocab-latin">pello, pellere, pepuli</span> &mdash; drive back, repel</li>
+            <li><span class="pp-vocab-latin">victus, -a, -um</span> &mdash; defeated</li>
+          </ul>
+        </div>
+
+        <div class="pp-questions">
+          <ol>
+            <li>What does the title <em>clarissimus</em> tell us about Caesar? <em>(1)</em></li>
+            <li>Where had Caesar led his troops? <em>(1)</em></li>
+            <li>Who was waiting on the shore? What were they doing? Give two details. <em>(2)</em></li>
+            <li>What was the name of the British king and what had he already done before Caesar arrived? <em>(2)</em></li>
+            <li>What does Caesar say to encourage his soldiers? Give two details. <em>(2)</em></li>
+            <li>What did the Roman soldiers do before charging into battle? <em>(1)</em></li>
+            <li>What happened when the British cavalry made their first charge? <em>(2)</em></li>
+            <li>What did Cassivelaunus do when he saw what was happening to his men? <em>(2)</em></li>
+            <li>Find one Latin word in the passage that means the same as <em>dux</em>. <em>(1)</em></li>
+            <li>From the passage, give the Latin and case of the noun used to describe the shore where the Britons stood. <em>(1)</em></li>
+          </ol>
+          <div class="pp-total">Total: 15 marks</div>
+        </div>
+      </div>
+
+      <!-- Q2: TRANSLATION -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 2 &mdash; Translation (30 marks)</div>
+
+        <p class="pp-translation-instruction">Translate the following passage into English.</p>
+
+        <div class="pp-translation-passage">
+          <span class="pp-line">postridie Caesar milites ad flumen duxit. ibi pontem aedificaverunt.</span>
+          <span class="pp-line">Britanni in ripa stantes Romanos timebant. Cassivelaunus tamen</span>
+          <span class="pp-line">milites suos hortatus est: &ldquo;nolite fugere! Romani hostes nostri sunt.&rdquo;</span>
+          <span class="pp-line">Britanni igitur fortiter pugnaverunt. Caesar ipse vulneratus est,</span>
+          <span class="pp-line">sed milites eius eum non deseruerunt. tandem Britanni victi sunt.</span>
+          <span class="pp-line">Cassivelaunus ad Caesarem venit et pacem petivit. Caesar,</span>
+          <span class="pp-line">quamquam iratus erat, pacem dedit: &ldquo;obsides dabitis,&rdquo; inquit,</span>
+          <span class="pp-line">&ldquo;et Romani vos numquam oppugnabunt.&rdquo;</span>
+        </div>
+
+        <div class="pp-vocab-box">
+          <div class="pp-vocab-box-label">Vocabulary</div>
+          <ul class="pp-vocab-list">
+            <li><span class="pp-vocab-latin">flumen, fluminis</span> (n) &mdash; river</li>
+            <li><span class="pp-vocab-latin">pons, pontis</span> (m) &mdash; bridge</li>
+            <li><span class="pp-vocab-latin">ripa, -ae</span> (f) &mdash; bank (of a river)</li>
+            <li><span class="pp-vocab-latin">stantes</span> &mdash; standing</li>
+            <li><span class="pp-vocab-latin">hostis, hostis</span> (m) &mdash; enemy</li>
+            <li><span class="pp-vocab-latin">ipse</span> &mdash; himself</li>
+            <li><span class="pp-vocab-latin">vulnero, -are</span> &mdash; wound</li>
+            <li><span class="pp-vocab-latin">desero, deserere</span> &mdash; abandon, desert</li>
+            <li><span class="pp-vocab-latin">pax, pacis</span> (f) &mdash; peace</li>
+            <li><span class="pp-vocab-latin">obses, obsidis</span> (m/f) &mdash; hostage</li>
+            <li><span class="pp-vocab-latin">oppugno, -are</span> &mdash; attack</li>
+          </ul>
+        </div>
+
+        <div class="pp-total">Total: 30 marks</div>
+      </div>
+
+      <!-- Q3: GRAMMAR -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 3 &mdash; Grammar (15 marks)</div>
+
+        <ol class="pp-questions" style="padding-left:1.5rem;">
+          <li style="margin-bottom:1rem;">
+            <strong>From the comprehension passage (Question 1), give the case and number of the following nouns and explain why each case is used.</strong>
+            <ol type="a" style="margin-top:0.5rem; padding-left:1.5rem;">
+              <li style="margin-bottom:0.4rem;"><em>Romanorum</em> (line 1) <em>(2)</em></li>
+              <li style="margin-bottom:0.4rem;"><em>milites</em> (line 3) &mdash; <em>milites hortatus est</em> <em>(2)</em></li>
+              <li style="margin-bottom:0.4rem;"><em>pugnam</em> (line 3) <em>(2)</em></li>
+            </ol>
+          </li>
+          <li style="margin-bottom:1rem;">
+            <strong>Parse the following verbs from the translation passage (Question 2) &mdash; give person, number, tense, and the first person singular of the same tense.</strong>
+            <ol type="a" style="margin-top:0.5rem; padding-left:1.5rem;">
+              <li style="margin-bottom:0.4rem;"><em>aedificaverunt</em> <em>(2)</em></li>
+              <li style="margin-bottom:0.4rem;"><em>timebant</em> <em>(2)</em></li>
+              <li style="margin-bottom:0.4rem;"><em>oppugnabunt</em> <em>(2)</em></li>
+            </ol>
+          </li>
+          <li style="margin-bottom:1rem;">
+            <strong>Translate the following sentence, then rewrite it in the plural.</strong>
+            <p style="margin-top:0.4rem; font-style:italic;">miles Romanus ad flumen cucurrit. <em>(3)</em></p>
+          </li>
+        </ol>
+
+        <div class="pp-total">Total: 15 marks</div>
+      </div>
+
+      <!-- Q4: ENGLISH INTO LATIN -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 4 &mdash; English into Latin (15 marks)</div>
+
+        <p style="font-size:0.9rem; margin-bottom:1rem; color:var(--color-stone);">Translate the following sentences into Latin. The vocabulary you need is given in brackets.</p>
+
+        <ol class="pp-questions" style="padding-left:1.5rem;">
+          <li style="margin-bottom:1rem;">The master is calling the slave. <em>(dominus, servo / servum, voco)</em> <em>(3)</em></li>
+          <li style="margin-bottom:1rem;">The girl was carrying water to the house. <em>(puella, aquam, porto, ad villam)</em> <em>(3)</em></li>
+          <li style="margin-bottom:1rem;">The soldiers fought bravely but the king fled. <em>(milites, fortiter, pugno, rex, fugio)</em> <em>(4)</em></li>
+          <li style="margin-bottom:1rem;">We have seen the large temple. <em>(video, templum, magnus)</em> <em>(3)</em></li>
+          <li style="margin-bottom:1rem;">Do not destroy the walls, soldiers! <em>(nolite, deleo, muri / muros, milites)</em> <em>(2)</em></li>
+        </ol>
+
+        <div class="pp-total">Total: 15 marks</div>
+      </div>
+
+      <!-- MARK SCHEME L2 -->
+
+      <button class="pp-ms-toggle" aria-expanded="false" aria-controls="ms-l2">
+        Mark Scheme &mdash; Level 2 Paper A
+        <span class="pp-ms-toggle-arrow">&#9660;</span>
+      </button>
+      <div class="pp-ms-body" id="ms-l2">
+
+        <div class="pp-ms-section-head">Question 1 &mdash; Comprehension</div>
+        <ol>
+          <li>He is very famous / most famous (clarissimus = superlative of clarus). <span class="pp-ms-award">(1)</span></li>
+          <li>Across the sea / to Britain. <span class="pp-ms-award">(1)</span></li>
+          <li>The Britons / British warriors were standing on the shore and watching the Romans. Award 1 mark per detail. <span class="pp-ms-award">(2)</span></li>
+          <li>Cassivelaunus; he had already prepared his soldiers for battle. Award 1 mark each. <span class="pp-ms-award">(2)</span></li>
+          <li>Any two from: they must fight bravely / the Britons are fierce / the Romans are stronger. <span class="pp-ms-award">(2)</span></li>
+          <li>They gave/let out a great shout/battle-cry. <span class="pp-ms-award">(1)</span></li>
+          <li>The Romans drove them back / repelled them. <span class="pp-ms-award">(2)</span></li>
+          <li>He fled into the woods. <span class="pp-ms-award">(2)</span></li>
+          <li><em>rex</em>. <span class="pp-ms-award">(1)</span></li>
+          <li><em>litore</em>, ablative (of place where). <span class="pp-ms-award">(1)</span></li>
+        </ol>
+
+        <div class="pp-ms-section-head">Question 2 &mdash; Translation (key sense-units)</div>
+        <ol>
+          <li><em>postridie Caesar milites ad flumen duxit</em> &mdash; The next day Caesar led his soldiers to the river. <span class="pp-ms-award">(3)</span></li>
+          <li><em>ibi pontem aedificaverunt</em> &mdash; There they built a bridge. <span class="pp-ms-award">(2)</span></li>
+          <li><em>Britanni in ripa stantes Romanos timebant</em> &mdash; The Britons standing on the bank feared the Romans. <span class="pp-ms-award">(3)</span></li>
+          <li><em>Cassivelaunus tamen milites suos hortatus est</em> &mdash; However Cassivelaunus encouraged his soldiers. <span class="pp-ms-award">(2)</span></li>
+          <li><em>&ldquo;nolite fugere! Romani hostes nostri sunt.&rdquo;</em> &mdash; &ldquo;Do not flee! The Romans are our enemies.&rdquo; <span class="pp-ms-award">(3)</span></li>
+          <li><em>Caesar ipse vulneratus est, sed milites eius eum non deseruerunt</em> &mdash; Caesar himself was wounded, but his soldiers did not abandon him. <span class="pp-ms-award">(4)</span></li>
+          <li><em>tandem Britanni victi sunt</em> &mdash; Finally the Britons were defeated. <span class="pp-ms-award">(2)</span></li>
+          <li><em>Cassivelaunus ad Caesarem venit et pacem petivit</em> &mdash; Cassivelaunus came to Caesar and asked for peace. <span class="pp-ms-award">(3)</span></li>
+          <li><em>Caesar, quamquam iratus erat, pacem dedit</em> &mdash; Caesar, although he was angry, gave (them) peace. <span class="pp-ms-award">(3)</span></li>
+          <li><em>&ldquo;obsides dabitis,&rdquo; inquit, &ldquo;et Romani vos numquam oppugnabunt.&rdquo;</em> &mdash; &ldquo;You will give hostages,&rdquo; he said, &ldquo;and the Romans will never attack you.&rdquo; <span class="pp-ms-award">(3)</span></li>
+        </ol>
+
+        <div class="pp-ms-section-head">Question 3 &mdash; Grammar</div>
+        <ol>
+          <li>
+            <ol type="a">
+              <li><em>Romanorum</em> &mdash; genitive plural; possession (of the Romans). <span class="pp-ms-award">(2)</span></li>
+              <li><em>milites</em> &mdash; accusative plural; direct object (Caesar encouraged his soldiers). <span class="pp-ms-award">(2)</span></li>
+              <li><em>pugnam</em> &mdash; accusative singular; after preposition <em>ad</em> (motion towards). <span class="pp-ms-award">(2)</span></li>
+            </ol>
+          </li>
+          <li>
+            <ol type="a">
+              <li><em>aedificaverunt</em> &mdash; 3rd person plural, perfect; 1st person: <em>aedificavi</em>. <span class="pp-ms-award">(2)</span></li>
+              <li><em>timebant</em> &mdash; 3rd person plural, imperfect; 1st person: <em>timebam</em>. <span class="pp-ms-award">(2)</span></li>
+              <li><em>oppugnabunt</em> &mdash; 3rd person plural, future; 1st person: <em>oppugnabo</em>. <span class="pp-ms-award">(2)</span></li>
+            </ol>
+          </li>
+          <li>
+            Translation: The Roman soldier ran to the river. <em>(1)</em><br>
+            Plural: <em>milites Romani ad flumen cucurrerunt.</em> Award 1 mark per correct change: noun <em>milites</em>, adjective <em>Romani</em>, verb <em>cucurrerunt</em>. <span class="pp-ms-award">(3)</span>
+          </li>
+        </ol>
+
+        <div class="pp-ms-section-head">Question 4 &mdash; English into Latin</div>
+        <ol>
+          <li><em>dominus servum vocat.</em> Award: subject nom. (1), object acc. (1), verb correct tense/person (1). <span class="pp-ms-award">(3)</span></li>
+          <li><em>puella aquam ad villam portabat.</em> Award: subject nom. (1), object acc. (1), verb imperfect (1). <span class="pp-ms-award">(3)</span></li>
+          <li><em>milites fortiter pugnaverunt sed rex fugit.</em> Award: noun/verb agreement (1), adverb (1), conjunction (1), second clause (1). <span class="pp-ms-award">(4)</span></li>
+          <li><em>templum magnum vidimus.</em> Award: noun+adj. acc. agreement (2), perfect 1st pl. (1). <span class="pp-ms-award">(3)</span></li>
+          <li><em>nolite muros delere, milites!</em> Award: <em>nolite</em> + infinitive (1), correct acc. pl. for walls (1). <span class="pp-ms-award">(2)</span></li>
+        </ol>
+
+        <div class="pp-ms-note">Markers should award marks for correct Latin even if not in the expected word order. Penalise wrong case endings once per construction, not per word. Accept alternative correct forms throughout.</div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         LEVEL 3 — THE WANDERINGS OF ODYSSEUS (SCHOLARSHIP)
+         ============================================================ -->
+
+    <section class="pp-paper" id="level3">
+
+      <div class="pp-paper-header">
+        <span class="pp-paper-title">Practice Paper A &mdash; Level 3 (Scholarship)</span>
+        <span class="pp-paper-meta">75 minutes &middot; No dictionary</span>
+      </div>
+      <p class="pp-paper-story">Story: The Wanderings of Odysseus &mdash; the Land of the Cyclops</p>
+
+      <!-- Q1: COMPREHENSION -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 1 &mdash; Comprehension (15 marks)</div>
+
+        <p style="font-size:0.9rem; color:var(--color-stone-light); margin-bottom:0.75rem;">Read the following passage carefully and then answer the questions below in English. Complete sentences are not required.</p>
+
+        <div class="pp-passage">
+          <span class="pp-line">Ulixes, postquam urbem Troiam cepit, domum navigabat. multos annos</span>
+          <span class="pp-line">per maria errabat quod di iram suam in eum posuerant. tandem</span>
+          <span class="pp-line">ad insulam Cyclopum pervenit. Ulixes cum duodecim sociis in speluncam</span>
+          <span class="pp-line">intravit, ubi multa dona deorum invenerunt. mox tamen Polyphemus,</span>
+          <span class="pp-line">Cyclops ingens, in speluncam rediit et saxum maximum ante ostium</span>
+          <span class="pp-line">posuit. Ulixes timebat sed socios non deseruit. Cyclops cum Ulixem</span>
+          <span class="pp-line">vidit, iratissimus erat: &ldquo;quis es tu?&rdquo; rugit. &ldquo;cur in spelunca mea es?&rdquo;</span>
+          <span class="pp-line">Ulixes callide respondit: &ldquo;nomen mihi est Nemo. hospes tuus sum.&rdquo;</span>
+        </div>
+
+        <div class="pp-vocab-box">
+          <div class="pp-vocab-box-label">Vocabulary</div>
+          <ul class="pp-vocab-list">
+            <li><span class="pp-vocab-latin">Ulixes, Ulixis</span> (m) &mdash; Odysseus (Ulysses)</span></li>
+            <li><span class="pp-vocab-latin">postquam</span> &mdash; after</li>
+            <li><span class="pp-vocab-latin">erro, errare</span> &mdash; wander, roam</li>
+            <li><span class="pp-vocab-latin">pono, ponere, posui</span> &mdash; place, put</li>
+            <li><span class="pp-vocab-latin">Cyclops, Cyclopis</span> (m) &mdash; Cyclops (one-eyed giant)</li>
+            <li><span class="pp-vocab-latin">pervenio, pervenire</span> &mdash; arrive, reach</li>
+            <li><span class="pp-vocab-latin">socius, -i</span> (m) &mdash; companion</li>
+            <li><span class="pp-vocab-latin">spelunca, -ae</span> (f) &mdash; cave</li>
+            <li><span class="pp-vocab-latin">donum, -i</span> (n) &mdash; gift</li>
+            <li><span class="pp-vocab-latin">Polyphemus, -i</span> (m) &mdash; Polyphemus (the Cyclops)</li>
+            <li><span class="pp-vocab-latin">saxum, -i</span> (n) &mdash; rock, boulder</li>
+            <li><span class="pp-vocab-latin">ostium, -i</span> (n) &mdash; entrance, doorway</li>
+            <li><span class="pp-vocab-latin">rug&#333;, rugire</span> &mdash; roar, bellow</li>
+            <li><span class="pp-vocab-latin">callide</span> &mdash; cleverly</li>
+            <li><span class="pp-vocab-latin">nomen mihi est</span> &mdash; my name is</li>
+            <li><span class="pp-vocab-latin">hospes, hospitis</span> (m) &mdash; guest; host</li>
+          </ul>
+        </div>
+
+        <div class="pp-questions">
+          <ol>
+            <li>Why had Ulysses been wandering the seas for many years? <em>(2)</em></li>
+            <li>How many companions did Ulysses take with him into the cave? <em>(1)</em></li>
+            <li>What did they find inside the cave? <em>(1)</em></li>
+            <li>Describe exactly what Polyphemus did when he returned to the cave. Give two details. <em>(2)</em></li>
+            <li>What does the description of Ulysses at the end of line 6 tell us about his character? Refer to the Latin in your answer. <em>(2)</em></li>
+            <li>What two questions did Polyphemus ask? <em>(2)</em></li>
+            <li>What name did Ulysses give and what reason did he give for being in the cave? <em>(2)</em></li>
+            <li>Why was it clever of Ulysses to call himself &ldquo;Nemo&rdquo;? Think about what &ldquo;nemo&rdquo; means in Latin. <em>(2)</em></li>
+            <li>How does the poet make Polyphemus sound frightening? Refer to two details from the Latin. <em>(1)</em></li>
+          </ol>
+          <div class="pp-total">Total: 15 marks</div>
+        </div>
+      </div>
+
+      <!-- Q2: TRANSLATION -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 2 &mdash; Translation (30 marks)</div>
+
+        <p class="pp-translation-instruction">Translate the following passage into English as accurately as you can.</p>
+
+        <div class="pp-translation-passage">
+          <span class="pp-line">nocte Ulixes lignum acutum in igne posuit. dum Polyphemus dormiebat,</span>
+          <span class="pp-line">Ulixes socios suos excitavit. &ldquo;nunc&rdquo; inquit &ldquo;tempus agendi adest.&rdquo;</span>
+          <span class="pp-line">lignum ardens e flammis rapuit et in oculum Cyclopis impulit.</span>
+          <span class="pp-line">Polyphemus, dolore oppressus, ululavit. alii Cyclopes extra speluncam</span>
+          <span class="pp-line">clamorem audientes appropinquaverunt. &ldquo;quis te laedit, Polyphere?&rdquo;</span>
+          <span class="pp-line">rogaverunt. &ldquo;Nemo me laedit!&rdquo; ille clamavit. itaque Cyclopes abierunt,</span>
+          <span class="pp-line">credentes eum insanum esse. Ulixes autem socios suos sub ovibus</span>
+          <span class="pp-line">celavit et sic omnes ex spelunca evaserunt. Polyphemus, caecus factus,</span>
+          <span class="pp-line">eos capere non poterat. Ulixes ad naves suas laetus festinavit.</span>
+        </div>
+
+        <div class="pp-vocab-box">
+          <div class="pp-vocab-box-label">Vocabulary</div>
+          <ul class="pp-vocab-list">
+            <li><span class="pp-vocab-latin">lignum, -i</span> (n) &mdash; piece of wood, stake</li>
+            <li><span class="pp-vocab-latin">acutus, -a, -um</span> &mdash; sharp, pointed</li>
+            <li><span class="pp-vocab-latin">ignis, ignis</span> (m) &mdash; fire</li>
+            <li><span class="pp-vocab-latin">dormio, dormire</span> &mdash; sleep</li>
+            <li><span class="pp-vocab-latin">excito, -are</span> &mdash; rouse, wake up</li>
+            <li><span class="pp-vocab-latin">tempus agendi</span> &mdash; time for action</li>
+            <li><span class="pp-vocab-latin">adsum, adesse</span> &mdash; be present, be at hand</li>
+            <li><span class="pp-vocab-latin">ardens, ardentis</span> &mdash; burning, blazing</li>
+            <li><span class="pp-vocab-latin">flamma, -ae</span> (f) &mdash; flame</li>
+            <li><span class="pp-vocab-latin">rapio, rapere</span> &mdash; snatch, seize</li>
+            <li><span class="pp-vocab-latin">oculus, -i</span> (m) &mdash; eye</li>
+            <li><span class="pp-vocab-latin">impello, impellere</span> &mdash; drive, thrust into</li>
+            <li><span class="pp-vocab-latin">dolor, doloris</span> (m) &mdash; pain</li>
+            <li><span class="pp-vocab-latin">oppressus, -a, -um</span> &mdash; overwhelmed</li>
+            <li><span class="pp-vocab-latin">ululo, ululare</span> &mdash; howl, shriek</li>
+            <li><span class="pp-vocab-latin">extra</span> (+ acc.) &mdash; outside</li>
+            <li><span class="pp-vocab-latin">laedo, laedere</span> &mdash; harm, hurt</li>
+            <li><span class="pp-vocab-latin">credo, credere</span> (+ acc. + infin.) &mdash; believe that</li>
+            <li><span class="pp-vocab-latin">insanus, -a, -um</span> &mdash; mad, insane</li>
+            <li><span class="pp-vocab-latin">ovis, ovis</span> (f) &mdash; sheep</li>
+            <li><span class="pp-vocab-latin">evado, evadere</span> &mdash; escape, get out</li>
+            <li><span class="pp-vocab-latin">caecus, -a, -um</span> &mdash; blind</li>
+          </ul>
+        </div>
+
+        <div class="pp-total">Total: 30 marks</div>
+      </div>
+
+      <!-- Q3: GRAMMAR -->
+
+      <div class="pp-section">
+        <div class="pp-section-head">Question 3 &mdash; Grammar and Style (25 marks)</div>
+
+        <ol class="pp-questions" style="padding-left:1.5rem;">
+
+          <li style="margin-bottom:1.25rem;">
+            <strong>Cases.</strong> Give the case and number of the following words from the passages above, and explain the reason for each case.
+            <ol type="a" style="margin-top:0.5rem; padding-left:1.5rem;">
+              <li style="margin-bottom:0.4rem;"><em>socios</em> (translation passage, line 2) <em>(2)</em></li>
+              <li style="margin-bottom:0.4rem;"><em>dolore</em> (translation passage, line 4) <em>(2)</em></li>
+              <li style="margin-bottom:0.4rem;"><em>ovibus</em> (translation passage, line 7) <em>(2)</em></li>
+            </ol>
+          </li>
+
+          <li style="margin-bottom:1.25rem;">
+            <strong>Verbs.</strong> Parse the following verbs fully (person, number, tense, mood, conjugation) and give the first person singular of the present tense.
+            <ol type="a" style="margin-top:0.5rem; padding-left:1.5rem;">
+              <li style="margin-bottom:0.4rem;"><em>rapuit</em> <em>(3)</em></li>
+              <li style="margin-bottom:0.4rem;"><em>dormiebat</em> <em>(3)</em></li>
+              <li style="margin-bottom:0.4rem;"><em>poterat</em> <em>(3)</em></li>
+            </ol>
+          </li>
+
+          <li style="margin-bottom:1.25rem;">
+            <strong>Comparison.</strong> Using the adjective <em>ingens</em> from the comprehension passage:
+            <ol type="a" style="margin-top:0.5rem; padding-left:1.5rem;">
+              <li style="margin-bottom:0.4rem;">Give the comparative form (nominative masculine singular) and translate it. <em>(2)</em></li>
+              <li style="margin-bottom:0.4rem;">Give the superlative form (nominative masculine singular) and translate it. <em>(2)</em></li>
+            </ol>
+          </li>
+
+          <li style="margin-bottom:1.25rem;">
+            <strong>Style.</strong> Look again at lines 4&ndash;6 of the translation passage (<em>Polyphemus, dolore oppressus &hellip; Cyclopes abierunt</em>).
+            <ol type="a" style="margin-top:0.5rem; padding-left:1.5rem;">
+              <li style="margin-bottom:0.4rem;">Identify one stylistic technique the writer uses and explain the effect it creates. <em>(2)</em></li>
+              <li style="margin-bottom:0.4rem;">How does Ulysses use the name &ldquo;Nemo&rdquo; to outwit the other Cyclopes? Explain in your own words. <em>(2)</em></li>
+            </ol>
+          </li>
+
+          <li style="margin-bottom:1.25rem;">
+            <strong>English into Latin.</strong> Translate the following sentences into Latin.
+            <ol type="a" style="margin-top:0.5rem; padding-left:1.5rem;">
+              <li style="margin-bottom:0.4rem;">The companions were afraid, but Ulysses was brave. <em>(milites / socii, timeo, sed, Ulixes, fortis)</em> <em>(3)</em></li>
+              <li style="margin-bottom:0.4rem;">The Cyclops was not able to see the men. <em>(Cyclops, possum, video, vir)</em> <em>(3)</em></li>
+            </ol>
+          </li>
+
+        </ol>
+
+        <div class="pp-total">Total: 25 marks</div>
+      </div>
+
+      <!-- MARK SCHEME L3 -->
+
+      <button class="pp-ms-toggle" aria-expanded="false" aria-controls="ms-l3">
+        Mark Scheme &mdash; Level 3 Paper A (Scholarship)
+        <span class="pp-ms-toggle-arrow">&#9660;</span>
+      </button>
+      <div class="pp-ms-body" id="ms-l3">
+
+        <div class="pp-ms-section-head">Question 1 &mdash; Comprehension</div>
+        <ol>
+          <li>The gods had placed their anger on him / the gods were angry with him (and sent him wandering). Award 1 for gods angry, 1 for the consequence / the wandering caused by it. <span class="pp-ms-award">(2)</span></li>
+          <li>Twelve (<em>duodecim</em>). <span class="pp-ms-award">(1)</span></li>
+          <li>Many gifts of the gods. <span class="pp-ms-award">(1)</span></li>
+          <li>Any two from: he returned to the cave / he placed a huge rock in front of the entrance. <span class="pp-ms-award">(2)</span></li>
+          <li><em>socios non deseruit</em> &mdash; he did not abandon his companions; shows loyalty/courage despite fear. Award 1 for correct Latin reference, 1 for the inference about character. <span class="pp-ms-award">(2)</span></li>
+          <li>Who are you? / Why are you in my cave? Award 1 each. <span class="pp-ms-award">(2)</span></li>
+          <li>He said his name was Nobody (Nemo); he said he was the Cyclops's guest. Award 1 each. <span class="pp-ms-award">(2)</span></li>
+          <li><em>nemo</em> means &ldquo;nobody&rdquo; in Latin; so when Polyphemus tells the other Cyclopes &ldquo;Nobody hurt me&rdquo; they think nothing is wrong and go away. Award 1 for the meaning, 1 for the consequence. <span class="pp-ms-award">(2)</span></li>
+          <li>Any two from: <em>Cyclops ingens</em> (vast / huge size), <em>rugit</em> (he roars / bellows). Award 1 for any one clearly referenced detail. <span class="pp-ms-award">(1)</span></li>
+        </ol>
+
+        <div class="pp-ms-section-head">Question 2 &mdash; Translation (key sense-units, 30 marks)</div>
+        <ol>
+          <li><em>nocte Ulixes lignum acutum in igne posuit</em> &mdash; At night Ulysses put a sharp stake in the fire. <span class="pp-ms-award">(3)</span></li>
+          <li><em>dum Polyphemus dormiebat, Ulixes socios suos excitavit</em> &mdash; While Polyphemus was sleeping, Ulysses roused his companions. <span class="pp-ms-award">(3)</span></li>
+          <li><em>&ldquo;nunc&rdquo; inquit &ldquo;tempus agendi adest&rdquo;</em> &mdash; &ldquo;Now&rdquo; he said &ldquo;the time for action is at hand.&rdquo; <span class="pp-ms-award">(2)</span></li>
+          <li><em>lignum ardens e flammis rapuit et in oculum Cyclopis impulit</em> &mdash; He snatched the burning stake from the flames and drove it into the Cyclops&rsquo;s eye. <span class="pp-ms-award">(4)</span></li>
+          <li><em>Polyphemus, dolore oppressus, ululavit</em> &mdash; Polyphemus, overwhelmed by pain, howled. <span class="pp-ms-award">(3)</span></li>
+          <li><em>alii Cyclopes extra speluncam clamorem audientes appropinquaverunt</em> &mdash; Other Cyclopes, hearing the shout outside the cave, came near. <span class="pp-ms-award">(3)</span></li>
+          <li><em>&ldquo;quis te laedit, Polyphere?&rdquo; rogaverunt</em> &mdash; &ldquo;Who is hurting you, Polyphemus?&rdquo; they asked. <span class="pp-ms-award">(2)</span></li>
+          <li><em>&ldquo;Nemo me laedit!&rdquo; ille clamavit</em> &mdash; &ldquo;Nobody is hurting me!&rdquo; he shouted. <span class="pp-ms-award">(2)</span></li>
+          <li><em>itaque Cyclopes abierunt, credentes eum insanum esse</em> &mdash; And so the Cyclopes went away, believing him to be mad. <span class="pp-ms-award">(3)</span></li>
+          <li><em>Ulixes autem socios suos sub ovibus celavit et sic omnes ex spelunca evaserunt</em> &mdash; But Ulysses hid his companions under the sheep and in this way they all escaped from the cave. <span class="pp-ms-award">(3)</span></li>
+          <li><em>Polyphemus, caecus factus, eos capere non poterat. Ulixes ad naves suas laetus festinavit</em> &mdash; Polyphemus, having been made blind, was not able to catch them. Ulysses hurried happily to his ships. <span class="pp-ms-award">(2)</span></li>
+        </ol>
+
+        <div class="pp-ms-section-head">Question 3 &mdash; Grammar and Style</div>
+        <p class="pp-ms-award" style="margin-bottom:0.5rem;">Q3.1 Cases:</p>
+        <ol type="a">
+          <li><em>socios</em> &mdash; accusative plural; direct object (Ulysses roused his companions). <span class="pp-ms-award">(2)</span></li>
+          <li><em>dolore</em> &mdash; ablative singular; ablative of cause (overwhelmed <em>by</em> pain). <span class="pp-ms-award">(2)</span></li>
+          <li><em>ovibus</em> &mdash; ablative plural; ablative of place / after <em>sub</em> (hid under the sheep). <span class="pp-ms-award">(2)</span></li>
+        </ol>
+
+        <p class="pp-ms-award" style="margin: 0.75rem 0 0.5rem;">Q3.2 Verbs:</p>
+        <ol type="a">
+          <li><em>rapuit</em> &mdash; 3rd person singular, perfect, indicative, active; 3rd conjugation (<em>rapio</em>). <em>rapio</em>. <span class="pp-ms-award">(3)</span></li>
+          <li><em>dormiebat</em> &mdash; 3rd person singular, imperfect, indicative, active; 4th conjugation. <em>dormio</em>. <span class="pp-ms-award">(3)</span></li>
+          <li><em>poterat</em> &mdash; 3rd person singular, imperfect, indicative, active; irregular (<em>possum</em>). <em>possum</em>. <span class="pp-ms-award">(3)</span></li>
+        </ol>
+
+        <p class="pp-ms-award" style="margin: 0.75rem 0 0.5rem;">Q3.3 Comparison:</p>
+        <ol type="a">
+          <li>Comparative: <em>ingentior</em> &mdash; bigger, more huge/enormous. <span class="pp-ms-award">(2)</span></li>
+          <li>Superlative: <em>ingentissimus</em> &mdash; biggest, most enormous/huge. <span class="pp-ms-award">(2)</span></li>
+        </ol>
+
+        <p class="pp-ms-award" style="margin: 0.75rem 0 0.5rem;">Q3.4 Style:</p>
+        <ol type="a">
+          <li>Accept any clearly identified technique with a plausible effect: e.g. irony / dramatic irony in &ldquo;Nemo me laedit&rdquo; (Polyphemus cannot explain his situation to the other Cyclopes); or the contrast between Polyphemus&rsquo;s strength and helplessness once blinded. Award 1 for identifying a technique, 1 for explaining the effect with reference to the text. <span class="pp-ms-award">(2)</span></li>
+          <li>&ldquo;Nemo&rdquo; means &ldquo;nobody&rdquo; in Latin, so when Polyphemus cries that &ldquo;Nobody hurt me&rdquo;, the other Cyclopes think he is unhurt or mad and go away, allowing Ulysses to escape. <span class="pp-ms-award">(2)</span></li>
+        </ol>
+
+        <p class="pp-ms-award" style="margin: 0.75rem 0 0.5rem;">Q3.5 English into Latin:</p>
+        <ol type="a">
+          <li><em>socii timebant sed Ulixes fortis erat.</em> Award: correct nom. pl. subject (1), imperfect verb (1), <em>sed</em> + nom. sg. + correct form of <em>fortis</em>/esse (1). <span class="pp-ms-award">(3)</span></li>
+          <li><em>Cyclops viros videre non poterat.</em> Award: correct subject nom. (1), correct acc. pl. for <em>vir</em> (1), <em>non poterat</em> + infinitive correctly formed (1). <span class="pp-ms-award">(3)</span></li>
+        </ol>
+
+        <div class="pp-ms-note">Scholarship marking: reward genuine understanding of Latin and sensitivity to meaning. A good translation that renders the sense accurately without being word-for-word should score highly. Penalise serious grammatical errors (wrong case, wrong tense) but reward good English expression.</div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Caerus Latin &middot; <a href="https://caerusrevision.co.uk">caerusrevision.co.uk</a> &middot; Original practice material &copy; Caerus Revision</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Mark scheme toggles
+    document.querySelectorAll('.pp-ms-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        var bodyId = this.getAttribute('aria-controls');
+        var body = document.getElementById(bodyId);
+        if (body) {
+          body.classList.toggle('open', !expanded);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
