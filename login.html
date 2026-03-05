@@ -589,7 +589,6 @@
         })
         .then(function(r) { return r.json(); })
         .then(function(data) {
-          console.log('Edge Function response:', JSON.stringify(data));
           if (data.alreadyGranted) {
             window.location.href = nextPage;
             return '';
