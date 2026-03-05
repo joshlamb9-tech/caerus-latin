@@ -204,18 +204,31 @@
 
     .progress-bar-wrap {
       margin-top: 1rem;
-      height: 4px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 2px;
+      height: 6px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 3px;
       overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.2);
     }
 
     .progress-bar-fill {
       height: 100%;
       background: linear-gradient(to right, #6bcf7f, #c9a84c);
-      border-radius: 2px;
+      border-radius: 3px;
       transition: width 0.8s ease;
       width: 0%;
+      min-width: 0;
+    }
+
+    .progress-bar-wrap.empty .progress-bar-fill {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      animation: pulse-bar 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bar {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
     }
 
     .progress-empty {
@@ -228,20 +241,21 @@
 
     /* ── Enhanced nav cards ── */
     .home-nav-grid {
-      gap: 0.875rem;
+      gap: 1rem;
       margin-top: 0;
     }
 
     .nav-card {
       display: flex;
       align-items: flex-start;
-      gap: 1rem;
-      padding: 1.25rem 1.25rem 1.25rem 1rem;
-      border-left: 3px solid #c9a84c;
+      gap: 1.25rem;
+      padding: 1.75rem 1.5rem;
+      border-left: 4px solid #c9a84c;
       border-top: 1px solid rgba(201,168,76,0.25);
       border-right: 1px solid rgba(201,168,76,0.25);
       border-bottom: 1px solid rgba(201,168,76,0.25);
       background: #f0ede4;
+      min-height: 110px;
       transition: background 0.2s, border-left-color 0.2s, box-shadow 0.2s, transform 0.15s;
     }
 
@@ -249,13 +263,13 @@
     .nav-card:focus {
       background: #fff;
       border-left-color: #1a2744;
-      box-shadow: 0 4px 16px rgba(26,39,68,0.1);
-      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(26,39,68,0.12);
+      transform: translateY(-2px);
       outline: none;
     }
 
     .nav-card-icon {
-      font-size: 1.5rem;
+      font-size: 2rem;
       line-height: 1;
       flex-shrink: 0;
       margin-top: 0.1rem;
@@ -266,17 +280,17 @@
     }
 
     .nav-card h2 {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #1a2744;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.35rem;
     }
 
     .nav-card p {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       color: #4a5568;
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     /* Section label */
@@ -442,7 +456,7 @@
           document.getElementById('progress-empty').textContent = 'Start practising to track your progress';
           document.getElementById('progress-empty').style.display = 'block';
           document.getElementById('progress-stats').style.display = 'none';
-          document.getElementById('progress-bar-wrap').style.display = 'none';
+          document.getElementById('progress-bar-wrap').classList.add('empty');
         }
       }).catch(function() {
         document.getElementById('progress-empty').textContent = 'Start practising to track your progress';
