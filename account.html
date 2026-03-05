@@ -277,6 +277,139 @@
       font-style: italic;
       font-size: 0.9rem;
     }
+
+    /* Leaderboard profile */
+    .lb-profile-intro {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1.25rem;
+      line-height: 1.55;
+    }
+
+    .lb-form-row { margin-bottom: 1rem; }
+
+    .lb-form-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a2744;
+      margin-bottom: 0.4rem;
+    }
+
+    .lb-form-label span {
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: #9ca3af;
+    }
+
+    .lb-input {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1rem;
+      color: #1a2744;
+      background: #faf8f3;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.15s;
+      box-sizing: border-box;
+    }
+
+    .lb-input:focus { border-color: #c9a84c; }
+
+    .lb-initials-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .lb-initials-row .lb-input {
+      max-width: 80px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .lb-flag-preview {
+      font-size: 1.75rem;
+      line-height: 1;
+      min-width: 2rem;
+    }
+
+    .lb-select { cursor: pointer; }
+
+    .lb-toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lb-toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .lb-toggle input { opacity: 0; width: 0; height: 0; }
+
+    .lb-toggle-slider {
+      position: absolute;
+      inset: 0;
+      background: #d1d5db;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .lb-toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 3px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+
+    .lb-toggle input:checked + .lb-toggle-slider { background: #c9a84c; }
+    .lb-toggle input:checked + .lb-toggle-slider::before { transform: translateX(20px); }
+
+    .btn-save-profile {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      background: #1a2744;
+      color: #faf8f3;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      margin-top: 1.25rem;
+      transition: background 0.15s;
+    }
+
+    .btn-save-profile:hover { background: #243358; }
+
+    .lb-save-msg {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 0.6rem;
+      min-height: 1.2em;
+    }
+
+    .lb-save-msg.success { color: #2a7a2a; }
+    .lb-save-msg.error   { color: #c0392b; }
   </style>
 </head>
 <body>
@@ -296,6 +429,7 @@
           <li><a href="quiz.html">Exercises</a></li>
           <li><a href="papers.html">Past Papers</a></li>
           <li><a href="practice-papers.html">Practice Papers</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
           <li><a href="account.html">Account</a></li>
         </ul>
       </nav>
@@ -352,6 +486,61 @@
           <div class="progress-bar-fill" id="acc-bar"></div>
         </div>
         <p class="progress-note" id="acc-note"></p>
+      </div>
+
+      <!-- Leaderboard profile -->
+      <div class="account-card" id="anchor-leaderboard-profile">
+        <div class="account-card-label">Leaderboard Profile</div>
+        <p class="lb-profile-intro">Set your initials and country to appear on the global leaderboard. Only your initials and flag will be visible to others.</p>
+
+        <div class="lb-form-row">
+          <label class="lb-form-label" for="lb-initials">Initials <span>(1–3 characters)</span></label>
+          <div class="lb-initials-row">
+            <input type="text" id="lb-initials" class="lb-input" maxlength="3" placeholder="e.g. JL" autocomplete="off">
+            <span class="lb-flag-preview" id="lb-flag-preview">🌍</span>
+          </div>
+        </div>
+
+        <div class="lb-form-row">
+          <label class="lb-form-label" for="lb-country">Country</label>
+          <select id="lb-country" class="lb-input lb-select">
+            <option value="">— Select country —</option>
+            <option value="GB">🇬🇧 United Kingdom</option>
+            <option value="US">🇺🇸 United States</option>
+            <option value="AU">🇦🇺 Australia</option>
+            <option value="CA">🇨🇦 Canada</option>
+            <option value="NZ">🇳🇿 New Zealand</option>
+            <option value="IE">🇮🇪 Ireland</option>
+            <option value="ZA">🇿🇦 South Africa</option>
+            <option value="FR">🇫🇷 France</option>
+            <option value="DE">🇩🇪 Germany</option>
+            <option value="IT">🇮🇹 Italy</option>
+            <option value="ES">🇪🇸 Spain</option>
+            <option value="NL">🇳🇱 Netherlands</option>
+            <option value="BE">🇧🇪 Belgium</option>
+            <option value="CH">🇨🇭 Switzerland</option>
+            <option value="AE">🇦🇪 UAE</option>
+            <option value="HK">🇭🇰 Hong Kong</option>
+            <option value="SG">🇸🇬 Singapore</option>
+            <option value="IN">🇮🇳 India</option>
+            <option value="JP">🇯🇵 Japan</option>
+            <option value="CN">🇨🇳 China</option>
+            <option value="BR">🇧🇷 Brazil</option>
+            <option value="MX">🇲🇽 Mexico</option>
+            <option value="AR">🇦🇷 Argentina</option>
+          </select>
+        </div>
+
+        <div class="lb-form-row lb-toggle-row">
+          <label class="lb-form-label" for="lb-show">Show on leaderboard</label>
+          <label class="lb-toggle">
+            <input type="checkbox" id="lb-show" checked>
+            <span class="lb-toggle-slider"></span>
+          </label>
+        </div>
+
+        <button class="btn-save-profile" id="btn-save-profile">Save leaderboard profile</button>
+        <p class="lb-save-msg" id="lb-save-msg"></p>
       </div>
 
       <!-- Sign out -->
@@ -441,6 +630,64 @@
         }
       }).catch(function () {
         document.getElementById('acc-note').textContent = 'Could not load progress data.';
+      });
+
+      // Leaderboard profile
+      function getFlag(code) {
+        if (!code) return '🌍';
+        return code.toUpperCase().replace(/./g, function(c) {
+          return String.fromCodePoint(c.charCodeAt(0) + 127397);
+        });
+      }
+
+      function updateFlagPreview(code) {
+        document.getElementById('lb-flag-preview').textContent = getFlag(code);
+      }
+
+      client.from('user_profiles')
+        .select('initials, country_code, show_on_leaderboard')
+        .eq('user_id', userId)
+        .limit(1)
+        .then(function (res) {
+          if (res.data && res.data.length > 0) {
+            var p = res.data[0];
+            if (p.initials) document.getElementById('lb-initials').value = p.initials;
+            if (p.country_code) document.getElementById('lb-country').value = p.country_code;
+            document.getElementById('lb-show').checked = p.show_on_leaderboard !== false;
+            updateFlagPreview(p.country_code);
+          }
+        });
+
+      document.getElementById('lb-country').addEventListener('change', function () {
+        updateFlagPreview(this.value);
+      });
+
+      document.getElementById('btn-save-profile').addEventListener('click', function () {
+        var initials = document.getElementById('lb-initials').value.trim().toUpperCase();
+        var country  = document.getElementById('lb-country').value;
+        var show     = document.getElementById('lb-show').checked;
+        var msgEl    = document.getElementById('lb-save-msg');
+        if (!initials || initials.length < 1) {
+          msgEl.className = 'lb-save-msg error';
+          msgEl.textContent = 'Please enter your initials.';
+          return;
+        }
+        client.from('user_profiles').upsert({
+          user_id: userId,
+          initials: initials,
+          country_code: country || null,
+          show_on_leaderboard: show,
+          updated_at: new Date().toISOString()
+        }, { onConflict: 'user_id' }).then(function (res) {
+          if (res.error) {
+            msgEl.className = 'lb-save-msg error';
+            msgEl.textContent = 'Could not save. Please try again.';
+          } else {
+            msgEl.className = 'lb-save-msg success';
+            msgEl.textContent = 'Profile saved — you\'ll appear on the leaderboard.';
+            updateFlagPreview(country);
+          }
+        });
       });
     });
 

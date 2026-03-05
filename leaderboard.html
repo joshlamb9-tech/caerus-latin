@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Leaderboard — Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+      var thisPage = location.pathname.split('/').pop() || 'leaderboard.html';
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) { window.location.href = 'login.html?next=' + encodeURIComponent(thisPage); return; }
+        client.from('access_grants').select('id')
+          .eq('user_id', session.user.id).eq('product', 'latin')
+          .gt('valid_until', new Date().toISOString()).limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = 'login.html?upgrade=1&next=' + encodeURIComponent(thisPage); return;
+            }
+            window.CR_AUTH = { client: client, userId: session.user.id, userEmail: session.user.email };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+            document.dispatchEvent(new CustomEvent('cr-auth', { detail: window.CR_AUTH }));
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li'); var a = document.createElement('a');
+                a.href = '#'; a.textContent = 'Sign out'; a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault(); client.auth.signOut().then(function () { window.location.href = 'login.html'; });
+                });
+                li.appendChild(a); ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+  <style>
+    .lb-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .lb-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .lb-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 0.4rem;
+    }
+
+    .lb-subtitle {
+      font-style: italic;
+      color: #6b7280;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .lb-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+    }
+    .lb-ornament-line { width: 48px; height: 1px; background: linear-gradient(to right, transparent, #c9a84c); }
+    .lb-ornament-line.r { background: linear-gradient(to left, transparent, #c9a84c); }
+    .lb-ornament-diamond { width: 6px; height: 6px; background: #c9a84c; transform: rotate(45deg); }
+
+    /* Ebbinghaus info panel */
+    .lb-info {
+      background: #1a2744;
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      border-left: 3px solid #c9a84c;
+    }
+
+    .lb-info-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 0.5rem;
+    }
+
+    .lb-info-text {
+      font-size: 0.92rem;
+      color: rgba(250,248,243,0.7);
+      line-height: 1.6;
+    }
+
+    .lb-info-text strong { color: #faf8f3; }
+
+    /* Podium — top 3 */
+    .lb-podium {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+      align-items: flex-end;
+    }
+
+    .podium-place {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem 0.5rem 1.25rem;
+      border-radius: 4px;
+      background: #f0ede4;
+      border: 1px solid rgba(201,168,76,0.25);
+      position: relative;
+      transition: transform 0.15s;
+    }
+
+    .podium-place:hover { transform: translateY(-2px); }
+
+    .podium-place.first {
+      background: #1a2744;
+      border-color: #c9a84c;
+      padding-top: 1.5rem;
+    }
+
+    .podium-place.second { order: -1; }
+
+    .podium-medal {
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .podium-flag {
+      font-size: 1.75rem;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .podium-initials {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .podium-place.first .podium-initials { color: #faf8f3; }
+
+    .podium-count {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #c9a84c;
+      letter-spacing: 0.05em;
+    }
+
+    .podium-label {
+      position: absolute;
+      bottom: -0.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #c9a84c;
+      color: #1a2744;
+      padding: 0.1rem 0.5rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .podium-empty {
+      font-style: italic;
+      color: #9ca3af;
+      font-size: 0.85rem;
+    }
+
+    /* Full leaderboard table */
+    .lb-table-wrap {
+      background: #faf8f3;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .lb-table-head {
+      display: grid;
+      grid-template-columns: 3rem 3.5rem 1fr auto;
+      padding: 0.6rem 1rem;
+      background: #1a2744;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.8);
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .lb-row {
+      display: grid;
+      grid-template-columns: 3rem 3.5rem 1fr auto;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.15s;
+    }
+
+    .lb-row:last-child { border-bottom: none; }
+    .lb-row:hover { background: #f0ede4; }
+
+    .lb-row.is-me {
+      background: rgba(201,168,76,0.1);
+      border-left: 3px solid #c9a84c;
+    }
+
+    .lb-rank {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    .lb-row:nth-child(1) .lb-rank { color: #c9a84c; }
+    .lb-row:nth-child(2) .lb-rank { color: #6b7280; }
+    .lb-row:nth-child(3) .lb-rank { color: #92784a; }
+
+    .lb-flag {
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .lb-initials {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a2744;
+    }
+
+    .lb-row.is-me .lb-initials::after {
+      content: ' (you)';
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #c9a84c;
+      font-style: italic;
+    }
+
+    .lb-mastered {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #c9a84c;
+      text-align: right;
+    }
+
+    .lb-mastered span {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: #9ca3af;
+      display: block;
+      text-align: right;
+    }
+
+    /* My rank (if outside top 20) */
+    .lb-my-rank {
+      background: #1a2744;
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .lb-my-rank-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9a84c;
+    }
+
+    .lb-my-rank-val {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #faf8f3;
+    }
+
+    /* No profile notice */
+    .lb-setup-notice {
+      background: #fff8e1;
+      border: 1px solid rgba(201,168,76,0.5);
+      border-left: 3px solid #c9a84c;
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      color: #1a2744;
+    }
+
+    .lb-setup-notice a {
+      color: #c9a84c;
+      font-weight: 600;
+    }
+
+    .lb-loading {
+      text-align: center;
+      padding: 3rem;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    .lb-empty {
+      text-align: center;
+      padding: 2.5rem;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    /* Decay note */
+    .lb-decay-note {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vocabulary.html">Vocabulary</a></li>
+          <li><a href="grammar.html">Grammar</a></li>
+          <li><a href="quiz.html">Exercises</a></li>
+          <li><a href="papers.html">Past Papers</a></li>
+          <li><a href="practice-papers.html">Practice Papers</a></li>
+          <li><a href="leaderboard.html" class="active">Leaderboard</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app">
+    <div class="lb-wrap">
+
+      <div class="lb-header">
+        <div class="lb-ornament">
+          <span class="lb-ornament-line"></span>
+          <span class="lb-ornament-diamond"></span>
+          <span class="lb-ornament-line r"></span>
+        </div>
+        <h1 class="lb-title">Global Leaderboard</h1>
+        <p class="lb-subtitle">Words actively mastered — ranked worldwide</p>
+      </div>
+
+      <!-- Ebbinghaus info panel -->
+      <div class="lb-info">
+        <div class="lb-info-title">The Ebbinghaus Forgetting Curve</div>
+        <p class="lb-info-text">
+          Hermann Ebbinghaus (1885) showed that memory decays exponentially without review — we lose roughly <strong>70% of new information within 24 hours</strong> if we don't revisit it.
+          This leaderboard only counts words you have <strong>reviewed within the last 21 days</strong>. A word you haven't practised recently doesn't count — because if you haven't reviewed it, you're likely forgetting it.
+          Keep practising to stay on the board.
+        </p>
+      </div>
+
+      <!-- No profile notice (shown if user hasn't set up leaderboard profile) -->
+      <div class="lb-setup-notice" id="lb-setup-notice" style="display:none">
+        You haven't set up your leaderboard profile yet.
+        <a href="account.html#leaderboard-profile">Set your initials and country</a> to appear on the board.
+      </div>
+
+      <!-- My rank (shown if outside top 20) -->
+      <div class="lb-my-rank" id="lb-my-rank" style="display:none">
+        <div>
+          <div class="lb-my-rank-label">Your rank</div>
+          <div class="lb-my-rank-val" id="lb-my-rank-val">&mdash;</div>
+        </div>
+        <div style="text-align:right">
+          <div class="lb-my-rank-label">Words mastered (active)</div>
+          <div class="lb-my-rank-val" id="lb-my-mastered-val">&mdash;</div>
+        </div>
+      </div>
+
+      <!-- Podium -->
+      <div class="lb-podium" id="lb-podium" style="display:none"></div>
+
+      <!-- Full table -->
+      <div class="lb-table-wrap">
+        <div class="lb-table-head">
+          <span>#</span>
+          <span style="text-align:center">Flag</span>
+          <span>Initials</span>
+          <span style="text-align:right">Mastered</span>
+        </div>
+        <div id="lb-rows"><div class="lb-loading">Loading leaderboard&hellip;</div></div>
+      </div>
+      <p class="lb-decay-note">Only words reviewed within the last 21 days count. Based on the Ebbinghaus Forgetting Curve.</p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Caerus Latin &middot; <a href="https://caerusrevision.co.uk">caerusrevision.co.uk</a></p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    function getFlag(code) {
+      if (!code) return '🌍';
+      return code.toUpperCase().replace(/./g, function(c) {
+        return String.fromCodePoint(c.charCodeAt(0) + 127397);
+      });
+    }
+
+    document.addEventListener('cr-auth', function (e) {
+      var client = e.detail.client;
+      var userId = e.detail.userId;
+
+      // Decay threshold: 21 days (Ebbinghaus)
+      var decayDate = new Date(Date.now() - 21 * 24 * 60 * 60 * 1000).toISOString();
+
+      // Fetch leaderboard via RPC
+      client.rpc('get_leaderboard').then(function (res) {
+        var rows = res.data || [];
+        renderLeaderboard(rows, userId);
+      }).catch(function () {
+        document.getElementById('lb-rows').innerHTML =
+          '<div class="lb-empty">Could not load leaderboard. Please try again.</div>';
+      });
+
+      // Check if user has a profile
+      client.from('user_profiles')
+        .select('initials, country_code')
+        .eq('user_id', userId)
+        .limit(1)
+        .then(function (res) {
+          if (!res.data || res.data.length === 0 || !res.data[0].initials) {
+            document.getElementById('lb-setup-notice').style.display = 'block';
+          }
+        });
+
+      // Fetch user's own active mastered count (for rank display)
+      client.from('user_progress')
+        .select('score, last_seen')
+        .eq('user_id', userId)
+        .eq('product', 'latin')
+        .gte('score', 3)
+        .gt('last_seen', decayDate)
+        .then(function (res) {
+          var myCount = (res.data || []).length;
+          document.getElementById('lb-my-mastered-val').textContent = myCount;
+        });
+    });
+
+    function renderLeaderboard(rows, userId) {
+      // Podium (top 3)
+      if (rows.length > 0) {
+        var podium = document.getElementById('lb-podium');
+        podium.style.display = 'grid';
+        var medals = ['🥇', '🥈', '🥉'];
+        var positions = [1, 0, 2]; // 2nd, 1st, 3rd visually
+        var html = '';
+        for (var i = 0; i < 3; i++) {
+          var idx = positions[i];
+          var r = rows[idx];
+          html += '<div class="podium-place ' + (idx === 0 ? 'first' : idx === 1 ? 'second' : 'third') + '">';
+          if (r) {
+            html += '<div class="podium-medal">' + medals[idx] + '</div>';
+            html += '<div class="podium-flag">' + getFlag(r.country_code) + '</div>';
+            html += '<div class="podium-initials">' + escHtml(r.initials) + '</div>';
+            html += '<div class="podium-count">' + r.mastered_count + ' words</div>';
+          } else {
+            html += '<div class="podium-medal">' + medals[idx] + '</div>';
+            html += '<div class="podium-empty">—</div>';
+          }
+          html += '<div class="podium-label">' + (idx === 0 ? '1st' : idx === 1 ? '2nd' : '3rd') + '</div>';
+          html += '</div>';
+        }
+        podium.innerHTML = html;
+      }
+
+      // Full table rows
+      var container = document.getElementById('lb-rows');
+      if (rows.length === 0) {
+        container.innerHTML = '<div class="lb-empty">No entries yet — be the first on the board!</div>';
+        return;
+      }
+
+      // Check if user is in top rows
+      var userInTop = false;
+      var html = '';
+      rows.forEach(function (row, i) {
+        var isMe = row.user_id === userId;
+        if (isMe) userInTop = true;
+        html += '<div class="lb-row' + (isMe ? ' is-me' : '') + '">';
+        html += '<div class="lb-rank">' + (i + 1) + '</div>';
+        html += '<div class="lb-flag">' + getFlag(row.country_code) + '</div>';
+        html += '<div class="lb-initials">' + escHtml(row.initials || '???') + '</div>';
+        html += '<div class="lb-mastered">' + row.mastered_count + '<span>words mastered</span></div>';
+        html += '</div>';
+      });
+      container.innerHTML = html;
+
+      // Show rank widget if user not in top list
+      if (!userInTop) {
+        document.getElementById('lb-my-rank').style.display = 'flex';
+        // Get rank via RPC
+        var client = window.CR_AUTH && window.CR_AUTH.client;
+        if (client) {
+          client.rpc('get_my_rank', { p_user_id: window.CR_AUTH.userId }).then(function (res) {
+            var rank = res.data;
+            document.getElementById('lb-my-rank-val').textContent = rank ? '#' + rank : 'Unranked';
+          });
+        }
+      }
+    }
+
+    function escHtml(str) {
+      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    if (window.CR_AUTH) {
+      document.dispatchEvent(new CustomEvent('cr-auth', { detail: window.CR_AUTH }));
+    }
+  </script>
+</body>
+</html>
