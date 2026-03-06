@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Speed Recall — Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+      var thisPage = location.pathname.split('/').pop() || 'speed-recall.html';
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) { window.location.href = 'login.html?next=' + encodeURIComponent(thisPage); return; }
+        client.from('access_grants').select('id')
+          .eq('user_id', session.user.id).eq('product', 'latin')
+          .gt('valid_until', new Date().toISOString()).limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = 'login.html?upgrade=1&next=' + encodeURIComponent(thisPage); return;
+            }
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+            document.dispatchEvent(new CustomEvent('cr-auth', { detail: window.CR_AUTH }));
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li'); var a = document.createElement('a');
+                a.href = '#'; a.textContent = 'Sign out'; a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault(); client.auth.signOut().then(function () { window.location.href = 'login.html'; });
+                });
+                li.appendChild(a); ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+  <style>
+    .sr-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* ── Header ── */
+    .sr-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .sr-ornament {
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.75rem;
+    }
+    .sr-ornament-line { width: 48px; height: 1px; background: linear-gradient(to right, transparent, #c9a84c); }
+    .sr-ornament-line.r { background: linear-gradient(to left, transparent, #c9a84c); }
+    .sr-ornament-diamond { width: 6px; height: 6px; background: #c9a84c; transform: rotate(45deg); }
+
+    .sr-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 0.4rem;
+    }
+
+    .sr-sub {
+      font-style: italic;
+      color: #6b7280;
+      font-size: 1rem;
+    }
+
+    /* ── Setup panel ── */
+    .sr-setup {
+      background: #f0ede4;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-left: 3px solid #c9a84c;
+      border-radius: 4px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sr-setup-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 1.25rem;
+    }
+
+    .sr-mode-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sr-mode-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+      padding: 1.1rem 1.25rem;
+      background: #faf8f3;
+      border: 2px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .sr-mode-card.selected {
+      border-color: #c9a84c;
+      background: #1a2744;
+    }
+
+    .sr-mode-card-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a2744;
+    }
+
+    .sr-mode-card.selected .sr-mode-card-name { color: #faf8f3; }
+
+    .sr-mode-card-desc {
+      font-size: 0.82rem;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    .sr-mode-card.selected .sr-mode-card-desc { color: rgba(250,248,243,0.6); }
+
+    .sr-setup-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .sr-setup-row label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #1a2744;
+      white-space: nowrap;
+    }
+
+    .sr-select {
+      padding: 0.5rem 0.75rem;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      color: #1a2744;
+      background: #faf8f3;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .btn-start {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: #1a2744;
+      color: #faf8f3;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn-start:hover { background: #243358; }
+    .btn-start:disabled { background: #9ca3af; cursor: not-allowed; }
+
+    /* ── Game HUD ── */
+    .sr-hud {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #1a2744;
+      border-radius: 4px;
+    }
+
+    .sr-timer {
+      position: relative;
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+    }
+
+    .sr-timer-ring {
+      width: 64px;
+      height: 64px;
+      transform: rotate(-90deg);
+    }
+
+    .sr-timer-bg { fill: none; stroke: rgba(201,168,76,0.2); stroke-width: 4; }
+    .sr-timer-progress {
+      fill: none;
+      stroke: #c9a84c;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 175.9;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 1s linear, stroke 0.5s;
+    }
+
+    .sr-timer-val {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #faf8f3;
+    }
+
+    .sr-timer-val.urgent { color: #ef4444; }
+
+    .sr-hud-score {
+      text-align: right;
+    }
+
+    .sr-hud-score-num {
+      display: block;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #c9a84c;
+    }
+
+    .sr-hud-score-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(250,248,243,0.45);
+    }
+
+    .sr-hud-mode {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.6);
+      text-align: center;
+    }
+
+    /* ── Word display ── */
+    .sr-word-area {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-bottom: 1.25rem;
+      background: #faf8f3;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sr-word {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 700;
+      color: #1a2744;
+      letter-spacing: 0.02em;
+      transition: opacity 0.1s;
+    }
+
+    .sr-word-pos {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      font-style: italic;
+      text-transform: capitalize;
+    }
+
+    .sr-word-area.correct-flash { background: rgba(107,207,127,0.15); }
+    .sr-word-area.wrong-flash   { background: rgba(239,68,68,0.1); }
+
+    /* ── Options grid (supported mode) ── */
+    .sr-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .sr-option-btn {
+      padding: 0.9rem 1rem;
+      background: #f0ede4;
+      border: 1.5px solid rgba(201,168,76,0.25);
+      border-radius: 4px;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      color: #1a2744;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.1s, border-color 0.1s;
+      line-height: 1.35;
+    }
+
+    .sr-option-btn:hover:not(:disabled) {
+      background: #e5e0d4;
+      border-color: #c9a84c;
+    }
+
+    .sr-option-btn.correct { background: rgba(107,207,127,0.2); border-color: #6bcf7f; color: #1a4a2a; }
+    .sr-option-btn.wrong   { background: rgba(239,68,68,0.1); border-color: #ef4444; color: #7a2020; }
+    .sr-option-btn:disabled { cursor: default; }
+
+    /* ── Text input (unsupported mode) ── */
+    .sr-input-area {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .sr-input {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      color: #1a2744;
+      background: #faf8f3;
+      border: 2px solid rgba(201,168,76,0.4);
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .sr-input:focus { border-color: #c9a84c; }
+    .sr-input.correct-input { border-color: #6bcf7f; background: rgba(107,207,127,0.08); }
+    .sr-input.wrong-input   { border-color: #ef4444; background: rgba(239,68,68,0.05); }
+
+    .btn-sr-submit {
+      padding: 0.85rem 1.25rem;
+      background: #1a2744;
+      color: #faf8f3;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-sr-submit:hover { background: #243358; }
+
+    /* ── Skip / feedback ── */
+    .sr-skip-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .sr-feedback-text {
+      font-size: 0.9rem;
+      font-style: italic;
+      min-height: 1.4em;
+      color: #9ca3af;
+    }
+
+    .sr-feedback-text.correct { color: #2a7a2a; }
+    .sr-feedback-text.wrong   { color: #c0392b; }
+
+    .btn-sr-skip {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      font-family: 'EB Garamond', Georgia, serif;
+    }
+
+    .btn-sr-skip:hover { color: #6b7280; }
+
+    /* ── Results panel ── */
+    .sr-results {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: #1a2744;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+
+    .sr-result-num {
+      display: block;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 5rem;
+      font-weight: 700;
+      color: #c9a84c;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .sr-result-label {
+      font-size: 0.9rem;
+      color: rgba(250,248,243,0.5);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .sr-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .sr-initials-input {
+      width: 80px;
+      padding: 0.6rem 0.5rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      color: #1a2744;
+      background: #faf8f3;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 3px;
+    }
+
+    .sr-flag-display {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+
+    .btn-submit-score {
+      padding: 0.7rem 1.5rem;
+      background: #c9a84c;
+      color: #1a2744;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn-submit-score:hover { background: #e2c06a; }
+    .btn-submit-score:disabled { background: #9ca3af; cursor: not-allowed; }
+
+    .sr-submit-msg {
+      font-size: 0.85rem;
+      min-height: 1.2em;
+      margin-bottom: 1rem;
+    }
+
+    .sr-submit-msg.success { color: #6bcf7f; }
+    .sr-submit-msg.error   { color: #ef4444; }
+
+    .btn-play-again {
+      padding: 0.75rem 2rem;
+      background: transparent;
+      color: rgba(250,248,243,0.6);
+      border: 1px solid rgba(250,248,243,0.2);
+      border-radius: 4px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-play-again:hover { background: rgba(250,248,243,0.08); color: #faf8f3; }
+
+    /* ── Leaderboard ── */
+    .sr-lb-section {
+      margin-top: 2rem;
+    }
+
+    .sr-lb-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .sr-lb-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a2744;
+    }
+
+    .sr-lb-tabs {
+      display: flex;
+      gap: 0.25rem;
+      background: #f0ede4;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 4px;
+      padding: 0.2rem;
+    }
+
+    .sr-lb-tab {
+      padding: 0.35rem 0.875rem;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      background: transparent;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .sr-lb-tab.active {
+      background: #1a2744;
+      color: #faf8f3;
+    }
+
+    .sr-lb-wrap {
+      background: #faf8f3;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .sr-lb-head {
+      display: grid;
+      grid-template-columns: 3rem 3.5rem 1fr auto;
+      padding: 0.6rem 1rem;
+      background: #1a2744;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.8);
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .sr-lb-row {
+      display: grid;
+      grid-template-columns: 3rem 3.5rem 1fr auto;
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.15s;
+    }
+
+    .sr-lb-row:last-child { border-bottom: none; }
+    .sr-lb-row:hover { background: #f0ede4; }
+    .sr-lb-row.is-me { background: rgba(201,168,76,0.08); border-left: 3px solid #c9a84c; }
+
+    .sr-lb-rank {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    .sr-lb-row:nth-child(1) .sr-lb-rank { color: #c9a84c; }
+    .sr-lb-row:nth-child(2) .sr-lb-rank { color: #6b7280; }
+    .sr-lb-row:nth-child(3) .sr-lb-rank { color: #92784a; }
+
+    .sr-lb-flag { font-size: 1.4rem; text-align: center; line-height: 1; }
+
+    .sr-lb-initials {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a2744;
+    }
+
+    .sr-lb-row.is-me .sr-lb-initials::after {
+      content: ' (you)';
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #c9a84c;
+      font-style: italic;
+    }
+
+    .sr-lb-score {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #c9a84c;
+      text-align: right;
+    }
+
+    .sr-lb-score span {
+      display: block;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #9ca3af;
+    }
+
+    .sr-lb-empty, .sr-lb-loading {
+      text-align: center;
+      padding: 2rem;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    .sr-lb-decay-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 480px) {
+      .sr-options-grid { grid-template-columns: 1fr; }
+      .sr-mode-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vocabulary.html">Vocabulary</a></li>
+          <li><a href="grammar.html">Grammar</a></li>
+          <li><a href="quiz.html">Exercises</a></li>
+          <li><a href="speed-recall.html" class="active">Speed Recall</a></li>
+          <li><a href="papers.html">Past Papers</a></li>
+          <li><a href="practice-papers.html">Practice Papers</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app">
+    <div class="sr-wrap">
+
+      <div class="sr-header">
+        <div class="sr-ornament">
+          <span class="sr-ornament-line"></span>
+          <span class="sr-ornament-diamond"></span>
+          <span class="sr-ornament-line r"></span>
+        </div>
+        <h1 class="sr-title">Speed Recall</h1>
+        <p class="sr-sub">60 seconds. How many words can you translate?</p>
+      </div>
+
+      <!-- SETUP -->
+      <div class="sr-setup" id="sr-setup">
+        <div class="sr-setup-label">Choose your mode</div>
+        <div class="sr-mode-cards">
+          <button class="sr-mode-card selected" data-mode="supported">
+            <span class="sr-mode-card-name">Supported</span>
+            <span class="sr-mode-card-desc">Choose the correct translation from 8 options</span>
+          </button>
+          <button class="sr-mode-card" data-mode="unsupported">
+            <span class="sr-mode-card-name">Unsupported</span>
+            <span class="sr-mode-card-desc">Type the English translation from memory</span>
+          </button>
+        </div>
+        <div class="sr-setup-row">
+          <label for="sr-level">Vocabulary:</label>
+          <select id="sr-level" class="sr-select">
+            <option value="all">All words — Level 1 &amp; 2</option>
+            <option value="1">Level 1 only</option>
+            <option value="2">Level 2 only</option>
+          </select>
+        </div>
+        <button class="btn-start" id="sr-start-btn">Start &mdash; 60 seconds</button>
+      </div>
+
+      <!-- GAME -->
+      <div id="sr-game" style="display:none">
+        <div class="sr-hud">
+          <div class="sr-timer">
+            <svg class="sr-timer-ring" viewBox="0 0 64 64">
+              <circle class="sr-timer-bg" cx="32" cy="32" r="28"/>
+              <circle class="sr-timer-progress" id="sr-timer-ring" cx="32" cy="32" r="28"/>
+            </svg>
+            <span class="sr-timer-val" id="sr-timer-val">60</span>
+          </div>
+          <div class="sr-hud-mode" id="sr-hud-mode"></div>
+          <div class="sr-hud-score">
+            <span class="sr-hud-score-num" id="sr-score-display">0</span>
+            <span class="sr-hud-score-label">correct</span>
+          </div>
+        </div>
+
+        <div class="sr-word-area" id="sr-word-area">
+          <span class="sr-word" id="sr-word">—</span>
+          <span class="sr-word-pos" id="sr-word-pos"></span>
+        </div>
+
+        <!-- Supported: 8 options -->
+        <div id="sr-options-wrap">
+          <div class="sr-options-grid" id="sr-options-grid"></div>
+        </div>
+
+        <!-- Unsupported: text input -->
+        <div id="sr-input-wrap" style="display:none">
+          <div class="sr-input-area">
+            <input type="text" id="sr-input" class="sr-input" placeholder="Type English translation&hellip;" autocomplete="off" spellcheck="false">
+            <button class="btn-sr-submit" id="sr-check-btn">Check</button>
+          </div>
+        </div>
+
+        <div class="sr-skip-row">
+          <span class="sr-feedback-text" id="sr-feedback"></span>
+          <button class="btn-sr-skip" id="sr-skip-btn">Skip</button>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="sr-results" style="display:none">
+        <div class="sr-results">
+          <span class="sr-result-num" id="sr-result-num">0</span>
+          <span class="sr-result-label">words correct in 60 seconds</span>
+
+          <div class="sr-submit-row">
+            <input type="text" id="sr-initials-input" class="sr-initials-input" maxlength="3" placeholder="Initials" autocomplete="off">
+            <span class="sr-flag-display" id="sr-flag-display">🌍</span>
+            <button class="btn-submit-score" id="sr-submit-score-btn">Submit score</button>
+          </div>
+          <div class="sr-submit-msg" id="sr-submit-msg"></div>
+          <button class="btn-play-again" id="sr-play-again-btn">Play again</button>
+        </div>
+      </div>
+
+      <!-- LEADERBOARD -->
+      <div class="sr-lb-section">
+        <div class="sr-lb-header">
+          <span class="sr-lb-title">Speed Recall Leaderboard</span>
+          <div class="sr-lb-tabs">
+            <button class="sr-lb-tab active" data-mode="supported">Supported</button>
+            <button class="sr-lb-tab" data-mode="unsupported">Unsupported</button>
+          </div>
+        </div>
+        <div class="sr-lb-wrap">
+          <div class="sr-lb-head">
+            <span>#</span>
+            <span style="text-align:center">Flag</span>
+            <span>Initials</span>
+            <span style="text-align:right">Best</span>
+          </div>
+          <div id="sr-lb-rows"><div class="sr-lb-loading">Loading&hellip;</div></div>
+        </div>
+        <p class="sr-lb-decay-note">Best score per player in the last 21 days &mdash; Ebbinghaus Forgetting Curve</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Caerus Latin &middot; <a href="https://caerusrevision.co.uk">caerusrevision.co.uk</a></p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    /* ─── Helpers ─── */
+    function getFlag(code) {
+      if (!code) return '🌍';
+      return code.toUpperCase().replace(/./g, function(c) {
+        return String.fromCodePoint(c.charCodeAt(0) + 127397);
+      });
+    }
+
+    function escHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+
+    function posLabel(w) {
+      if (w.part_of_speech === 'noun') return w.gender ? w.part_of_speech + ', ' + w.gender : w.part_of_speech;
+      return w.part_of_speech || '';
+    }
+
+    /* ─── State ─── */
+    var vocab = [];
+    var gameMode = 'supported';   // 'supported' | 'unsupported'
+    var gameLevel = 'all';
+    var gameQueue = [];
+    var gameScore = 0;
+    var gameTimer = null;
+    var gameSeconds = 60;
+    var gameActive = false;
+    var currentWord = null;
+    var userProfile = { initials: '', country_code: '', show_on_leaderboard: true };
+    var currentLbMode = 'supported';
+    var CRClient = null;
+    var CRUserId = null;
+
+    /* ─── Auth ─── */
+    document.addEventListener('cr-auth', function (e) {
+      CRClient = e.detail.client;
+      CRUserId = e.detail.userId;
+
+      // Load vocab
+      fetch('data/vocabulary/all.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          vocab = data;
+          document.getElementById('sr-start-btn').disabled = false;
+        });
+
+      // Load user profile (for pre-filling initials/flag)
+      CRClient.from('user_profiles')
+        .select('initials, country_code, show_on_leaderboard')
+        .eq('user_id', CRUserId)
+        .limit(1)
+        .then(function(res) {
+          if (res.data && res.data.length > 0) {
+            userProfile = res.data[0];
+            document.getElementById('sr-initials-input').value = userProfile.initials || '';
+            document.getElementById('sr-flag-display').textContent = getFlag(userProfile.country_code);
+          }
+        });
+
+      // Load leaderboard
+      loadLeaderboard('supported');
+    });
+
+    if (window.CR_AUTH) {
+      document.dispatchEvent(new CustomEvent('cr-auth', { detail: window.CR_AUTH }));
+    }
+
+    /* ─── Setup ─── */
+    document.querySelectorAll('.sr-mode-card').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.sr-mode-card').forEach(function(b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        gameMode = btn.dataset.mode;
+      });
+    });
+
+    document.getElementById('sr-start-btn').disabled = true;
+    document.getElementById('sr-start-btn').addEventListener('click', startGame);
+
+    /* ─── Game ─── */
+    function startGame() {
+      gameLevel = document.getElementById('sr-level').value;
+      var pool = vocab.filter(function(w) {
+        return gameLevel === 'all' || String(w.level) === gameLevel;
+      });
+      if (pool.length < 8) {
+        alert('Not enough words for that filter — try a broader selection.');
+        return;
+      }
+      gameQueue = shuffle(pool);
+      gameScore = 0;
+      gameSeconds = 60;
+      gameActive = true;
+
+      document.getElementById('sr-setup').style.display = 'none';
+      document.getElementById('sr-results').style.display = 'none';
+      document.getElementById('sr-game').style.display = 'block';
+      document.getElementById('sr-hud-mode').textContent = gameMode === 'supported' ? 'Supported' : 'Unsupported';
+      document.getElementById('sr-options-wrap').style.display = gameMode === 'supported' ? 'block' : 'none';
+      document.getElementById('sr-input-wrap').style.display  = gameMode === 'unsupported' ? 'flex' : 'none';
+      document.getElementById('sr-score-display').textContent = '0';
+      document.getElementById('sr-feedback').textContent = '';
+      document.getElementById('sr-feedback').className = 'sr-feedback-text';
+
+      updateTimerDisplay(60);
+      nextWord();
+      startTimer();
+    }
+
+    function startTimer() {
+      gameTimer = setInterval(function() {
+        gameSeconds--;
+        updateTimerDisplay(gameSeconds);
+        if (gameSeconds <= 0) {
+          clearInterval(gameTimer);
+          endGame();
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay(secs) {
+      var el = document.getElementById('sr-timer-val');
+      var ring = document.getElementById('sr-timer-ring');
+      el.textContent = secs;
+      el.className = 'sr-timer-val' + (secs <= 10 ? ' urgent' : '');
+      // Circumference = 2π × 28 ≈ 175.9
+      var pct = secs / 60;
+      var offset = 175.9 * (1 - pct);
+      ring.style.strokeDashoffset = offset;
+      ring.style.stroke = secs <= 10 ? '#ef4444' : '#c9a84c';
+    }
+
+    function nextWord() {
+      if (!gameActive) return;
+      if (gameQueue.length === 0) { gameQueue = shuffle(vocab.filter(function(w) {
+        return gameLevel === 'all' || String(w.level) === gameLevel;
+      })); }
+
+      currentWord = gameQueue.pop();
+      document.getElementById('sr-word').textContent = currentWord.latin;
+      document.getElementById('sr-word-pos').textContent = posLabel(currentWord);
+      document.getElementById('sr-word-area').className = 'sr-word-area';
+      document.getElementById('sr-feedback').textContent = '';
+      document.getElementById('sr-feedback').className = 'sr-feedback-text';
+
+      if (gameMode === 'supported') {
+        renderOptions(currentWord);
+      } else {
+        var inp = document.getElementById('sr-input');
+        inp.value = '';
+        inp.className = 'sr-input';
+        inp.focus();
+      }
+    }
+
+    function renderOptions(word) {
+      // Pick 7 random distractors (different words)
+      var pool = vocab.filter(function(w) { return w.id !== word.id; });
+      var distractors = shuffle(pool).slice(0, 7);
+      var options = shuffle(distractors.concat([word]));
+      var grid = document.getElementById('sr-options-grid');
+      grid.innerHTML = '';
+      options.forEach(function(opt) {
+        var btn = document.createElement('button');
+        btn.className = 'sr-option-btn';
+        btn.textContent = opt.english;
+        btn.addEventListener('click', function() {
+          handleOptionClick(opt, btn, options);
+        });
+        grid.appendChild(btn);
+      });
+    }
+
+    function handleOptionClick(opt, btn, allOptions) {
+      if (!gameActive) return;
+      var isCorrect = opt.id === currentWord.id;
+      // Disable all buttons briefly
+      document.querySelectorAll('.sr-option-btn').forEach(function(b) { b.disabled = true; });
+      if (isCorrect) {
+        btn.classList.add('correct');
+        gameScore++;
+        document.getElementById('sr-score-display').textContent = gameScore;
+        flashWordArea('correct');
+      } else {
+        btn.classList.add('wrong');
+        // Show correct answer
+        document.querySelectorAll('.sr-option-btn').forEach(function(b) {
+          if (b.textContent === currentWord.english) b.classList.add('correct');
+        });
+        flashWordArea('wrong');
+      }
+      setTimeout(nextWord, 500);
+    }
+
+    /* Unsupported: check on enter or button */
+    document.getElementById('sr-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkTypedAnswer();
+    });
+    document.getElementById('sr-check-btn').addEventListener('click', checkTypedAnswer);
+
+    function checkTypedAnswer() {
+      if (!gameActive || !currentWord) return;
+      var typed = document.getElementById('sr-input').value.trim().toLowerCase();
+      if (!typed) return;
+
+      // Accept if typed matches any part of the english (split on , / ;)
+      var accepted = currentWord.english.toLowerCase()
+        .split(/[,\/;]+/)
+        .map(function(s) { return s.trim(); });
+      var isCorrect = accepted.some(function(a) { return a === typed || a.includes(typed) || typed.includes(a); });
+
+      var inp = document.getElementById('sr-input');
+      var fb  = document.getElementById('sr-feedback');
+      inp.className = 'sr-input ' + (isCorrect ? 'correct-input' : 'wrong-input');
+
+      if (isCorrect) {
+        gameScore++;
+        document.getElementById('sr-score-display').textContent = gameScore;
+        fb.textContent = '✓ Correct';
+        fb.className = 'sr-feedback-text correct';
+        flashWordArea('correct');
+        setTimeout(nextWord, 400);
+      } else {
+        fb.textContent = 'Answer: ' + currentWord.english;
+        fb.className = 'sr-feedback-text wrong';
+        flashWordArea('wrong');
+        setTimeout(function() {
+          inp.className = 'sr-input';
+          fb.textContent = '';
+          fb.className = 'sr-feedback-text';
+          inp.value = '';
+          inp.focus();
+          nextWord();
+        }, 700);
+      }
+    }
+
+    document.getElementById('sr-skip-btn').addEventListener('click', function() {
+      if (!gameActive) return;
+      nextWord();
+    });
+
+    function flashWordArea(type) {
+      var el = document.getElementById('sr-word-area');
+      el.className = 'sr-word-area ' + type + '-flash';
+    }
+
+    function endGame() {
+      gameActive = false;
+      document.getElementById('sr-game').style.display = 'none';
+      document.getElementById('sr-results').style.display = 'block';
+      document.getElementById('sr-result-num').textContent = gameScore;
+      document.getElementById('sr-submit-msg').textContent = '';
+      document.getElementById('sr-submit-msg').className = 'sr-submit-msg';
+      document.getElementById('sr-submit-score-btn').disabled = false;
+
+      // Pre-fill initials/flag
+      if (userProfile.initials) {
+        document.getElementById('sr-initials-input').value = userProfile.initials;
+        document.getElementById('sr-flag-display').textContent = getFlag(userProfile.country_code);
+      }
+    }
+
+    /* ─── Submit score ─── */
+    document.getElementById('sr-submit-score-btn').addEventListener('click', function() {
+      var initials = document.getElementById('sr-initials-input').value.trim().toUpperCase();
+      if (!initials || !CRClient) return;
+
+      this.disabled = true;
+      var msgEl = document.getElementById('sr-submit-msg');
+
+      // Upsert profile if initials changed
+      if (initials !== userProfile.initials) {
+        CRClient.from('user_profiles').upsert({
+          user_id: CRUserId,
+          initials: initials,
+          country_code: userProfile.country_code || null,
+          show_on_leaderboard: true,
+          updated_at: new Date().toISOString()
+        }, { onConflict: 'user_id' });
+        userProfile.initials = initials;
+      }
+
+      // Insert score
+      CRClient.from('speed_recall_scores').insert({
+        user_id: CRUserId,
+        score: gameScore,
+        mode: gameMode
+      }).then(function(res) {
+        if (res.error) {
+          msgEl.className = 'sr-submit-msg error';
+          msgEl.textContent = 'Could not submit. Try again.';
+          document.getElementById('sr-submit-score-btn').disabled = false;
+        } else {
+          msgEl.className = 'sr-submit-msg success';
+          msgEl.textContent = 'Score submitted!';
+          loadLeaderboard(gameMode);
+        }
+      });
+    });
+
+    /* ─── Play again ─── */
+    document.getElementById('sr-play-again-btn').addEventListener('click', function() {
+      document.getElementById('sr-results').style.display = 'none';
+      document.getElementById('sr-setup').style.display = 'block';
+    });
+
+    /* ─── Leaderboard tabs ─── */
+    document.querySelectorAll('.sr-lb-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.sr-lb-tab').forEach(function(t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        currentLbMode = tab.dataset.mode;
+        loadLeaderboard(currentLbMode);
+      });
+    });
+
+    function loadLeaderboard(mode) {
+      if (!CRClient) return;
+      document.getElementById('sr-lb-rows').innerHTML = '<div class="sr-lb-loading">Loading&hellip;</div>';
+      CRClient.rpc('get_speed_recall_leaderboard', { p_mode: mode }).then(function(res) {
+        var rows = res.data || [];
+        renderLeaderboard(rows);
+      }).catch(function() {
+        document.getElementById('sr-lb-rows').innerHTML = '<div class="sr-lb-empty">Could not load leaderboard.</div>';
+      });
+    }
+
+    function renderLeaderboard(rows) {
+      var container = document.getElementById('sr-lb-rows');
+      if (rows.length === 0) {
+        container.innerHTML = '<div class="sr-lb-empty">No entries yet — be the first!</div>';
+        return;
+      }
+      var html = '';
+      rows.forEach(function(row, i) {
+        var isMe = row.user_id === CRUserId;
+        html += '<div class="sr-lb-row' + (isMe ? ' is-me' : '') + '">';
+        html += '<div class="sr-lb-rank">' + (i + 1) + '</div>';
+        html += '<div class="sr-lb-flag">' + getFlag(row.country_code) + '</div>';
+        html += '<div class="sr-lb-initials">' + escHtml(row.initials || '?') + '</div>';
+        html += '<div class="sr-lb-score">' + row.best_score + '<span>words</span></div>';
+        html += '</div>';
+      });
+      container.innerHTML = html;
+    }
+  </script>
+</body>
+</html>

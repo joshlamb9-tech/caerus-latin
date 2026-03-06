@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to use Caerus Latin — a guide for parents and pupils preparing for ISEB Common Entrance Latin">
+  <title>How to Use Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --navy-d: #0f1729;
+      --gold: #c9a84c;
+      --cream: #faf8f3;
+      --cream-d: #f0ede4;
+      --text: #2d2d2d;
+      --muted: #6b7280;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: var(--navy-d);
+      border-bottom: 2px solid var(--gold);
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      min-height: 56px;
+    }
+
+    .site-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 1rem 0;
+    }
+
+    .header-cta {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      color: var(--cream);
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(201,168,76,0.5);
+      border-radius: 4px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .header-cta:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+
+    /* ── Page title band ── */
+    .page-band {
+      background: var(--navy);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .page-band .eyebrow {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-band h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-band p {
+      color: rgba(250,248,243,0.75);
+      font-size: 1.05rem;
+      font-style: italic;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1rem auto 0;
+    }
+
+    /* ── Layout ── */
+    .guide-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── Audience tabs ── */
+    .audience-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--navy);
+      margin-bottom: 3rem;
+    }
+
+    .audience-tab {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--muted);
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.2s;
+      letter-spacing: 0.03em;
+    }
+
+    .audience-tab.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+    }
+
+    .audience-panel { display: none; }
+    .audience-panel.active { display: block; }
+
+    /* ── Section headings ── */
+    .guide-section {
+      margin-bottom: 3rem;
+    }
+
+    .guide-section h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--cream-d);
+    }
+
+    .guide-section h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .guide-section p {
+      margin-bottom: 0.85rem;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin: 0.5rem 0 1rem 1.5rem;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── Feature cards ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid var(--cream-d);
+      border-top: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 1.25rem 1.25rem 1rem;
+    }
+
+    .feature-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Step list ── */
+    .step-list {
+      list-style: none;
+      margin: 1rem 0 1.5rem;
+      padding: 0;
+      counter-reset: steps;
+    }
+
+    .step-list li {
+      counter-increment: steps;
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .step-list li::before {
+      content: counter(steps);
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+
+    .step-list li strong {
+      display: block;
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    /* ── Level badges ── */
+    .level-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .level-table th {
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      padding: 0.6rem 1rem;
+      text-align: left;
+      letter-spacing: 0.04em;
+    }
+
+    .level-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--cream-d);
+      vertical-align: top;
+    }
+
+    .level-table tr:nth-child(even) td { background: white; }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-l1 { background: #d4edda; color: #155724; }
+    .badge-l2 { background: #fff3cd; color: #856404; }
+    .badge-l3 { background: #f8d7da; color: #721c24; }
+
+    /* ── Tip box ── */
+    .tip-box {
+      background: white;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    .tip-box strong {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── CTA box ── */
+    .cta-box {
+      background: var(--navy);
+      border-radius: 6px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta-box h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-box p {
+      color: rgba(250,248,243,0.8);
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy-d);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-gold:hover { opacity: 0.88; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: var(--navy-d);
+      border-top: 2px solid var(--gold);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(250,248,243,0.55);
+    }
+
+    .site-footer a { color: rgba(201,168,76,0.8); text-decoration: none; }
+    .site-footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .audience-tab { padding: 0.65rem 1.25rem; font-size: 0.9rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html" class="site-title">Caerus Latin</a>
+    <a href="login.html" class="header-cta">Sign In</a>
+  </header>
+
+  <!-- Page title band -->
+  <div class="page-band">
+    <p class="eyebrow">Caerus Latin</p>
+    <h1>How to Use the Site</h1>
+    <p>A guide for parents and pupils preparing for ISEB Common Entrance Latin</p>
+    <div class="gold-rule"></div>
+  </div>
+
+  <div class="guide-wrap">
+
+    <!-- Audience tabs -->
+    <div class="audience-tabs" role="tablist">
+      <button class="audience-tab active" role="tab" aria-selected="true" data-panel="parents" onclick="showPanel('parents', this)">For Parents</button>
+      <button class="audience-tab" role="tab" aria-selected="false" data-panel="pupils" onclick="showPanel('pupils', this)">For Pupils</button>
+    </div>
+
+    <!-- Parents panel -->
+    <div id="panel-parents" class="audience-panel active">
+
+      <div class="guide-section">
+        <h2>What is Caerus Latin?</h2>
+        <p>Caerus Latin is a dedicated online revision resource for pupils preparing for the ISEB Common Entrance Latin examination at 13+. It was built by a prep school teacher specifically to fill a gap: there was no focused digital resource for CE Latin. Everything here is mapped directly to the ISEB syllabus.</p>
+        <p>It covers all three CE Latin levels — Level 1, Level 2, and Level 3 — with vocabulary, grammar, exercises, practice papers, and timed recall games to build confidence before the exam.</p>
+      </div>
+
+      <div class="guide-section">
+        <h2>What is ISEB Common Entrance Latin?</h2>
+        <p>Common Entrance Latin (CE) is taken at the end of Year 8 (age 13) as part of applications to senior independent schools. It is set and marked by the Independent Schools Examinations Board (ISEB).</p>
+        <p>There are three levels:</p>
+        <table class="level-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Typical entry</th>
+              <th>Content</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-l1">Level 1</span></td>
+              <td>Most CE candidates</td>
+              <td>Core vocabulary (&sim;200 words), basic grammar, unseen translation with vocabulary support</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-l2">Level 2</span></td>
+              <td>Schools requiring higher standard</td>
+              <td>Extended vocabulary, more grammar forms, harder translation passages</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-l3">Level 3</span></td>
+              <td>Scholarship/strong linguists</td>
+              <td>Full GCSE-adjacent content, verse translation, extended prose</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Check with your child&rsquo;s school which level is required for their senior school applications.</p>
+      </div>
+
+      <div class="guide-section">
+        <h2>What does Caerus Latin include?</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-card-icon">&#x1F4DA;</div>
+            <h4>Vocabulary</h4>
+            <p>Complete ISEB vocabulary lists, searchable and filterable by level and word type.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">&#x1F4D0;</div>
+            <h4>Grammar</h4>
+            <p>All key declension and conjugation tables, clearly laid out for quick reference and revision.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">&#x270F;&#xFE0F;</div>
+            <h4>Exercises</h4>
+            <p>Flashcard and multiple-choice practice, filterable by level and word type.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">&#x26A1;</div>
+            <h4>Speed Recall</h4>
+            <p>A 60-second timed word drill that builds automatic retrieval speed under pressure.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">&#x1F4C4;</div>
+            <h4>Past Papers</h4>
+            <p>Genuine ISEB past papers at each level, for timed exam practice.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">&#x1F4DD;</div>
+            <h4>Practice Papers</h4>
+            <p>Purpose-written practice papers at Levels 1, 2, and 3 for additional exam preparation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2>What level should my child use?</h2>
+        <p>Ask your child&rsquo;s Latin teacher which CE level their school is entering them for. Most candidates sit Level 1 or Level 2. Your child should:</p>
+        <ol>
+          <li>Start with the vocabulary and exercises at their target level.</li>
+          <li>Use the grammar tables for reference when they encounter something unfamiliar.</li>
+          <li>Move to past papers once vocabulary and grammar feel solid.</li>
+        </ol>
+        <p>If you are unsure, Level 1 is a safe starting point — it covers the core foundation all other levels build on.</p>
+      </div>
+
+      <div class="guide-section">
+        <h2>How do I get access?</h2>
+        <ol class="step-list">
+          <li>
+            <div><strong>Go to the login page</strong>Visit <a href="login.html" style="color: var(--navy); font-style: italic;">Caerus Latin</a> and create a free account with your email address.</div>
+          </li>
+          <li>
+            <div><strong>Purchase access</strong>A single payment of &pound;29.99 gives your child full access for a complete CE year. This covers all levels, all features, and all future content added during the year.</div>
+          </li>
+          <li>
+            <div><strong>Share the login</strong>Once purchased, your child can log in from any device &mdash; school computer, home laptop, or tablet. No app to install.</div>
+          </li>
+        </ol>
+
+        <div class="tip-box">
+          <strong>A note on access</strong>
+          The subscription is per account. If your child prefers to log in from multiple devices, they should use the same email and password on each. There is no device limit.
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2>How can I support revision at home?</h2>
+        <p>You don&rsquo;t need to know any Latin to help. The most effective thing parents can do is:</p>
+        <ul>
+          <li><strong>Set a routine</strong> &mdash; 15&ndash;20 minutes of Caerus Latin three or four times a week outperforms a single long session.</li>
+          <li><strong>Ask for the score</strong> &mdash; after a Speed Recall game or an Exercises session, ask your child what they got. Just the act of reporting it reinforces memory.</li>
+          <li><strong>Encourage the leaderboard</strong> &mdash; the 21-day rolling leaderboard rewards consistency, not just one-off effort.</li>
+          <li><strong>Use the past papers for mock conditions</strong> &mdash; Level 1 is 45 minutes, Level 2 is 60 minutes. Sit with them for one proper timed paper before the real exam.</li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- /parents panel -->
+
+    <!-- Pupils panel -->
+    <div id="panel-pupils" class="audience-panel">
+
+      <div class="guide-section">
+        <h2>Getting started</h2>
+        <p>Once you&rsquo;ve logged in and your subscription is active, you&rsquo;ll land on the home screen. Here&rsquo;s a quick overview of everything available to you.</p>
+      </div>
+
+      <div class="guide-section">
+        <h2>Vocabulary</h2>
+        <p>This is the complete ISEB vocabulary list &mdash; every word you need to know for CE Latin.</p>
+        <ul>
+          <li>Use the <strong>level filter</strong> (L1 / L2 / L3) to focus on the words for your exam.</li>
+          <li>Use the <strong>type filter</strong> to drill a specific word type (nouns, verbs, adjectives, etc.).</li>
+          <li>Use the <strong>search box</strong> to look up a specific Latin word or its English meaning.</li>
+        </ul>
+        <div class="tip-box">
+          <strong>Tip</strong>
+          Start with Level 1. Once you know those words confidently, move to Level 2. The levels build on each other.
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2>Grammar</h2>
+        <p>All the declension and conjugation tables you need, in one place.</p>
+        <ul>
+          <li>Use this as a <strong>reference</strong> when you&rsquo;re doing exercises or papers and can&rsquo;t remember a form.</li>
+          <li>Test yourself by covering one column and trying to recall the endings.</li>
+        </ul>
+      </div>
+
+      <div class="guide-section">
+        <h2>Exercises</h2>
+        <p>Practice vocabulary with flashcards and multiple-choice questions.</p>
+        <ol class="step-list">
+          <li>
+            <div><strong>Choose your level</strong> Use the filter to set which level words to practise.</div>
+          </li>
+          <li>
+            <div><strong>Choose your mode</strong> Flashcard mode shows you the word and you decide if you knew it. Multiple choice gives you options to pick from.</div>
+          </li>
+          <li>
+            <div><strong>Keep going</strong> Words you get wrong come back round. Keep going until you know them all.</div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="guide-section">
+        <h2>Speed Recall</h2>
+        <p>A 60-second word drill. A Latin word appears on screen &mdash; you have to give the English translation as fast as you can. Score as many as possible before the timer runs out.</p>
+        <ul>
+          <li><strong>Supported mode</strong> &mdash; Choose from 8 options (one correct, seven distractors).</li>
+          <li><strong>Unsupported mode</strong> &mdash; Type the translation yourself. Harder, and worth more practice.</li>
+        </ul>
+        <p>After the game, submit your score to the <strong>Leaderboard</strong>. Scores last 21 days &mdash; keep playing to stay on the board.</p>
+        <div class="tip-box">
+          <strong>Tip</strong>
+          Unsupported mode is the best preparation for the actual exam &mdash; you won&rsquo;t have options to choose from in the real thing.
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2>Past Papers</h2>
+        <p>Genuine ISEB past papers at Levels 1, 2, and 3.</p>
+        <ul>
+          <li>Download the paper for your level.</li>
+          <li>Do it under <strong>timed conditions</strong> (L1: 45 min &middot; L2: 60 min &middot; L3: 75 min).</li>
+          <li>Mark it using the mark scheme.</li>
+          <li>Any vocabulary you couldn&rsquo;t remember &mdash; go back to the Vocabulary page and drill it.</li>
+        </ul>
+      </div>
+
+      <div class="guide-section">
+        <h2>Practice Papers</h2>
+        <p>Purpose-written papers at each level for additional practice beyond the real past papers.</p>
+        <ul>
+          <li>Treat them the same as past papers &mdash; timed, on paper, marked at the end.</li>
+          <li>Great for a final week of intensive preparation.</li>
+        </ul>
+      </div>
+
+      <div class="guide-section">
+        <h2>Leaderboard</h2>
+        <p>A rolling 21-day leaderboard showing the best Speed Recall scores. Scores older than 21 days drop off automatically, which means you have to keep playing to stay ranked.</p>
+        <ul>
+          <li>Scores are shown with initials and a country flag.</li>
+          <li>Set up your initials and country on the <strong>Account</strong> page.</li>
+          <li>You can choose whether or not to appear on the leaderboard.</li>
+        </ul>
+      </div>
+
+      <div class="guide-section">
+        <h2>Account</h2>
+        <p>Manage your leaderboard profile here.</p>
+        <ol class="step-list">
+          <li>
+            <div><strong>Set your initials</strong> Up to 3 characters &mdash; what shows on the leaderboard.</div>
+          </li>
+          <li>
+            <div><strong>Choose your country</strong> Your flag will appear on the leaderboard next to your initials.</div>
+          </li>
+          <li>
+            <div><strong>Toggle visibility</strong> Decide whether your scores appear on the public leaderboard.</div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="guide-section">
+        <h2>A revision plan that works</h2>
+        <p>This is what a good week of Latin revision looks like with Caerus:</p>
+        <table class="level-table">
+          <thead>
+            <tr><th>Day</th><th>Activity</th><th>Time</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday</td><td>Vocabulary exercises (your level)</td><td>15 min</td></tr>
+            <tr><td>Tuesday</td><td>Speed Recall &mdash; Unsupported</td><td>10 min</td></tr>
+            <tr><td>Wednesday</td><td>Grammar review + exercises</td><td>20 min</td></tr>
+            <tr><td>Thursday</td><td>Speed Recall &mdash; Supported (beat your score)</td><td>10 min</td></tr>
+            <tr><td>Friday</td><td>Past paper or practice paper (timed)</td><td>45&ndash;75 min</td></tr>
+          </tbody>
+        </table>
+        <div class="tip-box">
+          <strong>The research behind it</strong>
+          Short, regular sessions beat one long cram. Ebbinghaus showed in 1885 that memory fades fast &mdash; but regular retrieval practice slows that fade dramatically. Speed Recall is designed on that principle.
+        </div>
+      </div>
+
+    </div>
+    <!-- /pupils panel -->
+
+    <div class="cta-box">
+      <h3>Ready to start?</h3>
+      <p>Log in to Caerus Latin and begin revising. Full access &mdash; all levels, all features &mdash; for &pound;29.99 per year.</p>
+      <a href="login.html" class="btn-gold">Sign In / Get Access</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>Caerus Latin &middot; Built on the methodology of R.C. Bass (Nova Latina) &middot; Reviewed by Heads of Classics &middot; <a href="https://caerusrevision.co.uk">caerusrevision.co.uk</a></p>
+  </footer>
+
+  <script>
+    function showPanel(id, btn) {
+      document.querySelectorAll('.audience-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.audience-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      document.getElementById('panel-' + id).classList.add('active');
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+    }
+  </script>
+
+</body>
+</html>
