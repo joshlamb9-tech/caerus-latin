@@ -113,6 +113,20 @@
       font-family: var(--font-b);
     }
 
+    .checkout-account {
+      font-size: 0.82rem !important;
+      margin-top: 0.75rem !important;
+      color: rgba(250,248,243,0.45) !important;
+    }
+
+    .checkout-account a {
+      color: var(--gold-l);
+      text-decoration: none;
+      opacity: 0.8;
+    }
+
+    .checkout-account a:hover { opacity: 1; }
+
     .card-body {
       padding: 2rem;
     }
@@ -415,6 +429,7 @@
     <div class="card-header">
       <h1>Enrol in Caerus Latin</h1>
       <p>Annual access &mdash; one payment, full year</p>
+      <p class="checkout-account">Signed in as <strong id="checkout-email"></strong> &middot; <a href="#" id="checkout-signout">Not you? Sign out</a></p>
     </div>
     <div class="checkout-layout">
 
@@ -507,11 +522,20 @@
         if (result.data && result.data.length > 0) {
           window.location.href = nextPage;
         } else {
+          var emailEl = document.getElementById('checkout-email');
+          if (emailEl) emailEl.textContent = user.email;
           show('view-checkout');
           initStripeCheckout(token);
         }
       });
   }
+
+  document.getElementById('checkout-signout').addEventListener('click', function(e) {
+    e.preventDefault();
+    client.auth.signOut().then(function() {
+      show('view-auth');
+    });
+  });
 
   /* ─── Tab switching ─── */
   function switchTab(tab) {
