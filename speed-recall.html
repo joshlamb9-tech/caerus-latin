@@ -664,12 +664,27 @@
       <nav class="site-nav" id="site-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="vocabulary.html">Vocabulary</a></li>
-          <li><a href="grammar.html">Grammar</a></li>
-          <li><a href="quiz.html">Exercises</a></li>
-          <li><a href="speed-recall.html" class="active">Speed Recall</a></li>
-          <li><a href="papers.html">Past Papers</a></li>
-          <li><a href="practice-papers.html">Practice Papers</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Learn <span class="nav-arrow">&#9660;</span></a>
+            <ul class="nav-group-menu">
+              <li><a href="vocabulary.html">Vocabulary</a></li>
+              <li><a href="grammar.html">Grammar</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Practise <span class="nav-arrow">&#9660;</span></a>
+            <ul class="nav-group-menu">
+              <li><a href="quiz.html">Exercises</a></li>
+              <li><a href="speed-recall.html">Speed Recall</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Papers <span class="nav-arrow">&#9660;</span></a>
+            <ul class="nav-group-menu">
+              <li><a href="papers.html">Past Papers</a></li>
+              <li><a href="practice-papers.html">Practice Papers</a></li>
+            </ul>
+          </li>
           <li><a href="leaderboard.html">Leaderboard</a></li>
           <li><a href="account.html">Account</a></li>
         </ul>
@@ -1105,6 +1120,10 @@
         } else {
           msgEl.className = 'sr-submit-msg success';
           msgEl.textContent = 'Score submitted!';
+          currentLbMode = gameMode;
+          document.querySelectorAll('.sr-lb-tab').forEach(function(t) {
+            t.classList.toggle('active', t.dataset.mode === gameMode);
+          });
           loadLeaderboard(gameMode);
         }
       });

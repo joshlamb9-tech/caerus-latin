@@ -10,12 +10,34 @@ if (navToggle && siteNav) {
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close nav when a link is tapped (mobile)
-  siteNav.querySelectorAll('a').forEach(link => {
+  // Dropdown group toggles (primarily for mobile)
+  siteNav.querySelectorAll('.nav-group-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const group = toggle.closest('.nav-group');
+      const isOpen = group.classList.toggle('open');
+      // On desktop, close other open groups
+      if (window.innerWidth >= 768) {
+        siteNav.querySelectorAll('.nav-group').forEach(g => {
+          if (g !== group) g.classList.remove('open');
+        });
+      }
+    });
+  });
+
+  // Close nav when a non-toggle link is tapped (mobile)
+  siteNav.querySelectorAll('a:not(.nav-group-toggle)').forEach(link => {
     link.addEventListener('click', () => {
       siteNav.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!siteNav.contains(e.target)) {
+      siteNav.querySelectorAll('.nav-group').forEach(g => g.classList.remove('open'));
+    }
   });
 }
 
