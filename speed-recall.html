@@ -721,8 +721,8 @@
         <div class="sr-setup-row">
           <label for="sr-level">Vocabulary:</label>
           <select id="sr-level" class="sr-select">
+            <option value="1" selected>Level 1 only</option>
             <option value="all">All words — Level 1 &amp; 2</option>
-            <option value="1">Level 1 only</option>
             <option value="2">Level 2 only</option>
           </select>
         </div>
@@ -845,7 +845,7 @@
     /* ─── State ─── */
     var vocab = [];
     var gameMode = 'supported';   // 'supported' | 'unsupported'
-    var gameLevel = 'all';
+    var gameLevel = '1';
     var gameQueue = [];
     var gameScore = 0;
     var gameTimer = null;
