@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guided revision pathway for ISEB CE Latin — step-by-step phases from nouns to full translation">
+  <meta name="theme-color" content="#1a2744">
+  <title>Revision Pathway &mdash; Caerus Latin</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Analytics -->
+  <script>
+    (function(){
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      try {
+        var sid = sessionStorage.getItem('cr_sid');
+        if (!sid) { sid = Math.random().toString(36).slice(2); sessionStorage.setItem('cr_sid', sid); }
+        var payload = JSON.stringify({ page: location.pathname.split('/').pop() || 'index.html', referrer: document.referrer || null, session_id: sid });
+        fetch(SUPABASE_URL + '/rest/v1/page_views', { method:'POST', headers:{ 'Content-Type':'application/json', 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON, 'Prefer': 'return=minimal' }, body: payload, keepalive: true }).catch(function(){});
+      } catch(e){}
+    })();
+  </script>
+
+  <!-- Supabase client (used by auth guard) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hides body until access confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+      var thisPage = location.pathname.split('/').pop() || 'index.html';
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = 'login.html?next=' + encodeURIComponent(thisPage);
+          return;
+        }
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = 'login.html?upgrade=1&next=' + encodeURIComponent(thisPage);
+              return;
+            }
+            // Access confirmed — reveal page and broadcast auth context
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+            document.dispatchEvent(new CustomEvent('cr-auth', {
+              detail: { client: client, userId: session.user.id }
+            }));
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () {
+                    window.location.href = 'login.html';
+                  });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+
+  <style>
+    /* ============================================================
+       Pathway page styles
+       All colours pulled from existing CSS custom properties
+       ============================================================ */
+
+    /* ── Page header ── */
+    .pw-page-header {
+      padding: 2rem 0 1.5rem;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      margin-bottom: 2rem;
+    }
+
+    .pw-page-ornament {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .pw-page-ornament-rule {
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c9a84c);
+    }
+
+    .pw-page-ornament-rule.right {
+      background: linear-gradient(to left, transparent, #c9a84c);
+    }
+
+    .pw-page-ornament-diamond {
+      width: 7px;
+      height: 7px;
+      background: #c9a84c;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .pw-page-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: #1a2744;
+      margin-bottom: 0.3rem;
+      line-height: 1.15;
+    }
+
+    .pw-page-header p {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1rem;
+      color: #4a5568;
+      font-style: italic;
+      margin: 0;
+    }
+
+    /* ── Shared card ── */
+    .pw-card {
+      background: #f0ede4;
+      border: 1px solid rgba(201,168,76,0.35);
+      border-left: 4px solid #c9a84c;
+      border-radius: 4px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pw-card-ornament {
+      width: 40px;
+      height: 2px;
+      background: #c9a84c;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Shared typography ── */
+    .pw-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: #1a2744;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .pw-lead {
+      font-size: 1.05rem;
+      color: #1a2744;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .pw-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .pw-section-label--mt {
+      margin-top: 1.75rem;
+    }
+
+    /* ── Phase strip ── */
+    .pw-strip-wrap {
+      margin-bottom: 2rem;
+    }
+
+    .pw-strip-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 0.75rem;
+    }
+
+    .pw-phase-strip {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .pw-phase-dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      cursor: default;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.15s, box-shadow 0.15s;
+      position: relative;
+    }
+
+    .pw-phase-dot--done {
+      background: #c9a84c;
+      color: #1a2744;
+      cursor: pointer;
+    }
+
+    .pw-phase-dot--done:hover {
+      transform: scale(1.08);
+      box-shadow: 0 2px 8px rgba(201,168,76,0.4);
+    }
+
+    .pw-phase-dot--current {
+      background: #1a2744;
+      color: #c9a84c;
+      border: 2px solid #c9a84c;
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
+      cursor: default;
+    }
+
+    .pw-phase-dot--locked {
+      background: #d4d0c8;
+      color: #9a9587;
+      cursor: not-allowed;
+    }
+
+    /* ── Level select ── */
+    .pw-level-choices {
+      margin-top: 1.75rem;
+    }
+
+    .pw-or {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9a9587;
+      margin: 1.25rem 0 1rem;
+      position: relative;
+    }
+
+    .pw-or::before,
+    .pw-or::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: calc(50% - 3.5rem);
+      height: 1px;
+      background: rgba(201,168,76,0.3);
+    }
+
+    .pw-or::before { left: 0; }
+    .pw-or::after  { right: 0; }
+
+    .pw-direct-starts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    /* ── Diagnostic bar ── */
+    .pw-diag-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pw-diag-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      white-space: nowrap;
+    }
+
+    .pw-diag-bar-wrap {
+      flex: 1;
+      height: 5px;
+      background: rgba(26,39,68,0.12);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+
+    .pw-diag-bar-fill {
+      height: 100%;
+      background: #c9a84c;
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    /* ── Questions and options ── */
+    .pw-question-text {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      color: #1a2744;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .pw-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pw-option {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 4px;
+      background: #fff;
+      color: #1a2744;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+      line-height: 1.4;
+    }
+
+    .pw-option:hover:not(:disabled) {
+      background: #f0ede4;
+      border-color: #c9a84c;
+      transform: translateX(2px);
+    }
+
+    .pw-option:disabled {
+      cursor: default;
+    }
+
+    .pw-option--correct {
+      background: #e8f5e9 !important;
+      border-color: #4caf50 !important;
+      color: #1b5e20 !important;
+    }
+
+    .pw-option--wrong {
+      background: #fdecea !important;
+      border-color: #e53935 !important;
+      color: #b71c1c !important;
+    }
+
+    /* ── Feedback ── */
+    .pw-feedback {
+      padding: 0.875rem 1rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .pw-feedback--correct {
+      background: #e8f5e9;
+      border-left: 3px solid #4caf50;
+      color: #1b5e20;
+    }
+
+    .pw-feedback--wrong {
+      background: #fdecea;
+      border-left: 3px solid #e53935;
+      color: #7f1d1d;
+    }
+
+    /* ── Buttons ── */
+    .pw-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 4px;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: background 0.15s, color 0.15s, transform 0.1s, box-shadow 0.15s;
+      text-decoration: none;
+    }
+
+    .pw-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .pw-btn-primary {
+      background: #1a2744;
+      color: #c9a84c;
+    }
+
+    .pw-btn-primary:hover {
+      background: #0f1729;
+      box-shadow: 0 4px 12px rgba(26,39,68,0.25);
+      color: #c9a84c;
+    }
+
+    .pw-btn-ghost {
+      background: transparent;
+      color: #1a2744;
+      border: 1px solid rgba(26,39,68,0.3);
+    }
+
+    .pw-btn-ghost:hover {
+      background: rgba(26,39,68,0.06);
+    }
+
+    .pw-btn-danger-ghost {
+      background: transparent;
+      color: #9a9587;
+      border: 1px solid rgba(154,149,135,0.3);
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+    }
+
+    .pw-btn-danger-ghost:hover {
+      color: #b71c1c;
+      border-color: rgba(183,28,28,0.4);
+      background: rgba(183,28,28,0.04);
+    }
+
+    .pw-next-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ── Diagnostic results ── */
+    .pw-results-card {
+      text-align: center;
+    }
+
+    .pw-results-score {
+      margin-bottom: 1.25rem;
+    }
+
+    .pw-score-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: #c9a84c;
+      line-height: 1;
+    }
+
+    .pw-score-denom {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      color: #4a5568;
+      margin-left: 0.25rem;
+    }
+
+    .pw-results-summary {
+      font-size: 1rem;
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .pw-results-recommendation {
+      background: #1a2744;
+      color: #faf8f3;
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pw-rec-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 0.4rem;
+    }
+
+    .pw-rec-phase {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .pw-results-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .pw-results-actions .pw-btn {
+      min-width: 200px;
+    }
+
+    /* ── Phase card ── */
+    .pw-phase-card {
+      background: #f0ede4;
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .pw-phase-card-header {
+      background: #1a2744;
+      color: #faf8f3;
+      padding: 1.5rem 2rem;
+    }
+
+    .pw-phase-number {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 0.4rem;
+    }
+
+    .pw-phase-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #faf8f3;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .pw-phase-subtitle {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      color: rgba(250,248,243,0.6);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .pw-phase-body {
+      padding: 1.75rem 2rem;
+    }
+
+    .pw-phase-intro p {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1rem;
+      color: #1a2744;
+      line-height: 1.65;
+      margin-bottom: 0.875rem;
+    }
+
+    .pw-phase-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Activities ── */
+    .pw-activities {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .pw-activity-link {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.75rem 1rem;
+      background: #fff;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-left: 3px solid #c9a84c;
+      border-radius: 2px;
+      text-decoration: none;
+      color: #1a2744;
+      font-size: 0.95rem;
+      transition: background 0.15s, border-left-color 0.15s, transform 0.1s;
+    }
+
+    .pw-activity-link:hover {
+      background: #faf8f3;
+      border-left-color: #1a2744;
+      transform: translateX(3px);
+      color: #1a2744;
+    }
+
+    .pw-activity-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .pw-activity-label {
+      flex: 1;
+      font-family: 'EB Garamond', Georgia, serif;
+    }
+
+    .pw-activity-arrow {
+      color: #c9a84c;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Output task ── */
+    .pw-output-task {
+      background: #fff;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .pw-output-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      color: #1a2744;
+      margin-bottom: 0.4rem;
+    }
+
+    .pw-output-instruction {
+      font-size: 0.9rem;
+      color: #4a5568;
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .pw-output-sentences {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+
+    .pw-output-sentences li {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      color: #1a2744;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .pw-output-sentences li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Phase footer ── */
+    .pw-phase-footer {
+      padding: 1.25rem 2rem 1.75rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      background: #f0ede4;
+    }
+
+    .pw-unlock-btn {
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    /* ── Level 1 complete ── */
+    .pw-complete-l1 {
+      text-align: center;
+    }
+
+    .pw-complete-badge {
+      display: inline-block;
+      background: #c9a84c;
+      color: #1a2744;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.875rem;
+      border-radius: 2rem;
+      margin-bottom: 0.875rem;
+    }
+
+    .pw-complete-l1 p {
+      font-size: 0.95rem;
+      color: #4a5568;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    /* ── Completed phases list ── */
+    .pw-completed-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .pw-completed-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0.875rem;
+      background: #f0ede4;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 4px;
+      text-decoration: none;
+      color: #1a2744;
+      font-size: 0.9rem;
+      transition: background 0.15s;
+    }
+
+    .pw-completed-item:hover {
+      background: #faf8f3;
+      color: #1a2744;
+    }
+
+    .pw-completed-tick {
+      color: #c9a84c;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .pw-completed-title {
+      font-family: 'EB Garamond', Georgia, serif;
+    }
+
+    /* ── Reset wrap ── */
+    .pw-reset-wrap {
+      text-align: center;
+      padding-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Unlock header ── */
+    .pw-unlock-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pw-back-btn {
+      background: none;
+      border: none;
+      color: #c9a84c;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0;
+      white-space: nowrap;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .pw-back-btn:hover {
+      color: #1a2744;
+    }
+
+    /* ── Unlock result ── */
+    .pw-unlock-result {
+      text-align: center;
+    }
+
+    .pw-result-badge {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .pw-result-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .pw-result-denom {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      margin-left: 0.15rem;
+      color: #4a5568;
+    }
+
+    .pw-result-badge--pass .pw-result-num { color: #2e7d32; }
+    .pw-result-badge--fail .pw-result-num { color: #c62828; }
+
+    .pw-unlock-result p {
+      font-size: 1rem;
+      color: #4a5568;
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .pw-unlock-result-screen .pw-card {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .pw-unlock-result .pw-btn + .pw-btn {
+      margin-top: 0.5rem;
+      margin-left: 0;
+    }
+
+    .pw-unlock-result .pw-heading {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Intro card ── */
+    .pw-intro-card p {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.65;
+      margin-bottom: 0.875rem;
+    }
+
+    .pw-intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .pw-card {
+        padding: 1.25rem;
+      }
+
+      .pw-phase-card-header {
+        padding: 1.25rem;
+      }
+
+      .pw-phase-body {
+        padding: 1.25rem;
+      }
+
+      .pw-phase-footer {
+        padding: 1rem 1.25rem 1.25rem;
+      }
+
+      .pw-phase-dot {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
+
+      .pw-score-num { font-size: 3rem; }
+      .pw-score-denom { font-size: 1.4rem; }
+      .pw-result-num { font-size: 3rem; }
+      .pw-result-denom { font-size: 1.5rem; }
+
+      .pw-diag-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+
+      .pw-results-actions .pw-btn {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .pw-direct-starts .pw-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.875rem;
+      }
+    }
+
+    /* ── Coming soon phases ── */
+    .pw-coming-soon-phases {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .pw-coming-soon-card {
+      flex: 1;
+      min-width: 200px;
+      background: #f0ede4;
+      border: 1px dashed rgba(201,168,76,0.4);
+      border-radius: 4px;
+      padding: 1.25rem;
+      opacity: 0.6;
+    }
+
+    .pw-coming-soon-card .pw-phase-number {
+      color: #c9a84c;
+    }
+
+    .pw-coming-soon-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: #1a2744;
+      margin-bottom: 0.25rem;
+    }
+
+    .pw-coming-soon-card p {
+      font-size: 0.85rem;
+      color: #9a9587;
+      font-style: italic;
+      margin: 0;
+    }
+
+    /* ── Pathway banner (used on index.html) ── */
+    .pw-banner {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: #1a2744;
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+      text-decoration: none;
+      border: 1px solid rgba(201,168,76,0.2);
+      transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+    }
+
+    .pw-banner:hover {
+      background: #0f1729;
+      box-shadow: 0 4px 16px rgba(26,39,68,0.2);
+      transform: translateY(-1px);
+    }
+
+    .pw-banner-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .pw-banner-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .pw-banner-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #faf8f3;
+      margin-bottom: 0.2rem;
+    }
+
+    .pw-banner-desc {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.9rem;
+      color: rgba(250,248,243,0.65);
+      margin: 0;
+    }
+
+    .pw-banner-arrow {
+      color: #c9a84c;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      .pw-banner {
+        padding: 1rem;
+        gap: 0.875rem;
+      }
+      .pw-banner-icon { font-size: 1.4rem; }
+      .pw-banner-title { font-size: 1rem; }
+      .pw-banner-desc { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-to-use.html">How to Use</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Learn <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="vocabulary.html">Vocabulary</a></li>
+              <li><a href="grammar.html">Grammar</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Practise <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="quiz.html">Exercises</a></li>
+              <li><a href="speed-recall.html">Speed Recall</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Papers <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="papers.html">Past Papers</a></li>
+              <li><a href="practice-papers.html">Practice Papers</a></li>
+            </ul>
+          </li>
+          <li><a href="pathway.html" class="nav-current">Pathway</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app">
+
+    <!-- Page header -->
+    <div class="pw-page-header">
+      <div class="pw-page-ornament">
+        <span class="pw-page-ornament-rule"></span>
+        <span class="pw-page-ornament-diamond"></span>
+        <span class="pw-page-ornament-rule right"></span>
+      </div>
+      <h1>Guided Revision Pathway</h1>
+      <p>Six phases from first nouns to Level 1 translation &mdash; work through in order, unlock as you go</p>
+    </div>
+
+    <!-- Coming soon phases (Level 2 preview, always visible) -->
+    <div id="coming-soon-wrap" style="display:none">
+      <div class="pw-section-label pw-section-label--mt">Coming soon &mdash; Level 2</div>
+      <div class="pw-coming-soon-phases">
+        <div class="pw-coming-soon-card">
+          <div class="pw-phase-number">Phase 7</div>
+          <h3>3rd Declension &amp; New Tenses</h3>
+          <p>Coming soon</p>
+        </div>
+        <div class="pw-coming-soon-card">
+          <div class="pw-phase-number">Phase 8</div>
+          <h3>Level 2 Consolidation</h3>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic app region -->
+    <div id="pathway-app">
+      <div class="pw-card" style="text-align:center; padding: 3rem 2rem;">
+        <p style="color:#4a5568; font-style:italic;">Loading your pathway&hellip;</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Caerus Latin &middot; <a href="https://caerusrevision.co.uk">caerusrevision.co.uk</a> &middot; <a href="terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/pathway.js"></script>
+
+  <script>
+    // Show coming-soon section once pathway renders
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('coming-soon-wrap').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

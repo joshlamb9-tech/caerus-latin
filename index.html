@@ -338,6 +338,48 @@
       .nav-card h2 { font-size: 1rem; margin-bottom: 0.1rem; }
       .nav-card p { font-size: 0.82rem; line-height: 1.3; }
     }
+
+    /* ── Pathway banner ── */
+    .pw-banner {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: #1a2744;
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+      text-decoration: none;
+      border: 1px solid rgba(201,168,76,0.2);
+      transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+    }
+    .pw-banner:hover {
+      background: #0f1729;
+      box-shadow: 0 4px 16px rgba(26,39,68,0.2);
+      transform: translateY(-1px);
+      color: inherit;
+    }
+    .pw-banner-icon  { font-size: 1.8rem; flex-shrink: 0; }
+    .pw-banner-body  { flex: 1; min-width: 0; }
+    .pw-banner-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #faf8f3;
+      margin-bottom: 0.2rem;
+    }
+    .pw-banner-desc {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.9rem;
+      color: rgba(250,248,243,0.65);
+      margin: 0;
+    }
+    .pw-banner-arrow { color: #c9a84c; font-size: 1.3rem; flex-shrink: 0; }
+    @media (max-width: 480px) {
+      .pw-banner { padding: 0.875rem 1rem; gap: 0.75rem; }
+      .pw-banner-icon  { font-size: 1.3rem; }
+      .pw-banner-title { font-size: 0.95rem; }
+      .pw-banner-desc  { font-size: 0.8rem; }
+    }
   </style>
 </head>
 <body>
@@ -374,6 +416,7 @@
               <li><a href="practice-papers.html">Practice Papers</a></li>
             </ul>
           </li>
+          <li><a href="pathway.html">Pathway</a></li>
           <li><a href="leaderboard.html">Leaderboard</a></li>
           <li><a href="account.html">Account</a></li>
         </ul>
@@ -418,6 +461,16 @@
         <div class="progress-bar-fill" id="progress-bar-fill"></div>
       </div>
     </div>
+
+    <!-- Pathway banner -->
+    <a href="pathway.html" class="pw-banner" id="pw-banner">
+      <span class="pw-banner-icon">&#128680;</span>
+      <div class="pw-banner-body">
+        <div class="pw-banner-title">Start your revision plan</div>
+        <p class="pw-banner-desc">Six guided phases from basic nouns to Level 1 translation &mdash; with a diagnostic quiz to find your starting point</p>
+      </div>
+      <span class="pw-banner-arrow">&#8594;</span>
+    </a>
 
     <!-- Navigation -->
     <div class="section-label">Study sections</div>
