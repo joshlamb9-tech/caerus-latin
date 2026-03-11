@@ -595,9 +595,11 @@
   var stripeInstance = Stripe(STRIPE_PK);
 
   // Where to redirect after successful login/purchase
-  var params   = new URLSearchParams(location.search);
-  var nextPage = params.get('next') || 'index.html';
+  var params     = new URLSearchParams(location.search);
+  var nextPage   = params.get('next') || 'index.html';
   var trialEnded = params.get('trial_ended') === '1';
+  var tabParam   = params.get('tab');
+  if (tabParam === 'trial') { switchTab('trial'); }
 
   /* ─── Boot: check auth state ─── */
   client.auth.getSession().then(function(result) {
