@@ -12,7 +12,7 @@ const TRIAL_DAYS = 7;
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
-  'Access-Control-Allow-Headers': 'content-type',
+  'Access-Control-Allow-Headers': 'content-type, authorization',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
 

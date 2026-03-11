@@ -724,7 +724,10 @@
 
     fetch(TRIAL_FN_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + SUPABASE_ANON,
+      },
       body: JSON.stringify({ email: email, password: password }),
     })
     .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, status: r.status, data: d }; }); })
