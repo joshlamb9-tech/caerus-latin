@@ -159,6 +159,71 @@
       font-weight: 600;
     }
 
+    /* ── Trial badge on tab ── */
+    .tab-trial-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+      line-height: 1.4;
+    }
+
+    /* ── Trial ended banner ── */
+    .trial-ended-banner {
+      background: #fffbeb;
+      border: 1.5px solid #f59e0b;
+      border-radius: 3px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #92400e;
+    }
+
+    .trial-ended-banner strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+      color: #78350f;
+    }
+
+    /* ── Trial features list ── */
+    .trial-features {
+      list-style: none;
+      margin: 1rem 0 1.25rem;
+      padding: 0;
+    }
+
+    .trial-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.25rem 0;
+    }
+
+    .trial-features li::before {
+      content: '\2714';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .trial-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
     /* ── Form ── */
     .form-group {
       margin-bottom: 1.25rem;
@@ -391,6 +456,7 @@
       <div class="tab-row">
         <button class="tab-btn active" id="tab-signin" onclick="switchTab('signin')">Sign in</button>
         <button class="tab-btn" id="tab-signup" onclick="switchTab('signup')">Create account</button>
+        <button class="tab-btn" id="tab-trial" onclick="switchTab('trial')">Free trial <span class="tab-trial-badge">7 days</span></button>
       </div>
 
       <div id="msg-auth" class="msg hidden"></div>
@@ -420,6 +486,35 @@
         </div>
         <button type="submit" class="btn-primary" id="btn-signup">Create account &rarr;</button>
       </form>
+
+      <!-- Free trial form -->
+      <div id="form-trial" class="hidden">
+        <div id="trial-ended-banner" class="trial-ended-banner hidden">
+          <strong>Your free trial has ended</strong>
+          Subscribe below to keep your progress and access everything.
+        </div>
+
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Try everything free for 7 days &mdash; no card required.</p>
+        <ul class="trial-features">
+          <li>Full vocabulary list &mdash; browse, search, and test</li>
+          <li>Complete grammar tables and quick-check exercises</li>
+          <li>Flashcards, quizzes, and speed recall</li>
+          <li>Original practice papers at all three levels</li>
+        </ul>
+
+        <form id="form-trial-inner" onsubmit="handleStartTrial(event)">
+          <div class="form-group">
+            <label for="tr-email">Email address</label>
+            <input type="email" id="tr-email" required placeholder="you@example.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="tr-password">Choose a password</label>
+            <input type="password" id="tr-password" required placeholder="At least 8 characters" minlength="8" autocomplete="new-password">
+          </div>
+          <button type="submit" class="btn-primary" id="btn-trial">Start free trial &rarr;</button>
+        </form>
+        <p class="trial-note">After 7 days you can subscribe for &pound;49.99/year to keep going.</p>
+      </div>
 
     </div>
   </div>
@@ -490,22 +585,31 @@
 </div>
 
 <script>
-  var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
-  var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
-  var STRIPE_PK     = 'pk_live_51T6r9sCqtyvkC5sKLwSdNNFDwnwIx0xMZRLee5FIYzvJCuAsDvCXlcP7duYMxyY67hXrj4ilaYnCzVodvVfk1C3100ERU4cs6Y';
-  var EDGE_FN_URL   = SUPABASE_URL + '/functions/v1/create-checkout';
+  var SUPABASE_URL        = 'https://dlcseuejvducbsjhqvze.supabase.co';
+  var SUPABASE_ANON       = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+  var STRIPE_PK           = 'pk_live_51T6r9sCqtyvkC5sKLwSdNNFDwnwIx0xMZRLee5FIYzvJCuAsDvCXlcP7duYMxyY67hXrj4ilaYnCzVodvVfk1C3100ERU4cs6Y';
+  var EDGE_FN_URL         = SUPABASE_URL + '/functions/v1/create-checkout';
+  var TRIAL_FN_URL        = SUPABASE_URL + '/functions/v1/start-trial';
 
   var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
   var stripeInstance = Stripe(STRIPE_PK);
 
   // Where to redirect after successful login/purchase
-  var nextPage = (new URLSearchParams(location.search).get('next')) || 'index.html';
+  var params   = new URLSearchParams(location.search);
+  var nextPage = params.get('next') || 'index.html';
+  var trialEnded = params.get('trial_ended') === '1';
 
   /* ─── Boot: check auth state ─── */
   client.auth.getSession().then(function(result) {
     var session = result.data.session;
     if (!session) {
       show('view-auth');
+      // If returning from an expired trial, update header copy and show a message
+      if (trialEnded) {
+        document.querySelector('#view-auth .card-header h1').textContent = 'Your trial has ended';
+        document.querySelector('#view-auth .card-header p').textContent = 'Sign in to subscribe and keep your progress.';
+        showMsg('Your 7-day trial has ended. Sign in below to subscribe for \u00a349.99/year.', 'error');
+      }
       return;
     }
     checkAccess(session.user, session.access_token);
@@ -524,6 +628,13 @@
         } else {
           var emailEl = document.getElementById('checkout-email');
           if (emailEl) emailEl.textContent = user.email;
+          // If we know their trial ended, update checkout header copy
+          if (trialEnded) {
+            var h1 = document.querySelector('#view-checkout .card-header h1');
+            var p  = document.querySelector('#view-checkout .card-header p');
+            if (h1) h1.textContent = 'Your trial has ended';
+            if (p)  p.textContent  = 'Subscribe below to keep your progress and full access.';
+          }
           show('view-checkout');
           initStripeCheckout(token);
         }
@@ -541,8 +652,10 @@
   function switchTab(tab) {
     document.getElementById('form-signin').classList.toggle('hidden', tab !== 'signin');
     document.getElementById('form-signup').classList.toggle('hidden', tab !== 'signup');
+    document.getElementById('form-trial').classList.toggle('hidden', tab !== 'trial');
     document.getElementById('tab-signin').classList.toggle('active', tab === 'signin');
     document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
+    document.getElementById('tab-trial').classList.toggle('active', tab === 'trial');
     clearMsg();
   }
 
@@ -596,6 +709,86 @@
         }
         checkAccess(result.data.user, result.data.session.access_token);
       });
+  }
+
+  /* ─── Start Free Trial ─── */
+  function handleStartTrial(e) {
+    e.preventDefault();
+    var btn = document.getElementById('btn-trial');
+    btn.disabled = true;
+    btn.textContent = 'Starting trial\u2026';
+    clearMsg();
+
+    var email    = document.getElementById('tr-email').value.trim().toLowerCase();
+    var password = document.getElementById('tr-password').value;
+
+    fetch(TRIAL_FN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, password: password }),
+    })
+    .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, status: r.status, data: d }; }); })
+    .then(function(res) {
+      btn.disabled = false;
+      btn.textContent = 'Start free trial \u2192';
+
+      if (!res.ok) {
+        var err = res.data.error || 'Could not start trial. Please try again.';
+
+        // Handle specific known errors gracefully
+        if (err === 'trial_expired') {
+          // They already had a trial — nudge to the checkout
+          showMsg('Your free trial has ended. Sign in below to subscribe.', 'error');
+          switchTab('signin');
+          return;
+        }
+        if (err === 'trial_active') {
+          showMsg('You already have an active trial. Please sign in.', 'error');
+          switchTab('signin');
+          return;
+        }
+        if (err === 'already_paid') {
+          showMsg('You already have a subscription. Please sign in.', 'error');
+          switchTab('signin');
+          return;
+        }
+        if (err === 'email_taken') {
+          showMsg('An account with this email already exists. Please sign in.', 'error');
+          switchTab('signin');
+          return;
+        }
+
+        showMsg(res.data.message || err, 'error');
+        return;
+      }
+
+      // Success — restore the session in the Supabase client, then redirect
+      var accessToken  = res.data.access_token;
+      var refreshToken = res.data.refresh_token;
+
+      if (!accessToken) {
+        showMsg('Trial started! Please sign in with your new account.', 'success');
+        switchTab('signin');
+        return;
+      }
+
+      client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken })
+        .then(function(sessionRes) {
+          if (sessionRes.error) {
+            // Session restore failed — just send them to sign in
+            showMsg('Trial started! Please sign in to continue.', 'success');
+            switchTab('signin');
+            return;
+          }
+          window.location.href = nextPage;
+        });
+    })
+    .catch(function(err) {
+      btn.disabled = false;
+      btn.textContent = 'Start free trial \u2192';
+      showMsg('Network error. Please check your connection and try again.', 'error');
+      console.error(err);
+    });
   }
 
   /* ─── Stripe Embedded Checkout ─── */

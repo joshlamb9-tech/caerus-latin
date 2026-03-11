@@ -52,7 +52,21 @@
           .limit(1)
           .then(function (gr) {
             if (!gr.data || gr.data.length === 0) {
-              window.location.href = 'login.html?upgrade=1&next=' + encodeURIComponent(thisPage);
+              // Check for an expired trial so login.html can show contextual copy
+              client.from('access_grants')
+                .select('id')
+                .eq('user_id', session.user.id)
+                .eq('product', 'latin')
+                .eq('grant_type', 'trial')
+                .limit(1)
+                .then(function (tr) {
+                  var hadTrial = tr.data && tr.data.length > 0;
+                  if (hadTrial) {
+                    window.location.href = 'login.html?trial_ended=1&next=' + encodeURIComponent(thisPage);
+                  } else {
+                    window.location.href = 'login.html?next=' + encodeURIComponent(thisPage);
+                  }
+                });
               return;
             }
             // Access confirmed — reveal page and broadcast auth context
