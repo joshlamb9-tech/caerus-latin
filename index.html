@@ -394,6 +394,86 @@
       .pw-banner-title { font-size: 0.95rem; }
       .pw-banner-desc  { font-size: 0.8rem; }
     }
+
+    /* ── Welcome CTA (new users with 0 progress) ── */
+    .welcome-cta {
+      text-align: center;
+      padding: 0.5rem 0 0.25rem;
+    }
+
+    .welcome-cta-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #faf8f3;
+      margin-bottom: 0.5rem;
+    }
+
+    .welcome-cta-text {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      color: rgba(250,248,243,0.65);
+      margin-bottom: 1.25rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .welcome-cta-btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #c9a84c;
+      color: #1a2744;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .welcome-cta-btn:hover {
+      background: #dbb95e;
+      transform: translateY(-1px);
+      color: #1a2744;
+    }
+
+    /* ── What's inside — feature list for new users ── */
+    .feature-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .feature-item {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 4px;
+    }
+
+    .feature-icon {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: rgba(250,248,243,0.55);
+    }
+
+    @media (max-width: 480px) {
+      .feature-strip { gap: 0.5rem; }
+      .feature-item { padding: 0.75rem 0.25rem; }
+      .feature-icon { font-size: 1.2rem; }
+    }
   </style>
 </head>
 <body>
@@ -572,10 +652,27 @@
         document.getElementById('progress-bar-fill').style.width = pct + '%';
 
         if (mastered === 0 && learning === 0) {
-          document.getElementById('progress-empty').textContent = 'Start practising to track your progress';
-          document.getElementById('progress-empty').style.display = 'block';
+          // New user — show a welcoming start prompt instead of empty stats
+          var emptyEl = document.getElementById('progress-empty');
+          emptyEl.innerHTML =
+            '<div class="welcome-cta">' +
+              '<div class="welcome-cta-heading">Welcome to Caerus Latin</div>' +
+              '<p class="welcome-cta-text">219 words. Full grammar reference. Past papers and practice tests.<br>Start with the guided pathway — it takes about 5 minutes to find your level.</p>' +
+              '<a href="pathway.html" class="welcome-cta-btn">Start the pathway &rarr;</a>' +
+            '</div>' +
+            '<div class="feature-strip">' +
+              '<div class="feature-item"><span class="feature-icon">📖</span><span class="feature-label">Vocabulary</span></div>' +
+              '<div class="feature-item"><span class="feature-icon">✏️</span><span class="feature-label">Exercises</span></div>' +
+              '<div class="feature-item"><span class="feature-icon">📜</span><span class="feature-label">Papers</span></div>' +
+            '</div>';
+          emptyEl.style.display = 'block';
           document.getElementById('progress-stats').style.display = 'none';
-          document.getElementById('progress-bar-wrap').classList.add('empty');
+          document.getElementById('progress-bar-wrap').style.display = 'none';
+          // Rename widget label and hide redundant pathway banner
+          var label = document.getElementById('progress-widget').querySelector('.progress-widget-label');
+          if (label) label.style.display = 'none';
+          var banner = document.getElementById('pw-banner');
+          if (banner) banner.style.display = 'none';
         }
       }).catch(function() {
         document.getElementById('progress-empty').textContent = 'Start practising to track your progress';

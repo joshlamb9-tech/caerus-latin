@@ -1642,6 +1642,18 @@ a:hover {
 .q4-score--notyet { background: #f8d7da; color: #721c24; }
 
 /* ============================================================
+   Mobile layout — reduce padding on small screens
+   ============================================================ */
+@media (max-width: 640px) {
+  main#app {
+    padding: 1rem;
+  }
+  .header-inner {
+    padding: 0 1rem;
+  }
+}
+
+/* ============================================================
    SW Update Banner (PWA-04)
    ============================================================ */
 
