@@ -1,0 +1,54 @@
+{
+  "declensions": [
+    {
+      "declension": 4,
+      "name": "Fourth Declension",
+      "gender": "m",
+      "example_noun": "manus",
+      "example_meaning": "hand",
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
+      "note": "The accusative plural is identical to the nominative plural in the 4th declension",
+      "singular": {
+        "nominative": "manus",
+        "vocative": "manus",
+        "accusative": "manum",
+        "genitive": "manūs",
+        "dative": "manuī",
+        "ablative": "manū"
+      },
+      "plural": {
+        "nominative": "manūs",
+        "vocative": "manūs",
+        "accusative": "manūs",
+        "genitive": "manuum",
+        "dative": "manibus",
+        "ablative": "manibus"
+      }
+    },
+    {
+      "declension": 5,
+      "name": "Fifth Declension",
+      "gender": "f",
+      "example_noun": "rēs",
+      "example_meaning": "thing, matter",
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
+      "note": "Nominative, vocative, and accusative plural are all 'rēs' — context distinguishes them",
+      "singular": {
+        "nominative": "rēs",
+        "vocative": "rēs",
+        "accusative": "rem",
+        "genitive": "reī",
+        "dative": "reī",
+        "ablative": "rē"
+      },
+      "plural": {
+        "nominative": "rēs",
+        "vocative": "rēs",
+        "accusative": "rēs",
+        "genitive": "rērum",
+        "dative": "rēbus",
+        "ablative": "rēbus"
+      }
+    }
+  ]
+}
