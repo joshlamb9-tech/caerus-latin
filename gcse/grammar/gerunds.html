@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gerund and gerundive — GCSE Latin grammar revision with formation tables, worked examples, and exercises">
+  <meta name="theme-color" content="#1a2744">
+  <title>Gerund &amp; Gerundive &mdash; GCSE Grammar &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .exam-tip {
+      border-left: 4px solid #c9a84c;
+      background: #fdf8ee;
+      padding: 0.85rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #3a3220;
+    }
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .grammar-table th, .grammar-table td {
+      border: 1px solid #e0dbd0;
+      padding: 0.45rem 0.7rem;
+      text-align: left;
+    }
+    .grammar-table th {
+      background: #f5f2eb;
+      font-weight: 600;
+      color: #1a2744;
+    }
+    .grammar-table tr:nth-child(even) td {
+      background: #fafaf8;
+    }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/grammar/gerunds.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Learn <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../../vocabulary.html">CE Vocab</a></li>
+              <li><a href="../../grammar.html">CE Grammar</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Practise <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../../quiz.html">CE Exercises</a></li>
+              <li><a href="../../speed-recall.html">Speed Recall</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html" class="nav-gcse-link">GCSE Latin <span class="nav-gcse-badge">GCSE</span></a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="grammar-page" style="max-width:800px; margin:0 auto; padding:1rem 1rem 3rem;">
+
+      <h1>The Gerund and Gerundive</h1>
+      <p class="page-intro">The <strong>gerund</strong> is a verbal noun — it names the action of a verb. The <strong>gerundive</strong> is a verbal adjective — it agrees with a noun and often expresses obligation. Both are formed from the verb stem and are common in J282 unseen texts.</p>
+
+      <section id="gerund-explanation">
+        <h2>The Gerund</h2>
+        <p>The gerund is a <strong>2nd-declension neuter noun</strong> used only in the singular, and only in the oblique cases (acc, gen, dat, abl). It is never used in the nominative — use the infinitive instead.</p>
+
+        <h3>Formation</h3>
+        <p>Add <strong>-ndum</strong> (acc), <strong>-ndī</strong> (gen), <strong>-ndō</strong> (dat/abl) to the present stem:</p>
+
+        <table class="grammar-table">
+          <thead>
+            <tr><th>Case</th><th>Ending</th><th>1st conj. (amō)</th><th>2nd conj. (moneō)</th><th>3rd conj. (regō)</th><th>4th conj. (audiō)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Acc.</td><td>-ndum</td><td><em>amandum</em></td><td><em>monendum</em></td><td><em>regendum</em></td><td><em>audiendum</em></td></tr>
+            <tr><td>Gen.</td><td>-ndī</td><td><em>amandī</em></td><td><em>monendī</em></td><td><em>regendī</em></td><td><em>audiendī</em></td></tr>
+            <tr><td>Dat.</td><td>-ndō</td><td><em>amandō</em></td><td><em>monendō</em></td><td><em>regendō</em></td><td><em>audiendō</em></td></tr>
+            <tr><td>Abl.</td><td>-ndō</td><td><em>amandō</em></td><td><em>monendō</em></td><td><em>regendō</em></td><td><em>audiendō</em></td></tr>
+          </tbody>
+        </table>
+
+        <h3>Worked Examples</h3>
+        <ul>
+          <li><em>Cupidus <strong>pugnandī</strong> erat.</em> — He was eager <strong>for fighting</strong>. (gen after cupidus)</li>
+          <li><em>Veniērunt ad <strong>pugnandum</strong>.</em> — They came <strong>to fight</strong>. (acc after ad)</li>
+          <li><em><strong>Legendo</strong> sapientia augētur.</em> — By <strong>reading</strong>, wisdom is increased. (abl of means)</li>
+        </ul>
+      </section>
+
+      <section id="gerundive-explanation">
+        <h2>The Gerundive</h2>
+        <p>The gerundive is a <strong>verbal adjective</strong> (-andus/-anda/-andum for 1st conj., -endus/-enda/-endum for 2nd–4th). It agrees with a noun in case, number, and gender.</p>
+
+        <h3>Gerundive of Obligation</h3>
+        <p>When used with a form of <em>sum</em>, the gerundive expresses <strong>obligation or necessity</strong>: "X must be done" / "X ought to be done".</p>
+        <ul>
+          <li><em>Liber <strong>legendus est</strong>.</em> — The book <strong>must be read</strong>.</li>
+          <li><em>Pāx <strong>petenda est</strong>.</em> — Peace <strong>must be sought</strong>.</li>
+          <li><em>Hostēs <strong>vincendī sunt</strong>.</em> — The enemy <strong>must be conquered</strong>.</li>
+        </ul>
+
+        <h3>Gerundive Replacing Gerund + Object</h3>
+        <p>When a gerund would take a direct object, Latin usually replaces it with a gerundive agreeing with the object:</p>
+        <ul>
+          <li>gerund + object: <em>ad urbem <strong>capiendam</strong></em> — for the purpose of capturing the city</li>
+          <li>(instead of: <em>ad capiendum urbem</em>)</li>
+        </ul>
+      </section>
+
+      <!-- Exam Tip -->
+      <div class="exam-tip">
+        <strong>Exam tip:</strong> If you see a verb form ending in <em>-ndus/-nda/-ndum</em> next to a form of <em>sum</em> (est, erat, erit…), it is a gerundive of obligation — translate it as "must be [verbed]". The gerundive agrees with its noun: check the gender and number to find which noun it goes with.
+      </div>
+
+      <!-- Exercises -->
+      <section id="exercises">
+        <h2>Practice</h2>
+        <div id="exercise-container"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      // Fetch exercises and render MCQ
+      fetch('../../data/exercises/gcse-gerunds.json')
+        .then(function(r) { return r.json(); })
+        .then(function(questions) {
+          var container = document.getElementById('exercise-container');
+          if (!container) return;
+          renderExercises(container, questions);
+        });
+
+      function renderExercises(container, pool) {
+        var lastIndex = -1;
+
+        function showQuestion() {
+          var idx;
+          if (pool.length === 1) { idx = 0; }
+          else { do { idx = Math.floor(Math.random() * pool.length); } while (idx === lastIndex); }
+          lastIndex = idx;
+          var q = pool[idx];
+          var shuffled = q.options.slice().sort(function() { return Math.random() - 0.5; });
+          var answered = false;
+
+          container.innerHTML = '<div class="qcheck">'
+            + '<div class="qcheck-header"><p class="qcheck-label">Quick check</p>'
+            + '<span class="qcheck-count">' + (idx + 1) + ' of ' + pool.length + '</span></div>'
+            + '<p class="qcheck-q">' + q.display + '</p>'
+            + '<p style="font-size:0.85rem;color:#4a5568;font-style:italic;">' + q.translation + '</p>'
+            + '<div class="qcheck-opts">'
+            + shuffled.map(function(o) { return '<button class="qcheck-btn" data-val="' + o + '">' + o + '</button>'; }).join('')
+            + '</div>'
+            + '<div class="qcheck-fb" style="display:none"></div>'
+            + '</div>';
+
+          container.querySelectorAll('.qcheck-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              if (answered) return;
+              answered = true;
+              var correct = btn.dataset.val === q.correct;
+              container.querySelectorAll('.qcheck-btn').forEach(function(b) {
+                b.disabled = true;
+                if (b.dataset.val === q.correct) b.classList.add('qcheck-correct');
+                else if (b === btn && !correct) b.classList.add('qcheck-wrong');
+              });
+              var fb = container.querySelector('.qcheck-fb');
+              fb.style.display = 'block';
+              fb.innerHTML = '<p class="' + (correct ? 'fb-correct' : 'fb-wrong') + '">'
+                + (correct ? '\u2713 Correct \u2014 you knew that.' : 'Not yet \u2014 it\u2019s <strong>' + q.correct + '</strong>') + '</p>'
+                + '<p class="fb-explanation">' + q.explanation + '</p>'
+                + (pool.length > 1 ? '<button class="qcheck-next-btn">Try another \u2192</button>' : '');
+              if (pool.length > 1) {
+                fb.querySelector('.qcheck-next-btn').addEventListener('click', showQuestion);
+              }
+            });
+          });
+        }
+
+        showQuestion();
+      }
+    })();
+  </script>
+
+</body>
+</html>
