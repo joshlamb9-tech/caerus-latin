@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-vocabulary/02-01-PLAN.md
-last_updated: "2026-03-23T15:50:00.000Z"
-last_activity: 2026-03-23 — Completed plan 02-01 (Extended DVL from 224 to 441 words with GCSE tagging and principal parts)
+stopped_at: Completed 02-vocabulary/02-02-PLAN.md
+last_updated: "2026-03-23T16:00:00.000Z"
+last_activity: 2026-03-23 — Completed plan 02-02 (GCSE vocabulary browse + drill page with latin-gcse gate)
 progress:
   total_phases: 7
   completed_phases: 1
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-23)
 ## Current Position
 
 Phase: 2 of 7 (Vocabulary)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-03-23 — Completed plan 02-01 (Extended DVL from 224 to 441 words with GCSE tagging and principal parts)
+Last activity: 2026-03-23 — Completed plan 02-02 (GCSE vocabulary browse + drill page with latin-gcse gate)
 
-Progress: [█░░░░░░░░░] 13%
+Progress: [██░░░░░░░░] 17%
 
 ## Performance Metrics
 
@@ -44,10 +44,10 @@ Progress: [█░░░░░░░░░] 13%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-infrastructure | 2 | 20 min | 10 min |
-| 02-vocabulary | 1 | 25 min | 25 min |
+| 02-vocabulary | 2 | 28 min | 14 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (10 min), 01-02 (10 min), 02-01 (25 min)
+- Last 5 plans: 01-01 (10 min), 01-02 (10 min), 02-01 (25 min), 02-02 (3 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -67,6 +67,8 @@ Progress: [█░░░░░░░░░] 13%
 - 39 GCSE-only words already present in CE list were skipped (not duplicated) — existing entries with gcse_only: false serve both audiences
 - GCSE-only words start at frequency_rank 300+ and use level: 3 to signal GCSE tier in the drill UI
 - Deponent verbs store perfect passive participle form at index [2] and null supine at index [3] in principal_parts array
+- vocabulary.html uses hard redirect on no-grant (unlike gcse/index.html which teases non-subscribers)
+- Speed-recall uses 4s countdown + 1.5s reveal per word (simpler than progress bar, adequate for drill)
 
 ### Pending Todos
 
@@ -78,6 +80,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T15:50:00Z
-Stopped at: Completed 02-vocabulary/02-01-PLAN.md
-Resume file: .planning/phases/02-vocabulary/02-02-PLAN.md
+Last session: 2026-03-23T16:00:00Z
+Stopped at: Completed 02-vocabulary/02-02-PLAN.md
+Resume file: .planning/phases/02-vocabulary/02-03-PLAN.md
