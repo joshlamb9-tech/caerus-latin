@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pronouns (hic, ille, qui, ipse) — GCSE Latin grammar revision with paradigm tables and exercises">
+  <meta name="theme-color" content="#1a2744">
+  <title>Pronouns &mdash; GCSE Grammar &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .exam-tip {
+      border-left: 4px solid #c9a84c;
+      background: #fdf8ee;
+      padding: 0.85rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #3a3220;
+    }
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .grammar-table th, .grammar-table td {
+      border: 1px solid #e0dbd0;
+      padding: 0.45rem 0.7rem;
+      text-align: left;
+    }
+    .grammar-table th {
+      background: #f5f2eb;
+      font-weight: 600;
+      color: #1a2744;
+    }
+    .grammar-table tr:nth-child(even) td {
+      background: #fafaf8;
+    }
+    .pronoun-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .pronoun-tab-btn { padding: 0.4rem 1rem; border: 1px solid #c9a84c; background: transparent; color: #c9a84c; cursor: pointer; border-radius: 3px; font-family: inherit; font-size: 0.9rem; transition: background 0.2s, color 0.2s; }
+    .pronoun-tab-btn.active { background: #c9a84c; color: #1a2744; font-weight: 600; }
+    .pronoun-panel { display: none; }
+    .pronoun-panel.active { display: block; }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/grammar/pronouns.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Learn <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../../vocabulary.html">CE Vocab</a></li>
+              <li><a href="../../grammar.html">CE Grammar</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Practise <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../../quiz.html">CE Exercises</a></li>
+              <li><a href="../../speed-recall.html">Speed Recall</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html" class="nav-gcse-link">GCSE Latin <span class="nav-gcse-badge">GCSE</span></a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="grammar-page" style="max-width:800px; margin:0 auto; padding:1rem 1rem 3rem;">
+
+      <h1>Pronouns</h1>
+      <p class="page-intro">Four pronouns go beyond CE coverage and appear regularly in J282 texts: <strong>hic</strong> (this), <strong>ille</strong> (that / he), <strong>quī</strong> (who/which — the relative pronoun), and <strong>ipse</strong> (himself/herself/itself, the very). Each has an irregular paradigm that must be learned.</p>
+
+      <section id="pronouns-intro">
+        <h2>The Four Pronouns</h2>
+        <div class="pronoun-tabs">
+          <button class="pronoun-tab-btn active" data-tab="tab-hic">hic / haec / hoc</button>
+          <button class="pronoun-tab-btn" data-tab="tab-ille">ille / illa / illud</button>
+          <button class="pronoun-tab-btn" data-tab="tab-qui">quī / quae / quod</button>
+          <button class="pronoun-tab-btn" data-tab="tab-ipse">ipse / ipsa / ipsum</button>
+        </div>
+
+        <div id="tab-hic" class="pronoun-panel active">
+          <h3>hic, haec, hoc — this (near the speaker)</h3>
+          <p>Also used as the 3rd-person pronoun "he/she/it/they" when referring to someone recently mentioned.</p>
+          <table class="grammar-table">
+            <thead><tr><th>Case</th><th>M.</th><th>F.</th><th>N.</th><th>M. pl.</th><th>F. pl.</th><th>N. pl.</th></tr></thead>
+            <tbody>
+              <tr><td>Nom.</td><td><em>hic</em></td><td><em>haec</em></td><td><em>hoc</em></td><td><em>hī</em></td><td><em>hae</em></td><td><em>haec</em></td></tr>
+              <tr><td>Acc.</td><td><em>hunc</em></td><td><em>hanc</em></td><td><em>hoc</em></td><td><em>hōs</em></td><td><em>hās</em></td><td><em>haec</em></td></tr>
+              <tr><td>Gen.</td><td><em>huius</em></td><td><em>huius</em></td><td><em>huius</em></td><td><em>hōrum</em></td><td><em>hārum</em></td><td><em>hōrum</em></td></tr>
+              <tr><td>Dat.</td><td><em>huic</em></td><td><em>huic</em></td><td><em>huic</em></td><td><em>hīs</em></td><td><em>hīs</em></td><td><em>hīs</em></td></tr>
+              <tr><td>Abl.</td><td><em>hōc</em></td><td><em>hāc</em></td><td><em>hōc</em></td><td><em>hīs</em></td><td><em>hīs</em></td><td><em>hīs</em></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Key forms to know:</strong> nom. sg. <em>hic/haec/hoc</em>; gen. sg. <em>huius</em>; dat. sg. <em>huic</em>; abl. sg. m./n. <em>hōc</em>, f. <em>hāc</em>.</p>
+        </div>
+
+        <div id="tab-ille" class="pronoun-panel">
+          <h3>ille, illa, illud — that (remote); he/she/it</h3>
+          <p>Often used as the main 3rd-person pronoun. Refers to someone/something further away or already established in context.</p>
+          <table class="grammar-table">
+            <thead><tr><th>Case</th><th>M.</th><th>F.</th><th>N.</th><th>M. pl.</th><th>F. pl.</th><th>N. pl.</th></tr></thead>
+            <tbody>
+              <tr><td>Nom.</td><td><em>ille</em></td><td><em>illa</em></td><td><em>illud</em></td><td><em>illī</em></td><td><em>illae</em></td><td><em>illa</em></td></tr>
+              <tr><td>Acc.</td><td><em>illum</em></td><td><em>illam</em></td><td><em>illud</em></td><td><em>illōs</em></td><td><em>illās</em></td><td><em>illa</em></td></tr>
+              <tr><td>Gen.</td><td><em>illīus</em></td><td><em>illīus</em></td><td><em>illīus</em></td><td><em>illōrum</em></td><td><em>illārum</em></td><td><em>illōrum</em></td></tr>
+              <tr><td>Dat.</td><td><em>illī</em></td><td><em>illī</em></td><td><em>illī</em></td><td><em>illīs</em></td><td><em>illīs</em></td><td><em>illīs</em></td></tr>
+              <tr><td>Abl.</td><td><em>illō</em></td><td><em>illā</em></td><td><em>illō</em></td><td><em>illīs</em></td><td><em>illīs</em></td><td><em>illīs</em></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Key forms to know:</strong> nom. sg. <em>ille/illa/illud</em>; gen. sg. <em>illīus</em>; dat. sg. <em>illī</em>.</p>
+        </div>
+
+        <div id="tab-qui" class="pronoun-panel">
+          <h3>quī, quae, quod — who, which (relative pronoun)</h3>
+          <p>Introduces a relative clause. The pronoun agrees with its antecedent in <strong>gender and number</strong>, but takes its case from its role in the relative clause.</p>
+          <table class="grammar-table">
+            <thead><tr><th>Case</th><th>M.</th><th>F.</th><th>N.</th><th>M. pl.</th><th>F. pl.</th><th>N. pl.</th></tr></thead>
+            <tbody>
+              <tr><td>Nom.</td><td><em>quī</em></td><td><em>quae</em></td><td><em>quod</em></td><td><em>quī</em></td><td><em>quae</em></td><td><em>quae</em></td></tr>
+              <tr><td>Acc.</td><td><em>quem</em></td><td><em>quam</em></td><td><em>quod</em></td><td><em>quōs</em></td><td><em>quās</em></td><td><em>quae</em></td></tr>
+              <tr><td>Gen.</td><td><em>cuius</em></td><td><em>cuius</em></td><td><em>cuius</em></td><td><em>quōrum</em></td><td><em>quārum</em></td><td><em>quōrum</em></td></tr>
+              <tr><td>Dat.</td><td><em>cuī</em></td><td><em>cuī</em></td><td><em>cuī</em></td><td><em>quibus</em></td><td><em>quibus</em></td><td><em>quibus</em></td></tr>
+              <tr><td>Abl.</td><td><em>quō</em></td><td><em>quā</em></td><td><em>quō</em></td><td><em>quibus</em></td><td><em>quibus</em></td><td><em>quibus</em></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Worked example:</strong> <em>Puella <strong>quam</strong> vidēbam pulchra erat.</em> — The girl <strong>whom</strong> I was seeing was beautiful. (<em>quam</em> is feminine acc. sg., agreeing with <em>puella</em>, accusative because it is the object of <em>vidēbam</em>.)</p>
+        </div>
+
+        <div id="tab-ipse" class="pronoun-panel">
+          <h3>ipse, ipsa, ipsum — himself/herself/itself; the very</h3>
+          <p>An intensive pronoun adding emphasis. Not reflexive — it agrees with the noun it modifies (or stands alone for the subject).</p>
+          <table class="grammar-table">
+            <thead><tr><th>Case</th><th>M.</th><th>F.</th><th>N.</th><th>M. pl.</th><th>F. pl.</th><th>N. pl.</th></tr></thead>
+            <tbody>
+              <tr><td>Nom.</td><td><em>ipse</em></td><td><em>ipsa</em></td><td><em>ipsum</em></td><td><em>ipsī</em></td><td><em>ipsae</em></td><td><em>ipsa</em></td></tr>
+              <tr><td>Acc.</td><td><em>ipsum</em></td><td><em>ipsam</em></td><td><em>ipsum</em></td><td><em>ipsōs</em></td><td><em>ipsās</em></td><td><em>ipsa</em></td></tr>
+              <tr><td>Gen.</td><td><em>ipsīus</em></td><td><em>ipsīus</em></td><td><em>ipsīus</em></td><td><em>ipsōrum</em></td><td><em>ipsārum</em></td><td><em>ipsōrum</em></td></tr>
+              <tr><td>Dat.</td><td><em>ipsī</em></td><td><em>ipsī</em></td><td><em>ipsī</em></td><td><em>ipsīs</em></td><td><em>ipsīs</em></td><td><em>ipsīs</em></td></tr>
+              <tr><td>Abl.</td><td><em>ipsō</em></td><td><em>ipsā</em></td><td><em>ipsō</em></td><td><em>ipsīs</em></td><td><em>ipsīs</em></td><td><em>ipsīs</em></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Worked example:</strong> <em>Rēx <strong>ipse</strong> vēnit.</em> — The king <strong>himself</strong> came. / <em>The very king</em> came.</p>
+        </div>
+      </section>
+
+      <!-- Exam Tip -->
+      <div class="exam-tip">
+        <strong>Exam tip:</strong> <em>Huius</em> and <em>illīus</em> (genitive singular, all genders) are the forms most likely to trip you up — they look nothing like 2nd-declension genitives. If you see <em>-ius</em> on a short word in a Latin sentence, think pronoun first. For <em>quī/quae/quod</em>, always ask: what noun is this agreeing with, and what case does it take in its own clause?
+      </div>
+
+      <!-- Exercises -->
+      <section id="exercises">
+        <h2>Practice</h2>
+        <div id="exercise-container"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    // Pronoun tab switching
+    document.querySelectorAll('.pronoun-tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var target = btn.getAttribute('data-tab');
+        document.querySelectorAll('.pronoun-tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.pronoun-panel').forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+
+  <script>
+    (function () {
+      // Fetch exercises and render MCQ
+      fetch('../../data/exercises/gcse-pronouns.json')
+        .then(function(r) { return r.json(); })
+        .then(function(questions) {
+          var container = document.getElementById('exercise-container');
+          if (!container) return;
+          renderExercises(container, questions);
+        });
+
+      function renderExercises(container, pool) {
+        var lastIndex = -1;
+
+        function showQuestion() {
+          var idx;
+          if (pool.length === 1) { idx = 0; }
+          else { do { idx = Math.floor(Math.random() * pool.length); } while (idx === lastIndex); }
+          lastIndex = idx;
+          var q = pool[idx];
+          var shuffled = q.options.slice().sort(function() { return Math.random() - 0.5; });
+          var answered = false;
+
+          container.innerHTML = '<div class="qcheck">'
+            + '<div class="qcheck-header"><p class="qcheck-label">Quick check</p>'
+            + '<span class="qcheck-count">' + (idx + 1) + ' of ' + pool.length + '</span></div>'
+            + '<p class="qcheck-q">' + q.display + '</p>'
+            + '<p style="font-size:0.85rem;color:#4a5568;font-style:italic;">' + q.translation + '</p>'
+            + '<div class="qcheck-opts">'
+            + shuffled.map(function(o) { return '<button class="qcheck-btn" data-val="' + o + '">' + o + '</button>'; }).join('')
+            + '</div>'
+            + '<div class="qcheck-fb" style="display:none"></div>'
+            + '</div>';
+
+          container.querySelectorAll('.qcheck-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              if (answered) return;
+              answered = true;
+              var correct = btn.dataset.val === q.correct;
+              container.querySelectorAll('.qcheck-btn').forEach(function(b) {
+                b.disabled = true;
+                if (b.dataset.val === q.correct) b.classList.add('qcheck-correct');
+                else if (b === btn && !correct) b.classList.add('qcheck-wrong');
+              });
+              var fb = container.querySelector('.qcheck-fb');
+              fb.style.display = 'block';
+              fb.innerHTML = '<p class="' + (correct ? 'fb-correct' : 'fb-wrong') + '">'
+                + (correct ? '\u2713 Correct \u2014 you knew that.' : 'Not yet \u2014 it\u2019s <strong>' + q.correct + '</strong>') + '</p>'
+                + '<p class="fb-explanation">' + q.explanation + '</p>'
+                + (pool.length > 1 ? '<button class="qcheck-next-btn">Try another \u2192</button>' : '');
+              if (pool.length > 1) {
+                fb.querySelector('.qcheck-next-btn').addEventListener('click', showQuestion);
+              }
+            });
+          });
+        }
+
+        showQuestion();
+      }
+    })();
+  </script>
+
+</body>
+</html>
