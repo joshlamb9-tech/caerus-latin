@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GCSE Latin revision — everything for OCR J282 in one place">
+  <meta name="theme-color" content="#1a2744">
+  <title>GCSE Latin &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Auth guard: hide body until session confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../login.html?next=' + encodeURIComponent('gcse/index.html');
+          return;
+        }
+
+        // Always reveal page — GCSE pages tease rather than redirect
+        window.CR_AUTH = { client: client, userId: session.user.id };
+        var guard = document.getElementById('auth-guard');
+        if (guard) guard.remove();
+
+        // Inject sign-out link
+        var nav = document.getElementById('site-nav');
+        if (nav) {
+          var ul = nav.querySelector('ul');
+          if (ul) {
+            var li = document.createElement('li');
+            var a  = document.createElement('a');
+            a.href = '#';
+            a.textContent = 'Sign out';
+            a.style.opacity = '0.65';
+            a.addEventListener('click', function (e) {
+              e.preventDefault();
+              client.auth.signOut().then(function () { window.location.href = '../login.html'; });
+            });
+            li.appendChild(a);
+            ul.appendChild(li);
+          }
+        }
+
+        // Check for latin-gcse grant
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (gr.data && gr.data.length > 0) {
+              // Subscriber hub view
+              window.CR_GCSE_ACCESS = true;
+              document.getElementById('gcse-teaser').style.display   = 'none';
+              document.getElementById('gcse-hub').style.display      = 'block';
+            } else {
+              // Teaser view — check for CE subscription to customise copy
+              window.CR_GCSE_ACCESS = false;
+              document.getElementById('gcse-hub').style.display = 'none';
+              client.from('access_grants')
+                .select('id')
+                .eq('user_id', session.user.id)
+                .eq('product', 'latin')
+                .gt('valid_until', new Date().toISOString())
+                .limit(1)
+                .then(function (ce) {
+                  var hasCE = ce.data && ce.data.length > 0;
+                  var teaser = document.getElementById('gcse-teaser');
+                  teaser.style.display = 'block';
+                  if (hasCE) {
+                    document.getElementById('teaser-headline').textContent =
+                      'You have CE Latin \u2014 upgrade to GCSE';
+                    document.getElementById('teaser-sub').textContent =
+                      'Add the full OCR J282 revision suite for \u00a349.99/year.';
+                  }
+                });
+            }
+          });
+      });
+    })();
+  </script>
+  <style>
+    /* GCSE landing page specific styles */
+    .gcse-hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+
+    .gcse-hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+      color: #1a2744;
+    }
+
+    .gcse-hero p {
+      font-size: 1.15rem;
+      color: #4a5568;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* Teaser overlay */
+    #gcse-teaser {
+      display: none;
+      max-width: 540px;
+      margin: 2rem auto;
+      padding: 2.5rem 2rem;
+      background: #fff;
+      border: 2px solid #c9a84c;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(26,39,68,0.10);
+    }
+
+    #gcse-teaser h2 {
+      font-size: 1.6rem;
+      color: #1a2744;
+      margin-bottom: 0.75rem;
+    }
+
+    #gcse-teaser p {
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+    }
+
+    .gcse-unlock-btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background-color: #c9a84c;
+      color: #1a2744;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+      transition: background-color 0.15s ease;
+    }
+
+    .gcse-unlock-btn:hover {
+      background-color: #b8943e;
+    }
+
+    /* Subscriber hub */
+    #gcse-hub {
+      display: none;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .gcse-section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .gcse-section-card {
+      display: block;
+      padding: 1.25rem;
+      background: #fff;
+      border: 1px solid #e0dbd0;
+      border-radius: 6px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .gcse-section-card:hover {
+      border-color: #c9a84c;
+      box-shadow: 0 2px 10px rgba(26,39,68,0.08);
+    }
+
+    .gcse-section-card h3 {
+      font-size: 1.05rem;
+      color: #1a2744;
+      margin-bottom: 0.3rem;
+    }
+
+    .gcse-section-card p {
+      font-size: 0.9rem;
+      color: #4a5568;
+      margin: 0;
+    }
+
+    .gcse-section-card.coming-soon {
+      opacity: 0.6;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .gcse-coming-badge {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #4a5568;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../how-to-use.html">How to Use</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Learn <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../vocabulary.html">Vocabulary</a></li>
+              <li><a href="../grammar.html">Grammar</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Practise <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../quiz.html">Exercises</a></li>
+              <li><a href="../speed-recall.html">Speed Recall</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Papers <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../papers.html">Past Papers</a></li>
+              <li><a href="../practice-papers.html">Practice Papers</a></li>
+            </ul>
+          </li>
+          <li><a href="../pathway.html">Pathway</a></li>
+          <li><a href="../leaderboard.html">Leaderboard</a></li>
+          <li><a href="index.html" class="nav-gcse-link">GCSE Latin <span class="nav-gcse-badge">GCSE</span></a></li>
+          <li><a href="../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="gcse-hero">
+      <h1>GCSE Latin</h1>
+      <p>Everything for OCR J282 in one place &mdash; vocabulary, grammar, syntax, translation, literature, and mock papers.</p>
+    </section>
+
+    <!-- Teaser: shown to non-subscribers -->
+    <div id="gcse-teaser">
+      <h2 id="teaser-headline">Unlock GCSE Latin</h2>
+      <p id="teaser-sub">Everything you need for OCR J282 &mdash; vocabulary, grammar, syntax, translation, literature, and mock papers &mdash; for &pound;49.99/year.</p>
+      <a href="STRIPE_CHECKOUT_URL_PLACEHOLDER" class="gcse-unlock-btn" id="gcse-unlock-cta">Get GCSE Latin &mdash; &pound;49.99/year</a>
+    </div>
+
+    <!-- Hub: shown to latin-gcse subscribers -->
+    <div id="gcse-hub">
+      <h2 style="text-align:center; margin-bottom:0.25rem;">Your GCSE Latin</h2>
+      <p style="text-align:center; color:#4a5568; margin-bottom:1rem;">OCR J282 revision &mdash; work through the sections in order or jump to what you need.</p>
+
+      <div class="gcse-section-grid">
+
+        <a href="vocabulary.html" class="gcse-section-card coming-soon">
+          <h3>Vocabulary</h3>
+          <p>Full DVL &mdash; 450 words, flashcards, speed recall, GCSE-only filter</p>
+          <span class="gcse-coming-badge">Coming soon</span>
+        </a>
+
+        <a href="grammar.html" class="gcse-section-card coming-soon">
+          <h3>Grammar</h3>
+          <p>4th &amp; 5th declension, passive voice, subjunctive, deponents, gerundive, pronouns</p>
+          <span class="gcse-coming-badge">Coming soon</span>
+        </a>
+
+        <a href="syntax.html" class="gcse-section-card coming-soon">
+          <h3>Syntax</h3>
+          <p>All 10 J282 constructions &mdash; indirect statement, ablative absolute, conditionals, and more</p>
+          <span class="gcse-coming-badge">Coming soon</span>
+        </a>
+
+        <a href="translation.html" class="gcse-section-card coming-soon">
+          <h3>Translation Practice</h3>
+          <p>Unseen passages and English-to-Latin composition sets</p>
+          <span class="gcse-coming-badge">Coming soon</span>
+        </a>
+
+        <a href="literature.html" class="gcse-section-card coming-soon">
+          <h3>Literature</h3>
+          <p>PETE, MANGOES, essay skills, Literature &amp; Culture themes</p>
+          <span class="gcse-coming-badge">Coming soon</span>
+        </a>
+
+        <a href="mock-papers.html" class="gcse-section-card coming-soon">
+          <h3>Mock Papers</h3>
+          <p>4 full J282/01 Language papers with mark schemes</p>
+          <span class="gcse-coming-badge">Coming soon</span>
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
