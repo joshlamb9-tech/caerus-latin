@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: in-progress
-stopped_at: Completed 01-infrastructure/01-01-PLAN.md
-last_updated: "2026-03-23T15:11:00Z"
-last_activity: 2026-03-23 — Completed plan 01-01 (GCSE nav CSS + Supabase setup doc)
+status: executing
+stopped_at: Completed 01-infrastructure/01-02-PLAN.md
+last_updated: "2026-03-23T15:18:11.363Z"
+last_activity: 2026-03-23 — Completed plan 01-02 (GCSE nav injection into all 13 CE pages with standard nav)
 progress:
   total_phases: 7
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 1
-  percent: 5
+  completed_plans: 3
+  percent: 10
 ---
 
 # Project State
@@ -26,28 +26,28 @@ See: .planning/PROJECT.md (updated 2026-03-23)
 ## Current Position
 
 Phase: 1 of 7 (Infrastructure)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-03-23 — Completed plan 01-01 (GCSE nav CSS + Supabase setup doc)
+Last activity: 2026-03-23 — Completed plan 01-02 (GCSE nav injection into all 13 CE pages with standard nav)
 
-Progress: [█░░░░░░░░░] 5%
+Progress: [██░░░░░░░░] 10%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
+- Total plans completed: 2
 - Average duration: 10 min
-- Total execution time: 10 min
+- Total execution time: 20 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-infrastructure | 1 | 10 min | 10 min |
+| 01-infrastructure | 2 | 20 min | 10 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (10 min)
-- Trend: baseline
+- Last 5 plans: 01-01 (10 min), 01-02 (10 min)
+- Trend: stable
 
 *Updated after each plan completion*
 
@@ -61,6 +61,8 @@ Progress: [█░░░░░░░░░] 5%
 - Generic literature tools only in v1 — set texts rotate every 2 years
 - Gold accent (#c9a84c via --color-border) used for GCSE nav — matches existing brand token, differentiates from CE items
 - latin-gcse product gate requires no Supabase schema change — product column is already free-text
+- welcome.html and login.html excluded from nav injection — standalone pages without standard CE nav shell
+- Injection script preserved in scripts/ as reference artifact — idempotent guard ensures safe re-runs
 
 ### Pending Todos
 
@@ -68,10 +70,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- Nav update requires editing every existing CE HTML page — repetitive but straightforward; scope this carefully in Phase 1 plan
+None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T15:11:00Z
-Stopped at: Completed 01-infrastructure/01-01-PLAN.md
-Resume file: .planning/phases/01-infrastructure/01-02-PLAN.md
+Last session: 2026-03-23T15:21:00Z
+Stopped at: Completed 01-infrastructure/01-02-PLAN.md
+Resume file: .planning/phases/01-infrastructure/01-03-PLAN.md

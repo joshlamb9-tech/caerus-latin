@@ -14,7 +14,7 @@
 | ID | Requirement |
 |----|-------------|
 | INFRA-01 | GCSE product gate (`latin-gcse`) in Supabase access_grants |
-| INFRA-02 | GCSE nav section added to all existing pages |
+| INFRA-02 | GCSE nav section added to all existing pages | DONE (01-02) |
 | INFRA-03 | GCSE section landing/home page |
 
 ### Vocabulary

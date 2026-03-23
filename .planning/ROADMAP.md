@@ -29,7 +29,7 @@ This roadmap builds the OCR J282 GCSE Latin section on top of the existing Caeru
 
 Plans:
 - [x] 01-01-PLAN.md — GCSE nav CSS styles + Supabase gate documentation (INFRA-01)
-- [ ] 01-02-PLAN.md — Nav injection script: add GCSE item to all 15 CE pages (INFRA-02)
+- [x] 01-02-PLAN.md — Nav injection script: add GCSE item to all 15 CE pages (INFRA-02)
 - [ ] 01-03-PLAN.md — GCSE landing page with dual-view (sales / subscriber hub) (INFRA-03)
 
 ### Phase 2: Vocabulary
@@ -102,7 +102,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Infrastructure | 1/3 | In progress | - |
+| 1. Infrastructure | 2/3 | In progress | - |
 | 2. Vocabulary | 0/TBD | Not started | - |
 | 3. Grammar (Accidence) | 0/TBD | Not started | - |
 | 4. Syntax | 0/TBD | Not started | - |
