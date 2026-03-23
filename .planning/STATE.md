@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-02 (declensions.html and passive.html — 4th/5th declension and passive voice pages)
-last_updated: "2026-03-23T19:39:18.995Z"
+stopped_at: Completed 03-03 (subjunctive.html and deponents.html — subjunctive mood and deponent verbs pages)
+last_updated: "2026-03-23T19:46:38.736Z"
 last_activity: 2026-03-23 — Completed plan 03-01 (grammar data files — gcse-nouns.json, gcse-verbs.json, 6 exercise JSON files)
 progress:
   total_phases: 7
   completed_phases: 2
   total_plans: 10
-  completed_plans: 7
+  completed_plans: 8
   percent: 20
 ---
 
@@ -53,6 +53,7 @@ Progress: [██░░░░░░░░] 20%
 
 *Updated after each plan completion*
 | Phase 03-grammar-accidence P02 | 46 | 2 tasks | 2 files |
+| Phase 03-grammar-accidence P03 | 4 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,8 @@ Progress: [██░░░░░░░░] 20%
 - [Phase 03-grammar-accidence]: Grammar pages are fully standalone — all JS inline, no external script imports
 - [Phase 03-grammar-accidence]: gcse/grammar/ pages use ../../ relative paths (two levels deeper than gcse/vocabulary.html)
 - [Phase 03-grammar-accidence]: Passive paradigm tables render only the passive indicative group — subjunctive/deponent reserved for later plans
+- [Phase 03-grammar-accidence]: Subjunctive tenses rendered in gcse-verbs.json insertion order — matches pedagogical progression
+- [Phase 03-grammar-accidence]: Deponent meanings table uses present-tense gloss only — simpler and sufficient for parsing
 
 ### Pending Todos
 
@@ -87,6 +90,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T19:39:18.994Z
-Stopped at: Completed 03-02 (declensions.html and passive.html — 4th/5th declension and passive voice pages)
+Last session: 2026-03-23T19:46:38.734Z
+Stopped at: Completed 03-03 (subjunctive.html and deponents.html — subjunctive mood and deponent verbs pages)
 Resume file: None
