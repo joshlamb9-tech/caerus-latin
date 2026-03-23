@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-01 (grammar data files — nouns, verbs, 6 exercise sets)
-last_updated: "2026-03-23T18:00:00.000Z"
+stopped_at: Completed 03-02 (declensions.html and passive.html — 4th/5th declension and passive voice pages)
+last_updated: "2026-03-23T19:39:18.995Z"
 last_activity: 2026-03-23 — Completed plan 03-01 (grammar data files — gcse-nouns.json, gcse-verbs.json, 6 exercise JSON files)
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 10
+  completed_plans: 7
   percent: 20
 ---
 
@@ -52,6 +52,7 @@ Progress: [██░░░░░░░░] 20%
 - Trend: stable
 
 *Updated after each plan completion*
+| Phase 03-grammar-accidence P02 | 46 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -72,6 +73,9 @@ Progress: [██░░░░░░░░] 20%
 - Speed-recall uses 4s countdown + 1.5s reveal per word (simpler than progress bar, adequate for drill)
 - gcse-verbs.json organises tenses by pedagogical group (passive / subjunctive / deponent) rather than by conjugation number — each tense carries explicit voice/mood fields
 - Grammar exercise files follow gap-fill.json schema exactly: 9–11 questions, all 7 fields required, macron Latin throughout
+- [Phase 03-grammar-accidence]: Grammar pages are fully standalone — all JS inline, no external script imports
+- [Phase 03-grammar-accidence]: gcse/grammar/ pages use ../../ relative paths (two levels deeper than gcse/vocabulary.html)
+- [Phase 03-grammar-accidence]: Passive paradigm tables render only the passive indicative group — subjunctive/deponent reserved for later plans
 
 ### Pending Todos
 
@@ -83,6 +87,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T18:00:00.000Z
-Stopped at: Completed 03-01 (grammar data files — nouns, verbs, 6 exercise sets)
-Resume file: .planning/phases/03-grammar-accidence/03-02-PLAN.md
+Last session: 2026-03-23T19:39:18.994Z
+Stopped at: Completed 03-02 (declensions.html and passive.html — 4th/5th declension and passive voice pages)
+Resume file: None
