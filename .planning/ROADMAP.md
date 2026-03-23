@@ -41,7 +41,11 @@ Plans:
   2. A student can filter drills to show only GCSE-new words
   3. A student can practice verb principal parts from the drill interface
   4. Flashcard and speed-recall modes are both functional across the full DVL
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Extend data/vocabulary/all.json to ~450 words with gcse_only tagging and principal_parts (VOC-01)
+- [ ] 02-02-PLAN.md — gcse/vocabulary.html + gcse/js/vocabulary.js: browse, GCSE-new filter, flashcard + speed-recall drill modes (VOC-02)
 
 ### Phase 3: Grammar (Accidence)
 **Goal**: Students can study and practise every accidence topic examined in J282 that goes beyond CE coverage
@@ -103,7 +107,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/3 | In progress | - |
-| 2. Vocabulary | 0/TBD | Not started | - |
+| 2. Vocabulary | 0/2 | Not started | - |
 | 3. Grammar (Accidence) | 0/TBD | Not started | - |
 | 4. Syntax | 0/TBD | Not started | - |
 | 5. Translation Practice | 0/TBD | Not started | - |
