@@ -9,7 +9,7 @@ This roadmap builds the OCR J282 GCSE Latin section on top of the existing Caeru
 - [ ] **Phase 1: Infrastructure** - GCSE product gate, nav, and landing page
 - [x] **Phase 2: Vocabulary** - Extend DVL to 450 words with GCSE drills (completed 2026-03-23)
 - [x] **Phase 3: Grammar (Accidence)** - 4th/5th declension, passive, subjunctive, deponents, gerundive, pronouns (completed 2026-03-23)
-- [ ] **Phase 4: Syntax** - 10 construction pages covering the full J282 syntax syllabus
+- [ ] **Phase 4: Syntax** - 11 construction pages covering the full J282 syntax syllabus
 - [ ] **Phase 5: Translation Practice** - Unseen passage library and English-to-Latin sets
 - [ ] **Phase 6: Literature Tools** - PETE, MANGOES, essay skills, Literature & Culture
 - [ ] **Phase 7: Mock Papers** - 4 full J282/01 papers + "Coming from CE?" orientation
@@ -64,11 +64,16 @@ Plans:
 **Depends on**: Phase 3
 **Requirements**: SYN-01
 **Success Criteria** (what must be TRUE):
-  1. All 10 syntax constructions have individual pages (indirect statement, purpose, result, indirect commands, indirect questions, ablative absolute, temporal/causal/concessive, conditionals, fearing clauses, participles)
+  1. All 10 syntax constructions have individual pages (indirect statement, purpose, result, indirect commands, indirect questions, ablative absolute, temporal/causal/concessive, conditionals, fearing clauses, participles) plus a dedicated sequence-of-tenses reference page and a syntax index hub
   2. Each page explains the construction and provides at least one worked example
-  3. Each page includes a practice element (identification or translation exercise)
-  4. All 10 pages are linked from the GCSE nav
-**Plans**: TBD
+  3. Each page includes a practice element (identification or translation exercise) — except the sequence-of-tenses reference page
+  4. All 11 construction pages are linked from the GCSE nav and from the syntax index hub
+**Plans**: 3 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — 10 exercise JSON files in data/exercises/ (one per construction, 10 questions each) (SYN-01)
+- [ ] 04-02-PLAN.md — gcse/syntax/index.html hub + 5 construction pages: participles, ablative-absolute, indirect-statement, indirect-commands, indirect-questions (SYN-01)
+- [ ] 04-03-PLAN.md — 5 remaining construction pages + sequence-of-tenses reference + gcse/index.html hub card update (SYN-01)
 
 ### Phase 5: Translation Practice
 **Goal**: Students can practise unseen translation and English-to-Latin composition at exam level
@@ -109,7 +114,7 @@ Plans:
 | 1. Infrastructure | 2/3 | In progress | - |
 | 2. Vocabulary | 2/2 | Complete   | 2026-03-23 |
 | 3. Grammar (Accidence) | 5/5 | Complete   | 2026-03-23 |
-| 4. Syntax | 0/TBD | Not started | - |
+| 4. Syntax | 0/3 | Not started | - |
 | 5. Translation Practice | 0/TBD | Not started | - |
 | 6. Literature Tools | 0/TBD | Not started | - |
 | 7. Mock Papers | 0/TBD | Not started | - |
