@@ -13,7 +13,9 @@
       "nature"
     ],
     "frequency_rank": 25,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "ancilla-01",
@@ -29,7 +31,9 @@
       "daily-life"
     ],
     "frequency_rank": 5,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "aqua-01",
@@ -45,7 +49,9 @@
       "nature"
     ],
     "frequency_rank": 12,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "cena-01",
@@ -60,7 +66,9 @@
       "daily-life"
     ],
     "frequency_rank": 14,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "fama-01",
@@ -75,7 +83,9 @@
       "daily-life"
     ],
     "frequency_rank": 24,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "femina-01",
@@ -91,7 +101,9 @@
       "daily-life"
     ],
     "frequency_rank": 3,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "filia-01",
@@ -106,7 +118,9 @@
       "family"
     ],
     "frequency_rank": 18,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "hasta-01",
@@ -121,7 +135,9 @@
       "war/army"
     ],
     "frequency_rank": 22,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "hora-01",
@@ -136,7 +152,9 @@
       "daily-life"
     ],
     "frequency_rank": 40,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "insula-01",
@@ -152,7 +170,9 @@
       "nature"
     ],
     "frequency_rank": 35,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "ira-01",
@@ -167,7 +187,9 @@
       "daily-life"
     ],
     "frequency_rank": 20,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "mora-01",
@@ -183,7 +205,9 @@
       "travel"
     ],
     "frequency_rank": 16,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "nauta-01",
@@ -199,7 +223,9 @@
       "war/army"
     ],
     "frequency_rank": 28,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "patria-01",
@@ -215,7 +241,9 @@
       "daily-life"
     ],
     "frequency_rank": 32,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "poeta-01",
@@ -230,7 +258,9 @@
       "daily-life"
     ],
     "frequency_rank": 50,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "puella-01",
@@ -246,7 +276,9 @@
       "daily-life"
     ],
     "frequency_rank": 4,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "regina-01",
@@ -262,7 +294,9 @@
       "gods"
     ],
     "frequency_rank": 10,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "silva-01",
@@ -278,7 +312,9 @@
       "travel"
     ],
     "frequency_rank": 26,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "terra-01",
@@ -294,7 +330,9 @@
       "travel"
     ],
     "frequency_rank": 15,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "via-01",
@@ -310,7 +348,9 @@
       "daily-life"
     ],
     "frequency_rank": 11,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "villa-01",
@@ -326,7 +366,9 @@
       "family"
     ],
     "frequency_rank": 9,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "vita-01",
@@ -341,7 +383,9 @@
       "daily-life"
     ],
     "frequency_rank": 17,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "domina-01",
@@ -357,7 +401,9 @@
       "daily-life"
     ],
     "frequency_rank": 36,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "turba-01",
@@ -372,7 +418,9 @@
       "daily-life"
     ],
     "frequency_rank": 38,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "unda-01",
@@ -388,7 +436,9 @@
       "travel"
     ],
     "frequency_rank": 43,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "pecunia-01",
@@ -403,7 +453,9 @@
       "daily-life"
     ],
     "frequency_rank": 44,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "epistula-01",
@@ -418,7 +470,9 @@
       "daily-life"
     ],
     "frequency_rank": 46,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "incola-01",
@@ -433,7 +487,9 @@
       "daily-life"
     ],
     "frequency_rank": 48,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "amicus-01",
@@ -449,7 +505,9 @@
       "family"
     ],
     "frequency_rank": 8,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "bellum-01",
@@ -464,7 +522,9 @@
       "war/army"
     ],
     "frequency_rank": 6,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "captivus-01",
@@ -479,7 +539,9 @@
       "war/army"
     ],
     "frequency_rank": 45,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "deus-01",
@@ -494,7 +556,9 @@
       "gods"
     ],
     "frequency_rank": 7,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "dominus-01",
@@ -510,7 +574,9 @@
       "daily-life"
     ],
     "frequency_rank": 7,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "equus-01",
@@ -527,7 +593,9 @@
       "nature"
     ],
     "frequency_rank": 27,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "filius-01",
@@ -542,7 +610,9 @@
       "family"
     ],
     "frequency_rank": 9,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "gladius-01",
@@ -557,7 +627,9 @@
       "war/army"
     ],
     "frequency_rank": 23,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "imperium-01",
@@ -573,7 +645,9 @@
       "gods"
     ],
     "frequency_rank": 16,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "liber-01",
@@ -588,7 +662,9 @@
       "daily-life"
     ],
     "frequency_rank": 49,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "magister-01",
@@ -603,7 +679,9 @@
       "daily-life"
     ],
     "frequency_rank": 31,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "maritus-01",
@@ -618,7 +696,9 @@
       "family"
     ],
     "frequency_rank": 15,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "murus-01",
@@ -634,7 +714,9 @@
       "daily-life"
     ],
     "frequency_rank": 24,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "nuntius-01",
@@ -650,7 +732,9 @@
       "war/army"
     ],
     "frequency_rank": 29,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "oppidum-01",
@@ -666,7 +750,9 @@
       "daily-life"
     ],
     "frequency_rank": 26,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "periculum-01",
@@ -682,7 +768,9 @@
       "travel"
     ],
     "frequency_rank": 33,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "puer-01",
@@ -698,7 +786,9 @@
       "daily-life"
     ],
     "frequency_rank": 6,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "servus-01",
@@ -714,7 +804,9 @@
       "daily-life"
     ],
     "frequency_rank": 2,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "templum-01",
@@ -730,7 +822,9 @@
       "daily-life"
     ],
     "frequency_rank": 28,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "vir-01",
@@ -747,7 +841,9 @@
       "daily-life"
     ],
     "frequency_rank": 8,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "civis-01",
@@ -763,7 +859,9 @@
       "war/army"
     ],
     "frequency_rank": 39,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "dux-01",
@@ -778,7 +876,9 @@
       "war/army"
     ],
     "frequency_rank": 18,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "flumen-01",
@@ -794,7 +894,9 @@
       "travel"
     ],
     "frequency_rank": 19,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "homo-01",
@@ -809,7 +911,9 @@
       "daily-life"
     ],
     "frequency_rank": 21,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "imperator-01",
@@ -825,7 +929,9 @@
       "gods"
     ],
     "frequency_rank": 17,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "miles-01",
@@ -840,7 +946,9 @@
       "war/army"
     ],
     "frequency_rank": 5,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "mors-01",
@@ -856,7 +964,9 @@
       "daily-life"
     ],
     "frequency_rank": 20,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "navis-01",
@@ -872,7 +982,9 @@
       "war/army"
     ],
     "frequency_rank": 23,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "nomen-01",
@@ -887,7 +999,9 @@
       "daily-life"
     ],
     "frequency_rank": 14,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "pars-01",
@@ -903,7 +1017,9 @@
       "travel"
     ],
     "frequency_rank": 32,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "pater-01",
@@ -919,7 +1035,9 @@
       "gods"
     ],
     "frequency_rank": 10,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "rex-01",
@@ -936,7 +1054,9 @@
       "war/army"
     ],
     "frequency_rank": 7,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "urbs-01",
@@ -952,7 +1072,9 @@
       "daily-life"
     ],
     "frequency_rank": 13,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "uxor-01",
@@ -967,7 +1089,9 @@
       "family"
     ],
     "frequency_rank": 11,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "mater-01",
@@ -983,7 +1107,9 @@
       "gods"
     ],
     "frequency_rank": 12,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "frater-01",
@@ -998,7 +1124,9 @@
       "family"
     ],
     "frequency_rank": 24,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "soror-01",
@@ -1013,7 +1141,9 @@
       "family"
     ],
     "frequency_rank": 29,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "hostis-01",
@@ -1028,7 +1158,9 @@
       "war/army"
     ],
     "frequency_rank": 22,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "pax-01",
@@ -1043,7 +1175,9 @@
       "war/army"
     ],
     "frequency_rank": 33,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "corpus-01",
@@ -1058,7 +1192,9 @@
       "daily-life"
     ],
     "frequency_rank": 38,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "iter-01",
@@ -1074,7 +1210,9 @@
       "war/army"
     ],
     "frequency_rank": 34,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "mons-01",
@@ -1090,7 +1228,9 @@
       "travel"
     ],
     "frequency_rank": 41,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "pons-01",
@@ -1106,7 +1246,9 @@
       "war/army"
     ],
     "frequency_rank": 43,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "consilium-01",
@@ -1122,7 +1264,9 @@
       "war/army"
     ],
     "frequency_rank": 13,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "parens-01",
@@ -1137,7 +1281,9 @@
       "family"
     ],
     "frequency_rank": 51,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "vulnus-01",
@@ -1152,7 +1298,9 @@
       "war/army"
     ],
     "frequency_rank": 52,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "socius-01",
@@ -1168,7 +1316,9 @@
       "daily-life"
     ],
     "frequency_rank": 53,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "dea-01",
@@ -1183,7 +1333,9 @@
       "gods"
     ],
     "frequency_rank": 23,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "porta-01",
@@ -1200,7 +1352,9 @@
       "daily-life"
     ],
     "frequency_rank": 30,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "sagitta-01",
@@ -1215,7 +1369,9 @@
       "war/army"
     ],
     "frequency_rank": 45,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "arma-01",
@@ -1230,7 +1386,9 @@
       "war/army"
     ],
     "frequency_rank": 27,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "castra-01",
@@ -1245,7 +1403,9 @@
       "war/army"
     ],
     "frequency_rank": 32,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "cibus-01",
@@ -1261,7 +1421,9 @@
       "daily-life"
     ],
     "frequency_rank": 155,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "ager-01",
@@ -1277,7 +1439,9 @@
       "farm"
     ],
     "frequency_rank": 185,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "amo-01",
@@ -1293,7 +1457,14 @@
       "daily-life"
     ],
     "frequency_rank": 4,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "amo",
+      "amare",
+      "amavi",
+      "amatum"
+    ]
   },
   {
     "id": "ambulo-01",
@@ -1309,7 +1480,14 @@
       "travel"
     ],
     "frequency_rank": 18,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "ambulo",
+      "ambulare",
+      "ambulavi",
+      "ambulatum"
+    ]
   },
   {
     "id": "appropinquo-01",
@@ -1325,7 +1503,14 @@
       "war/army"
     ],
     "frequency_rank": 25,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "appropinquo",
+      "appropinquare",
+      "appropinquavi",
+      "appropinquatum"
+    ]
   },
   {
     "id": "audio-01",
@@ -1340,7 +1525,14 @@
       "daily-life"
     ],
     "frequency_rank": 14,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "audio",
+      "audire",
+      "audivi",
+      "auditum"
+    ]
   },
   {
     "id": "capio-01",
@@ -1356,7 +1548,14 @@
       "daily-life"
     ],
     "frequency_rank": 10,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "capio",
+      "capere",
+      "cepi",
+      "captum"
+    ]
   },
   {
     "id": "canto-01",
@@ -1371,7 +1570,14 @@
       "daily-life"
     ],
     "frequency_rank": 55,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "canto",
+      "cantare",
+      "cantavi",
+      "cantatum"
+    ]
   },
   {
     "id": "celo-01",
@@ -1386,7 +1592,14 @@
       "daily-life"
     ],
     "frequency_rank": 42,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "celo",
+      "celare",
+      "celavi",
+      "celatum"
+    ]
   },
   {
     "id": "clamo-01",
@@ -1402,7 +1615,14 @@
       "war/army"
     ],
     "frequency_rank": 19,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "clamo",
+      "clamare",
+      "clamavi",
+      "clamatum"
+    ]
   },
   {
     "id": "cupio-01",
@@ -1417,7 +1637,14 @@
       "daily-life"
     ],
     "frequency_rank": 12,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "cupio",
+      "cupere",
+      "cupivi",
+      "cupitum"
+    ]
   },
   {
     "id": "curro-01",
@@ -1433,7 +1660,14 @@
       "travel"
     ],
     "frequency_rank": 57,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "curro",
+      "currere",
+      "cucurri",
+      "cursum"
+    ]
   },
   {
     "id": "delet-01",
@@ -1448,7 +1682,14 @@
       "war/army"
     ],
     "frequency_rank": 22,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "deleo",
+      "delere",
+      "delevi",
+      "deletum"
+    ]
   },
   {
     "id": "dico-01",
@@ -1463,7 +1704,14 @@
       "daily-life"
     ],
     "frequency_rank": 59,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "dico",
+      "dicere",
+      "dixi",
+      "dictum"
+    ]
   },
   {
     "id": "discedo-01",
@@ -1479,7 +1727,14 @@
       "daily-life"
     ],
     "frequency_rank": 28,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "discedo",
+      "discedere",
+      "discessi",
+      "discessum"
+    ]
   },
   {
     "id": "do-01",
@@ -1494,7 +1749,14 @@
       "daily-life"
     ],
     "frequency_rank": 9,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "do",
+      "dare",
+      "dedi",
+      "datum"
+    ]
   },
   {
     "id": "duco-01",
@@ -1510,7 +1772,14 @@
       "war/army"
     ],
     "frequency_rank": 16,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "duco",
+      "ducere",
+      "duxi",
+      "ductum"
+    ]
   },
   {
     "id": "eo-01",
@@ -1526,7 +1795,14 @@
       "daily-life"
     ],
     "frequency_rank": 11,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "eo",
+      "ire",
+      "ii",
+      "itum"
+    ]
   },
   {
     "id": "facio-01",
@@ -1541,7 +1817,14 @@
       "daily-life"
     ],
     "frequency_rank": 61,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "facio",
+      "facere",
+      "feci",
+      "factum"
+    ]
   },
   {
     "id": "festino-01",
@@ -1557,7 +1840,14 @@
       "daily-life"
     ],
     "frequency_rank": 20,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "festino",
+      "festinare",
+      "festinavi",
+      "festinatum"
+    ]
   },
   {
     "id": "fugio-01",
@@ -1573,7 +1863,14 @@
       "travel"
     ],
     "frequency_rank": 21,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "fugio",
+      "fugere",
+      "fugi",
+      "fugitum"
+    ]
   },
   {
     "id": "habeo-01",
@@ -1588,7 +1885,14 @@
       "daily-life"
     ],
     "frequency_rank": 5,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "habeo",
+      "habere",
+      "habui",
+      "habitum"
+    ]
   },
   {
     "id": "habito-01",
@@ -1604,7 +1908,14 @@
       "family"
     ],
     "frequency_rank": 13,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "habito",
+      "habitare",
+      "habitavi",
+      "habitatum"
+    ]
   },
   {
     "id": "intro-01",
@@ -1620,7 +1931,14 @@
       "travel"
     ],
     "frequency_rank": 17,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "intro",
+      "intrare",
+      "intravi",
+      "intratum"
+    ]
   },
   {
     "id": "laudo-01",
@@ -1635,7 +1953,14 @@
       "daily-life"
     ],
     "frequency_rank": 63,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "laudo",
+      "laudare",
+      "laudavi",
+      "laudatum"
+    ]
   },
   {
     "id": "maneo-01",
@@ -1651,7 +1976,14 @@
       "travel"
     ],
     "frequency_rank": 27,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "maneo",
+      "manere",
+      "mansi",
+      "mansum"
+    ]
   },
   {
     "id": "mitto-01",
@@ -1667,7 +1999,14 @@
       "daily-life"
     ],
     "frequency_rank": 12,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "mitto",
+      "mittere",
+      "misi",
+      "missum"
+    ]
   },
   {
     "id": "moneo-01",
@@ -1683,7 +2022,14 @@
       "war/army"
     ],
     "frequency_rank": 15,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "moneo",
+      "monere",
+      "monui",
+      "monitum"
+    ]
   },
   {
     "id": "muto-01",
@@ -1698,7 +2044,14 @@
       "daily-life"
     ],
     "frequency_rank": 41,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "muto",
+      "mutare",
+      "mutavi",
+      "mutatum"
+    ]
   },
   {
     "id": "neco-01",
@@ -1713,7 +2066,14 @@
       "war/army"
     ],
     "frequency_rank": 23,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "neco",
+      "necare",
+      "necavi",
+      "necatum"
+    ]
   },
   {
     "id": "nuntio-01",
@@ -1729,7 +2089,14 @@
       "war/army"
     ],
     "frequency_rank": 29,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "nuntio",
+      "nuntiare",
+      "nuntiavi",
+      "nuntiatum"
+    ]
   },
   {
     "id": "paro-01",
@@ -1745,7 +2112,14 @@
       "war/army"
     ],
     "frequency_rank": 8,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "paro",
+      "parare",
+      "paravi",
+      "paratum"
+    ]
   },
   {
     "id": "peto-01",
@@ -1761,7 +2135,14 @@
       "travel"
     ],
     "frequency_rank": 24,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "peto",
+      "petere",
+      "petivi",
+      "petitum"
+    ]
   },
   {
     "id": "porto-01",
@@ -1778,7 +2159,14 @@
       "travel"
     ],
     "frequency_rank": 6,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "porto",
+      "portare",
+      "portavi",
+      "portatum"
+    ]
   },
   {
     "id": "pugno-01",
@@ -1793,7 +2181,14 @@
       "war/army"
     ],
     "frequency_rank": 7,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "pugno",
+      "pugnare",
+      "pugnavi",
+      "pugnatum"
+    ]
   },
   {
     "id": "rego-01",
@@ -1809,7 +2204,14 @@
       "family"
     ],
     "frequency_rank": 16,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "rego",
+      "regere",
+      "rexi",
+      "rectum"
+    ]
   },
   {
     "id": "respondeo-01",
@@ -1824,7 +2226,14 @@
       "daily-life"
     ],
     "frequency_rank": 32,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "respondeo",
+      "respondere",
+      "respondi",
+      "responsum"
+    ]
   },
   {
     "id": "rogo-01",
@@ -1839,7 +2248,14 @@
       "daily-life"
     ],
     "frequency_rank": 26,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "rogo",
+      "rogare",
+      "rogavi",
+      "rogatum"
+    ]
   },
   {
     "id": "scribo-01",
@@ -1854,7 +2270,14 @@
       "daily-life"
     ],
     "frequency_rank": 65,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "scribo",
+      "scribere",
+      "scripsi",
+      "scriptum"
+    ]
   },
   {
     "id": "specto-01",
@@ -1869,7 +2292,14 @@
       "daily-life"
     ],
     "frequency_rank": 34,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "specto",
+      "spectare",
+      "spectavi",
+      "spectatum"
+    ]
   },
   {
     "id": "timeo-01",
@@ -1885,7 +2315,14 @@
       "daily-life"
     ],
     "frequency_rank": 13,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "timeo",
+      "timere",
+      "timui",
+      null
+    ]
   },
   {
     "id": "voco-01",
@@ -1901,7 +2338,14 @@
       "family"
     ],
     "frequency_rank": 10,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "voco",
+      "vocare",
+      "vocavi",
+      "vocatum"
+    ]
   },
   {
     "id": "video-01",
@@ -1916,7 +2360,14 @@
       "daily-life"
     ],
     "frequency_rank": 3,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "video",
+      "videre",
+      "vidi",
+      "visum"
+    ]
   },
   {
     "id": "venio-01",
@@ -1932,7 +2383,14 @@
       "daily-life"
     ],
     "frequency_rank": 6,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "venio",
+      "venire",
+      "veni",
+      "ventum"
+    ]
   },
   {
     "id": "sum-01",
@@ -1947,7 +2405,14 @@
       "daily-life"
     ],
     "frequency_rank": 1,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "sum",
+      "esse",
+      "fui",
+      null
+    ]
   },
   {
     "id": "possum-01",
@@ -1962,7 +2427,14 @@
       "daily-life"
     ],
     "frequency_rank": 67,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": [
+      "possum",
+      "posse",
+      "potui",
+      null
+    ]
   },
   {
     "id": "constituo-01",
@@ -1978,7 +2450,14 @@
       "war/army"
     ],
     "frequency_rank": 54,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "constituo",
+      "constituere",
+      "constitui",
+      "constitutum"
+    ]
   },
   {
     "id": "pello-01",
@@ -1993,7 +2472,14 @@
       "war/army"
     ],
     "frequency_rank": 56,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "pello",
+      "pellere",
+      "pepuli",
+      "pulsum"
+    ]
   },
   {
     "id": "supero-01",
@@ -2009,7 +2495,14 @@
       "travel"
     ],
     "frequency_rank": 58,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "supero",
+      "superare",
+      "superavi",
+      "superatum"
+    ]
   },
   {
     "id": "fero-01",
@@ -2025,7 +2518,14 @@
       "war/army"
     ],
     "frequency_rank": 60,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "fero",
+      "ferre",
+      "tuli",
+      "latum"
+    ]
   },
   {
     "id": "revenio-01",
@@ -2041,7 +2541,14 @@
       "daily-life"
     ],
     "frequency_rank": 62,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": [
+      "revenio",
+      "revenire",
+      "revenii",
+      "reventum"
+    ]
   },
   {
     "id": "bonus-01",
@@ -2056,7 +2563,9 @@
       "daily-life"
     ],
     "frequency_rank": 5,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "malus-01",
@@ -2072,7 +2581,9 @@
       "war/army"
     ],
     "frequency_rank": 8,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "magnus-01",
@@ -2088,7 +2599,9 @@
       "war/army"
     ],
     "frequency_rank": 3,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "parvus-01",
@@ -2103,7 +2616,9 @@
       "daily-life"
     ],
     "frequency_rank": 16,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "multus-01",
@@ -2118,7 +2633,9 @@
       "daily-life"
     ],
     "frequency_rank": 9,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "pulcher-01",
@@ -2133,7 +2650,9 @@
       "daily-life"
     ],
     "frequency_rank": 22,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "saevus-01",
@@ -2149,7 +2668,9 @@
       "daily-life"
     ],
     "frequency_rank": 14,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "laetus-01",
@@ -2164,7 +2685,9 @@
       "daily-life"
     ],
     "frequency_rank": 17,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "miser-01",
@@ -2179,7 +2702,9 @@
       "daily-life"
     ],
     "frequency_rank": 18,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "iratus-01",
@@ -2194,7 +2719,9 @@
       "daily-life"
     ],
     "frequency_rank": 19,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "omnis-01",
@@ -2209,7 +2736,9 @@
       "daily-life"
     ],
     "frequency_rank": 11,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "fortis-01",
@@ -2224,7 +2753,9 @@
       "war/army"
     ],
     "frequency_rank": 21,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "altus-01",
@@ -2240,7 +2771,9 @@
       "daily-life"
     ],
     "frequency_rank": 69,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "clarus-01",
@@ -2255,7 +2788,9 @@
       "daily-life"
     ],
     "frequency_rank": 71,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "novus-01",
@@ -2270,7 +2805,9 @@
       "daily-life"
     ],
     "frequency_rank": 73,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "notus-01",
@@ -2285,7 +2822,9 @@
       "daily-life"
     ],
     "frequency_rank": 75,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "sacer-01",
@@ -2301,7 +2840,9 @@
       "daily-life"
     ],
     "frequency_rank": 77,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "tutus-01",
@@ -2317,7 +2858,9 @@
       "war/army"
     ],
     "frequency_rank": 79,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "validus-01",
@@ -2333,7 +2876,9 @@
       "war/army"
     ],
     "frequency_rank": 81,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "fessus-01",
@@ -2349,7 +2894,9 @@
       "war/army"
     ],
     "frequency_rank": 42,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "audax-01",
@@ -2365,7 +2912,9 @@
       "daily-life"
     ],
     "frequency_rank": 44,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "celer-01",
@@ -2381,7 +2930,9 @@
       "travel"
     ],
     "frequency_rank": 45,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "et-01",
@@ -2396,7 +2947,9 @@
       "daily-life"
     ],
     "frequency_rank": 1,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "sed-01",
@@ -2411,7 +2964,9 @@
       "daily-life"
     ],
     "frequency_rank": 4,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "aut-01",
@@ -2426,7 +2981,9 @@
       "daily-life"
     ],
     "frequency_rank": 15,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "quod-01",
@@ -2441,7 +2998,9 @@
       "daily-life"
     ],
     "frequency_rank": 10,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "nam-01",
@@ -2456,7 +3015,9 @@
       "daily-life"
     ],
     "frequency_rank": 13,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "tamen-01",
@@ -2471,7 +3032,9 @@
       "daily-life"
     ],
     "frequency_rank": 9,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "igitur-01",
@@ -2486,7 +3049,9 @@
       "daily-life"
     ],
     "frequency_rank": 12,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "itaque-01",
@@ -2501,7 +3066,9 @@
       "daily-life"
     ],
     "frequency_rank": 16,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "postquam-01",
@@ -2516,7 +3083,9 @@
       "daily-life"
     ],
     "frequency_rank": 18,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "ubi-01",
@@ -2532,7 +3101,9 @@
       "travel"
     ],
     "frequency_rank": 14,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "ad-01",
@@ -2548,7 +3119,9 @@
       "daily-life"
     ],
     "frequency_rank": 2,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "contra-01",
@@ -2564,7 +3137,9 @@
       "daily-life"
     ],
     "frequency_rank": 11,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "cum-01",
@@ -2579,7 +3154,9 @@
       "daily-life"
     ],
     "frequency_rank": 6,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "de-01",
@@ -2594,7 +3171,9 @@
       "daily-life"
     ],
     "frequency_rank": 14,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "e-01",
@@ -2610,7 +3189,9 @@
       "daily-life"
     ],
     "frequency_rank": 8,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "in-01",
@@ -2626,7 +3207,9 @@
       "travel"
     ],
     "frequency_rank": 3,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "per-01",
@@ -2642,7 +3225,9 @@
       "daily-life"
     ],
     "frequency_rank": 10,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "post-01",
@@ -2658,7 +3243,9 @@
       "travel"
     ],
     "frequency_rank": 13,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "pro-01",
@@ -2674,7 +3261,9 @@
       "daily-life"
     ],
     "frequency_rank": 15,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "propter-01",
@@ -2689,7 +3278,9 @@
       "daily-life"
     ],
     "frequency_rank": 20,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "sine-01",
@@ -2704,7 +3295,9 @@
       "daily-life"
     ],
     "frequency_rank": 17,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "sub-01",
@@ -2720,7 +3313,9 @@
       "nature"
     ],
     "frequency_rank": 22,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "trans-01",
@@ -2735,7 +3330,9 @@
       "travel"
     ],
     "frequency_rank": 19,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "bene-01",
@@ -2750,7 +3347,9 @@
       "daily-life"
     ],
     "frequency_rank": 11,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "celeriter-01",
@@ -2766,7 +3365,9 @@
       "travel"
     ],
     "frequency_rank": 14,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "deinde-01",
@@ -2781,7 +3382,9 @@
       "daily-life"
     ],
     "frequency_rank": 16,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "diu-01",
@@ -2796,7 +3399,9 @@
       "daily-life"
     ],
     "frequency_rank": 12,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "fortiter-01",
@@ -2812,7 +3417,9 @@
       "daily-life"
     ],
     "frequency_rank": 83,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "hic-01",
@@ -2828,7 +3435,9 @@
       "daily-life"
     ],
     "frequency_rank": 18,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "ibi-01",
@@ -2844,7 +3453,9 @@
       "daily-life"
     ],
     "frequency_rank": 85,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "iam-01",
@@ -2859,7 +3470,9 @@
       "daily-life"
     ],
     "frequency_rank": 9,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "iterum-01",
@@ -2874,7 +3487,9 @@
       "daily-life"
     ],
     "frequency_rank": 87,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "magnopere-01",
@@ -2889,7 +3504,9 @@
       "daily-life"
     ],
     "frequency_rank": 15,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "mox-01",
@@ -2904,7 +3521,9 @@
       "daily-life"
     ],
     "frequency_rank": 17,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "non-01",
@@ -2919,7 +3538,9 @@
       "daily-life"
     ],
     "frequency_rank": 2,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "numquam-01",
@@ -2934,7 +3555,9 @@
       "daily-life"
     ],
     "frequency_rank": 89,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "nunc-01",
@@ -2949,7 +3572,9 @@
       "daily-life"
     ],
     "frequency_rank": 13,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "olim-01",
@@ -2964,7 +3589,9 @@
       "daily-life"
     ],
     "frequency_rank": 10,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "saepe-01",
@@ -2979,7 +3606,9 @@
       "daily-life"
     ],
     "frequency_rank": 8,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "semper-01",
@@ -2994,7 +3623,9 @@
       "daily-life"
     ],
     "frequency_rank": 7,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "statim-01",
@@ -3009,7 +3640,9 @@
       "daily-life"
     ],
     "frequency_rank": 6,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "subito-01",
@@ -3025,7 +3658,9 @@
       "war/army"
     ],
     "frequency_rank": 20,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "tandem-01",
@@ -3040,7 +3675,9 @@
       "daily-life"
     ],
     "frequency_rank": 21,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "hic-02",
@@ -3055,7 +3692,9 @@
       "daily-life"
     ],
     "frequency_rank": 5,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "ego-01",
@@ -3070,7 +3709,9 @@
       "daily-life"
     ],
     "frequency_rank": 7,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "is-01",
@@ -3085,7 +3726,9 @@
       "daily-life"
     ],
     "frequency_rank": 4,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "qui-01",
@@ -3100,7 +3743,9 @@
       "daily-life"
     ],
     "frequency_rank": 6,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "cur-01",
@@ -3115,7 +3760,9 @@
       "daily-life"
     ],
     "frequency_rank": 91,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "quid-01",
@@ -3130,7 +3777,9 @@
       "daily-life"
     ],
     "frequency_rank": 93,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "quis-01",
@@ -3145,7 +3794,9 @@
       "daily-life"
     ],
     "frequency_rank": 95,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "unus-01",
@@ -3160,7 +3811,9 @@
       "daily-life"
     ],
     "frequency_rank": 25,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "duo-01",
@@ -3175,7 +3828,9 @@
       "daily-life"
     ],
     "frequency_rank": 28,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "tres-01",
@@ -3190,7 +3845,9 @@
       "daily-life"
     ],
     "frequency_rank": 31,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "quattuor-01",
@@ -3205,7 +3862,9 @@
       "daily-life"
     ],
     "frequency_rank": 40,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "quinque-01",
@@ -3220,7 +3879,9 @@
       "daily-life"
     ],
     "frequency_rank": 42,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "decem-01",
@@ -3235,7 +3896,9 @@
       "daily-life"
     ],
     "frequency_rank": 44,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "etiam-01",
@@ -3250,7 +3913,9 @@
       "daily-life"
     ],
     "frequency_rank": 13,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "Graecia-01",
@@ -3265,7 +3930,9 @@
       "places"
     ],
     "frequency_rank": 55,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "Graecus-01",
@@ -3281,7 +3948,9 @@
       "daily-life"
     ],
     "frequency_rank": 56,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "meus-01",
@@ -3297,7 +3966,9 @@
       "family"
     ],
     "frequency_rank": 57,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "noster-01",
@@ -3313,7 +3984,9 @@
       "family"
     ],
     "frequency_rank": 58,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "Roma-01",
@@ -3328,7 +4001,9 @@
       "places"
     ],
     "frequency_rank": 59,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "Romanus-01",
@@ -3345,7 +4020,9 @@
       "daily-life"
     ],
     "frequency_rank": 60,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "sic-01",
@@ -3360,7 +4037,9 @@
       "daily-life"
     ],
     "frequency_rank": 61,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "suus-01",
@@ -3376,7 +4055,9 @@
       "family"
     ],
     "frequency_rank": 62,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "Troia-01",
@@ -3391,7 +4072,9 @@
       "places"
     ],
     "frequency_rank": 63,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "Troianus-01",
@@ -3407,7 +4090,9 @@
       "war/army"
     ],
     "frequency_rank": 64,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "tuus-01",
@@ -3423,7 +4108,9 @@
       "family"
     ],
     "frequency_rank": 65,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "vester-01",
@@ -3439,7 +4126,9 @@
       "family"
     ],
     "frequency_rank": 66,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "vinum-01",
@@ -3455,7 +4144,9 @@
       "daily-life"
     ],
     "frequency_rank": 67,
-    "level": 1
+    "level": 1,
+    "gcse_only": false,
+    "principal_parts": null
   },
   {
     "id": "quamquam-01",
@@ -3470,6 +4161,4209 @@
       "daily-life"
     ],
     "frequency_rank": 19,
-    "level": 2
+    "level": 2,
+    "gcse_only": false,
+    "principal_parts": null
+  },
+  {
+    "id": "adventus-gcse",
+    "latin": "adventus",
+    "genitive": "adventus",
+    "gender": "m",
+    "english": "arrival",
+    "part_of_speech": "noun",
+    "declension": 4,
+    "conjugation": null,
+    "topics": [
+      "travel"
+    ],
+    "frequency_rank": 300,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "animus-gcse",
+    "latin": "animus",
+    "genitive": "animi",
+    "gender": "m",
+    "english": "mind, spirit, courage",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "emotions"
+    ],
+    "frequency_rank": 301,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "auxilium-gcse",
+    "latin": "auxilium",
+    "genitive": "auxilii",
+    "gender": "n",
+    "english": "help, aid",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 303,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "caedes-gcse",
+    "latin": "caedes",
+    "genitive": "caedis",
+    "gender": "f",
+    "english": "slaughter, murder",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "crime"
+    ],
+    "frequency_rank": 304,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "caelum-gcse",
+    "latin": "caelum",
+    "genitive": "caeli",
+    "gender": "n",
+    "english": "sky, heaven",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "nature",
+      "religion"
+    ],
+    "frequency_rank": 305,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "clamor-gcse",
+    "latin": "clamor",
+    "genitive": "clamoris",
+    "gender": "m",
+    "english": "shout, outcry",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "war/army"
+    ],
+    "frequency_rank": 306,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "copiae-gcse",
+    "latin": "copiae",
+    "genitive": "copiarum",
+    "gender": "f",
+    "english": "forces, troops; supplies",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 308,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "corona-gcse",
+    "latin": "corona",
+    "genitive": "coronae",
+    "gender": "f",
+    "english": "crown, garland",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "religion",
+      "daily-life"
+    ],
+    "frequency_rank": 309,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "custos-gcse",
+    "latin": "custos",
+    "genitive": "custodis",
+    "gender": "m",
+    "english": "guard, guardian",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 311,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "dies-gcse",
+    "latin": "dies",
+    "genitive": "diei",
+    "gender": "m",
+    "english": "day",
+    "part_of_speech": "noun",
+    "declension": 5,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 313,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "domus-gcse",
+    "latin": "domus",
+    "genitive": "domus",
+    "gender": "f",
+    "english": "house, home",
+    "part_of_speech": "noun",
+    "declension": 4,
+    "conjugation": null,
+    "topics": [
+      "buildings",
+      "daily-life"
+    ],
+    "frequency_rank": 314,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "exercitus-gcse",
+    "latin": "exercitus",
+    "genitive": "exercitus",
+    "gender": "m",
+    "english": "army",
+    "part_of_speech": "noun",
+    "declension": 4,
+    "conjugation": null,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 315,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "fides-gcse",
+    "latin": "fides",
+    "genitive": "fidei",
+    "gender": "f",
+    "english": "faith, loyalty, trust",
+    "part_of_speech": "noun",
+    "declension": 5,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "frequency_rank": 316,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "fuga-gcse",
+    "latin": "fuga",
+    "genitive": "fugae",
+    "gender": "f",
+    "english": "flight, escape",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "travel"
+    ],
+    "frequency_rank": 317,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "gloria-gcse",
+    "latin": "gloria",
+    "genitive": "gloriae",
+    "gender": "f",
+    "english": "glory, fame",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "emotions"
+    ],
+    "frequency_rank": 319,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "laus-gcse",
+    "latin": "laus",
+    "genitive": "laudis",
+    "gender": "f",
+    "english": "praise, glory",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "war/army"
+    ],
+    "frequency_rank": 322,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "lex-gcse",
+    "latin": "lex",
+    "genitive": "legis",
+    "gender": "f",
+    "english": "law",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "crime",
+      "daily-life"
+    ],
+    "frequency_rank": 323,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "lux-gcse",
+    "latin": "lux",
+    "genitive": "lucis",
+    "gender": "f",
+    "english": "light",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "nature",
+      "daily-life"
+    ],
+    "frequency_rank": 324,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "manus-gcse",
+    "latin": "manus",
+    "genitive": "manus",
+    "gender": "f",
+    "english": "hand; band of men",
+    "part_of_speech": "noun",
+    "declension": 4,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 325,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "mos-gcse",
+    "latin": "mos",
+    "genitive": "moris",
+    "gender": "m",
+    "english": "custom, habit; (pl.) morals",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "religion"
+    ],
+    "frequency_rank": 328,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "nox-gcse",
+    "latin": "nox",
+    "genitive": "noctis",
+    "gender": "f",
+    "english": "night",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "nature"
+    ],
+    "frequency_rank": 331,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "odium-gcse",
+    "latin": "odium",
+    "genitive": "odii",
+    "gender": "n",
+    "english": "hatred",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "emotions"
+    ],
+    "frequency_rank": 332,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ops-gcse",
+    "latin": "ops",
+    "genitive": "opis",
+    "gender": "f",
+    "english": "help, power; (pl.) resources, wealth",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 333,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "oratio-gcse",
+    "latin": "oratio",
+    "genitive": "orationis",
+    "gender": "f",
+    "english": "speech",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 334,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "pes-gcse",
+    "latin": "pes",
+    "genitive": "pedis",
+    "gender": "m",
+    "english": "foot",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 338,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "poena-gcse",
+    "latin": "poena",
+    "genitive": "poenae",
+    "gender": "f",
+    "english": "punishment, penalty",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "crime",
+      "daily-life"
+    ],
+    "frequency_rank": 339,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "potestas-gcse",
+    "latin": "potestas",
+    "genitive": "potestatis",
+    "gender": "f",
+    "english": "power, authority",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 341,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "proelium-gcse",
+    "latin": "proelium",
+    "genitive": "proelii",
+    "gender": "n",
+    "english": "battle",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 342,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ratio-gcse",
+    "latin": "ratio",
+    "genitive": "rationis",
+    "gender": "f",
+    "english": "reason, method, account",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 343,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "regnum-gcse",
+    "latin": "regnum",
+    "genitive": "regni",
+    "gender": "n",
+    "english": "kingdom, rule",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 344,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "res-gcse",
+    "latin": "res",
+    "genitive": "rei",
+    "gender": "f",
+    "english": "thing, matter, affair",
+    "part_of_speech": "noun",
+    "declension": 5,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 345,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "salus-gcse",
+    "latin": "salus",
+    "genitive": "salutis",
+    "gender": "f",
+    "english": "safety, health, greeting",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 346,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "senatus-gcse",
+    "latin": "senatus",
+    "genitive": "senatus",
+    "gender": "m",
+    "english": "senate",
+    "part_of_speech": "noun",
+    "declension": 4,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 347,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "signum-gcse",
+    "latin": "signum",
+    "genitive": "signi",
+    "gender": "n",
+    "english": "sign, signal, standard",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 348,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "spes-gcse",
+    "latin": "spes",
+    "genitive": "spei",
+    "gender": "f",
+    "english": "hope",
+    "part_of_speech": "noun",
+    "declension": 5,
+    "conjugation": null,
+    "topics": [
+      "emotions"
+    ],
+    "frequency_rank": 349,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "tempus-gcse",
+    "latin": "tempus",
+    "genitive": "temporis",
+    "gender": "n",
+    "english": "time",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 350,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "timor-gcse",
+    "latin": "timor",
+    "genitive": "timoris",
+    "gender": "m",
+    "english": "fear",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions"
+    ],
+    "frequency_rank": 351,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "virtus-gcse",
+    "latin": "virtus",
+    "genitive": "virtutis",
+    "gender": "f",
+    "english": "courage, virtue",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "emotions"
+    ],
+    "frequency_rank": 353,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "vis-gcse",
+    "latin": "vis",
+    "genitive": "(vis)",
+    "gender": "f",
+    "english": "force, violence; (pl.) strength",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 354,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "accipio-gcse",
+    "latin": "accipio",
+    "genitive": null,
+    "gender": null,
+    "english": "I receive, accept",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 356,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "accipio",
+      "accipere",
+      "accepi",
+      "acceptum"
+    ]
+  },
+  {
+    "id": "adsum-gcse",
+    "latin": "adsum",
+    "genitive": null,
+    "gender": null,
+    "english": "I am present, am near",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 357,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "adsum",
+      "adesse",
+      "adfui",
+      null
+    ]
+  },
+  {
+    "id": "ago-gcse",
+    "latin": "ago",
+    "genitive": null,
+    "gender": null,
+    "english": "I do, drive, lead",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 358,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "ago",
+      "agere",
+      "egi",
+      "actum"
+    ]
+  },
+  {
+    "id": "ascendo-gcse",
+    "latin": "ascendo",
+    "genitive": null,
+    "gender": null,
+    "english": "I climb, go up",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
+    "frequency_rank": 359,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "ascendo",
+      "ascendere",
+      "ascendi",
+      "ascensum"
+    ]
+  },
+  {
+    "id": "cado-gcse",
+    "latin": "cado",
+    "genitive": null,
+    "gender": null,
+    "english": "I fall",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 360,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "cado",
+      "cadere",
+      "cecidi",
+      "casum"
+    ]
+  },
+  {
+    "id": "caedo-gcse",
+    "latin": "caedo",
+    "genitive": null,
+    "gender": null,
+    "english": "I cut down, kill",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "crime"
+    ],
+    "frequency_rank": 361,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "caedo",
+      "caedere",
+      "cecidi",
+      "caesum"
+    ]
+  },
+  {
+    "id": "cogo-gcse",
+    "latin": "cogo",
+    "genitive": null,
+    "gender": null,
+    "english": "I force, compel, collect",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 362,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "cogo",
+      "cogere",
+      "coegi",
+      "coactum"
+    ]
+  },
+  {
+    "id": "descendo-gcse",
+    "latin": "descendo",
+    "genitive": null,
+    "gender": null,
+    "english": "I climb down, descend",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
+    "frequency_rank": 364,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "descendo",
+      "descendere",
+      "descendi",
+      "descensum"
+    ]
+  },
+  {
+    "id": "desero-gcse",
+    "latin": "desero",
+    "genitive": null,
+    "gender": null,
+    "english": "I desert, abandon",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "emotions"
+    ],
+    "frequency_rank": 365,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "desero",
+      "deserere",
+      "deserui",
+      "desertum"
+    ]
+  },
+  {
+    "id": "dono-gcse",
+    "latin": "dono",
+    "genitive": null,
+    "gender": null,
+    "english": "I give as a gift, present",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 366,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "dono",
+      "donare",
+      "donavi",
+      "donatum"
+    ]
+  },
+  {
+    "id": "expello-gcse",
+    "latin": "expello",
+    "genitive": null,
+    "gender": null,
+    "english": "I drive out, expel",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 367,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "expello",
+      "expellere",
+      "expuli",
+      "expulsum"
+    ]
+  },
+  {
+    "id": "gero-gcse",
+    "latin": "gero",
+    "genitive": null,
+    "gender": null,
+    "english": "I carry on, wage, wear",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 368,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "gero",
+      "gerere",
+      "gessi",
+      "gestum"
+    ]
+  },
+  {
+    "id": "impero-gcse",
+    "latin": "impero",
+    "genitive": null,
+    "gender": null,
+    "english": "I order, command (+ dat.)",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 369,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "impero",
+      "imperare",
+      "imperavi",
+      "imperatum"
+    ]
+  },
+  {
+    "id": "incendo-gcse",
+    "latin": "incendo",
+    "genitive": null,
+    "gender": null,
+    "english": "I set on fire, burn",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 370,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "incendo",
+      "incendere",
+      "incendi",
+      "incensum"
+    ]
+  },
+  {
+    "id": "interficio-gcse",
+    "latin": "interficio",
+    "genitive": null,
+    "gender": null,
+    "english": "I kill",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "crime"
+    ],
+    "frequency_rank": 371,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "interficio",
+      "interficere",
+      "interfeci",
+      "interfectum"
+    ]
+  },
+  {
+    "id": "invenio-gcse",
+    "latin": "invenio",
+    "genitive": null,
+    "gender": null,
+    "english": "I find, come upon",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 4,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 372,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "invenio",
+      "invenire",
+      "inveni",
+      "inventum"
+    ]
+  },
+  {
+    "id": "moror-gcse",
+    "latin": "moror",
+    "genitive": null,
+    "gender": null,
+    "english": "I delay, linger",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 373,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "moror",
+      "morari",
+      "moratus sum",
+      null
+    ]
+  },
+  {
+    "id": "nascor-gcse",
+    "latin": "nascor",
+    "genitive": null,
+    "gender": null,
+    "english": "I am born",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "family",
+      "daily-life"
+    ],
+    "frequency_rank": 374,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "nascor",
+      "nasci",
+      "natus sum",
+      null
+    ]
+  },
+  {
+    "id": "neglego-gcse",
+    "latin": "neglego",
+    "genitive": null,
+    "gender": null,
+    "english": "I neglect, disregard",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 375,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "neglego",
+      "neglegere",
+      "neglexi",
+      "neglectum"
+    ]
+  },
+  {
+    "id": "nolo-gcse",
+    "latin": "nolo",
+    "genitive": null,
+    "gender": null,
+    "english": "I am unwilling, do not want",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 376,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "nolo",
+      "nolle",
+      "nolui",
+      null
+    ]
+  },
+  {
+    "id": "occido-gcse",
+    "latin": "occido",
+    "genitive": null,
+    "gender": null,
+    "english": "I kill, cut down",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "crime"
+    ],
+    "frequency_rank": 377,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "occido",
+      "occidere",
+      "occidi",
+      "occisum"
+    ]
+  },
+  {
+    "id": "oppugno-gcse",
+    "latin": "oppugno",
+    "genitive": null,
+    "gender": null,
+    "english": "I attack, besiege",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 378,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "oppugno",
+      "oppugnare",
+      "oppugnavi",
+      "oppugnatum"
+    ]
+  },
+  {
+    "id": "oro-gcse",
+    "latin": "oro",
+    "genitive": null,
+    "gender": null,
+    "english": "I beg, pray",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "religion",
+      "emotions"
+    ],
+    "frequency_rank": 379,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "oro",
+      "orare",
+      "oravi",
+      "oratum"
+    ]
+  },
+  {
+    "id": "pereo-gcse",
+    "latin": "pereo",
+    "genitive": null,
+    "gender": null,
+    "english": "I perish, die",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 380,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "pereo",
+      "perire",
+      "perii",
+      "peritum"
+    ]
+  },
+  {
+    "id": "persuadeo-gcse",
+    "latin": "persuadeo",
+    "genitive": null,
+    "gender": null,
+    "english": "I persuade (+ dat.)",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 381,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "persuadeo",
+      "persuadere",
+      "persuasi",
+      "persuasum"
+    ]
+  },
+  {
+    "id": "pono-gcse",
+    "latin": "pono",
+    "genitive": null,
+    "gender": null,
+    "english": "I put, place",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 382,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "pono",
+      "ponere",
+      "posui",
+      "positum"
+    ]
+  },
+  {
+    "id": "proficiscor-gcse",
+    "latin": "proficiscor",
+    "genitive": null,
+    "gender": null,
+    "english": "I set out, depart",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "travel",
+      "war/army"
+    ],
+    "frequency_rank": 383,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "proficiscor",
+      "proficisci",
+      "profectus sum",
+      null
+    ]
+  },
+  {
+    "id": "progredior-gcse",
+    "latin": "progredior",
+    "genitive": null,
+    "gender": null,
+    "english": "I advance, go forward",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "travel"
+    ],
+    "frequency_rank": 384,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "progredior",
+      "progredi",
+      "progressus sum",
+      null
+    ]
+  },
+  {
+    "id": "prohibeo-gcse",
+    "latin": "prohibeo",
+    "genitive": null,
+    "gender": null,
+    "english": "I prevent, forbid",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 385,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "prohibeo",
+      "prohibere",
+      "prohibui",
+      "prohibitum"
+    ]
+  },
+  {
+    "id": "promitto-gcse",
+    "latin": "promitto",
+    "genitive": null,
+    "gender": null,
+    "english": "I promise",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 386,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "promitto",
+      "promittere",
+      "promisi",
+      "promissum"
+    ]
+  },
+  {
+    "id": "redeo-gcse",
+    "latin": "redeo",
+    "genitive": null,
+    "gender": null,
+    "english": "I return, go back",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
+    "frequency_rank": 387,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "redeo",
+      "redire",
+      "redii",
+      "reditum"
+    ]
+  },
+  {
+    "id": "sequor-gcse",
+    "latin": "sequor",
+    "genitive": null,
+    "gender": null,
+    "english": "I follow",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 389,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "sequor",
+      "sequi",
+      "secutus sum",
+      null
+    ]
+  },
+  {
+    "id": "servo-gcse",
+    "latin": "servo",
+    "genitive": null,
+    "gender": null,
+    "english": "I save, keep, guard",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 390,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "servo",
+      "servare",
+      "servavi",
+      "servatum"
+    ]
+  },
+  {
+    "id": "solvo-gcse",
+    "latin": "solvo",
+    "genitive": null,
+    "gender": null,
+    "english": "I loosen, pay, set sail",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 391,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "solvo",
+      "solvere",
+      "solvi",
+      "solutum"
+    ]
+  },
+  {
+    "id": "statuo-gcse",
+    "latin": "statuo",
+    "genitive": null,
+    "gender": null,
+    "english": "I decide, establish",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 392,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "statuo",
+      "statuere",
+      "statui",
+      "statutum"
+    ]
+  },
+  {
+    "id": "terreo-gcse",
+    "latin": "terreo",
+    "genitive": null,
+    "gender": null,
+    "english": "I frighten, terrify",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "war/army",
+      "emotions"
+    ],
+    "frequency_rank": 393,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "terreo",
+      "terrere",
+      "terrui",
+      "territum"
+    ]
+  },
+  {
+    "id": "trado-gcse",
+    "latin": "trado",
+    "genitive": null,
+    "gender": null,
+    "english": "I hand over, betray",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 394,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "trado",
+      "tradere",
+      "tradidi",
+      "traditum"
+    ]
+  },
+  {
+    "id": "verto-gcse",
+    "latin": "verto",
+    "genitive": null,
+    "gender": null,
+    "english": "I turn",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 395,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "verto",
+      "vertere",
+      "verti",
+      "versum"
+    ]
+  },
+  {
+    "id": "volo-gcse",
+    "latin": "volo",
+    "genitive": null,
+    "gender": null,
+    "english": "I want, wish",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 396,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "volo",
+      "velle",
+      "volui",
+      null
+    ]
+  },
+  {
+    "id": "acer-gcse",
+    "latin": "acer",
+    "genitive": "acris",
+    "gender": null,
+    "english": "sharp, fierce, keen",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "emotions"
+    ],
+    "frequency_rank": 397,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "brevis-gcse",
+    "latin": "brevis",
+    "genitive": "brevis",
+    "gender": null,
+    "english": "short, brief",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 399,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "certus-gcse",
+    "latin": "certus",
+    "genitive": "certi",
+    "gender": null,
+    "english": "certain, sure, reliable",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 400,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "crudelis-gcse",
+    "latin": "crudelis",
+    "genitive": "crudelis",
+    "gender": null,
+    "english": "cruel",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "crime"
+    ],
+    "frequency_rank": 402,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "durus-gcse",
+    "latin": "durus",
+    "genitive": "duri",
+    "gender": null,
+    "english": "hard, harsh, tough",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "emotions"
+    ],
+    "frequency_rank": 403,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "facilis-gcse",
+    "latin": "facilis",
+    "genitive": "facilis",
+    "gender": null,
+    "english": "easy",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 404,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "felix-gcse",
+    "latin": "felix",
+    "genitive": "felicis",
+    "gender": null,
+    "english": "lucky, happy, fortunate",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions"
+    ],
+    "frequency_rank": 405,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "gravis-gcse",
+    "latin": "gravis",
+    "genitive": "gravis",
+    "gender": null,
+    "english": "heavy, serious, severe",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "emotions"
+    ],
+    "frequency_rank": 407,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ingens-gcse",
+    "latin": "ingens",
+    "genitive": "ingentis",
+    "gender": null,
+    "english": "huge, vast",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 408,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "mortuus-gcse",
+    "latin": "mortuus",
+    "genitive": "mortui",
+    "gender": null,
+    "english": "dead",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 412,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "nobilis-gcse",
+    "latin": "nobilis",
+    "genitive": "nobilis",
+    "gender": null,
+    "english": "noble, famous, well-known",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 413,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "plenus-gcse",
+    "latin": "plenus",
+    "genitive": "pleni",
+    "gender": null,
+    "english": "full (+ gen. or abl.)",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 416,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "potens-gcse",
+    "latin": "potens",
+    "genitive": "potentis",
+    "gender": null,
+    "english": "powerful, able",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 417,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "summus-gcse",
+    "latin": "summus",
+    "genitive": "summi",
+    "gender": null,
+    "english": "greatest, highest, top of",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 420,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "tantus-gcse",
+    "latin": "tantus",
+    "genitive": "tanti",
+    "gender": null,
+    "english": "so great, so large",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 421,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "tardus-gcse",
+    "latin": "tardus",
+    "genitive": "tardi",
+    "gender": null,
+    "english": "slow, late",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 422,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "totus-gcse",
+    "latin": "totus",
+    "genitive": "totius",
+    "gender": null,
+    "english": "whole, all, entire",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 423,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "turpis-gcse",
+    "latin": "turpis",
+    "genitive": "turpis",
+    "gender": null,
+    "english": "shameful, disgraceful, ugly",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "crime"
+    ],
+    "frequency_rank": 424,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ultimus-gcse",
+    "latin": "ultimus",
+    "genitive": "ultimi",
+    "gender": null,
+    "english": "last, furthest, final",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 425,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "varius-gcse",
+    "latin": "varius",
+    "genitive": "varii",
+    "gender": null,
+    "english": "varied, various, different",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 426,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "autem-gcse",
+    "latin": "autem",
+    "genitive": null,
+    "gender": null,
+    "english": "however, but, moreover",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 427,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "enim-gcse",
+    "latin": "enim",
+    "genitive": null,
+    "gender": null,
+    "english": "for, because, indeed (postpositive)",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 429,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "inde-gcse",
+    "latin": "inde",
+    "genitive": null,
+    "gender": null,
+    "english": "from there, then",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 432,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ita-gcse",
+    "latin": "ita",
+    "genitive": null,
+    "gender": null,
+    "english": "so, in this way, thus",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 433,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "modo-gcse",
+    "latin": "modo",
+    "genitive": null,
+    "gender": null,
+    "english": "only, just now, recently",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 434,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "postea-gcse",
+    "latin": "postea",
+    "genitive": null,
+    "gender": null,
+    "english": "afterwards, later",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 435,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "prius-gcse",
+    "latin": "prius",
+    "genitive": null,
+    "gender": null,
+    "english": "before, earlier, sooner",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 436,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "quoque-gcse",
+    "latin": "quoque",
+    "genitive": null,
+    "gender": null,
+    "english": "also, too (follows word it modifies)",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 437,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "vero-gcse",
+    "latin": "vero",
+    "genitive": null,
+    "gender": null,
+    "english": "truly, in fact, indeed",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 441,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ante-gcse",
+    "latin": "ante",
+    "genitive": null,
+    "gender": null,
+    "english": "before, in front of (+ acc.)",
+    "part_of_speech": "preposition",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 442,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "circum-gcse",
+    "latin": "circum",
+    "genitive": null,
+    "gender": null,
+    "english": "around (+ acc.)",
+    "part_of_speech": "preposition",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 443,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "inter-gcse",
+    "latin": "inter",
+    "genitive": null,
+    "gender": null,
+    "english": "among, between (+ acc.)",
+    "part_of_speech": "preposition",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 445,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ob-gcse",
+    "latin": "ob",
+    "genitive": null,
+    "gender": null,
+    "english": "on account of, because of (+ acc.)",
+    "part_of_speech": "preposition",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 446,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "praeter-gcse",
+    "latin": "praeter",
+    "genitive": null,
+    "gender": null,
+    "english": "past, beyond, except (+ acc.)",
+    "part_of_speech": "preposition",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 448,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "acies-gcse",
+    "latin": "acies",
+    "genitive": "aciei",
+    "gender": "f",
+    "english": "line of battle, sharp edge",
+    "part_of_speech": "noun",
+    "declension": 5,
+    "conjugation": null,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 451,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "amor-gcse",
+    "latin": "amor",
+    "genitive": "amoris",
+    "gender": "m",
+    "english": "love",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "family"
+    ],
+    "frequency_rank": 452,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "aquila-gcse",
+    "latin": "aquila",
+    "genitive": "aquilae",
+    "gender": "f",
+    "english": "eagle; (military) standard",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "nature",
+      "war/army"
+    ],
+    "frequency_rank": 453,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "arx-gcse",
+    "latin": "arx",
+    "genitive": "arcis",
+    "gender": "f",
+    "english": "citadel, stronghold",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "buildings",
+      "war/army"
+    ],
+    "frequency_rank": 454,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "causa-gcse",
+    "latin": "causa",
+    "genitive": "causae",
+    "gender": "f",
+    "english": "reason, cause, case",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "crime"
+    ],
+    "frequency_rank": 455,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "centurio-gcse",
+    "latin": "centurio",
+    "genitive": "centurionis",
+    "gender": "m",
+    "english": "centurion",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 456,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "civitas-gcse",
+    "latin": "civitas",
+    "genitive": "civitatis",
+    "gender": "f",
+    "english": "state, city, citizenship",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 457,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "dolor-gcse",
+    "latin": "dolor",
+    "genitive": "doloris",
+    "gender": "m",
+    "english": "pain, grief, suffering",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "frequency_rank": 458,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "donum-gcse",
+    "latin": "donum",
+    "genitive": "doni",
+    "gender": "n",
+    "english": "gift, offering",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "religion"
+    ],
+    "frequency_rank": 459,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "factum-gcse",
+    "latin": "factum",
+    "genitive": "facti",
+    "gender": "n",
+    "english": "deed, act, achievement",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 460,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "fatum-gcse",
+    "latin": "fatum",
+    "genitive": "fati",
+    "gender": "n",
+    "english": "fate, destiny",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "religion",
+      "emotions"
+    ],
+    "frequency_rank": 461,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "fortuna-gcse",
+    "latin": "fortuna",
+    "genitive": "fortunae",
+    "gender": "f",
+    "english": "fortune, luck, chance",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "religion",
+      "emotions"
+    ],
+    "frequency_rank": 462,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "gaudium-gcse",
+    "latin": "gaudium",
+    "genitive": "gaudii",
+    "gender": "n",
+    "english": "joy, delight",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "emotions"
+    ],
+    "frequency_rank": 463,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "gens-gcse",
+    "latin": "gens",
+    "genitive": "gentis",
+    "gender": "f",
+    "english": "clan, tribe, race, people",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 464,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "labor-gcse",
+    "latin": "labor",
+    "genitive": "laboris",
+    "gender": "m",
+    "english": "work, toil, hardship",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 466,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "locus-gcse",
+    "latin": "locus",
+    "genitive": "loci",
+    "gender": "m",
+    "english": "place, position",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 467,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "mens-gcse",
+    "latin": "mens",
+    "genitive": "mentis",
+    "gender": "f",
+    "english": "mind, thought, intention",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "frequency_rank": 468,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "modus-gcse",
+    "latin": "modus",
+    "genitive": "modi",
+    "gender": "m",
+    "english": "manner, way, method",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 469,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "natura-gcse",
+    "latin": "natura",
+    "genitive": "naturae",
+    "gender": "f",
+    "english": "nature, character",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "nature",
+      "daily-life"
+    ],
+    "frequency_rank": 470,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "numerus-gcse",
+    "latin": "numerus",
+    "genitive": "numeri",
+    "gender": "m",
+    "english": "number, group",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 472,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "oculus-gcse",
+    "latin": "oculus",
+    "genitive": "oculi",
+    "gender": "m",
+    "english": "eye",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 473,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "officium-gcse",
+    "latin": "officium",
+    "genitive": "officii",
+    "gender": "n",
+    "english": "duty, service, office",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 474,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "oppidani-gcse",
+    "latin": "oppidani",
+    "genitive": "oppidanorum",
+    "gender": "m",
+    "english": "townspeople, citizens",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 475,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ordo-gcse",
+    "latin": "ordo",
+    "genitive": "ordinis",
+    "gender": "m",
+    "english": "rank, order, row",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 476,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "populus-gcse",
+    "latin": "populus",
+    "genitive": "populi",
+    "gender": "m",
+    "english": "people, nation",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 478,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "praemium-gcse",
+    "latin": "praemium",
+    "genitive": "praemii",
+    "gender": "n",
+    "english": "reward, prize, booty",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 479,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "primus-gcse",
+    "latin": "primus",
+    "genitive": "primi",
+    "gender": null,
+    "english": "first, chief, most important",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 480,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "princeps-gcse",
+    "latin": "princeps",
+    "genitive": "principis",
+    "gender": "m",
+    "english": "leader, chief, emperor",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 481,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "pugna-gcse",
+    "latin": "pugna",
+    "genitive": "pugnae",
+    "gender": "f",
+    "english": "fight, battle",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 482,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "sanguis-gcse",
+    "latin": "sanguis",
+    "genitive": "sanguinis",
+    "gender": "m",
+    "english": "blood",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 483,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "senex-gcse",
+    "latin": "senex",
+    "genitive": "senis",
+    "gender": "m",
+    "english": "old man",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "family",
+      "daily-life"
+    ],
+    "frequency_rank": 484,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "sermo-gcse",
+    "latin": "sermo",
+    "genitive": "sermonis",
+    "gender": "m",
+    "english": "conversation, talk, speech",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 485,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "sol-gcse",
+    "latin": "sol",
+    "genitive": "solis",
+    "gender": "m",
+    "english": "sun",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "nature",
+      "daily-life"
+    ],
+    "frequency_rank": 486,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "telum-gcse",
+    "latin": "telum",
+    "genitive": "teli",
+    "gender": "n",
+    "english": "weapon, missile, spear",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 487,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "verbum-gcse",
+    "latin": "verbum",
+    "genitive": "verbi",
+    "gender": "n",
+    "english": "word",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 489,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "victoria-gcse",
+    "latin": "victoria",
+    "genitive": "victoriae",
+    "gender": "f",
+    "english": "victory",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 490,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "voluntas-gcse",
+    "latin": "voluntas",
+    "genitive": "voluntatis",
+    "gender": "f",
+    "english": "will, wish, desire",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "frequency_rank": 491,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "adeo-gcse",
+    "latin": "adeo",
+    "genitive": null,
+    "gender": null,
+    "english": "I go to, approach",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 492,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "adeo",
+      "adire",
+      "adii",
+      "aditum"
+    ]
+  },
+  {
+    "id": "audeo-gcse",
+    "latin": "audeo",
+    "genitive": null,
+    "gender": null,
+    "english": "I dare",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "war/army",
+      "emotions"
+    ],
+    "frequency_rank": 493,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "audeo",
+      "audere",
+      "ausus sum",
+      null
+    ]
+  },
+  {
+    "id": "coeo-gcse",
+    "latin": "coeo",
+    "genitive": null,
+    "gender": null,
+    "english": "I come together, meet",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 494,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "coeo",
+      "coire",
+      "coii",
+      "coitum"
+    ]
+  },
+  {
+    "id": "conficio-gcse",
+    "latin": "conficio",
+    "genitive": null,
+    "gender": null,
+    "english": "I complete, finish, exhaust",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 495,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "conficio",
+      "conficere",
+      "confeci",
+      "confectum"
+    ]
+  },
+  {
+    "id": "contendo-gcse",
+    "latin": "contendo",
+    "genitive": null,
+    "gender": null,
+    "english": "I strive, hurry, march, compete",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "travel"
+    ],
+    "frequency_rank": 496,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "contendo",
+      "contendere",
+      "contendi",
+      "contentum"
+    ]
+  },
+  {
+    "id": "convenio-gcse",
+    "latin": "convenio",
+    "genitive": null,
+    "gender": null,
+    "english": "I come together, assemble",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 4,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 497,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "convenio",
+      "convenire",
+      "conveni",
+      "conventum"
+    ]
+  },
+  {
+    "id": "defendo-gcse",
+    "latin": "defendo",
+    "genitive": null,
+    "gender": null,
+    "english": "I defend, protect",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 498,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "defendo",
+      "defendere",
+      "defendi",
+      "defensum"
+    ]
+  },
+  {
+    "id": "effugio-gcse",
+    "latin": "effugio",
+    "genitive": null,
+    "gender": null,
+    "english": "I escape, flee away",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "travel"
+    ],
+    "frequency_rank": 499,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "effugio",
+      "effugere",
+      "effugi",
+      null
+    ]
+  },
+  {
+    "id": "egredior-gcse",
+    "latin": "egredior",
+    "genitive": null,
+    "gender": null,
+    "english": "I go out, disembark",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
+    "frequency_rank": 500,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "egredior",
+      "egredi",
+      "egressus sum",
+      null
+    ]
+  },
+  {
+    "id": "expugno-gcse",
+    "latin": "expugno",
+    "genitive": null,
+    "gender": null,
+    "english": "I storm, capture (by assault)",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 501,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "expugno",
+      "expugnare",
+      "expugnavi",
+      "expugnatum"
+    ]
+  },
+  {
+    "id": "hortor-gcse",
+    "latin": "hortor",
+    "genitive": null,
+    "gender": null,
+    "english": "I encourage, urge, exhort",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 502,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "hortor",
+      "hortari",
+      "hortatus sum",
+      null
+    ]
+  },
+  {
+    "id": "iungo-gcse",
+    "latin": "iungo",
+    "genitive": null,
+    "gender": null,
+    "english": "I join, connect, yoke",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 503,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "iungo",
+      "iungere",
+      "iunxi",
+      "iunctum"
+    ]
+  },
+  {
+    "id": "loquor-gcse",
+    "latin": "loquor",
+    "genitive": null,
+    "gender": null,
+    "english": "I speak, say, talk",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 504,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "loquor",
+      "loqui",
+      "locutus sum",
+      null
+    ]
+  },
+  {
+    "id": "mereor-gcse",
+    "latin": "mereor",
+    "genitive": null,
+    "gender": null,
+    "english": "I deserve, earn, serve (as soldier)",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 505,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "mereor",
+      "mereri",
+      "meritus sum",
+      null
+    ]
+  },
+  {
+    "id": "moveo-gcse",
+    "latin": "moveo",
+    "genitive": null,
+    "gender": null,
+    "english": "I move, disturb, influence",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 506,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "moveo",
+      "movere",
+      "movi",
+      "motum"
+    ]
+  },
+  {
+    "id": "obtineo-gcse",
+    "latin": "obtineo",
+    "genitive": null,
+    "gender": null,
+    "english": "I hold, obtain, maintain",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 507,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "obtineo",
+      "obtinere",
+      "obtinui",
+      "obtentum"
+    ]
+  },
+  {
+    "id": "ostendo-gcse",
+    "latin": "ostendo",
+    "genitive": null,
+    "gender": null,
+    "english": "I show, display, point out",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 508,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "ostendo",
+      "ostendere",
+      "ostendi",
+      "ostentum"
+    ]
+  },
+  {
+    "id": "patior-gcse",
+    "latin": "patior",
+    "genitive": null,
+    "gender": null,
+    "english": "I suffer, endure, allow",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "frequency_rank": 509,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "patior",
+      "pati",
+      "passus sum",
+      null
+    ]
+  },
+  {
+    "id": "perficio-gcse",
+    "latin": "perficio",
+    "genitive": null,
+    "gender": null,
+    "english": "I complete, accomplish",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 510,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "perficio",
+      "perficere",
+      "perfeci",
+      "perfectum"
+    ]
+  },
+  {
+    "id": "pervenio-gcse",
+    "latin": "pervenio",
+    "genitive": null,
+    "gender": null,
+    "english": "I arrive at, reach",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 4,
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
+    "frequency_rank": 511,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "pervenio",
+      "pervenire",
+      "perveni",
+      "perventum"
+    ]
+  },
+  {
+    "id": "praebeo-gcse",
+    "latin": "praebeo",
+    "genitive": null,
+    "gender": null,
+    "english": "I provide, offer, show",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 512,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "praebeo",
+      "praebere",
+      "praebui",
+      "praebitum"
+    ]
+  },
+  {
+    "id": "premo-gcse",
+    "latin": "premo",
+    "genitive": null,
+    "gender": null,
+    "english": "I press, oppress, overwhelm",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 513,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "premo",
+      "premere",
+      "pressi",
+      "pressum"
+    ]
+  },
+  {
+    "id": "procedo-gcse",
+    "latin": "procedo",
+    "genitive": null,
+    "gender": null,
+    "english": "I advance, go forward",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "travel"
+    ],
+    "frequency_rank": 514,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "procedo",
+      "procedere",
+      "processi",
+      "processum"
+    ]
+  },
+  {
+    "id": "prodeo-gcse",
+    "latin": "prodeo",
+    "genitive": null,
+    "gender": null,
+    "english": "I go forward, appear, come out",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 515,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "prodeo",
+      "prodire",
+      "prodii",
+      "proditum"
+    ]
+  },
+  {
+    "id": "propono-gcse",
+    "latin": "propono",
+    "genitive": null,
+    "gender": null,
+    "english": "I put forward, set out, propose",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 516,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "propono",
+      "proponere",
+      "proposui",
+      "propositum"
+    ]
+  },
+  {
+    "id": "quaero-gcse",
+    "latin": "quaero",
+    "genitive": null,
+    "gender": null,
+    "english": "I seek, ask, inquire",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 517,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "quaero",
+      "quaerere",
+      "quaesivi",
+      "quaesitum"
+    ]
+  },
+  {
+    "id": "recipio-gcse",
+    "latin": "recipio",
+    "genitive": null,
+    "gender": null,
+    "english": "I take back, receive, recover",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 518,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "recipio",
+      "recipere",
+      "recepi",
+      "receptum"
+    ]
+  },
+  {
+    "id": "refero-gcse",
+    "latin": "refero",
+    "genitive": null,
+    "gender": null,
+    "english": "I bring back, report, refer",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 519,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "refero",
+      "referre",
+      "rettuli",
+      "relatum"
+    ]
+  },
+  {
+    "id": "scio-gcse",
+    "latin": "scio",
+    "genitive": null,
+    "gender": null,
+    "english": "I know",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 4,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 521,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "scio",
+      "scire",
+      "scivi",
+      "scitum"
+    ]
+  },
+  {
+    "id": "sentio-gcse",
+    "latin": "sentio",
+    "genitive": null,
+    "gender": null,
+    "english": "I feel, sense, think, perceive",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 4,
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "frequency_rank": 522,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "sentio",
+      "sentire",
+      "sensi",
+      "sensum"
+    ]
+  },
+  {
+    "id": "sino-gcse",
+    "latin": "sino",
+    "genitive": null,
+    "gender": null,
+    "english": "I allow, permit",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 523,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "sino",
+      "sinere",
+      "sivi",
+      "situm"
+    ]
+  },
+  {
+    "id": "sustineo-gcse",
+    "latin": "sustineo",
+    "genitive": null,
+    "gender": null,
+    "english": "I hold up, sustain, endure, withstand",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 2,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 524,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "sustineo",
+      "sustinere",
+      "sustinui",
+      "sustentum"
+    ]
+  },
+  {
+    "id": "tollo-gcse",
+    "latin": "tollo",
+    "genitive": null,
+    "gender": null,
+    "english": "I raise, lift, remove, destroy",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 525,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "tollo",
+      "tollere",
+      "sustuli",
+      "sublatum"
+    ]
+  },
+  {
+    "id": "utor-gcse",
+    "latin": "utor",
+    "genitive": null,
+    "gender": null,
+    "english": "I use, enjoy (+ ablative)",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 526,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "utor",
+      "uti",
+      "usus sum",
+      null
+    ]
+  },
+  {
+    "id": "vinco-gcse",
+    "latin": "vinco",
+    "genitive": null,
+    "gender": null,
+    "english": "I conquer, win, defeat",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 3,
+    "topics": [
+      "war/army"
+    ],
+    "frequency_rank": 527,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "vinco",
+      "vincere",
+      "vici",
+      "victum"
+    ]
+  },
+  {
+    "id": "vulnero-gcse",
+    "latin": "vulnero",
+    "genitive": null,
+    "gender": null,
+    "english": "I wound, injure",
+    "part_of_speech": "verb",
+    "declension": null,
+    "conjugation": 1,
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 528,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": [
+      "vulnero",
+      "vulnerare",
+      "vulneravi",
+      "vulneratum"
+    ]
+  },
+  {
+    "id": "aequus-gcse",
+    "latin": "aequus",
+    "genitive": "aequi",
+    "gender": null,
+    "english": "equal, fair, calm",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "emotions"
+    ],
+    "frequency_rank": 529,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "alienus-gcse",
+    "latin": "alienus",
+    "genitive": "alieni",
+    "gender": null,
+    "english": "another's, foreign, unsuitable",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 530,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "antiquus-gcse",
+    "latin": "antiquus",
+    "genitive": "antiqui",
+    "gender": null,
+    "english": "ancient, old, former",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 531,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "communis-gcse",
+    "latin": "communis",
+    "genitive": "communis",
+    "gender": null,
+    "english": "common, shared, general",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 533,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "difficilis-gcse",
+    "latin": "difficilis",
+    "genitive": "difficilis",
+    "gender": null,
+    "english": "difficult, troublesome",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 534,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "dimidius-gcse",
+    "latin": "dimidius",
+    "genitive": "dimidii",
+    "gender": null,
+    "english": "half",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 535,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ferus-gcse",
+    "latin": "ferus",
+    "genitive": "feri",
+    "gender": null,
+    "english": "wild, fierce, cruel",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "nature",
+      "war/army"
+    ],
+    "frequency_rank": 536,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "imus-gcse",
+    "latin": "imus",
+    "genitive": "imi",
+    "gender": null,
+    "english": "lowest, bottom of",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 537,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "longus-gcse",
+    "latin": "longus",
+    "genitive": "longi",
+    "gender": null,
+    "english": "long, far, distant",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 538,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "medius-gcse",
+    "latin": "medius",
+    "genitive": "medii",
+    "gender": null,
+    "english": "middle (of), mid",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 539,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "propinquus-gcse",
+    "latin": "propinquus",
+    "genitive": "propinqui",
+    "gender": null,
+    "english": "near, neighbouring",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "frequency_rank": 542,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "reliquus-gcse",
+    "latin": "reliquus",
+    "genitive": "reliqui",
+    "gender": null,
+    "english": "remaining, rest of",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 543,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "secundus-gcse",
+    "latin": "secundus",
+    "genitive": "secundi",
+    "gender": null,
+    "english": "second, favourable",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 544,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "severus-gcse",
+    "latin": "severus",
+    "genitive": "severi",
+    "gender": null,
+    "english": "strict, severe, stern",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "emotions"
+    ],
+    "frequency_rank": 545,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "similis-gcse",
+    "latin": "similis",
+    "genitive": "similis",
+    "gender": null,
+    "english": "like, similar (+ gen. or dat.)",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 546,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "sinister-gcse",
+    "latin": "sinister",
+    "genitive": "sinistri",
+    "gender": null,
+    "english": "left, unfavourable, perverse",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
+    "frequency_rank": 547,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "superbus-gcse",
+    "latin": "superbus",
+    "genitive": "superbi",
+    "gender": null,
+    "english": "proud, arrogant, haughty",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "frequency_rank": 548,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "talis-gcse",
+    "latin": "talis",
+    "genitive": "talis",
+    "gender": null,
+    "english": "such, of such a kind",
+    "part_of_speech": "adjective",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 549,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "verus-gcse",
+    "latin": "verus",
+    "genitive": "veri",
+    "gender": null,
+    "english": "true, real, genuine",
+    "part_of_speech": "adjective",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 550,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "antea-gcse",
+    "latin": "antea",
+    "genitive": null,
+    "gender": null,
+    "english": "before, previously",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 551,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "certe-gcse",
+    "latin": "certe",
+    "genitive": null,
+    "gender": null,
+    "english": "certainly, at least, at any rate",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 552,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "denique-gcse",
+    "latin": "denique",
+    "genitive": null,
+    "gender": null,
+    "english": "finally, at last",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 553,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ergo-gcse",
+    "latin": "ergo",
+    "genitive": null,
+    "gender": null,
+    "english": "therefore, so, then",
+    "part_of_speech": "conjunction",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 554,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "haud-gcse",
+    "latin": "haud",
+    "genitive": null,
+    "gender": null,
+    "english": "not, not at all (literary)",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 555,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "nisi-gcse",
+    "latin": "nisi",
+    "genitive": null,
+    "gender": null,
+    "english": "unless, if not, except",
+    "part_of_speech": "conjunction",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 556,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "paulatim-gcse",
+    "latin": "paulatim",
+    "genitive": null,
+    "gender": null,
+    "english": "gradually, little by little",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 557,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "paulum-gcse",
+    "latin": "paulum",
+    "genitive": null,
+    "gender": null,
+    "english": "a little, slightly",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 558,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "primo-gcse",
+    "latin": "primo",
+    "genitive": null,
+    "gender": null,
+    "english": "at first, firstly",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 559,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "quidem-gcse",
+    "latin": "quidem",
+    "genitive": null,
+    "gender": null,
+    "english": "indeed, certainly, even",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 560,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "simul-gcse",
+    "latin": "simul",
+    "genitive": null,
+    "gender": null,
+    "english": "at the same time, together, at once",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 561,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "tum-gcse",
+    "latin": "tum",
+    "genitive": null,
+    "gender": null,
+    "english": "then, at that time",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "time"
+    ],
+    "frequency_rank": 563,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
+  },
+  {
+    "id": "ut-gcse",
+    "latin": "ut",
+    "genitive": null,
+    "gender": null,
+    "english": "as, when, so that, in order that",
+    "part_of_speech": "conjunction",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 564,
+    "level": 3,
+    "gcse_only": true,
+    "principal_parts": null
   }
 ]
