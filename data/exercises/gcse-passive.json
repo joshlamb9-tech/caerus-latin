@@ -1,0 +1,102 @@
+[
+  {
+    "id": "gcse-pas-01",
+    "sentence": "puella ā magistrō laudātur.",
+    "blank_word": "laudātur",
+    "display": "puella ā magistrō _____.",
+    "translation": "The girl is praised by the teacher.",
+    "options": ["laudātur", "laudat", "laudābat", "laudābitur"],
+    "correct": "laudātur",
+    "explanation": "laudātur is 3rd person singular present passive — 'is praised'. The -tur ending marks the passive. The agent (teacher) appears with ā + ablative."
+  },
+  {
+    "id": "gcse-pas-02",
+    "sentence": "servī ā dominō vocābantur.",
+    "blank_word": "vocābantur",
+    "display": "servī ā dominō _____.",
+    "translation": "The slaves were being called by the master.",
+    "options": ["vocābantur", "vocābant", "vocāntur", "vocābuntur"],
+    "correct": "vocābantur",
+    "explanation": "vocābantur is 3rd person plural imperfect passive — 'were being called'. Imperfect passive uses the stem + bā- + passive endings (-ntur for 3rd plural)."
+  },
+  {
+    "id": "gcse-pas-03",
+    "sentence": "epistula ā poētā scrīpta est.",
+    "blank_word": "scrīpta est",
+    "display": "epistula ā poētā _____.",
+    "translation": "The letter was written by the poet.",
+    "options": ["scrīpta est", "scrīpsit", "scrībitur", "scrīptum est"],
+    "correct": "scrīpta est",
+    "explanation": "scrīpta est is the perfect passive — 'was written'. The perfect passive uses the perfect passive participle (scrīpta, agreeing with epistula = feminine) + est."
+  },
+  {
+    "id": "gcse-pas-04",
+    "sentence": "amāmur means _____.",
+    "blank_word": "we are loved",
+    "display": "amāmur means _____.",
+    "translation": "(translation question)",
+    "options": ["we are loved", "we were loved", "we love", "we were loving"],
+    "correct": "we are loved",
+    "explanation": "amāmur is 1st person plural present passive of amō. The -mur ending is the passive marker for 1st person plural."
+  },
+  {
+    "id": "gcse-pas-05",
+    "sentence": "mīlitēs ā imperātōre laudātī erant.",
+    "blank_word": "laudātī erant",
+    "display": "mīlitēs ā imperātōre _____.",
+    "translation": "The soldiers had been praised by the general.",
+    "options": ["laudātī erant", "laudāverant", "laudābantur", "laudātī sunt"],
+    "correct": "laudātī erant",
+    "explanation": "laudātī erant is pluperfect passive — 'had been praised'. Pluperfect passive uses the PPP (laudātī, masculine plural, agreeing with mīlitēs) + erant."
+  },
+  {
+    "id": "gcse-pas-06",
+    "sentence": "urbs ā hostibus dēlēbitur.",
+    "blank_word": "dēlēbitur",
+    "display": "urbs ā hostibus _____.",
+    "translation": "The city will be destroyed by the enemy.",
+    "options": ["dēlēbitur", "dēlēbātur", "dēlētur", "dēlēta est"],
+    "correct": "dēlēbitur",
+    "explanation": "dēlēbitur is future passive — 'will be destroyed'. Future passive of 2nd conjugation uses stem + be/bi + -tur for 3rd singular."
+  },
+  {
+    "id": "gcse-pas-07",
+    "sentence": "The agent in a passive sentence is introduced by _____.",
+    "blank_word": "ā/ab",
+    "display": "The agent in a passive sentence is introduced by _____.",
+    "translation": "(grammar question)",
+    "options": ["ā/ab", "ex", "dē", "cum"],
+    "correct": "ā/ab",
+    "explanation": "The person by whom the action is done (the agent) is expressed with ā (before consonants) or ab (before vowels) + ablative. E.g. ā magistrō = by the teacher."
+  },
+  {
+    "id": "gcse-pas-08",
+    "sentence": "captīvī ā Rōmānīs vinciuntur.",
+    "blank_word": "vinciuntur",
+    "display": "captīvī ā Rōmānīs _____.",
+    "translation": "The captives are being defeated by the Romans.",
+    "options": ["vinciuntur", "vincunt", "vincēbantur", "victī sunt"],
+    "correct": "vinciuntur",
+    "explanation": "vinciuntur is 3rd person plural present passive of vincō (3rd conjugation). 3rd conjugation present passive 3rd plural ends in -untur."
+  },
+  {
+    "id": "gcse-pas-09",
+    "sentence": "The present passive infinitive of amō is _____.",
+    "blank_word": "amārī",
+    "display": "The present passive infinitive of amō is _____.",
+    "translation": "(paradigm question)",
+    "options": ["amārī", "amāre", "amāvisse", "amātum esse"],
+    "correct": "amārī",
+    "explanation": "The present passive infinitive of 1st conjugation verbs ends in -ārī (amārī = to be loved). It is formed by replacing the active -re ending with -rī."
+  },
+  {
+    "id": "gcse-pas-10",
+    "sentence": "puer ā cane territus est.",
+    "blank_word": "territus est",
+    "display": "puer ā cane _____.",
+    "translation": "The boy was frightened by the dog.",
+    "options": ["territus est", "terrebat", "terrētur", "territum est"],
+    "correct": "territus est",
+    "explanation": "territus est is perfect passive — 'was frightened'. The PPP territus agrees with puer (masculine singular) + est = was."
+  }
+]

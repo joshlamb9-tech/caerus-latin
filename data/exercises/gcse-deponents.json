@@ -1,0 +1,92 @@
+[
+  {
+    "id": "gcse-dep-01",
+    "sentence": "Deponent verbs have _____ endings.",
+    "blank_word": "passive form, active meaning",
+    "display": "Deponent verbs have _____ endings.",
+    "translation": "(grammar question)",
+    "options": ["passive form, active meaning", "active form, passive meaning", "no perfect tense", "no infinitive"],
+    "correct": "passive form, active meaning",
+    "explanation": "Deponent verbs use passive endings but have active meanings. E.g. loquor = I speak (not 'I am spoken'). They have no active voice forms."
+  },
+  {
+    "id": "gcse-dep-02",
+    "sentence": "loquitur means _____.",
+    "blank_word": "he/she speaks",
+    "display": "loquitur means _____.",
+    "translation": "(parsing question)",
+    "options": ["he/she speaks", "he/she is spoken", "he/she spoke", "he/she was speaking"],
+    "correct": "he/she speaks",
+    "explanation": "loquitur is 3rd singular present of loquor (deponent) — passive form, active meaning: he/she speaks. The -itur ending is present passive, but deponents use it actively."
+  },
+  {
+    "id": "gcse-dep-03",
+    "sentence": "mīlitēs lentē sequebantur.",
+    "blank_word": "sequebantur",
+    "display": "mīlitēs lentē _____.",
+    "translation": "The soldiers were following slowly.",
+    "options": ["sequebantur", "sequerentur", "secūtī sunt", "sequuntur"],
+    "correct": "sequebantur",
+    "explanation": "sequebantur is imperfect of sequor (3rd conjugation deponent: to follow). Imperfect passive endings used actively: they were following. Not passive meaning."
+  },
+  {
+    "id": "gcse-dep-04",
+    "sentence": "Perfect of loquor, 3rd singular = _____.",
+    "blank_word": "locūtus est",
+    "display": "Perfect of loquor, 3rd singular = _____.",
+    "translation": "(paradigm question)",
+    "options": ["locūtus est", "locūtus erat", "loquitur", "loquēbātur"],
+    "correct": "locūtus est",
+    "explanation": "locūtus est = he spoke / has spoken (perfect of loquor). Deponent perfects use the perfect passive participle + sum/es/est. This looks like a passive but means he spoke."
+  },
+  {
+    "id": "gcse-dep-05",
+    "sentence": "imperātor mīlitēs hortātus est.",
+    "blank_word": "hortātus est",
+    "display": "imperātor mīlitēs _____.",
+    "translation": "The general encouraged the soldiers.",
+    "options": ["hortātus est", "hortābātur", "hortātur", "hortābat"],
+    "correct": "hortātus est",
+    "explanation": "hortātus est is perfect of hortor (1st conjugation deponent: to encourage). Perfect passive form, but active meaning: he encouraged."
+  },
+  {
+    "id": "gcse-dep-06",
+    "sentence": "Which is a deponent verb?",
+    "blank_word": "sequor",
+    "display": "Which is a deponent verb?",
+    "translation": "(identification question)",
+    "options": ["sequor", "porto", "dico", "facio"],
+    "correct": "sequor",
+    "explanation": "sequor (to follow) is a classic 3rd conjugation deponent — it only exists in passive forms but has active meaning. Porto, dico, and facio are ordinary active verbs."
+  },
+  {
+    "id": "gcse-dep-07",
+    "sentence": "patior multa means _____.",
+    "blank_word": "I suffer many things",
+    "display": "patior multa means _____.",
+    "translation": "(translation question)",
+    "options": ["I suffer many things", "many things are suffered", "I will suffer", "I was suffering"],
+    "correct": "I suffer many things",
+    "explanation": "patior is 1st singular present of patior (3rd io conjugation deponent: to suffer). Passive form, active meaning: I suffer. 'multa' is accusative plural (neuter), the direct object."
+  },
+  {
+    "id": "gcse-dep-08",
+    "sentence": "ancilla in hortō morābātur.",
+    "blank_word": "morābātur",
+    "display": "ancilla in hortō _____.",
+    "translation": "The slave girl was lingering in the garden.",
+    "options": ["morābātur", "morātur", "morāta est", "morārētur"],
+    "correct": "morābātur",
+    "explanation": "morābātur is imperfect of moror (1st conjugation deponent: to delay/linger). Passive form, active meaning: was lingering. The -bātur ending = 3rd singular imperfect passive."
+  },
+  {
+    "id": "gcse-dep-09",
+    "sentence": "locūtī sumus means _____.",
+    "blank_word": "we spoke",
+    "display": "locūtī sumus means _____.",
+    "translation": "(translation question)",
+    "options": ["we spoke", "we have been spoken to", "we are speaking", "we were spoken of"],
+    "correct": "we spoke",
+    "explanation": "locūtī sumus is perfect of loquor, 1st person plural. PPP locūtī (masculine plural) + sumus = we spoke. A deponent perfect always uses PPP + sum form but carries active meaning."
+  }
+]

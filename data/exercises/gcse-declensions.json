@@ -1,0 +1,92 @@
+[
+  {
+    "id": "gcse-dec-01",
+    "sentence": "fīlius manūs patris tenēbat.",
+    "blank_word": "manūs",
+    "display": "fīlius _____ patris tenēbat.",
+    "translation": "The son was holding the hands of his father.",
+    "options": ["manūs", "manū", "manuum", "manum"],
+    "correct": "manūs",
+    "explanation": "manūs is accusative plural of manus (4th declension) — the direct object. The genitive singular also ends -ūs, but here 'patris' is already the genitive; this form is accusative plural."
+  },
+  {
+    "id": "gcse-dec-02",
+    "sentence": "gladiātōrēs manibus pugnam gerēbant.",
+    "blank_word": "manibus",
+    "display": "gladiātōrēs _____ pugnam gerēbant.",
+    "translation": "The gladiators were waging the fight with their hands.",
+    "options": ["manibus", "manūs", "manum", "manuum"],
+    "correct": "manibus",
+    "explanation": "manibus is the ablative plural of manus (4th declension). Ablative of means: 'with their hands'."
+  },
+  {
+    "id": "gcse-dec-03",
+    "sentence": "imperātor manum mīlitī dedit.",
+    "blank_word": "manum",
+    "display": "imperātor _____ mīlitī dedit.",
+    "translation": "The general gave his hand to the soldier.",
+    "options": ["manum", "manūs", "manū", "manibus"],
+    "correct": "manum",
+    "explanation": "manum is accusative singular of manus — the direct object of dedit (gave)."
+  },
+  {
+    "id": "gcse-dec-04",
+    "sentence": "poēta rem nārrābat.",
+    "blank_word": "rem",
+    "display": "poēta _____ nārrābat.",
+    "translation": "The poet was telling the story.",
+    "options": ["rem", "reī", "rē", "rēs"],
+    "correct": "rem",
+    "explanation": "rem is accusative singular of rēs (5th declension) — the direct object of nārrābat."
+  },
+  {
+    "id": "gcse-dec-05",
+    "sentence": "discipulī reī nōmen nōn sciēbant.",
+    "blank_word": "reī",
+    "display": "discipulī _____ nōmen nōn sciēbant.",
+    "translation": "The students did not know the name of the thing.",
+    "options": ["reī", "rem", "rē", "rēs"],
+    "correct": "reī",
+    "explanation": "reī is genitive singular of rēs (5th declension) — 'of the thing'. The 5th declension genitive singular ends in -eī."
+  },
+  {
+    "id": "gcse-dec-06",
+    "sentence": "multās rēs in forō vīdimus.",
+    "blank_word": "rēs",
+    "display": "multās _____ in forō vīdimus.",
+    "translation": "We saw many things in the forum.",
+    "options": ["rēs", "rērum", "reī", "rem"],
+    "correct": "rēs",
+    "explanation": "rēs here is accusative plural (matching multās, feminine accusative plural adjective). In the 5th declension, accusative plural = rēs."
+  },
+  {
+    "id": "gcse-dec-07",
+    "sentence": "ā manū magistrī stetit.",
+    "blank_word": "manū",
+    "display": "ā _____ magistrī stetit.",
+    "translation": "He stood at the hand of the teacher.",
+    "options": ["manū", "manūs", "manum", "manibus"],
+    "correct": "manū",
+    "explanation": "manū is ablative singular of manus (4th declension). The preposition ā/ab takes the ablative. Ablative singular of 4th declension ends in -ū."
+  },
+  {
+    "id": "gcse-dec-08",
+    "sentence": "senex dē rē cogitābat.",
+    "blank_word": "rē",
+    "display": "senex dē _____ cogitābat.",
+    "translation": "The old man was thinking about the matter.",
+    "options": ["rē", "reī", "rem", "rēs"],
+    "correct": "rē",
+    "explanation": "rē is ablative singular of rēs (5th declension). The preposition dē takes the ablative. Ablative singular of 5th declension ends in -ē."
+  },
+  {
+    "id": "gcse-dec-09",
+    "sentence": "4th declension genitive singular ends in _____.",
+    "blank_word": "-ūs",
+    "display": "4th declension genitive singular ends in _____.",
+    "translation": "(paradigm question)",
+    "options": ["-ūs", "-ī", "-is", "-eī"],
+    "correct": "-ūs",
+    "explanation": "The genitive singular of 4th declension nouns ends in -ūs (e.g. manūs = of the hand). Do not confuse with the nominative plural, which is also -ūs."
+  }
+]

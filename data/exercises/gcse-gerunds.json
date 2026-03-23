@@ -1,0 +1,92 @@
+[
+  {
+    "id": "gcse-ger-01",
+    "sentence": "A gerund is a _____.",
+    "blank_word": "verbal noun",
+    "display": "A gerund is a _____.",
+    "translation": "(grammar question)",
+    "options": ["verbal noun", "verbal adjective", "conjunction", "participle"],
+    "correct": "verbal noun",
+    "explanation": "A gerund is a verbal noun: it is derived from a verb but functions as a noun. E.g. amandī = of loving, amandō = by loving. It only exists in the genitive, dative, accusative, and ablative singular."
+  },
+  {
+    "id": "gcse-ger-02",
+    "sentence": "discipulī cupidī legendī erant.",
+    "blank_word": "legendī",
+    "display": "discipulī cupidī _____ erant.",
+    "translation": "The students were eager for reading.",
+    "options": ["legendī", "legendum", "legendō", "legentēs"],
+    "correct": "legendī",
+    "explanation": "legendī is genitive of the gerund of legō (to read). Cupidus + genitive: eager for reading. Gerund genitive = stem + -andī (1st conj.) or -endī (other conj.)."
+  },
+  {
+    "id": "gcse-ger-03",
+    "sentence": "poēta scrībendō gaudēbat.",
+    "blank_word": "scrībendō",
+    "display": "poēta _____ gaudēbat.",
+    "translation": "The poet was enjoying writing.",
+    "options": ["scrībendō", "scrībitur", "scrībendum", "scrīpsit"],
+    "correct": "scrībendō",
+    "explanation": "scrībendō is the dative/ablative of the gerund of scrībō (to write). Here ablative of means: by/through writing. Dative/ablative gerund = -andō (1st) or -endō (others)."
+  },
+  {
+    "id": "gcse-ger-04",
+    "sentence": "A gerundive is a _____.",
+    "blank_word": "verbal adjective expressing necessity",
+    "display": "A gerundive is a _____.",
+    "translation": "(grammar question)",
+    "options": ["verbal adjective expressing necessity", "verbal noun", "perfect active participle", "deponent verb form"],
+    "correct": "verbal adjective expressing necessity",
+    "explanation": "A gerundive is a verbal adjective (agrees with a noun in case, number, gender) expressing that something must be done. E.g. amanda = loveable / to be loved (fem. nom. sg.)."
+  },
+  {
+    "id": "gcse-ger-05",
+    "sentence": "Rōma dēlenda est.",
+    "blank_word": "dēlenda est",
+    "display": "Rōma _____.",
+    "translation": "Rome must be destroyed.",
+    "options": ["dēlenda est", "dēlētur", "dēlenda erat", "dēlēbitur"],
+    "correct": "dēlenda est",
+    "explanation": "dēlenda est = must be destroyed. The gerundive dēlenda (feminine, agreeing with Rōma) + est expresses necessity. This is the gerundive of obligation construction."
+  },
+  {
+    "id": "gcse-ger-06",
+    "sentence": "librī legendī sunt.",
+    "blank_word": "legendī sunt",
+    "display": "librī _____.",
+    "translation": "The books must be read.",
+    "options": ["legendī sunt", "leguntur", "legenda sunt", "legendō sunt"],
+    "correct": "legendī sunt",
+    "explanation": "legendī sunt = must be read. Librī is masculine plural; the gerundive legendī (masculine plural) agrees with it. legendī + sunt = must be read."
+  },
+  {
+    "id": "gcse-ger-07",
+    "sentence": "mīlitēs ad pugnandum parātī erant.",
+    "blank_word": "pugnandum",
+    "display": "mīlitēs ad _____ parātī erant.",
+    "translation": "The soldiers were ready for fighting.",
+    "options": ["pugnandum", "pugnandī", "pugnandō", "pugnātūrī"],
+    "correct": "pugnandum",
+    "explanation": "pugnandum is accusative of the gerund after ad: ad pugnandum = for the purpose of fighting. Ad + accusative gerund is a common Latin way of expressing purpose."
+  },
+  {
+    "id": "gcse-ger-08",
+    "sentence": "Gerund vs gerundive: gerund is a _____, gerundive is a _____.",
+    "blank_word": "gerund is a noun; gerundive is an adjective",
+    "display": "Gerund vs gerundive: gerund is a _____, gerundive is a _____.",
+    "translation": "(grammar question)",
+    "options": ["gerund is a noun; gerundive is an adjective", "gerund is an adjective; gerundive is a noun", "they are the same", "gerund is active; gerundive is passive"],
+    "correct": "gerund is a noun; gerundive is an adjective",
+    "explanation": "Gerund = verbal noun (no gender/number agreement). Gerundive = verbal adjective (agrees with a noun in case, number, gender, often expressing necessity)."
+  },
+  {
+    "id": "gcse-ger-09",
+    "sentence": "senātōribus cōnsulendum est.",
+    "blank_word": "cōnsulendum est",
+    "display": "senātōribus _____.",
+    "translation": "The senators must be consulted.",
+    "options": ["cōnsulendum est", "cōnsuluntur", "cōnsulendum erat", "cōnsulitur"],
+    "correct": "cōnsulendum est",
+    "explanation": "cōnsulendum est = it must be consulted, i.e. the senators must be consulted. Impersonal gerundive construction: gerundive (neuter nom. sg.) + est; the dative (senātōribus) shows by whom."
+  }
+]

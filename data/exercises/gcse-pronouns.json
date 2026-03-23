@@ -1,0 +1,102 @@
+[
+  {
+    "id": "gcse-pro-01",
+    "sentence": "hic means _____.",
+    "blank_word": "this (one near me)",
+    "display": "hic means _____.",
+    "translation": "(vocabulary question)",
+    "options": ["this (one near me)", "that (one over there)", "who/which", "himself/itself"],
+    "correct": "this (one near me)",
+    "explanation": "hic, haec, hoc = this/these — referring to something near the speaker. Contrast with ille (that, over there) and is/ea/id (he/she/it, more neutral)."
+  },
+  {
+    "id": "gcse-pro-02",
+    "sentence": "hanc puellam vīdī.",
+    "blank_word": "hanc",
+    "display": "_____ puellam vīdī.",
+    "translation": "I saw this girl.",
+    "options": ["hanc", "haec", "huius", "hāc"],
+    "correct": "hanc",
+    "explanation": "hanc is accusative singular feminine of hic/haec/hoc (this). It agrees with puellam (acc. sg. fem.) — the direct object. hic follows a 2nd-declension-like pattern for masculine/neuter but uses irregular forms for accusative."
+  },
+  {
+    "id": "gcse-pro-03",
+    "sentence": "illum librum legō.",
+    "blank_word": "illum",
+    "display": "_____ librum legō.",
+    "translation": "I am reading that book.",
+    "options": ["illum", "illī", "illā", "ille"],
+    "correct": "illum",
+    "explanation": "illum is accusative singular masculine of ille/illa/illud (that). It agrees with librum (acc. sg. masc.). ille often refers to something further away or already mentioned."
+  },
+  {
+    "id": "gcse-pro-04",
+    "sentence": "vir quī in hortō sedēbat erat pater meus.",
+    "blank_word": "quī",
+    "display": "vir _____ in hortō sedēbat erat pater meus.",
+    "translation": "The man who was sitting in the garden was my father.",
+    "options": ["quī", "cuius", "quem", "quō"],
+    "correct": "quī",
+    "explanation": "quī is nominative singular masculine of the relative pronoun qui/quae/quod (who/which). It is the subject of the relative clause (sedēbat). The relative pronoun agrees with its antecedent (vir: m. sg.)."
+  },
+  {
+    "id": "gcse-pro-05",
+    "sentence": "servum quem dominus laudāverat fugiit.",
+    "blank_word": "quem",
+    "display": "servum _____ dominus laudāverat fugiit.",
+    "translation": "The slave whom the master had praised fled.",
+    "options": ["quem", "quī", "cuius", "cui"],
+    "correct": "quem",
+    "explanation": "quem is accusative singular masculine of quī — the relative pronoun is the object of laudāverat within the relative clause. The case of the relative pronoun is determined by its function in the relative clause, not by its antecedent."
+  },
+  {
+    "id": "gcse-pro-06",
+    "sentence": "rēx ipse templum intrāvit.",
+    "blank_word": "ipse",
+    "display": "rēx _____ templum intrāvit.",
+    "translation": "The king himself entered the temple.",
+    "options": ["ipse", "idem", "hic", "ille"],
+    "correct": "ipse",
+    "explanation": "ipse/ipsa/ipsum = himself/herself/itself/themselves (emphatic). Here ipse (nominative masc. sg.) emphasises rēx: the king himself. Do not confuse with is/ea/id (he/she/it)."
+  },
+  {
+    "id": "gcse-pro-07",
+    "sentence": "Genitive singular of hic/haec/hoc = _____.",
+    "blank_word": "huius",
+    "display": "Genitive singular of hic/haec/hoc = _____.",
+    "translation": "(paradigm question)",
+    "options": ["huius", "eius", "illius", "ipsius"],
+    "correct": "huius",
+    "explanation": "huius = of this (genitive singular of hic/haec/hoc, all genders). Note: all three genders share the same genitive singular form huius. Compare: illius (gen. sg. of ille) and eius (gen. sg. of is)."
+  },
+  {
+    "id": "gcse-pro-08",
+    "sentence": "ipsa rēgīna loquēbātur.",
+    "blank_word": "ipsa",
+    "display": "_____ rēgīna loquēbātur.",
+    "translation": "The queen herself was speaking.",
+    "options": ["ipsa", "illa", "haec", "ea"],
+    "correct": "ipsa",
+    "explanation": "ipsa is nominative singular feminine of ipse/ipsa/ipsum, used here for emphasis: the queen herself. It agrees with rēgīna (f. nom. sg.)."
+  },
+  {
+    "id": "gcse-pro-09",
+    "sentence": "quārum is _____ of the relative pronoun.",
+    "blank_word": "genitive plural",
+    "display": "quārum is _____ of the relative pronoun.",
+    "translation": "(parsing question)",
+    "options": ["genitive plural", "dative plural", "ablative plural", "accusative plural"],
+    "correct": "genitive plural",
+    "explanation": "quārum is genitive plural feminine of quī/quae/quod — 'whose' or 'of whom'. Here: the girls whose books I read. The genitive plural of quī is quōrum (m./n.) or quārum (f.)."
+  },
+  {
+    "id": "gcse-pro-10",
+    "sentence": "illīus virī fīlius erat clārus.",
+    "blank_word": "illīus",
+    "display": "_____ virī fīlius erat clārus.",
+    "translation": "The son of that man was famous.",
+    "options": ["illīus", "illum", "illō", "illī"],
+    "correct": "illīus",
+    "explanation": "illīus is genitive singular of ille/illa/illud (all genders share this form). 'Of that man' — the genitive shows possession. illīus is a common exam form to recognise."
+  }
+]

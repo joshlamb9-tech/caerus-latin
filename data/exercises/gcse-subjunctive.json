@@ -1,0 +1,102 @@
+[
+  {
+    "id": "gcse-subj-01",
+    "sentence": "The present subjunctive expresses _____.",
+    "blank_word": "purpose or possibility",
+    "display": "The present subjunctive expresses _____.",
+    "translation": "(grammar question)",
+    "options": ["purpose or possibility", "a completed action", "an ongoing past action", "a command"],
+    "correct": "purpose or possibility",
+    "explanation": "The present subjunctive is used in purpose clauses (ut + subj.) and other indirect constructions. It expresses what someone intends or that something is possible."
+  },
+  {
+    "id": "gcse-subj-02",
+    "sentence": "mīlitēs pugnābant ut vincērent.",
+    "blank_word": "vincērent",
+    "display": "mīlitēs pugnābant ut _____.",
+    "translation": "The soldiers were fighting in order to win.",
+    "options": ["vincērent", "vincant", "vīcissent", "vincēbant"],
+    "correct": "vincērent",
+    "explanation": "vincērent is imperfect subjunctive — used in a purpose clause (ut + subj.) after a past main verb (pugnābant). This is the sequence of tenses: past main verb → imperfect subj."
+  },
+  {
+    "id": "gcse-subj-03",
+    "sentence": "tam fortis erat ut omnēs admīrārentur.",
+    "blank_word": "admīrārentur",
+    "display": "tam fortis erat ut omnēs _____.",
+    "translation": "He was so brave that everyone admired him.",
+    "options": ["admīrārentur", "admīrantur", "admīrātī erant", "admīrābunt"],
+    "correct": "admīrārentur",
+    "explanation": "admīrārentur is imperfect passive subjunctive — used in a result clause (tam...ut) after a past main verb. The -rentur ending = 3rd plural imperfect passive subjunctive."
+  },
+  {
+    "id": "gcse-subj-04",
+    "sentence": "Imperfect subjunctive of amō, 3rd person singular = _____.",
+    "blank_word": "amāret",
+    "display": "Imperfect subjunctive of amō, 3rd person singular = _____.",
+    "translation": "(paradigm question)",
+    "options": ["amāret", "amet", "amāvisset", "amābat"],
+    "correct": "amāret",
+    "explanation": "amāret = imperfect subjunctive, 3rd singular active. Imperfect subjunctive = present infinitive + personal endings: amāre + t → amāret."
+  },
+  {
+    "id": "gcse-subj-05",
+    "sentence": "After a present main verb, a purpose clause uses the _____.",
+    "blank_word": "present subjunctive",
+    "display": "After a present main verb, a purpose clause uses the _____.",
+    "translation": "(grammar question)",
+    "options": ["present subjunctive", "imperfect subjunctive", "pluperfect subjunctive", "perfect subjunctive"],
+    "correct": "present subjunctive",
+    "explanation": "Sequence of tenses: primary sequence (present/future main verb) → present subjunctive in the subordinate clause. Secondary sequence (past main verb) → imperfect subjunctive."
+  },
+  {
+    "id": "gcse-subj-06",
+    "sentence": "cum hostēs advenissent, cīvēs fugerunt.",
+    "blank_word": "advenissent",
+    "display": "cum hostēs _____, cīvēs fugerunt.",
+    "translation": "When the enemy had arrived, the citizens fled.",
+    "options": ["advenissent", "advenirent", "advenerant", "adveniant"],
+    "correct": "advenissent",
+    "explanation": "advenissent is pluperfect subjunctive — used after cum meaning 'when' with a perfect main verb (fugerunt). Pluperfect subj. indicates the earlier of two past actions."
+  },
+  {
+    "id": "gcse-subj-07",
+    "sentence": "Pluperfect subjunctive of amō, 3rd person plural = _____.",
+    "blank_word": "amāvissent",
+    "display": "Pluperfect subjunctive of amō, 3rd person plural = _____.",
+    "translation": "(paradigm question)",
+    "options": ["amāvissent", "amāvissēmus", "amāvissētis", "amāvisset"],
+    "correct": "amāvissent",
+    "explanation": "amāvissent = pluperfect subjunctive 3rd plural. Formed from the perfect stem (amāv-) + isse + nt. The pluperfect subjunctive always uses the perfect stem."
+  },
+  {
+    "id": "gcse-subj-08",
+    "sentence": "dux imperāvit ut mīlitēs cēderent.",
+    "blank_word": "cēderent",
+    "display": "dux imperāvit ut mīlitēs _____.",
+    "translation": "The general ordered the soldiers to withdraw.",
+    "options": ["cēderent", "cēdant", "cessērant", "cēdunt"],
+    "correct": "cēderent",
+    "explanation": "cēderent is imperfect subjunctive — indirect command (ut + subj.) after imperāvit (past main verb). Secondary sequence: past main → imperfect subjunctive."
+  },
+  {
+    "id": "gcse-subj-09",
+    "sentence": "puella tam bene cantābat ut omnēs audirent.",
+    "blank_word": "audirent",
+    "display": "puella tam bene cantābat ut omnēs _____.",
+    "translation": "The girl was singing so well that everyone listened.",
+    "options": ["audirent", "audiant", "audīvissent", "audīverint"],
+    "correct": "audirent",
+    "explanation": "audirent is imperfect subjunctive — result clause (tam...ut) after a past main verb (cantābat). Result clauses, like purpose clauses, follow the sequence of tenses."
+  },
+  {
+    "id": "gcse-subj-10",
+    "sentence": "A purpose clause is most commonly introduced by _____.",
+    "blank_word": "ut",
+    "display": "A purpose clause is most commonly introduced by _____.",
+    "translation": "(grammar question)",
+    "options": ["ut", "cum", "dum", "sī"],
+    "correct": "ut",
+    "explanation": "Purpose clauses are introduced by ut (+ subjunctive) = 'in order that/to'. Negative purpose clauses use nē (+ subj.) = 'in order that...not / lest'."
+  }
+]
