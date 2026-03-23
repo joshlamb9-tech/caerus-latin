@@ -108,7 +108,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/3 | In progress | - |
 | 2. Vocabulary | 2/2 | Complete   | 2026-03-23 |
-| 3. Grammar (Accidence) | 3/5 | In Progress|  |
+| 3. Grammar (Accidence) | 4/5 | In Progress|  |
 | 4. Syntax | 0/TBD | Not started | - |
 | 5. Translation Practice | 0/TBD | Not started | - |
 | 6. Literature Tools | 0/TBD | Not started | - |

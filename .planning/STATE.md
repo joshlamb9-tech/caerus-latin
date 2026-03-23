@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-03 (subjunctive.html and deponents.html — subjunctive mood and deponent verbs pages)
-last_updated: "2026-03-23T19:46:38.736Z"
-last_activity: 2026-03-23 — Completed plan 03-01 (grammar data files — gcse-nouns.json, gcse-verbs.json, 6 exercise JSON files)
+stopped_at: Completed 03-04 (gerunds.html and pronouns.html — gerund/gerundive and extended pronouns pages)
+last_updated: "2026-03-23T20:15:00.000Z"
+last_activity: 2026-03-23 — Completed plan 03-04 (gerunds.html and pronouns.html — final two GCSE grammar pages)
 progress:
   total_phases: 7
   completed_phases: 2
   total_plans: 10
-  completed_plans: 8
-  percent: 20
+  completed_plans: 9
+  percent: 22
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-23)
 
 **Core value:** A GCSE student can revise every examinable element of OCR J282 in one place — vocabulary, grammar, syntax, translation, and literature skills — without a tutor or textbook alongside it.
-**Current focus:** Phase 3 — Grammar Accidence
+**Current focus:** Phase 3 — Grammar Accidence (complete)
 
 ## Current Position
 
 Phase: 3 of 7 (Grammar Accidence)
-Plan: 1 of 5 in current phase
+Plan: 5 of 5 in current phase (complete)
 Status: In progress
-Last activity: 2026-03-23 — Completed plan 03-01 (grammar data files — gcse-nouns.json, gcse-verbs.json, 6 exercise JSON files)
+Last activity: 2026-03-23 — Completed plan 03-04 (gerunds.html and pronouns.html — final two GCSE grammar pages)
 
-Progress: [██░░░░░░░░] 20%
+Progress: [██░░░░░░░░] 22%
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ Progress: [██░░░░░░░░] 20%
 *Updated after each plan completion*
 | Phase 03-grammar-accidence P02 | 46 | 2 tasks | 2 files |
 | Phase 03-grammar-accidence P03 | 4 | 2 tasks | 2 files |
+| Phase 03-grammar-accidence P04 | 12 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -79,6 +80,9 @@ Progress: [██░░░░░░░░] 20%
 - [Phase 03-grammar-accidence]: Passive paradigm tables render only the passive indicative group — subjunctive/deponent reserved for later plans
 - [Phase 03-grammar-accidence]: Subjunctive tenses rendered in gcse-verbs.json insertion order — matches pedagogical progression
 - [Phase 03-grammar-accidence]: Deponent meanings table uses present-tense gloss only — simpler and sufficient for parsing
+- [Phase 03-grammar-accidence]: Gerundive of obligation given its own subsection — most exam-critical gerundive use
+- [Phase 03-grammar-accidence]: Tab layout used for pronoun paradigms — four pronouns on one page, avoids page proliferation
+- [Phase 03-grammar-accidence]: All 4 pronouns (hic, ille, qui, ipse) on one page for comparative learning
 
 ### Pending Todos
 
@@ -90,6 +94,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T19:46:38.734Z
-Stopped at: Completed 03-03 (subjunctive.html and deponents.html — subjunctive mood and deponent verbs pages)
+Last session: 2026-03-23T20:15:00.000Z
+Stopped at: Completed 03-04 (gerunds.html and pronouns.html — gerund/gerundive and extended pronouns pages)
 Resume file: None
