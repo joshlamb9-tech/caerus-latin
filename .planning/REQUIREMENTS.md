@@ -77,7 +77,7 @@
 | INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Pending |
 | INFRA-03 | Phase 1 | Pending |
-| VOC-01 | Phase 2 | Pending |
+| VOC-01 | Phase 2 | Complete |
 | VOC-02 | Phase 2 | Pending |
 | GRAM-01 | Phase 3 | Pending |
 | GRAM-02 | Phase 3 | Pending |
