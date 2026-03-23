@@ -1,0 +1,265 @@
+{
+  "conjugations": [
+    {
+      "conjugation": 1,
+      "name": "First Conjugation — Passive Voice",
+      "example_verb": "amor",
+      "example_infinitive": "amārī",
+      "example_meaning": "to be loved",
+      "voice": "passive",
+      "mood": "indicative",
+      "tenses": {
+        "present_passive": {
+          "name": "Present Passive",
+          "endings_note": "stem: amā- + passive endings",
+          "voice": "passive",
+          "mood": "indicative",
+          "singular": {
+            "1st": "amor",
+            "2nd": "amāris",
+            "3rd": "amātur"
+          },
+          "plural": {
+            "1st": "amāmur",
+            "2nd": "amāminī",
+            "3rd": "amantur"
+          }
+        },
+        "imperfect_passive": {
+          "name": "Imperfect Passive",
+          "endings_note": "stem + bā- + passive endings",
+          "voice": "passive",
+          "mood": "indicative",
+          "singular": {
+            "1st": "amābar",
+            "2nd": "amābāris",
+            "3rd": "amābātur"
+          },
+          "plural": {
+            "1st": "amābāmur",
+            "2nd": "amābāminī",
+            "3rd": "amābantur"
+          }
+        },
+        "future_passive": {
+          "name": "Future Passive",
+          "endings_note": "stem + be-/bi- + passive endings",
+          "voice": "passive",
+          "mood": "indicative",
+          "singular": {
+            "1st": "amābor",
+            "2nd": "amāberis",
+            "3rd": "amābitur"
+          },
+          "plural": {
+            "1st": "amābimur",
+            "2nd": "amābiminī",
+            "3rd": "amābuntur"
+          }
+        },
+        "perfect_passive": {
+          "name": "Perfect Passive",
+          "endings_note": "PPP (amātus/a/um) + sum/es/est/sumus/estis/sunt",
+          "voice": "passive",
+          "mood": "indicative",
+          "note": "Perfect passive is compound: PPP agrees with subject in gender/number",
+          "singular": {
+            "1st": "amātus sum",
+            "2nd": "amātus es",
+            "3rd": "amātus est"
+          },
+          "plural": {
+            "1st": "amātī sumus",
+            "2nd": "amātī estis",
+            "3rd": "amātī sunt"
+          }
+        },
+        "pluperfect_passive": {
+          "name": "Pluperfect Passive",
+          "endings_note": "PPP (amātus/a/um) + eram/erās/erat/erāmus/erātis/erant",
+          "voice": "passive",
+          "mood": "indicative",
+          "note": "Pluperfect passive is compound: PPP agrees with subject in gender/number",
+          "singular": {
+            "1st": "amātus eram",
+            "2nd": "amātus erās",
+            "3rd": "amātus erat"
+          },
+          "plural": {
+            "1st": "amātī erāmus",
+            "2nd": "amātī erātis",
+            "3rd": "amātī erant"
+          }
+        }
+      }
+    },
+    {
+      "conjugation": 1,
+      "name": "First Conjugation — Subjunctive",
+      "example_verb": "amem",
+      "example_infinitive": "amāre",
+      "example_meaning": "may love / loved (subj.)",
+      "voice": "active",
+      "mood": "subjunctive",
+      "tenses": {
+        "present_active_subj": {
+          "name": "Present Active Subjunctive",
+          "endings_note": "stem + e- + active endings (1st conj. uses -e- where indicative has -a-)",
+          "voice": "active",
+          "mood": "subjunctive",
+          "singular": {
+            "1st": "amem",
+            "2nd": "amēs",
+            "3rd": "amet"
+          },
+          "plural": {
+            "1st": "amēmus",
+            "2nd": "amētis",
+            "3rd": "ament"
+          }
+        },
+        "imperfect_active_subj": {
+          "name": "Imperfect Active Subjunctive",
+          "endings_note": "present infinitive (amāre) + active endings",
+          "voice": "active",
+          "mood": "subjunctive",
+          "singular": {
+            "1st": "amārem",
+            "2nd": "amārēs",
+            "3rd": "amāret"
+          },
+          "plural": {
+            "1st": "amārēmus",
+            "2nd": "amārētis",
+            "3rd": "amārent"
+          }
+        },
+        "pluperfect_active_subj": {
+          "name": "Pluperfect Active Subjunctive",
+          "endings_note": "perfect stem (amāv-) + isse + active endings",
+          "voice": "active",
+          "mood": "subjunctive",
+          "singular": {
+            "1st": "amāvissem",
+            "2nd": "amāvissēs",
+            "3rd": "amāvisset"
+          },
+          "plural": {
+            "1st": "amāvissēmus",
+            "2nd": "amāvissētis",
+            "3rd": "amāvissent"
+          }
+        },
+        "present_passive_subj": {
+          "name": "Present Passive Subjunctive",
+          "endings_note": "stem + e- + passive endings",
+          "voice": "passive",
+          "mood": "subjunctive",
+          "singular": {
+            "1st": "amer",
+            "2nd": "amēris",
+            "3rd": "amētur"
+          },
+          "plural": {
+            "1st": "amēmur",
+            "2nd": "amēminī",
+            "3rd": "amentur"
+          }
+        },
+        "imperfect_passive_subj": {
+          "name": "Imperfect Passive Subjunctive",
+          "endings_note": "present passive infinitive (amārī → amāre-) + passive endings",
+          "voice": "passive",
+          "mood": "subjunctive",
+          "singular": {
+            "1st": "amārer",
+            "2nd": "amārēris",
+            "3rd": "amārētur"
+          },
+          "plural": {
+            "1st": "amārēmur",
+            "2nd": "amārēminī",
+            "3rd": "amārentur"
+          }
+        },
+        "pluperfect_passive_subj": {
+          "name": "Pluperfect Passive Subjunctive",
+          "endings_note": "PPP (amātus/a/um) + esse forms of subjunctive",
+          "voice": "passive",
+          "mood": "subjunctive",
+          "note": "PPP agrees with subject in gender/number",
+          "singular": {
+            "1st": "amātus essem",
+            "2nd": "amātus essēs",
+            "3rd": "amātus esset"
+          },
+          "plural": {
+            "1st": "amātī essēmus",
+            "2nd": "amātī essētis",
+            "3rd": "amātī essent"
+          }
+        }
+      }
+    },
+    {
+      "conjugation": 3,
+      "name": "Third Conjugation — Deponent",
+      "example_verb": "loquor",
+      "example_infinitive": "loquī",
+      "example_meaning": "to speak",
+      "deponent": true,
+      "note": "Deponent verbs use passive forms but have active meanings. loquor = I speak, not I am spoken.",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "passive endings, active meaning",
+          "voice": "passive",
+          "mood": "indicative",
+          "singular": {
+            "1st": "loquor",
+            "2nd": "loqueris",
+            "3rd": "loquitur"
+          },
+          "plural": {
+            "1st": "loquimur",
+            "2nd": "loquiminī",
+            "3rd": "loquuntur"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "imperfect passive endings, active meaning",
+          "voice": "passive",
+          "mood": "indicative",
+          "singular": {
+            "1st": "loquēbar",
+            "2nd": "loquēbāris",
+            "3rd": "loquēbātur"
+          },
+          "plural": {
+            "1st": "loquēbāmur",
+            "2nd": "loquēbāminī",
+            "3rd": "loquēbantur"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "PPP (locūtus/a/um) + sum/es/est — active meaning: spoke/has spoken",
+          "voice": "passive",
+          "mood": "indicative",
+          "note": "Deponent perfects use PPP + sum forms but carry active meaning",
+          "singular": {
+            "1st": "locūtus sum",
+            "2nd": "locūtus es",
+            "3rd": "locūtus est"
+          },
+          "plural": {
+            "1st": "locūtī sumus",
+            "2nd": "locūtī estis",
+            "3rd": "locūtī sunt"
+          }
+        }
+      }
+    }
+  ]
+}
