@@ -1690,3 +1690,42 @@ a:hover {
 .update-banner-btn:hover {
   background: var(--color-terracotta-dark);
 }
+
+/* ── GCSE Section Nav ── */
+
+/* Accent link for the GCSE entry point in the CE nav */
+.nav-gcse-link {
+  position: relative;
+  border-left: 3px solid var(--color-border) !important;
+  padding-left: calc(1.5rem - 3px) !important;
+}
+
+.nav-gcse-link:hover,
+.nav-gcse-link:focus {
+  background-color: rgba(201, 168, 76, 0.12) !important;
+}
+
+/* "GCSE" badge displayed after the link text */
+.nav-gcse-badge {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.05em 0.4em;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  color: #1a2744;
+  background-color: var(--color-border);
+  border-radius: 3px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+/* Desktop nav: GCSE link styling when nav is horizontal */
+@media (min-width: 768px) {
+  .nav-gcse-link {
+    border-left: none !important;
+    border-bottom: 2px solid var(--color-border) !important;
+    padding-left: 1rem !important;
+  }
+}
