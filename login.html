@@ -665,7 +665,11 @@
   if (tabParam === 'trial') { switchTab('trial'); }
 
   /* ─── Boot: check auth state ─── */
+  // Safety net: if getSession hangs, show the auth form after 5s
+  var authTimeout = setTimeout(function() { show('view-auth'); }, 5000);
+
   client.auth.getSession().then(function(result) {
+    clearTimeout(authTimeout);
     var session = result.data.session;
     if (!session) {
       show('view-auth');
@@ -679,6 +683,9 @@
       return;
     }
     checkAccess(session.user, session.access_token);
+  }).catch(function() {
+    clearTimeout(authTimeout);
+    show('view-auth');
   });
 
   function checkAccess(user, token) {
