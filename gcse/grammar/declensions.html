@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="4th and 5th declension nouns — GCSE Latin grammar revision with paradigm tables and exercises">
+  <meta name="theme-color" content="#1a2744">
+  <title>4th &amp; 5th Declension &mdash; GCSE Grammar &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .exam-tip {
+      border-left: 4px solid #c9a84c;
+      background: #fdf8ee;
+      padding: 0.85rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #3a3220;
+    }
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .grammar-table th, .grammar-table td {
+      border: 1px solid #e0dbd0;
+      padding: 0.45rem 0.7rem;
+      text-align: left;
+    }
+    .grammar-table th {
+      background: #f5f2eb;
+      font-weight: 600;
+      color: #1a2744;
+    }
+    .grammar-table tr:nth-child(even) td {
+      background: #fafaf8;
+    }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/grammar/declensions.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Learn <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../../vocabulary.html">CE Vocab</a></li>
+              <li><a href="../../grammar.html">CE Grammar</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Practise <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../../quiz.html">CE Exercises</a></li>
+              <li><a href="../../speed-recall.html">Speed Recall</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html" class="nav-gcse-link">GCSE Latin <span class="nav-gcse-badge">GCSE</span></a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="grammar-page" style="max-width:800px; margin:0 auto; padding:1rem 1rem 3rem;">
+
+      <h1>4th &amp; 5th Declension Nouns</h1>
+      <p class="page-intro">The 4th and 5th declensions are rarer than the first three but appear regularly in GCSE texts. Learn the key endings and you will recognise them instantly.</p>
+
+      <!-- Section 1: 4th Declension -->
+      <section id="fourth-declension">
+        <h2>Fourth Declension</h2>
+        <p>4th declension nouns are mostly masculine and end in <strong>-us</strong> in the nominative singular. The stem vowel is <strong>-u-</strong>, which appears in most endings.</p>
+        <h3>Formation rules</h3>
+        <ul>
+          <li>Nominative singular: <strong>-us</strong> (e.g. <em>manus</em> = hand)</li>
+          <li>Genitive singular: <strong>-ūs</strong> (long u — do not confuse with the nominative)</li>
+          <li>Dative singular: <strong>-uī</strong></li>
+          <li>Accusative singular: <strong>-um</strong></li>
+          <li>Ablative singular: <strong>-ū</strong> (long u)</li>
+          <li>Nominative/accusative plural: <strong>-ūs</strong></li>
+          <li>Dative/ablative plural: <strong>-ibus</strong> (same as 3rd declension!)</li>
+        </ul>
+        <h3>Worked examples</h3>
+        <p><em>Mīlitēs manibus pugnābant.</em> — The soldiers were fighting with their hands. (<em>manibus</em> = ablative plural, means)</p>
+        <p><em>Fīlius manūs patris tenēbat.</em> — The son was holding the hands of his father. (<em>manūs</em> = accusative plural)</p>
+        <div id="table-4th"></div>
+      </section>
+
+      <!-- Section 2: 5th Declension -->
+      <section id="fifth-declension">
+        <h2>Fifth Declension</h2>
+        <p>5th declension nouns are mostly feminine and end in <strong>-ēs</strong> in the nominative singular. The most common is <em>rēs</em> (thing, matter) — it appears constantly in Latin texts.</p>
+        <h3>Formation rules</h3>
+        <ul>
+          <li>Nominative/vocative singular: <strong>-ēs</strong></li>
+          <li>Accusative singular: <strong>-em</strong></li>
+          <li>Genitive/dative singular: <strong>-eī</strong></li>
+          <li>Ablative singular: <strong>-ē</strong></li>
+          <li>Nominative/vocative/accusative plural: <strong>-ēs</strong> (all three the same!)</li>
+          <li>Genitive plural: <strong>-ērum</strong></li>
+          <li>Dative/ablative plural: <strong>-ēbus</strong></li>
+        </ul>
+        <h3>Worked examples</h3>
+        <p><em>Senex dē rē cogitābat.</em> — The old man was thinking about the matter. (<em>rē</em> = ablative singular after dē)</p>
+        <p><em>Multās rēs in forō vīdimus.</em> — We saw many things in the forum. (<em>rēs</em> = accusative plural)</p>
+        <div id="table-5th"></div>
+      </section>
+
+      <!-- Exam Tip -->
+      <div class="exam-tip">
+        <strong>Exam tip:</strong> The trickiest forms are the 4th declension genitive singular (<em>manūs</em>) and nominative plural (<em>manūs</em>) — they look identical. Use context: if it follows a noun as a possessive it is genitive; if it is the subject of the verb it is nominative. For the 5th declension, watch for <em>reī</em> (genitive/dative) — two syllables, long -ī.
+      </div>
+
+      <!-- Exercises -->
+      <section id="exercises">
+        <h2>Practice</h2>
+        <div id="exercise-container"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      // Fetch paradigm data and render tables
+      fetch('../../data/grammar/gcse-nouns.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          data.declensions.forEach(function(dec) {
+            var targetId = dec.declension === 4 ? 'table-4th' : 'table-5th';
+            var container = document.getElementById(targetId);
+            if (!container) return;
+            var cases = dec.cases;
+            var html = '<table class="grammar-table">'
+              + '<thead><tr><th>Case</th><th>Singular</th><th>Plural</th></tr></thead><tbody>';
+            cases.forEach(function(c) {
+              html += '<tr><td>' + c.charAt(0).toUpperCase() + c.slice(1) + '</td>'
+                + '<td><em>' + dec.singular[c] + '</em></td>'
+                + '<td><em>' + dec.plural[c] + '</em></td></tr>';
+            });
+            html += '</tbody></table>';
+            if (dec.note) {
+              html += '<p style="font-size:0.85rem;color:#4a5568;margin-top:-0.5rem;">' + dec.note + '</p>';
+            }
+            container.innerHTML = html;
+          });
+        });
+
+      // Fetch exercises and render MCQ
+      fetch('../../data/exercises/gcse-declensions.json')
+        .then(function(r) { return r.json(); })
+        .then(function(questions) {
+          var container = document.getElementById('exercise-container');
+          if (!container) return;
+          renderExercises(container, questions);
+        });
+
+      function renderExercises(container, pool) {
+        var lastIndex = -1;
+
+        function showQuestion() {
+          var idx;
+          if (pool.length === 1) { idx = 0; }
+          else { do { idx = Math.floor(Math.random() * pool.length); } while (idx === lastIndex); }
+          lastIndex = idx;
+          var q = pool[idx];
+          var shuffled = q.options.slice().sort(function() { return Math.random() - 0.5; });
+          var answered = false;
+
+          container.innerHTML = '<div class="qcheck">'
+            + '<div class="qcheck-header"><p class="qcheck-label">Quick check</p>'
+            + '<span class="qcheck-count">' + (idx + 1) + ' of ' + pool.length + '</span></div>'
+            + '<p class="qcheck-q">' + q.display + '</p>'
+            + '<p style="font-size:0.85rem;color:#4a5568;font-style:italic;">' + q.translation + '</p>'
+            + '<div class="qcheck-opts">'
+            + shuffled.map(function(o) { return '<button class="qcheck-btn" data-val="' + o + '">' + o + '</button>'; }).join('')
+            + '</div>'
+            + '<div class="qcheck-fb" style="display:none"></div>'
+            + '</div>';
+
+          container.querySelectorAll('.qcheck-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              if (answered) return;
+              answered = true;
+              var correct = btn.dataset.val === q.correct;
+              container.querySelectorAll('.qcheck-btn').forEach(function(b) {
+                b.disabled = true;
+                if (b.dataset.val === q.correct) b.classList.add('qcheck-correct');
+                else if (b === btn && !correct) b.classList.add('qcheck-wrong');
+              });
+              var fb = container.querySelector('.qcheck-fb');
+              fb.style.display = 'block';
+              fb.innerHTML = '<p class="' + (correct ? 'fb-correct' : 'fb-wrong') + '">'
+                + (correct ? '\u2713 Correct \u2014 you knew that.' : 'Not yet \u2014 it\u2019s <strong>' + q.correct + '</strong>') + '</p>'
+                + '<p class="fb-explanation">' + q.explanation + '</p>'
+                + (pool.length > 1 ? '<button class="qcheck-next-btn">Try another \u2192</button>' : '');
+              if (pool.length > 1) {
+                fb.querySelector('.qcheck-next-btn').addEventListener('click', showQuestion);
+              }
+            });
+          });
+        }
+
+        showQuestion();
+      }
+    })();
+  </script>
+
+</body>
+</html>
