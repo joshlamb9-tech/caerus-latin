@@ -8,7 +8,7 @@ This roadmap builds the OCR J282 GCSE Latin section on top of the existing Caeru
 
 - [ ] **Phase 1: Infrastructure** - GCSE product gate, nav, and landing page
 - [x] **Phase 2: Vocabulary** - Extend DVL to 450 words with GCSE drills (completed 2026-03-23)
-- [ ] **Phase 3: Grammar (Accidence)** - 4th/5th declension, passive, subjunctive, deponents, gerundive, pronouns
+- [x] **Phase 3: Grammar (Accidence)** - 4th/5th declension, passive, subjunctive, deponents, gerundive, pronouns (completed 2026-03-23)
 - [ ] **Phase 4: Syntax** - 10 construction pages covering the full J282 syntax syllabus
 - [ ] **Phase 5: Translation Practice** - Unseen passage library and English-to-Latin sets
 - [ ] **Phase 6: Literature Tools** - PETE, MANGOES, essay skills, Literature & Culture
@@ -108,7 +108,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/3 | In progress | - |
 | 2. Vocabulary | 2/2 | Complete   | 2026-03-23 |
-| 3. Grammar (Accidence) | 4/5 | In Progress|  |
+| 3. Grammar (Accidence) | 5/5 | Complete   | 2026-03-23 |
 | 4. Syntax | 0/TBD | Not started | - |
 | 5. Translation Practice | 0/TBD | Not started | - |
 | 6. Literature Tools | 0/TBD | Not started | - |

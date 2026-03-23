@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-04 (gerunds.html and pronouns.html — gerund/gerundive and extended pronouns pages)
-last_updated: "2026-03-23T20:15:00.000Z"
+stopped_at: Completed 03-05 (GCSE hub updated with 6 grammar topic cards)
+last_updated: "2026-03-23T20:16:30.763Z"
 last_activity: 2026-03-23 — Completed plan 03-04 (gerunds.html and pronouns.html — final two GCSE grammar pages)
 progress:
   total_phases: 7
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 10
-  completed_plans: 9
+  completed_plans: 10
   percent: 22
 ---
 
@@ -55,6 +55,7 @@ Progress: [██░░░░░░░░] 22%
 | Phase 03-grammar-accidence P02 | 46 | 2 tasks | 2 files |
 | Phase 03-grammar-accidence P03 | 4 | 2 tasks | 2 files |
 | Phase 03-grammar-accidence P04 | 12 | 2 tasks | 2 files |
+| Phase 03-grammar-accidence P05 | 3 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -83,6 +84,7 @@ Progress: [██░░░░░░░░] 22%
 - [Phase 03-grammar-accidence]: Gerundive of obligation given its own subsection — most exam-critical gerundive use
 - [Phase 03-grammar-accidence]: Tab layout used for pronoun paradigms — four pronouns on one page, avoids page proliferation
 - [Phase 03-grammar-accidence]: All 4 pronouns (hic, ille, qui, ipse) on one page for comparative learning
+- [Phase 03-grammar-accidence]: GCSE hub gets 6 direct grammar cards with no intermediate grammar index page — replaces single coming-soon grammar.html card
 
 ### Pending Todos
 
@@ -94,6 +96,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T20:15:00.000Z
-Stopped at: Completed 03-04 (gerunds.html and pronouns.html — gerund/gerundive and extended pronouns pages)
+Last session: 2026-03-23T20:16:30.761Z
+Stopped at: Completed 03-05 (GCSE hub updated with 6 grammar topic cards)
 Resume file: None
