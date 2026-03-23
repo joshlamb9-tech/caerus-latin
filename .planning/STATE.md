@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 3 context gathered
-last_updated: "2026-03-23T17:20:58.576Z"
-last_activity: 2026-03-23 — Completed plan 02-02 (GCSE vocabulary browse + drill page with latin-gcse gate)
+stopped_at: Completed 03-01 (grammar data files — nouns, verbs, 6 exercise sets)
+last_updated: "2026-03-23T18:00:00.000Z"
+last_activity: 2026-03-23 — Completed plan 03-01 (grammar data files — gcse-nouns.json, gcse-verbs.json, 6 exercise JSON files)
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 5
-  completed_plans: 5
-  percent: 17
+  total_plans: 6
+  completed_plans: 6
+  percent: 20
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-23)
 
 **Core value:** A GCSE student can revise every examinable element of OCR J282 in one place — vocabulary, grammar, syntax, translation, and literature skills — without a tutor or textbook alongside it.
-**Current focus:** Phase 2 — Vocabulary
+**Current focus:** Phase 3 — Grammar Accidence
 
 ## Current Position
 
-Phase: 2 of 7 (Vocabulary)
-Plan: 2 of 3 in current phase
+Phase: 3 of 7 (Grammar Accidence)
+Plan: 1 of 5 in current phase
 Status: In progress
-Last activity: 2026-03-23 — Completed plan 02-02 (GCSE vocabulary browse + drill page with latin-gcse gate)
+Last activity: 2026-03-23 — Completed plan 03-01 (grammar data files — gcse-nouns.json, gcse-verbs.json, 6 exercise JSON files)
 
-Progress: [██░░░░░░░░] 17%
+Progress: [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
@@ -45,9 +45,10 @@ Progress: [██░░░░░░░░] 17%
 |-------|-------|-------|----------|
 | 01-infrastructure | 2 | 20 min | 10 min |
 | 02-vocabulary | 2 | 28 min | 14 min |
+| 03-grammar-accidence | 1 | 15 min | 15 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (10 min), 01-02 (10 min), 02-01 (25 min), 02-02 (3 min)
+- Last 5 plans: 01-01 (10 min), 01-02 (10 min), 02-01 (25 min), 02-02 (3 min), 03-01 (15 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -69,6 +70,8 @@ Progress: [██░░░░░░░░] 17%
 - Deponent verbs store perfect passive participle form at index [2] and null supine at index [3] in principal_parts array
 - vocabulary.html uses hard redirect on no-grant (unlike gcse/index.html which teases non-subscribers)
 - Speed-recall uses 4s countdown + 1.5s reveal per word (simpler than progress bar, adequate for drill)
+- gcse-verbs.json organises tenses by pedagogical group (passive / subjunctive / deponent) rather than by conjugation number — each tense carries explicit voice/mood fields
+- Grammar exercise files follow gap-fill.json schema exactly: 9–11 questions, all 7 fields required, macron Latin throughout
 
 ### Pending Todos
 
@@ -80,6 +83,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T17:20:58.574Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-grammar-accidence/03-CONTEXT.md
+Last session: 2026-03-23T18:00:00.000Z
+Stopped at: Completed 03-01 (grammar data files — nouns, verbs, 6 exercise sets)
+Resume file: .planning/phases/03-grammar-accidence/03-02-PLAN.md
