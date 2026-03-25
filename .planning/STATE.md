@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 4 context gathered
-last_updated: "2026-03-23T21:14:37.170Z"
-last_activity: 2026-03-23 — Completed plan 03-04 (gerunds.html and pronouns.html — final two GCSE grammar pages)
+stopped_at: Completed 04-01-PLAN.md (syntax exercise JSON files)
+last_updated: "2026-03-25T15:05:08Z"
+last_activity: 2026-03-25 — Completed plan 04-01 (10 syntax exercise JSON files — all J282 constructions)
 progress:
   total_phases: 7
   completed_phases: 3
   total_plans: 10
-  completed_plans: 10
-  percent: 22
+  completed_plans: 11
+  percent: 24
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-23)
 
 **Core value:** A GCSE student can revise every examinable element of OCR J282 in one place — vocabulary, grammar, syntax, translation, and literature skills — without a tutor or textbook alongside it.
-**Current focus:** Phase 3 — Grammar Accidence (complete)
+**Current focus:** Phase 4 — Syntax (in progress)
 
 ## Current Position
 
-Phase: 3 of 7 (Grammar Accidence)
-Plan: 5 of 5 in current phase (complete)
+Phase: 4 of 7 (Syntax)
+Plan: 1 of 3 in current phase (complete)
 Status: In progress
-Last activity: 2026-03-23 — Completed plan 03-04 (gerunds.html and pronouns.html — final two GCSE grammar pages)
+Last activity: 2026-03-25 — Completed plan 04-01 (10 syntax exercise JSON files — all J282 constructions)
 
-Progress: [██░░░░░░░░] 22%
+Progress: [███░░░░░░░] 24%
 
 ## Performance Metrics
 
@@ -56,6 +56,7 @@ Progress: [██░░░░░░░░] 22%
 | Phase 03-grammar-accidence P03 | 4 | 2 tasks | 2 files |
 | Phase 03-grammar-accidence P04 | 12 | 2 tasks | 2 files |
 | Phase 03-grammar-accidence P05 | 3 | 1 tasks | 1 files |
+| Phase 04-syntax P01 | 6 | 2 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -85,6 +86,10 @@ Progress: [██░░░░░░░░] 22%
 - [Phase 03-grammar-accidence]: Tab layout used for pronoun paradigms — four pronouns on one page, avoids page proliferation
 - [Phase 03-grammar-accidence]: All 4 pronouns (hic, ille, qui, ipse) on one page for comparative learning
 - [Phase 03-grammar-accidence]: GCSE hub gets 6 direct grammar cards with no intermediate grammar index page — replaces single coming-soon grammar.html card
+- [Phase 04-syntax]: Syntax exercises use blank_word: "" (empty) — engine ignores field for non-gap-fill questions
+- [Phase 04-syntax]: Fearing clause nē = positive fear ("that it will happen"), ut = negative fear ("that it will not") — counter-intuitive reversal stressed in explanations
+- [Phase 04-syntax]: Conditional option labels match J282 mark scheme terminology: "open conditional", "unfulfilled conditional (present)", "unfulfilled conditional (past)"
+- [Phase 04-syntax]: Ablative absolute explanations always confirm ablative noun is NOT the main clause subject — the key diagnostic criterion
 
 ### Pending Todos
 

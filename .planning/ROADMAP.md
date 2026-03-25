@@ -114,7 +114,7 @@ Plans:
 | 1. Infrastructure | 2/3 | In progress | - |
 | 2. Vocabulary | 2/2 | Complete   | 2026-03-23 |
 | 3. Grammar (Accidence) | 5/5 | Complete   | 2026-03-23 |
-| 4. Syntax | 0/3 | Not started | - |
+| 4. Syntax | 1/3 | In Progress|  |
 | 5. Translation Practice | 0/TBD | Not started | - |
 | 6. Literature Tools | 0/TBD | Not started | - |
 | 7. Mock Papers | 0/TBD | Not started | - |
