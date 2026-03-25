@@ -1,0 +1,127 @@
+[
+  {
+    "id": "part-01",
+    "sentence": "puella in viā ambulāns cantābat.",
+    "blank_word": "",
+    "display": "puella in viā ambulāns cantābat.",
+    "translation": "The girl walking in the street was singing.",
+    "options": ["participial phrase", "ablative absolute", "indirect statement", "purpose clause"],
+    "correct": "participial phrase",
+    "explanation": "ambulāns (walking) is a present active participle agreeing with puella (nominative). It describes the subject while performing an action — 'the walking girl was singing'. Present active participles end in -ns (nominative singular) and describe action simultaneous with the main verb."
+  },
+  {
+    "id": "part-02",
+    "sentence": "mīlitēs ab hostibus victī domum rediērunt.",
+    "blank_word": "",
+    "display": "mīlitēs ab hostibus victī domum rediērunt.",
+    "translation": "The soldiers, having been defeated by the enemy, returned home.",
+    "options": ["participial phrase", "indirect statement", "ablative absolute", "temporal clause"],
+    "correct": "participial phrase",
+    "explanation": "victī is a perfect passive participle (PPP) agreeing with mīlitēs (nominative plural masculine). The PPP signals an action completed before the main verb — they were defeated, then returned. ab hostibus gives the agent with the passive participle."
+  },
+  {
+    "id": "part-03",
+    "sentence": "servus cibum ferēns in tablīnum intrāvit.",
+    "blank_word": "",
+    "display": "servus cibum ferēns in tablīnum intrāvit.",
+    "translation": "The slave carrying food entered the study.",
+    "options": ["participial phrase", "purpose clause", "indirect statement", "ablative absolute"],
+    "correct": "participial phrase",
+    "explanation": "ferēns (carrying) is a present active participle from ferō (to carry), agreeing with servus (nominative masculine). Present participles from ferō and other irregular verbs still use the -ns pattern in the nominative."
+  },
+  {
+    "id": "part-04",
+    "sentence": "rēgīna litterīs lectīs lacrimāvit.",
+    "blank_word": "",
+    "display": "rēgīna litterīs lectīs lacrimāvit.",
+    "translation": "The queen, having read the letter, wept.",
+    "options": ["ablative absolute", "participial phrase", "temporal clause", "indirect statement"],
+    "correct": "ablative absolute",
+    "explanation": "litterīs lectīs is an ablative absolute — both noun (litterīs) and participle (lectīs, PPP of legō) are in the ablative. The queen is not the subject of reading (the queen ≠ the letters), so this is ablative absolute, not a standard participial phrase."
+  },
+  {
+    "id": "part-05",
+    "sentence": "fēmina ad forum itūra togam induuit.",
+    "blank_word": "",
+    "display": "fēmina ad forum itūra togam induuit.",
+    "translation": "The woman, about to go to the forum, put on her toga.",
+    "options": ["participial phrase", "ablative absolute", "purpose clause", "indirect statement"],
+    "correct": "participial phrase",
+    "explanation": "itūra is a future active participle (from eō, to go) agreeing with fēmina (nominative). Future active participles end in -ūrus/-ūra/-ūrum and express intention or imminence — 'about to go' or 'intending to go'. The action follows the main verb."
+  },
+  {
+    "id": "part-06",
+    "sentence": "captīvī ā mīlitibus custōdītī in carcere manēbant.",
+    "blank_word": "",
+    "display": "captīvī ā mīlitibus custōdītī in carcere manēbant.",
+    "translation": "",
+    "options": [
+      "The prisoners, guarded by the soldiers, remained in prison.",
+      "The prisoners guarded the soldiers who remained in prison.",
+      "The prisoners who were about to guard the soldiers remained.",
+      "The soldiers guarded the prisoners although they remained."
+    ],
+    "correct": "The prisoners, guarded by the soldiers, remained in prison.",
+    "explanation": "custōdītī is a PPP (guarded) agreeing with captīvī (nominative plural masculine). ā mīlitibus gives the agent. The PPP action (being guarded) is concurrent with or prior to the main verb (remained). custōdītī describes the state of the captives while they remained."
+  },
+  {
+    "id": "part-07",
+    "sentence": "puer librum legēns nihil audīvit.",
+    "blank_word": "",
+    "display": "puer librum legēns nihil audīvit.",
+    "translation": "",
+    "options": [
+      "The boy, reading the book, heard nothing.",
+      "The boy read the book, then heard nothing.",
+      "The boy who had read the book heard nothing.",
+      "The boy about to read the book heard nothing."
+    ],
+    "correct": "The boy, reading the book, heard nothing.",
+    "explanation": "legēns (reading) is a present active participle agreeing with puer (nominative), describing what the boy was doing at the same time as the main verb (audīvit). The present participle always expresses simultaneous action with the main verb."
+  },
+  {
+    "id": "part-08",
+    "sentence": "imperātor victōriā ēlātus cīvēs laudāvit.",
+    "blank_word": "",
+    "display": "imperātor victōriā ēlātus cīvēs laudāvit.",
+    "translation": "",
+    "options": [
+      "The general, elated by the victory, praised the citizens.",
+      "The general, about to win a victory, praised the citizens.",
+      "The general praised the citizens who had won the victory.",
+      "The general, praising the citizens, was elated."
+    ],
+    "correct": "The general, elated by the victory, praised the citizens.",
+    "explanation": "ēlātus is a PPP of efferō (to carry out/elate) agreeing with imperātor (nominative masculine). victōriā is ablative of cause (elated by the victory). The PPP describes a state resulting from a prior event — elation preceded the praising."
+  },
+  {
+    "id": "part-09",
+    "sentence": "ancillae urbem relictūrae ā dominō retentae sunt.",
+    "blank_word": "",
+    "display": "ancillae urbem relictūrae ā dominō retentae sunt.",
+    "translation": "",
+    "options": [
+      "The slave-girls, about to leave the city, were held back by the master.",
+      "The slave-girls, having left the city, were held back by the master.",
+      "The slave-girls were held back while the master was leaving.",
+      "The slave-girls who left the city held back the master."
+    ],
+    "correct": "The slave-girls, about to leave the city, were held back by the master.",
+    "explanation": "relictūrae is a future active participle (feminine nominative plural) agreeing with ancillae — 'about to leave'. retentae sunt is perfect passive (were held back). The future participle indicates their intention/imminence of leaving before they were stopped."
+  },
+  {
+    "id": "part-10",
+    "sentence": "dux exercitum dūctūrus mīlitēs allocūtus est.",
+    "blank_word": "",
+    "display": "dux exercitum dūctūrus mīlitēs allocūtus est.",
+    "translation": "",
+    "options": [
+      "The leader, about to lead the army, addressed the soldiers.",
+      "The leader, having led the army, addressed the soldiers.",
+      "The leader addressed the soldiers who were about to lead the army.",
+      "The leader led the army after addressing the soldiers."
+    ],
+    "correct": "The leader, about to lead the army, addressed the soldiers.",
+    "explanation": "dūctūrus is a future active participle (masculine nominative singular) agreeing with dux — 'about to lead'. allocūtus est is perfect of the deponent allocor (to address). The future participle shows the leading comes after the addressing — he spoke first, then would lead."
+  }
+]

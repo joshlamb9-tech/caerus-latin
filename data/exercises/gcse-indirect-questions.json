@@ -1,0 +1,127 @@
+[
+  {
+    "id": "iq-01",
+    "sentence": "rogat quis in viā ambulet.",
+    "blank_word": "",
+    "display": "rogat quis in viā ambulet.",
+    "translation": "He asks who is walking in the street.",
+    "options": ["indirect question", "purpose clause", "indirect statement", "indirect command"],
+    "correct": "indirect question",
+    "explanation": "After rogat (he asks), quis (who) introduces an indirect question; the verb ambulet is in the subjunctive, which is the key signal for indirect questions. Unlike direct questions, indirect questions always use the subjunctive."
+  },
+  {
+    "id": "iq-02",
+    "sentence": "nesciō cūr servus lacrimet.",
+    "blank_word": "",
+    "display": "nesciō cūr servus lacrimet.",
+    "translation": "I do not know why the slave is crying.",
+    "options": ["indirect question", "indirect statement", "purpose clause", "indirect command"],
+    "correct": "indirect question",
+    "explanation": "After nesciō (I do not know), cūr (why) introduces an indirect question; lacrimet is present subjunctive. Verbs of knowing (sciō, nesciō) can introduce either indirect statement (accusative + infinitive) or indirect question (question word + subjunctive) — cūr signals the latter here."
+  },
+  {
+    "id": "iq-03",
+    "sentence": "mīror ubi rēx habitet.",
+    "blank_word": "",
+    "display": "mīror ubi rēx habitet.",
+    "translation": "I wonder where the king lives.",
+    "options": ["indirect question", "purpose clause", "indirect statement", "temporal clause"],
+    "correct": "indirect question",
+    "explanation": "After mīror (I wonder), a verb of wondering, ubi (where) introduces an indirect question; habitet is present subjunctive. The combination of question word + subjunctive after a verb of wondering is the diagnostic pattern."
+  },
+  {
+    "id": "iq-04",
+    "sentence": "nōn intellegō quōmodo hoc factum sit.",
+    "blank_word": "",
+    "display": "nōn intellegō quōmodo hoc factum sit.",
+    "translation": "I do not understand how this was done.",
+    "options": ["indirect question", "indirect statement", "result clause", "indirect command"],
+    "correct": "indirect question",
+    "explanation": "After intellegō (I understand), quōmodo (how) introduces an indirect question; factum sit is perfect subjunctive passive. The question word quōmodo marks this as an embedded question reported in indirect speech."
+  },
+  {
+    "id": "iq-05",
+    "sentence": "quaerit num cīvēs vērum dīxerint.",
+    "blank_word": "",
+    "display": "quaerit num cīvēs vērum dīxerint.",
+    "translation": "He asks whether the citizens spoke the truth.",
+    "options": ["indirect question", "indirect statement", "indirect command", "causal clause"],
+    "correct": "indirect question",
+    "explanation": "After quaerit (he asks), num introduces an indirect yes/no question; dīxerint is perfect subjunctive. num in an indirect question means 'whether' (expecting a possible negative answer). Compare: utrum...an for 'whether...or'."
+  },
+  {
+    "id": "iq-06",
+    "sentence": "scīs quid hostēs in animō habeant?",
+    "blank_word": "",
+    "display": "scīs quid hostēs in animō habeant?",
+    "translation": "",
+    "options": [
+      "Do you know what the enemy intend?",
+      "You know that the enemy intend something.",
+      "You ask whether the enemy intend something.",
+      "You know what the enemy intended."
+    ],
+    "correct": "Do you know what the enemy intend?",
+    "explanation": "scīs (do you know?) + quid (what) + subjunctive (habeant) is an indirect question. in animō habēre means 'to intend/have in mind'. The subjunctive habeant (present) makes this an indirect question, not a relative clause."
+  },
+  {
+    "id": "iq-07",
+    "sentence": "incertus sum utrum manērem an discēderem.",
+    "blank_word": "",
+    "display": "incertus sum utrum manērem an discēderem.",
+    "translation": "",
+    "options": [
+      "I was uncertain whether to stay or to leave.",
+      "I was uncertain why I was staying.",
+      "I knew that I should either stay or leave.",
+      "I stayed although I wanted to leave."
+    ],
+    "correct": "I was uncertain whether to stay or to leave.",
+    "explanation": "incertus sum (I am/was uncertain) introduces an indirect question; utrum...an (whether...or) presents two alternatives; manērem and discēderem are imperfect subjunctive. utrum...an is the paired construction for alternative indirect questions."
+  },
+  {
+    "id": "iq-08",
+    "sentence": "rogāvit quando dux rediisset.",
+    "blank_word": "",
+    "display": "rogāvit quando dux rediisset.",
+    "translation": "",
+    "options": [
+      "He asked when the leader had returned.",
+      "He asked the leader to return quickly.",
+      "He knew the leader had already returned.",
+      "He asked whether the leader would return."
+    ],
+    "correct": "He asked when the leader had returned.",
+    "explanation": "rogāvit (he asked) + quando (when) + pluperfect subjunctive (rediisset) is an indirect question. The pluperfect subjunctive follows sequence of tenses after a past main verb and shows the return preceded the asking."
+  },
+  {
+    "id": "iq-09",
+    "sentence": "mirantur quis tantam urbem aedificāverit.",
+    "blank_word": "",
+    "display": "mirantur quis tantam urbem aedificāverit.",
+    "translation": "",
+    "options": [
+      "They wonder who built such a great city.",
+      "They wonder at the man who built the city.",
+      "They believe someone built such a great city.",
+      "They order someone to build such a great city."
+    ],
+    "correct": "They wonder who built such a great city.",
+    "explanation": "mirantur (they wonder) + quis (who) + perfect subjunctive (aedificāverit) is an indirect question. The perfect subjunctive after a present main verb shows the action (building) happened before the wondering."
+  },
+  {
+    "id": "iq-10",
+    "sentence": "nesciēbāmus ubi fīliī nostrī essent.",
+    "blank_word": "",
+    "display": "nesciēbāmus ubi fīliī nostrī essent.",
+    "translation": "",
+    "options": [
+      "We did not know where our sons were.",
+      "We did not know that our sons were there.",
+      "We asked where our sons had gone.",
+      "We did not know why our sons had left."
+    ],
+    "correct": "We did not know where our sons were.",
+    "explanation": "nesciēbāmus (we did not know) + ubi (where) + imperfect subjunctive (essent) is an indirect question. The imperfect subjunctive follows sequence of tenses after the imperfect main verb, showing the sons' location was concurrent with the not-knowing."
+  }
+]

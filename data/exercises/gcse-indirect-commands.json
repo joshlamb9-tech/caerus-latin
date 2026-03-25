@@ -1,0 +1,127 @@
+[
+  {
+    "id": "ic-01",
+    "sentence": "rogō tē ut mēcum veniās.",
+    "blank_word": "",
+    "display": "rogō tē ut mēcum veniās.",
+    "translation": "I ask you to come with me.",
+    "options": ["indirect command", "purpose clause", "indirect statement", "result clause"],
+    "correct": "indirect command",
+    "explanation": "After rogō (I ask), a verb of requesting, ut + subjunctive (veniās) signals an indirect command. The ut clause reports what is requested — compare with purpose clauses where ut + subjunctive shows aim after a motion verb."
+  },
+  {
+    "id": "ic-02",
+    "sentence": "imperō mīlitibus nē fūgerent.",
+    "blank_word": "",
+    "display": "imperō mīlitibus nē fūgerent.",
+    "translation": "I order the soldiers not to flee.",
+    "options": ["indirect command", "indirect statement", "result clause", "purpose clause"],
+    "correct": "indirect command",
+    "explanation": "After imperō (I order), nē + subjunctive (fūgerent) signals a negative indirect command — an order not to do something. The dative mīlitibus is the recipient of the order."
+  },
+  {
+    "id": "ic-03",
+    "sentence": "hortātur nōs ut fortiter pugnēmus.",
+    "blank_word": "",
+    "display": "hortātur nōs ut fortiter pugnēmus.",
+    "translation": "He urges us to fight bravely.",
+    "options": ["indirect command", "purpose clause", "indirect statement", "indirect question"],
+    "correct": "indirect command",
+    "explanation": "hortātur (he urges/encourages) is a verb of urging; ut + subjunctive (pugnēmus) follows to express the content of the urging. This is the indirect command pattern: verb of requesting/urging + ut + subjunctive."
+  },
+  {
+    "id": "ic-04",
+    "sentence": "persuādent cīvibus ut pacem accipiant.",
+    "blank_word": "",
+    "display": "persuādent cīvibus ut pacem accipiant.",
+    "translation": "They persuade the citizens to accept peace.",
+    "options": ["indirect command", "result clause", "indirect statement", "temporal clause"],
+    "correct": "indirect command",
+    "explanation": "persuādent (they persuade) is a verb of persuading; cīvibus is dative (persuādeō takes the dative); ut + subjunctive (accipiant) expresses what they are persuaded to do — the classic indirect command structure."
+  },
+  {
+    "id": "ic-05",
+    "sentence": "monet servōs nē dominō noceant.",
+    "blank_word": "",
+    "display": "monet servōs nē dominō noceant.",
+    "translation": "He warns the slaves not to harm the master.",
+    "options": ["indirect command", "fearing clause", "indirect question", "purpose clause"],
+    "correct": "indirect command",
+    "explanation": "monet (he warns) is a verb of advising/warning; nē + subjunctive (noceant) expresses a negative indirect command — the content of the warning. Compare fearing clauses where nē means 'that' after fear verbs."
+  },
+  {
+    "id": "ic-06",
+    "sentence": "rogō tē ut ad mē quam celerrimē redeās.",
+    "blank_word": "",
+    "display": "rogō tē ut ad mē quam celerrimē redeās.",
+    "translation": "",
+    "options": [
+      "I ask you to return to me as quickly as possible.",
+      "I ask whether you have returned to me.",
+      "I know you returned to me quickly.",
+      "I urge you so that you return quickly."
+    ],
+    "correct": "I ask you to return to me as quickly as possible.",
+    "explanation": "rogō (I ask) + ut + subjunctive (redeās) is an indirect command. quam celerrimē means 'as quickly as possible'. The tē (you) is the accusative person being requested; the ut clause gives what they are asked to do."
+  },
+  {
+    "id": "ic-07",
+    "sentence": "imperāvit mīlitibus ut castra dēfenderent.",
+    "blank_word": "",
+    "display": "imperāvit mīlitibus ut castra dēfenderent.",
+    "translation": "",
+    "options": [
+      "He ordered the soldiers to defend the camp.",
+      "He ordered the soldiers who were defending the camp.",
+      "He believed the soldiers were defending the camp.",
+      "He persuaded the soldiers to abandon the camp."
+    ],
+    "correct": "He ordered the soldiers to defend the camp.",
+    "explanation": "imperāvit (he ordered) + dative mīlitibus + ut + subjunctive (dēfenderent, imperfect — after a past main verb) is an indirect command. The imperfect subjunctive follows the sequence of tenses after a perfect main verb."
+  },
+  {
+    "id": "ic-08",
+    "sentence": "persuāsit amīcīs nē in perīculum sē conicerēnt.",
+    "blank_word": "",
+    "display": "persuāsit amīcīs nē in perīculum sē conicerēnt.",
+    "translation": "",
+    "options": [
+      "He persuaded his friends not to throw themselves into danger.",
+      "He persuaded his friends to throw themselves into danger.",
+      "He asked his friends whether they were in danger.",
+      "He knew his friends had thrown themselves into danger."
+    ],
+    "correct": "He persuaded his friends not to throw themselves into danger.",
+    "explanation": "persuāsit + dative amīcīs + nē + subjunctive (conicerēnt) is a negative indirect command — persuading them not to do something. sē conicere means 'to throw oneself'; the reflexive sē refers back to the friends."
+  },
+  {
+    "id": "ic-09",
+    "sentence": "hortāta est nōs ut dīligenter studērēmus.",
+    "blank_word": "",
+    "display": "hortāta est nōs ut dīligenter studērēmus.",
+    "translation": "",
+    "options": [
+      "She urged us to study diligently.",
+      "She asked us whether we were studying diligently.",
+      "She said we had studied diligently.",
+      "She warned us not to study."
+    ],
+    "correct": "She urged us to study diligently.",
+    "explanation": "hortāta est (she urged — hortōr is deponent, so hortāta est = perfect active) + nōs + ut + subjunctive (studērēmus) is an indirect command. The imperfect subjunctive studērēmus follows sequence of tenses after the perfect main verb."
+  },
+  {
+    "id": "ic-10",
+    "sentence": "moneō vōs nē tempus perdātis.",
+    "blank_word": "",
+    "display": "moneō vōs nē tempus perdātis.",
+    "translation": "",
+    "options": [
+      "I warn you not to waste time.",
+      "I fear that you will waste time.",
+      "I ask whether you are wasting time.",
+      "I warn you to waste time."
+    ],
+    "correct": "I warn you not to waste time.",
+    "explanation": "moneō (I warn/advise) + nē + subjunctive (perdātis) is a negative indirect command. perdātis is present subjunctive of perdō (to waste/lose). Compare with fearing clauses: timeō nē would mean 'I fear that' — here the verb is moneō, not a fear verb."
+  }
+]

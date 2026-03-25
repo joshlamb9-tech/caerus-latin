@@ -1,0 +1,127 @@
+[
+  {
+    "id": "is-01",
+    "sentence": "dīcō puerōs in forō esse.",
+    "blank_word": "",
+    "display": "dīcō puerōs in forō esse.",
+    "translation": "I say that the boys are in the forum.",
+    "options": ["indirect statement", "purpose clause", "indirect command", "ablative absolute"],
+    "correct": "indirect statement",
+    "explanation": "After the verb of speaking dīcō, the accusative + infinitive construction signals indirect statement: puerōs (accusative subject) + esse (present infinitive). This is the standard accusative and infinitive construction."
+  },
+  {
+    "id": "is-02",
+    "sentence": "crēdit servum labōrāre.",
+    "blank_word": "",
+    "display": "crēdit servum labōrāre.",
+    "translation": "He believes the slave is working.",
+    "options": ["indirect statement", "ablative absolute", "indirect command", "purpose clause"],
+    "correct": "indirect statement",
+    "explanation": "After crēdit (he believes), a verb of thinking, we have servum (accusative subject) + labōrāre (present active infinitive). The accusative and infinitive construction reports what he believes."
+  },
+  {
+    "id": "is-03",
+    "sentence": "sciō mīlitēs fortiter pugnāvisse.",
+    "blank_word": "",
+    "display": "sciō mīlitēs fortiter pugnāvisse.",
+    "translation": "I know the soldiers fought bravely.",
+    "options": ["indirect statement", "purpose clause", "indirect command", "ablative absolute"],
+    "correct": "indirect statement",
+    "explanation": "After sciō (I know), a verb of knowing, we find mīlitēs (accusative) + pugnāvisse (perfect active infinitive). The perfect infinitive pugnāvisse signals the action happened before the main verb — they fought before I know it."
+  },
+  {
+    "id": "is-04",
+    "sentence": "putant rēgem rediisse.",
+    "blank_word": "",
+    "display": "putant rēgem rediisse.",
+    "translation": "They think the king has returned.",
+    "options": ["indirect statement", "ablative absolute", "purpose clause", "indirect command"],
+    "correct": "indirect statement",
+    "explanation": "After putant (they think), a verb of thinking, rēgem (accusative) + rediisse (perfect active infinitive of redeō) form an indirect statement. The perfect infinitive shows the return happened before the thinking."
+  },
+  {
+    "id": "is-05",
+    "sentence": "audiō fēminās in agrīs cantāre.",
+    "blank_word": "",
+    "display": "audiō fēminās in agrīs cantāre.",
+    "translation": "I hear the women singing in the fields.",
+    "options": ["indirect statement", "purpose clause", "ablative absolute", "indirect command"],
+    "correct": "indirect statement",
+    "explanation": "After audiō (I hear), a verb of perceiving, fēminās (accusative) + cantāre (present active infinitive) report what is perceived. Verbs of perceiving — hearing, seeing, feeling — trigger the accusative and infinitive construction."
+  },
+  {
+    "id": "is-06",
+    "sentence": "crēdō mīlitēs fortiter pugnāvisse.",
+    "blank_word": "",
+    "display": "crēdō mīlitēs fortiter pugnāvisse.",
+    "translation": "",
+    "options": [
+      "I believe the soldiers fought bravely.",
+      "I order the soldiers to fight bravely.",
+      "The soldiers believe they fought bravely.",
+      "I believe the soldiers are fighting bravely."
+    ],
+    "correct": "I believe the soldiers fought bravely.",
+    "explanation": "crēdō introduces indirect statement; mīlitēs is accusative (subject of indirect statement); pugnāvisse is the perfect active infinitive, placing the action before the main verb. 'I believe' + 'the soldiers' + 'to have fought bravely' = they fought bravely (past action reported now)."
+  },
+  {
+    "id": "is-07",
+    "sentence": "dīcit puellam laetam esse.",
+    "blank_word": "",
+    "display": "dīcit puellam laetam esse.",
+    "translation": "",
+    "options": [
+      "He says the girl is happy.",
+      "He orders the girl to be happy.",
+      "He asks whether the girl is happy.",
+      "He says the girl was happy."
+    ],
+    "correct": "He says the girl is happy.",
+    "explanation": "dīcit (he says) introduces indirect statement; puellam (accusative) is the subject of the indirect statement; esse (present infinitive of sum) agrees with it; laetam (accusative adjective) modifies puellam. The present infinitive shows the girl's happiness is simultaneous with the speaking."
+  },
+  {
+    "id": "is-08",
+    "sentence": "putāmus cīvēs urbem aedificāvisse.",
+    "blank_word": "",
+    "display": "putāmus cīvēs urbem aedificāvisse.",
+    "translation": "",
+    "options": [
+      "We think the citizens built the city.",
+      "We order the citizens to build the city.",
+      "We think the citizens are building the city.",
+      "We ask the citizens to build the city."
+    ],
+    "correct": "We think the citizens built the city.",
+    "explanation": "putāmus (we think) introduces indirect statement; cīvēs (accusative) is the subject; aedificāvisse is the perfect active infinitive of aedificō, placing the building before the thinking. urbem (accusative) is the object inside the indirect statement."
+  },
+  {
+    "id": "is-09",
+    "sentence": "sciō tē errāre.",
+    "blank_word": "",
+    "display": "sciō tē errāre.",
+    "translation": "",
+    "options": [
+      "I know you are making a mistake.",
+      "I order you to make a mistake.",
+      "I ask whether you are making a mistake.",
+      "I know you have made a mistake."
+    ],
+    "correct": "I know you are making a mistake.",
+    "explanation": "sciō (I know) introduces indirect statement; tē (accusative of tū) is the subject; errāre (present active infinitive of errō) indicates simultaneous action. The present infinitive means the mistake is happening at the same time as the knowing."
+  },
+  {
+    "id": "is-10",
+    "sentence": "sentiō aquam frīgidam esse.",
+    "blank_word": "",
+    "display": "sentiō aquam frīgidam esse.",
+    "translation": "",
+    "options": [
+      "I feel the water is cold.",
+      "I order the water to be cold.",
+      "I feel that the water was cold.",
+      "I ask whether the water is cold."
+    ],
+    "correct": "I feel the water is cold.",
+    "explanation": "sentiō (I feel/perceive) is a verb of sensing that triggers indirect statement; aquam (accusative) is the subject; esse (present infinitive of sum) + frīgidam (accusative predicate adjective) report what is perceived simultaneously."
+  }
+]
