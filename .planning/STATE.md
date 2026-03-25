@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-01-PLAN.md (syntax exercise JSON files)
-last_updated: "2026-03-25T15:05:08Z"
-last_activity: 2026-03-25 — Completed plan 04-01 (10 syntax exercise JSON files — all J282 constructions)
+stopped_at: Completed 04-03-PLAN.md (syntax construction pages wave 2)
+last_updated: "2026-03-25T15:22:30Z"
+last_activity: 2026-03-25 — Completed plan 04-03 (6 syntax pages: purpose, result, fearing, temporal-causal-concessive, conditionals, sequence-of-tenses + gcse/index.html updated)
 progress:
   total_phases: 7
   completed_phases: 3
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-03-23)
 ## Current Position
 
 Phase: 4 of 7 (Syntax)
-Plan: 1 of 3 in current phase (complete)
+Plan: 3 of 3 in current phase (complete)
 Status: In progress
-Last activity: 2026-03-25 — Completed plan 04-01 (10 syntax exercise JSON files — all J282 constructions)
+Last activity: 2026-03-25 — Completed plan 04-03 (6 syntax pages: purpose, result, fearing, temporal-causal-concessive, conditionals, sequence-of-tenses + gcse/index.html updated)
 
 Progress: [███░░░░░░░] 24%
 
@@ -57,6 +57,7 @@ Progress: [███░░░░░░░] 24%
 | Phase 03-grammar-accidence P04 | 12 | 2 tasks | 2 files |
 | Phase 03-grammar-accidence P05 | 3 | 1 tasks | 1 files |
 | Phase 04-syntax P01 | 6 | 2 tasks | 10 files |
+| Phase 04-syntax P03 | 20 | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -90,6 +91,9 @@ Progress: [███░░░░░░░] 24%
 - [Phase 04-syntax]: Fearing clause nē = positive fear ("that it will happen"), ut = negative fear ("that it will not") — counter-intuitive reversal stressed in explanations
 - [Phase 04-syntax]: Conditional option labels match J282 mark scheme terminology: "open conditional", "unfulfilled conditional (present)", "unfulfilled conditional (past)"
 - [Phase 04-syntax]: Ablative absolute explanations always confirm ablative noun is NOT the main clause subject — the key diagnostic criterion
+- [Phase 04-syntax P03]: sequence-of-tenses.html is reference-only (no exercises) — linked from all subjunctive construction pages as a rule reference
+- [Phase 04-syntax P03]: Syntax nav group added to gcse/index.html — direct navigation from GCSE hub to any construction
+- [Phase 04-syntax P03]: Syntax card in gcse/index.html now links syntax/index.html with 11 constructions badge (coming-soon removed)
 
 ### Pending Todos
 
