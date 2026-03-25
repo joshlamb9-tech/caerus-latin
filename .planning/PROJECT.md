@@ -16,18 +16,21 @@ A GCSE student using this site should be able to revise every examinable element
 - ✓ Supabase auth + access_grants paywall — existing
 - ✓ Stripe payments — existing
 - ✓ CE Latin vocabulary (219 words), grammar (declensions 1–3, conjugations 1–4, active only), exercises, practice papers — existing
+- ✓ GCSE product gate (`latin-gcse`) in Supabase access_grants — Phase 1
+- ✓ GCSE nav section added to all existing pages — Phase 1
+- ✓ GCSE section landing/home page — Phase 1
+- ✓ DVL vocabulary extended from 219 to ~450 words with GCSE tagging — Phase 2
+- ✓ Vocabulary drills covering full DVL (flashcards, speed recall, GCSE-new filter, verb principal parts) — Phase 2
+- ✓ 4th and 5th declension noun tables with exercises — Phase 3
+- ✓ Full passive voice tables (all tenses) with exercises — Phase 3
+- ✓ Subjunctive tables (present, imperfect, pluperfect) with exercises — Phase 3
+- ✓ Deponent verb page with parsing exercises — Phase 3
+- ✓ Gerund and gerundive page — Phase 3
+- ✓ Extended pronoun tables (hic/haec/hoc, ille/illa/illud, qui/quae/quod, ipse) — Phase 3
+- ✓ 10 syntax pages: indirect statement, purpose clauses, result clauses, indirect commands, indirect questions, ablative absolute, temporal/causal/concessive clauses, conditionals, fearing clauses, participles — Phase 4
 
 ### Active
 
-- [ ] DVL vocabulary extended from 219 to ~450 words with GCSE tagging
-- [ ] Vocabulary drills covering full DVL (flashcards, speed recall, GCSE-new filter, verb principal parts)
-- [ ] 4th and 5th declension noun tables with exercises
-- [ ] Full passive voice tables (all tenses) with exercises
-- [ ] Subjunctive tables (present, imperfect, pluperfect) with exercises
-- [ ] Deponent verb page with parsing exercises
-- [ ] Gerund and gerundive page
-- [ ] Extended pronoun tables (hic/haec/hoc, ille/illa/illud, qui/quae/quod, ipse)
-- [ ] 10 syntax pages: indirect statement, purpose clauses, result clauses, indirect commands, indirect questions, ablative absolute, temporal/causal/concessive clauses, conditionals, fearing clauses, participles
 - [ ] English-to-Latin practice sets (10 sets × 3 sentences)
 - [ ] Practice passage library (6–8 tagged unseen passages)
 - [ ] PETE method + MANGOES literary devices page
@@ -35,9 +38,6 @@ A GCSE student using this site should be able to revise every examinable element
 - [ ] Literature & Culture pages for 3 themes (Entertainment, Romans in Britain, Myths and Beliefs)
 - [ ] 4 mock Language papers (J282/01) with mark schemes
 - [ ] "Coming from CE?" orientation page
-- [ ] GCSE product gate (`latin-gcse`) in Supabase access_grants
-- [ ] GCSE nav section added to all existing pages
-- [ ] GCSE section landing/home page
 
 ### Out of Scope
 
@@ -71,7 +71,9 @@ A GCSE student using this site should be able to revise every examinable element
 | £49.99/year pricing | Accessible price to build user base; matches CE price | — Pending |
 | Language component first | 50% of marks, compulsory — highest ROI | — Pending |
 | Generic literature tools only (no set texts) | Set texts rotate every 2 years — too volatile for v1 | — Pending |
-| Reuse existing exercise engine | Avoids rebuilding; extend data + filters | — Pending |
+| Reuse existing exercise engine | Avoids rebuilding; extend data + filters | ✓ Confirmed — MCQ engine copy-pasted per page works reliably |
+| Syntax pages use MCQ not gap-fill | Syntax identification/translation suits MCQ; gap-fill reserved for grammar | ✓ Phase 4 |
+| Sequence of tenses as reference-only page | Cross-cutting rule referenced by 6 constructions; no standalone exercises needed | ✓ Phase 4 |
 
 ---
-*Last updated: 2026-03-23 after initialization*
+*Last updated: 2026-03-25 after Phase 4 (Syntax)*
