@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: "Completed 05-01: Translation Practice data files (9 JSON files)"
-last_updated: "2026-03-25T15:51:32.400Z"
+stopped_at: "Completed 05-02: Translation Practice UI (3 HTML pages + gcse/index.html updated)"
+last_updated: "2026-03-25T15:58:13.218Z"
 last_activity: "2026-03-25 — Completed plan 04-03 (6 syntax pages: purpose, result, fearing, temporal-causal-concessive, conditionals, sequence-of-tenses + gcse/index.html updated)"
 progress:
   total_phases: 7
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 15
-  completed_plans: 14
+  completed_plans: 15
   percent: 24
 ---
 
@@ -60,6 +60,7 @@ Progress: [███░░░░░░░] 24%
 | Phase 04-syntax P03 | 20 | 2 tasks | 7 files |
 | Phase 04-syntax P02 | 11 | 2 tasks | 6 files |
 | Phase 05-translation-practice P01 | 5 | 2 tasks | 9 files |
+| Phase 05-translation-practice P02 | 12 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -102,6 +103,8 @@ Progress: [███░░░░░░░] 24%
 - [Phase 05-translation-practice]: Passage latin_text uses line-numbered array entries — mirrors J282 exam paper format
 - [Phase 05-translation-practice]: vocabulary_notes limited to non-DVL words only — mirrors exam paper glossary convention
 - [Phase 05-translation-practice]: key_phrases extracted as separate top-level array — UI can highlight mark-scoring phrases in model translation
+- [Phase 05-translation-practice]: Translation hub uses tease pattern (not hard-redirect) — consistent with syntax/index.html convention for hub pages
+- [Phase 05-translation-practice]: escapeHtml helper added inline to translation pages — JSON is author-controlled but defensive escaping is correct practice
 
 ### Pending Todos
 
@@ -113,6 +116,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-25T15:51:32.398Z
-Stopped at: Completed 05-01: Translation Practice data files (9 JSON files)
+Last session: 2026-03-25T15:58:13.216Z
+Stopped at: Completed 05-02: Translation Practice UI (3 HTML pages + gcse/index.html updated)
 Resume file: None
