@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GCSE Latin unseen passages &mdash; Foundation and Higher level with model translations">
+  <meta name="theme-color" content="#1a2744">
+  <title>Unseen Passages &mdash; GCSE Translation &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; justify-content: center; }
+    .filter-btn { padding: 0.4rem 0.9rem; border: 1px solid #e0dbd0; border-radius: 4px; background: #fff; color: #4a5568; font-size: 0.85rem; cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .filter-btn:hover { border-color: #c9a84c; }
+    .filter-btn.active { background: #c9a84c; color: #1a2744; border-color: #c9a84c; font-weight: 600; }
+
+    .passage-card { padding: 1.25rem; background: #fff; border: 1px solid #e0dbd0; border-radius: 6px; margin-bottom: 1rem; cursor: pointer; transition: border-color 0.15s ease; }
+    .passage-card:hover { border-color: #c9a84c; }
+    .passage-card h3 { margin: 0 0 0.3rem; font-size: 1.05rem; color: #1a2744; }
+    .passage-card .passage-meta { font-size: 0.85rem; color: #4a5568; }
+    .passage-badge { display: inline-block; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 3px; text-transform: uppercase; margin-right: 0.4rem; }
+    .passage-badge.foundation { background: #e8f5e9; color: #2e7d32; }
+    .passage-badge.higher { background: #fff3e0; color: #e65100; }
+    .topic-tag { display: inline-block; padding: 0.1rem 0.4rem; font-size: 0.7rem; color: #4a5568; border: 1px solid #e0dbd0; border-radius: 3px; margin-right: 0.3rem; }
+
+    .passage-full { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e0dbd0; }
+    .passage-full.open { display: block; }
+    .latin-lines { font-family: 'EB Garamond', serif; font-size: 1.1rem; line-height: 1.8; margin: 1rem 0; }
+    .latin-lines .line-num { display: inline-block; width: 2rem; color: #999; font-size: 0.85rem; }
+    .vocab-notes { margin: 1rem 0; padding: 0.75rem 1rem; background: #f5f2eb; border-radius: 4px; font-size: 0.9rem; }
+    .vocab-notes dt { font-weight: 600; font-style: italic; }
+    .vocab-notes dd { margin: 0 0 0.4rem 1rem; }
+    .model-translation { display: none; margin: 1rem 0; padding: 1rem; background: #fafaf8; border-left: 3px solid #c9a84c; border-radius: 0 4px 4px 0; }
+    .model-translation.shown { display: block; }
+    .model-translation mark { background: #fef3cd; padding: 0.1rem 0.2rem; border-radius: 2px; }
+
+    .show-translation-btn { padding: 0.45rem 1rem; border: 1px solid #c9a84c; border-radius: 4px; background: #fff; color: #1a2744; font-size: 0.9rem; cursor: pointer; font-family: inherit; transition: all 0.15s ease; margin-top: 0.75rem; }
+    .show-translation-btn:hover { background: #c9a84c; }
+
+    .passage-toggle-hint { font-size: 0.8rem; color: #999; margin-top: 0.4rem; }
+
+    #passage-list { max-width: 800px; margin: 0 auto; padding: 0 1rem 3rem; }
+    .passages-hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .passages-hero h1 { font-size: 2rem; color: #1a2744; margin-bottom: 0.5rem; }
+    .passages-hero p { font-size: 1.1rem; color: #4a5568; max-width: 600px; margin: 0 auto; }
+    .no-results { text-align: center; color: #4a5568; padding: 2rem; font-style: italic; }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/translation/passages.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+
+            // Load passages
+            initPassages();
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">GCSE Home</a></li>
+          <li><a href="../vocabulary.html">Vocabulary</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Grammar <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../grammar/declensions.html">4th &amp; 5th Declension</a></li>
+              <li><a href="../grammar/passive.html">Passive Voice</a></li>
+              <li><a href="../grammar/subjunctive.html">Subjunctive</a></li>
+              <li><a href="../grammar/deponents.html">Deponent Verbs</a></li>
+              <li><a href="../grammar/gerunds.html">Gerund &amp; Gerundive</a></li>
+              <li><a href="../grammar/pronouns.html">Pronouns</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Syntax <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../syntax/participles.html">Participles</a></li>
+              <li><a href="../syntax/ablative-absolute.html">Ablative Absolute</a></li>
+              <li><a href="../syntax/indirect-statement.html">Indirect Statement</a></li>
+              <li><a href="../syntax/indirect-commands.html">Indirect Commands</a></li>
+              <li><a href="../syntax/indirect-questions.html">Indirect Questions</a></li>
+              <li><a href="../syntax/purpose.html">Purpose Clauses</a></li>
+              <li><a href="../syntax/result.html">Result Clauses</a></li>
+              <li><a href="../syntax/fearing.html">Fearing Clauses</a></li>
+              <li><a href="../syntax/temporal-causal-concessive.html">Temporal / Causal / Concessive</a></li>
+              <li><a href="../syntax/conditionals.html">Conditionals</a></li>
+              <li><a href="../syntax/sequence-of-tenses.html">Sequence of Tenses</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Translation <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="passages.html">Unseen Passages</a></li>
+              <li><a href="english-to-latin.html">English to Latin</a></li>
+            </ul>
+          </li>
+          <li><a href="../../index.html">CE Latin</a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="passages-hero">
+      <h1>Unseen Passages</h1>
+      <p>8 Latin passages at Foundation and Higher level. Read the passage, then reveal the model translation.</p>
+    </section>
+
+    <div id="passage-list">
+
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-filter-type="all">All</button>
+        <button class="filter-btn" data-filter-type="difficulty" data-filter-value="Foundation">Foundation</button>
+        <button class="filter-btn" data-filter-type="difficulty" data-filter-value="Higher">Higher</button>
+        <button class="filter-btn" data-filter-type="topic" data-filter-value="mythology">Mythology</button>
+        <button class="filter-btn" data-filter-type="topic" data-filter-value="military">Military</button>
+        <button class="filter-btn" data-filter-type="topic" data-filter-value="daily life">Daily Life</button>
+        <button class="filter-btn" data-filter-type="topic" data-filter-value="historical narrative">Historical Narrative</button>
+        <button class="filter-btn" data-filter-type="topic" data-filter-value="religion">Religion</button>
+      </div>
+
+      <div id="cards-container">
+        <p style="text-align:center; color:#4a5568; padding:2rem;">Loading passages&hellip;</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function initPassages() {
+      var PASSAGE_IDS = [1, 2, 3, 4, 5, 6, 7, 8];
+      var passages = [];
+      var activeFilters = { difficulty: null, topic: null };
+
+      // Fetch all passage JSONs
+      Promise.all(PASSAGE_IDS.map(function (i) {
+        var id = i < 10 ? '0' + i : '' + i;
+        return fetch('../../data/passages/gcse-passage-' + id + '.json').then(function (r) { return r.json(); });
+      })).then(function (data) {
+        passages = data;
+        renderCards();
+      }).catch(function (err) {
+        document.getElementById('cards-container').innerHTML = '<p class="no-results">Could not load passages. Please try again.</p>';
+        console.error('Error loading passages:', err);
+      });
+
+      // Filter button interactions
+      var filterBar = document.getElementById('filter-bar');
+      filterBar.addEventListener('click', function (e) {
+        var btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+
+        var filterType = btn.dataset.filterType;
+        var filterValue = btn.dataset.filterValue;
+
+        if (filterType === 'all') {
+          activeFilters.difficulty = null;
+          activeFilters.topic = null;
+          filterBar.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+        } else if (filterType === 'difficulty') {
+          // Toggle: if already active, clear it
+          if (activeFilters.difficulty === filterValue) {
+            activeFilters.difficulty = null;
+            btn.classList.remove('active');
+          } else {
+            activeFilters.difficulty = filterValue;
+            filterBar.querySelectorAll('[data-filter-type="difficulty"]').forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+          }
+          // Remove "All" active state
+          filterBar.querySelector('[data-filter-type="all"]').classList.remove('active');
+        } else if (filterType === 'topic') {
+          // Toggle: if already active, clear it
+          if (activeFilters.topic === filterValue) {
+            activeFilters.topic = null;
+            btn.classList.remove('active');
+          } else {
+            activeFilters.topic = filterValue;
+            filterBar.querySelectorAll('[data-filter-type="topic"]').forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+          }
+          filterBar.querySelector('[data-filter-type="all"]').classList.remove('active');
+        }
+
+        // If no filters active, re-activate All button
+        if (!activeFilters.difficulty && !activeFilters.topic) {
+          filterBar.querySelector('[data-filter-type="all"]').classList.add('active');
+        }
+
+        renderCards();
+      });
+
+      function renderCards() {
+        var container = document.getElementById('cards-container');
+        var filtered = passages.filter(function (p) {
+          var diffOk = !activeFilters.difficulty || p.difficulty === activeFilters.difficulty;
+          var topicOk = !activeFilters.topic || (p.topics && p.topics.some(function (t) {
+            return t.toLowerCase() === activeFilters.topic.toLowerCase();
+          }));
+          return diffOk && topicOk;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = '<p class="no-results">No passages match the selected filters.</p>';
+          return;
+        }
+
+        container.innerHTML = filtered.map(function (p) {
+          var diffClass = p.difficulty ? p.difficulty.toLowerCase() : '';
+          var topicTags = (p.topics || []).map(function (t) {
+            return '<span class="topic-tag">' + escapeHtml(t) + '</span>';
+          }).join('');
+
+          var latinLines = (p.latin_text || []).map(function (l) {
+            return '<div><span class="line-num">' + l.line + '</span>' + escapeHtml(l.text) + '</div>';
+          }).join('');
+
+          var vocabNotes = '';
+          if (p.vocabulary_notes && p.vocabulary_notes.length > 0) {
+            vocabNotes = '<div class="vocab-notes"><h4 style="margin:0 0 0.5rem; font-size:0.9rem; color:#1a2744;">Vocabulary help</h4><dl>'
+              + p.vocabulary_notes.map(function (v) {
+                return '<dt>' + escapeHtml(v.word) + '</dt><dd>' + escapeHtml(v.meaning) + '</dd>';
+              }).join('') + '</dl></div>';
+          }
+
+          // Build model translation paragraphs with key phrases highlighted
+          var translationHtml = (p.model_translation || []).map(function (para) {
+            var text = para.text;
+            // Highlight key phrases
+            (p.key_phrases || []).forEach(function (phrase) {
+              text = text.replace(phrase, '<mark>' + phrase + '</mark>');
+            });
+            return '<p>' + text + '</p>';
+          }).join('');
+
+          return '<div class="passage-card" id="card-' + escapeHtml(p.id) + '">'
+            + '<h3>' + escapeHtml(p.title) + '</h3>'
+            + '<div class="passage-meta">'
+            + '<span class="passage-badge ' + diffClass + '">' + escapeHtml(p.difficulty) + '</span>'
+            + topicTags
+            + '<span style="margin-left:0.3rem;">' + (p.word_count || '') + ' words</span>'
+            + '</div>'
+            + '<p class="passage-toggle-hint" style="font-size:0.8rem;color:#999;margin-top:0.4rem;">Click to expand</p>'
+            + '<div class="passage-full" id="full-' + escapeHtml(p.id) + '">'
+            + '<div class="latin-lines">' + latinLines + '</div>'
+            + vocabNotes
+            + '<button class="show-translation-btn" onclick="showTranslation(\'' + escapeHtml(p.id) + '\'); event.stopPropagation();">Show translation</button>'
+            + '<div class="model-translation" id="trans-' + escapeHtml(p.id) + '">' + translationHtml + '</div>'
+            + '</div>'
+            + '</div>';
+        }).join('');
+
+        // Bind click handlers to cards
+        container.querySelectorAll('.passage-card').forEach(function (card) {
+          card.addEventListener('click', function () {
+            var id = card.id.replace('card-', '');
+            togglePassage(id);
+          });
+        });
+      }
+
+      function togglePassage(id) {
+        var full = document.getElementById('full-' + id);
+        if (!full) return;
+        full.classList.toggle('open');
+        var card = document.getElementById('card-' + id);
+        if (card) {
+          var hint = card.querySelector('.passage-toggle-hint');
+          if (hint) hint.textContent = full.classList.contains('open') ? 'Click to collapse' : 'Click to expand';
+        }
+      }
+
+      function showTranslation(id) {
+        var trans = document.getElementById('trans-' + id);
+        if (!trans) return;
+        trans.classList.add('shown');
+        // Hide the button
+        var card = document.getElementById('card-' + id);
+        if (card) {
+          var btn = card.querySelector('.show-translation-btn');
+          if (btn) btn.style.display = 'none';
+        }
+      }
+
+      // Expose to global scope for onclick handlers
+      window.togglePassage = togglePassage;
+      window.showTranslation = showTranslation;
+    }
+  </script>
+
+</body>
+</html>
