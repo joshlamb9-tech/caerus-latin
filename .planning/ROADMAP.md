@@ -84,7 +84,11 @@ Plans:
   2. Students can filter passages by topic or difficulty tag
   3. English-to-Latin sets (10 sets × 3 sentences) are accessible with mark schemes or model answers
   4. A student can attempt a passage and check their translation against a provided version
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — 8 unseen passage JSON files + English-to-Latin composition JSON (TRANS-01, TRANS-02)
+- [ ] 05-02-PLAN.md — Translation hub, passage library, English-to-Latin page + GCSE hub card update (TRANS-01, TRANS-02)
 
 ### Phase 6: Literature Tools
 **Goal**: Students have the analytical frameworks and cultural knowledge needed for the Literature component
@@ -115,6 +119,6 @@ Plans:
 | 2. Vocabulary | 2/2 | Complete   | 2026-03-23 |
 | 3. Grammar (Accidence) | 5/5 | Complete   | 2026-03-23 |
 | 4. Syntax | 3/3 | Complete   | 2026-03-25 |
-| 5. Translation Practice | 0/TBD | Not started | - |
+| 5. Translation Practice | 0/2 | Not started | - |
 | 6. Literature Tools | 0/TBD | Not started | - |
 | 7. Mock Papers | 0/TBD | Not started | - |
