@@ -1,0 +1,127 @@
+[
+  {
+    "id": "cond-01",
+    "sentence": "sī labōrās, praemium accipies.",
+    "blank_word": "",
+    "display": "sī labōrās, praemium accipies.",
+    "translation": "If you work, you will receive a prize.",
+    "options": ["open conditional", "unfulfilled conditional (present)", "unfulfilled conditional (past)", "temporal clause"],
+    "correct": "open conditional",
+    "explanation": "sī + present indicative (labōrās) + future indicative (accipies) is an open conditional — it presents a real, possible condition with no implication it is unfulfilled. The indicative in both clauses signals openness: the working may or may not happen, but the condition is treated as genuinely possible."
+  },
+  {
+    "id": "cond-02",
+    "sentence": "sī amīcus veniret, laetissimus essem.",
+    "blank_word": "",
+    "display": "sī amīcus veniret, laetissimus essem.",
+    "translation": "If my friend were coming (but he isn't), I would be very happy.",
+    "options": ["unfulfilled conditional (present)", "open conditional", "unfulfilled conditional (past)", "temporal clause"],
+    "correct": "unfulfilled conditional (present)",
+    "explanation": "sī + imperfect subjunctive (veniret) + imperfect subjunctive (essem) is an unfulfilled conditional in present time — sometimes called 'contrary to fact (present)'. The imperfect subjunctive signals that the condition is not currently being met: the friend is NOT coming, therefore the happiness is not happening."
+  },
+  {
+    "id": "cond-03",
+    "sentence": "nisi mīlitēs fugissent, vicissēmus.",
+    "blank_word": "",
+    "display": "nisi mīlitēs fugissent, vicissēmus.",
+    "translation": "If the soldiers had not fled, we would have won.",
+    "options": ["unfulfilled conditional (past)", "open conditional", "unfulfilled conditional (present)", "temporal clause"],
+    "correct": "unfulfilled conditional (past)",
+    "explanation": "nisi (if not/unless) + pluperfect subjunctive (fugissent) + pluperfect subjunctive (vicissēmus) is an unfulfilled conditional in past time. The pluperfect subjunctive signals both clauses refer to a past situation that did not happen: the soldiers DID flee, so we did NOT win. nisi = sī nōn in most cases."
+  },
+  {
+    "id": "cond-04",
+    "sentence": "sī aquam bibis, sānus eris.",
+    "blank_word": "",
+    "display": "sī aquam bibis, sānus eris.",
+    "translation": "If you drink water, you will be healthy.",
+    "options": ["open conditional", "unfulfilled conditional (present)", "temporal clause", "unfulfilled conditional (past)"],
+    "correct": "open conditional",
+    "explanation": "sī + present indicative (bibis) + future indicative (eris) is a simple open conditional — a genuine possibility. The drinking of water and resulting health are treated as real possibilities, not counter-factual. Indicative in both clauses = open, real condition."
+  },
+  {
+    "id": "cond-05",
+    "sentence": "sī Rōmae nātus essem, Latīnē melius loquerer.",
+    "blank_word": "",
+    "display": "sī Rōmae nātus essem, Latīnē melius loquerer.",
+    "translation": "If I had been born in Rome, I would speak Latin better.",
+    "options": ["unfulfilled conditional (present)", "open conditional", "unfulfilled conditional (past)", "causal clause"],
+    "correct": "unfulfilled conditional (present)",
+    "explanation": "sī + pluperfect subjunctive (nātus essem — the birth is in the past) + imperfect subjunctive (loquerer — the speaking is present). This is a 'mixed' unfulfilled conditional: past condition (was not born in Rome) with present consequence (would speak better now). The imperfect subjunctive in the main clause confirms the present unfulfilled result."
+  },
+  {
+    "id": "cond-06",
+    "sentence": "sī pecūniam habēbis, librum emere poteris.",
+    "blank_word": "",
+    "display": "sī pecūniam habēbis, librum emere poteris.",
+    "translation": "",
+    "options": [
+      "If you have money, you will be able to buy the book.",
+      "If you had money, you would be able to buy the book.",
+      "If you had had money, you would have been able to buy the book.",
+      "Since you had money, you were able to buy the book."
+    ],
+    "correct": "If you have money, you will be able to buy the book.",
+    "explanation": "sī + future indicative (habēbis) + future indicative (poteris) is an open conditional. Latin uses the future in the sī clause (while English uses the present: 'if you have'). Both verbs in the indicative confirm this is a real, open condition — it may well happen."
+  },
+  {
+    "id": "cond-07",
+    "sentence": "sī hoc dīxissēs, errāvissēs.",
+    "blank_word": "",
+    "display": "sī hoc dīxissēs, errāvissēs.",
+    "translation": "",
+    "options": [
+      "If you had said this, you would have been wrong.",
+      "If you were saying this, you would be wrong.",
+      "If you say this, you will be wrong.",
+      "Since you said this, you were wrong."
+    ],
+    "correct": "If you had said this, you would have been wrong.",
+    "explanation": "sī + pluperfect subjunctive (dīxissēs) + pluperfect subjunctive (errāvissēs) is an unfulfilled conditional in past time. Both pluperfect subjunctives confirm this is about a past situation that did not occur: you did NOT say this, so you were NOT wrong. Completely counter-factual."
+  },
+  {
+    "id": "cond-08",
+    "sentence": "nisi Cicerō adfuisset, rēs pūblica periisset.",
+    "blank_word": "",
+    "display": "nisi Cicerō adfuisset, rēs pūblica periisset.",
+    "translation": "",
+    "options": [
+      "If Cicero had not been present, the republic would have perished.",
+      "If Cicero were not present, the republic would perish.",
+      "Since Cicero was not present, the republic perished.",
+      "If Cicero is not present, the republic will perish."
+    ],
+    "correct": "If Cicero had not been present, the republic would have perished.",
+    "explanation": "nisi (if not) + pluperfect subjunctive (adfuisset) + pluperfect subjunctive (periisset) is an unfulfilled past conditional. The implication: Cicero WAS present, so the republic did NOT perish. Both pluperfect subjunctives point to a past counter-factual scenario."
+  },
+  {
+    "id": "cond-09",
+    "sentence": "sī omnēs cīvēs cōnsentirent, pāx fierī posset.",
+    "blank_word": "",
+    "display": "sī omnēs cīvēs cōnsentirent, pāx fierī posset.",
+    "translation": "",
+    "options": [
+      "If all the citizens were to agree, peace could be made.",
+      "If all the citizens had agreed, peace could have been made.",
+      "If all the citizens agree, peace will be able to be made.",
+      "Since all the citizens agreed, peace was made."
+    ],
+    "correct": "If all the citizens were to agree, peace could be made.",
+    "explanation": "sī + imperfect subjunctive (cōnsentirent) + imperfect subjunctive (posset) is an unfulfilled conditional in present time — they are NOT currently agreeing, so peace cannot currently be made. fieri is the present passive infinitive of faciō (to be made); posset is imperfect subjunctive of possum."
+  },
+  {
+    "id": "cond-10",
+    "sentence": "sī nōn festīnāvissēmus, nāvem āmīsīssēmus.",
+    "blank_word": "",
+    "display": "sī nōn festīnāvissēmus, nāvem āmīsīssēmus.",
+    "translation": "",
+    "options": [
+      "If we had not hurried, we would have missed the ship.",
+      "If we were not hurrying, we would miss the ship.",
+      "If we do not hurry, we will miss the ship.",
+      "Because we had not hurried, we missed the ship."
+    ],
+    "correct": "If we had not hurried, we would have missed the ship.",
+    "explanation": "sī nōn (if not, alternative to nisi) + pluperfect subjunctive (festīnāvissēmus) + pluperfect subjunctive (āmīsīssēmus) is an unfulfilled past conditional. The implication: we DID hurry, so we did NOT miss the ship. āmittere nāvem = 'to miss/lose the ship'. Both pluperfect subjunctives signal the past counter-factual."
+  }
+]

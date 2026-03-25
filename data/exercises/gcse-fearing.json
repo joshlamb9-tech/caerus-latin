@@ -1,0 +1,127 @@
+[
+  {
+    "id": "fear-01",
+    "sentence": "timeō nē hostēs veniant.",
+    "blank_word": "",
+    "display": "timeō nē hostēs veniant.",
+    "translation": "I fear that the enemy will come.",
+    "options": ["fearing clause", "purpose clause", "result clause", "indirect command"],
+    "correct": "fearing clause",
+    "explanation": "timeō (I fear) is a verb of fearing; nē + subjunctive (veniant) after a fear verb signals a fearing clause. Crucially, nē here means 'that' (positive fear) — the opposite of its meaning in purpose and indirect commands. 'I fear that the enemy will come' = a real fear."
+  },
+  {
+    "id": "fear-02",
+    "sentence": "vereor ut tempestās sēdet.",
+    "blank_word": "",
+    "display": "vereor ut tempestās sēdet.",
+    "translation": "I fear that the storm will not calm down.",
+    "options": ["fearing clause", "indirect command", "purpose clause", "result clause"],
+    "correct": "fearing clause",
+    "explanation": "vereor (I fear) is a verb of fearing; ut + subjunctive (sēdet) after a fear verb signals negative fear — 'I fear that...not'. This is the counter-intuitive reversal: with fear verbs, ut = that...not (negative fear) while nē = that (positive fear). sēdet is present subjunctive of sedeō used intransitively."
+  },
+  {
+    "id": "fear-03",
+    "sentence": "metuit nē frāter in perīculō esset.",
+    "blank_word": "",
+    "display": "metuit nē frāter in perīculō esset.",
+    "translation": "He feared that his brother was in danger.",
+    "options": ["fearing clause", "purpose clause", "indirect statement", "fearing clause"],
+    "correct": "fearing clause",
+    "explanation": "metuō (I fear) + nē + subjunctive (esset, imperfect — sequence of tenses after perfect metuō) is a fearing clause expressing positive fear. The thing feared is that the brother was in danger. The imperfect subjunctive esset follows the sequence after the perfect main verb."
+  },
+  {
+    "id": "fear-04",
+    "sentence": "timeō nē servī effūgerint.",
+    "blank_word": "",
+    "display": "timeō nē servī effūgerint.",
+    "translation": "I fear that the slaves have escaped.",
+    "options": ["fearing clause", "indirect command", "result clause", "purpose clause"],
+    "correct": "fearing clause",
+    "explanation": "timeō + nē + perfect subjunctive (effūgerint) is a fearing clause about a past event — fearing something has already happened. effūgerint is perfect subjunctive of effugiō (to escape/flee away). The perfect subjunctive after a present fear verb means the feared event may already have occurred."
+  },
+  {
+    "id": "fear-05",
+    "sentence": "verebantur nē rēx irrātus reverterētur.",
+    "blank_word": "",
+    "display": "verebantur nē rēx irrātus reverterētur.",
+    "translation": "They were afraid that the angry king would return.",
+    "options": ["fearing clause", "temporal clause", "indirect statement", "result clause"],
+    "correct": "fearing clause",
+    "explanation": "verebantur (they were afraid) + nē + subjunctive (reverterētur, imperfect — after imperfect main verb) is a fearing clause. irrātus (angry) is a PPP used as an adjective modifying rēx. The imperfect subjunctive follows sequence of tenses after the imperfect verebantur."
+  },
+  {
+    "id": "fear-06",
+    "sentence": "timeō nē iter longum sit.",
+    "blank_word": "",
+    "display": "timeō nē iter longum sit.",
+    "translation": "",
+    "options": [
+      "I fear that the journey is long.",
+      "I fear that the journey is not long.",
+      "I order that the journey be long.",
+      "I am afraid lest the journey not be long."
+    ],
+    "correct": "I fear that the journey is long.",
+    "explanation": "timeō + nē + subjunctive (sit) is a fearing clause. nē after a fear verb = 'that' (positive fear). This is the key rule to remember: nē with fear verbs expresses positive fear ('I fear that it IS long'), while nē with motion verbs or verbs of ordering expresses negative purpose or command."
+  },
+  {
+    "id": "fear-07",
+    "sentence": "metuēbāmus ut satis aquae esset.",
+    "blank_word": "",
+    "display": "metuēbāmus ut satis aquae esset.",
+    "translation": "",
+    "options": [
+      "We feared that there was not enough water.",
+      "We feared that there was enough water.",
+      "We ordered that there be enough water.",
+      "We hurried so that there would be enough water."
+    ],
+    "correct": "We feared that there was not enough water.",
+    "explanation": "metuēbāmus (we feared) + ut + subjunctive (esset) is a fearing clause. ut after a fear verb = 'that...not' (negative fear). 'We feared that there was NOT enough water' — the feared thing is the negative outcome (not enough water). satis aquae = 'enough of water' (partitive genitive)."
+  },
+  {
+    "id": "fear-08",
+    "sentence": "timēmus nē tū capiāris.",
+    "blank_word": "",
+    "display": "timēmus nē tū capiāris.",
+    "translation": "",
+    "options": [
+      "We fear that you will be captured.",
+      "We fear that you will not be captured.",
+      "We order that you not be captured.",
+      "We ran so that you would not be captured."
+    ],
+    "correct": "We fear that you will be captured.",
+    "explanation": "timēmus + nē + subjunctive passive (capiāris, present passive subjunctive of capiō) is a fearing clause. nē = 'that' with fear verbs. capiāris is 2nd person singular present passive subjunctive — 'you be captured'. The fear is that capture happens, not that it doesn't."
+  },
+  {
+    "id": "fear-09",
+    "sentence": "verēbātur nē dux interficerētur.",
+    "blank_word": "",
+    "display": "verēbātur nē dux interficerētur.",
+    "translation": "",
+    "options": [
+      "He was afraid that the leader would be killed.",
+      "He was afraid that the leader would not be killed.",
+      "He ordered that the leader not be killed.",
+      "He was so afraid that the leader was killed."
+    ],
+    "correct": "He was afraid that the leader would be killed.",
+    "explanation": "verēbātur (he was afraid) + nē + imperfect subjunctive passive (interficerētur) is a fearing clause. nē = positive fear (that it WOULD happen). interficerētur is imperfect passive subjunctive of interficiō, following sequence of tenses after the imperfect verēbātur."
+  },
+  {
+    "id": "fear-10",
+    "sentence": "timeō ut nautae salvī sint.",
+    "blank_word": "",
+    "display": "timeō ut nautae salvī sint.",
+    "translation": "",
+    "options": [
+      "I fear that the sailors are not safe.",
+      "I fear that the sailors are safe.",
+      "I order the sailors to be safe.",
+      "I hurry so that the sailors are safe."
+    ],
+    "correct": "I fear that the sailors are not safe.",
+    "explanation": "timeō + ut + subjunctive (sint) is a fearing clause expressing negative fear — 'I fear that...not'. The feared thing is their NOT being safe. ut with fear verbs signals that the thing feared is the negative/absence of the stated condition. Reverse from normal: here I fear they are NOT salvī."
+  }
+]

@@ -1,0 +1,127 @@
+[
+  {
+    "id": "aa-01",
+    "sentence": "rēge occīsō, cīvēs lībertātem cēlēbrāvērunt.",
+    "blank_word": "",
+    "display": "rēge occīsō, cīvēs lībertātem cēlēbrāvērunt.",
+    "translation": "With the king killed, the citizens celebrated their freedom.",
+    "options": ["ablative absolute", "participial phrase", "temporal clause", "purpose clause"],
+    "correct": "ablative absolute",
+    "explanation": "rēge occīsō is an ablative absolute: rēge (ablative noun) + occīsō (PPP of occīdō, ablative). The key signal is that the king is NOT the subject of the main clause (cīvēs are). An ablative absolute is grammatically independent — both noun and participle are ablative and separate from the main sentence."
+  },
+  {
+    "id": "aa-02",
+    "sentence": "duce profectō, mīlitēs timēbant.",
+    "blank_word": "",
+    "display": "duce profectō, mīlitēs timēbant.",
+    "translation": "With the leader having set out, the soldiers were afraid.",
+    "options": ["ablative absolute", "temporal clause", "participial phrase", "indirect statement"],
+    "correct": "ablative absolute",
+    "explanation": "duce profectō: duce (ablative of dux) + profectō (PPP/perfect participle of the deponent proficīscor, ablative). The leader is not the subject of the main clause (mīlitēs are). Both parts are in the ablative and grammatically independent — the hallmark of the ablative absolute."
+  },
+  {
+    "id": "aa-03",
+    "sentence": "hīs rēbus audītīs, omnēs perterritī sunt.",
+    "blank_word": "",
+    "display": "hīs rēbus audītīs, omnēs perterritī sunt.",
+    "translation": "These things having been heard, everyone was terrified.",
+    "options": ["ablative absolute", "participial phrase", "purpose clause", "temporal clause"],
+    "correct": "ablative absolute",
+    "explanation": "hīs rēbus audītīs: hīs rēbus (ablative plural of hae rēs) + audītīs (PPP of audiō, ablative plural). The things heard are not the subject (omnēs are). This is a typical ablative absolute with a demonstrative pronoun + PPP, giving a before-and-after sequence."
+  },
+  {
+    "id": "aa-04",
+    "sentence": "mīlitibus discēdentibus, hostēs urbem oppugnāvērunt.",
+    "blank_word": "",
+    "display": "mīlitibus discēdentibus, hostēs urbem oppugnāvērunt.",
+    "translation": "With the soldiers leaving, the enemy attacked the city.",
+    "options": ["ablative absolute", "temporal clause", "participial phrase", "purpose clause"],
+    "correct": "ablative absolute",
+    "explanation": "mīlitibus discēdentibus: mīlitibus (ablative) + discēdentibus (present active participle of discēdō, ablative plural). The soldiers are not the subject of oppugnāvērunt (hostēs are). An ablative absolute can use a present participle (simultaneous action) or PPP (prior action)."
+  },
+  {
+    "id": "aa-05",
+    "sentence": "nūntiō missō, imperātor respondēre potuit.",
+    "blank_word": "",
+    "display": "nūntiō missō, imperātor respondēre potuit.",
+    "translation": "With a messenger sent, the general was able to reply.",
+    "options": ["ablative absolute", "purpose clause", "participial phrase", "result clause"],
+    "correct": "ablative absolute",
+    "explanation": "nūntiō missō: nūntiō (ablative of nūntius) + missō (PPP of mittō, ablative). The messenger is not the subject of potuit (imperātor is). The sending of the messenger is the prior action that enabled the general to respond — ablative absolute sets the scene for the main clause."
+  },
+  {
+    "id": "aa-06",
+    "sentence": "ponte dēlētō, hostēs trānsīre nōn poterant.",
+    "blank_word": "",
+    "display": "ponte dēlētō, hostēs trānsīre nōn poterant.",
+    "translation": "",
+    "options": [
+      "With the bridge destroyed, the enemy could not cross.",
+      "The bridge having destroyed the enemy, they could not cross.",
+      "Although the bridge was destroyed, the enemy crossed.",
+      "The enemy destroyed the bridge so that they could cross."
+    ],
+    "correct": "With the bridge destroyed, the enemy could not cross.",
+    "explanation": "ponte dēlētō: ablative noun (ponte, ablative of pōns) + PPP (dēlētō, ablative of dēleō). The bridge is not the subject — hostēs are. The destruction of the bridge is the condition/prior event. Translate as 'with the bridge destroyed' or 'after the bridge was destroyed'."
+  },
+  {
+    "id": "aa-07",
+    "sentence": "omnibus rēbus parātīs, exercitus profectus est.",
+    "blank_word": "",
+    "display": "omnibus rēbus parātīs, exercitus profectus est.",
+    "translation": "",
+    "options": [
+      "With all things prepared, the army set out.",
+      "The army prepared all things and set out.",
+      "Although all things were prepared, the army set out.",
+      "The army set out in order to prepare all things."
+    ],
+    "correct": "With all things prepared, the army set out.",
+    "explanation": "omnibus rēbus parātīs: omnibus rēbus (ablative plural) + parātīs (PPP of parō, ablative plural). The things are not the subject — exercitus is. Note the agreement: all three words (omnibus, rēbus, parātīs) are ablative plural. The preparation is completed before setting out."
+  },
+  {
+    "id": "aa-08",
+    "sentence": "Caesare imperante, Rōmānī multa bella gessērunt.",
+    "blank_word": "",
+    "display": "Caesare imperante, Rōmānī multa bella gessērunt.",
+    "translation": "",
+    "options": [
+      "With Caesar in command, the Romans waged many wars.",
+      "Caesar commanded the Romans to wage many wars.",
+      "While Caesar waged war, the Romans were in command.",
+      "The Romans waged war so that Caesar could command."
+    ],
+    "correct": "With Caesar in command, the Romans waged many wars.",
+    "explanation": "Caesare imperante: Caesare (ablative of Caesar) + imperante (present active participle of imperō, ablative). Caesar is not the subject of gessērunt (Rōmānī are). Present participle in ablative absolute expresses simultaneous action — while Caesar was commanding, the Romans were waging wars."
+  },
+  {
+    "id": "aa-09",
+    "sentence": "signo datō, mīlitēs in hostēs impetum fēcērunt.",
+    "blank_word": "",
+    "display": "signo datō, mīlitēs in hostēs impetum fēcērunt.",
+    "translation": "",
+    "options": [
+      "With the signal given, the soldiers charged the enemy.",
+      "The soldiers gave the signal and charged the enemy.",
+      "Although the signal was given, the soldiers did not charge.",
+      "The soldiers gave the signal in order to charge the enemy."
+    ],
+    "correct": "With the signal given, the soldiers charged the enemy.",
+    "explanation": "signo datō: signo (ablative of signum) + datō (PPP of dō, ablative). The signal is not the subject — mīlitēs are. impetum facere means 'to make an attack/charge'. The giving of the signal (ablative absolute) precedes and triggers the charge."
+  },
+  {
+    "id": "aa-10",
+    "sentence": "pāce factā, cīvēs domum rediērunt.",
+    "blank_word": "",
+    "display": "pāce factā, cīvēs domum rediērunt.",
+    "translation": "",
+    "options": [
+      "With peace made, the citizens returned home.",
+      "The citizens made peace and returned home.",
+      "The citizens returned home in order to make peace.",
+      "Although peace was made, the citizens returned home."
+    ],
+    "correct": "With peace made, the citizens returned home.",
+    "explanation": "pāce factā: pāce (ablative of pāx) + factā (PPP of faciō, ablative feminine singular agreeing with pāce). The peace is not the subject — cīvēs are. pācem facere means 'to make peace'. The making of peace (ablative absolute) is the prior event enabling the return home."
+  }
+]

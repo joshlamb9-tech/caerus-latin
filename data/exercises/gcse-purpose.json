@@ -1,0 +1,127 @@
+[
+  {
+    "id": "pur-01",
+    "sentence": "cucurrimus ut amīcum salūtārēmus.",
+    "blank_word": "",
+    "display": "cucurrimus ut amīcum salūtārēmus.",
+    "translation": "We ran in order to greet our friend.",
+    "options": ["purpose clause", "result clause", "indirect command", "fearing clause"],
+    "correct": "purpose clause",
+    "explanation": "ut + subjunctive (salūtārēmus) after a verb of motion (cucurrimus) signals a purpose clause — it answers 'why did we run?'. Purpose clauses always use the subjunctive; the imperfect salūtārēmus follows sequence of tenses after the perfect main verb."
+  },
+  {
+    "id": "pur-02",
+    "sentence": "vēnit nē verba eius audīrentur.",
+    "blank_word": "",
+    "display": "vēnit nē verba eius audīrentur.",
+    "translation": "He came so that his words would not be heard.",
+    "options": ["purpose clause", "fearing clause", "result clause", "indirect command"],
+    "correct": "purpose clause",
+    "explanation": "nē + subjunctive (audīrentur) after a verb of motion expresses negative purpose — 'so that...not' or 'lest'. audīrentur is imperfect subjunctive passive. The key diagnostic: purpose answers 'why?'; nē after a motion/action verb = negative purpose."
+  },
+  {
+    "id": "pur-03",
+    "sentence": "discipulī labōrant ut praemium accipiant.",
+    "blank_word": "",
+    "display": "discipulī labōrant ut praemium accipiant.",
+    "translation": "The pupils work in order to receive a prize.",
+    "options": ["purpose clause", "result clause", "temporal clause", "indirect statement"],
+    "correct": "purpose clause",
+    "explanation": "ut + subjunctive (accipiant) after labōrant shows why they work — it expresses the aim. The present subjunctive follows the primary sequence (present main verb). Ask: 'why do they work?' → to receive a prize. Purpose answers 'why?'."
+  },
+  {
+    "id": "pur-04",
+    "sentence": "ad forum ibāmus ad rēgem videndum.",
+    "blank_word": "",
+    "display": "ad forum ibāmus ad rēgem videndum.",
+    "translation": "We were going to the forum to see the king.",
+    "options": ["purpose clause", "indirect statement", "ablative absolute", "result clause"],
+    "correct": "purpose clause",
+    "explanation": "ad + gerund(ive) (ad videndum) expresses purpose — an alternative to ut + subjunctive for expressing aim. rēgem is the accusative object of the gerundive construction. This ad + gerundive pattern is equally valid for expressing purpose."
+  },
+  {
+    "id": "pur-05",
+    "sentence": "nūntiōs mīsit nē hostēs crēderent.",
+    "blank_word": "",
+    "display": "nūntiōs mīsit nē hostēs crēderent.",
+    "translation": "He sent messengers so that the enemy would not believe.",
+    "options": ["purpose clause", "indirect command", "fearing clause", "result clause"],
+    "correct": "purpose clause",
+    "explanation": "mīsit (he sent) + nē + subjunctive (crēderent) expresses negative purpose — why the messengers were sent. The aim was to prevent the enemy from believing. Distinguish from indirect command: the main verb here is mīsit (to send), not a verb of ordering/requesting."
+  },
+  {
+    "id": "pur-06",
+    "sentence": "militēs profectī sunt ut hostēs superārent.",
+    "blank_word": "",
+    "display": "militēs profectī sunt ut hostēs superārent.",
+    "translation": "",
+    "options": [
+      "The soldiers set out in order to defeat the enemy.",
+      "The soldiers set out so that the enemy were defeated.",
+      "The soldiers set out because they had defeated the enemy.",
+      "The soldiers set out although the enemy had been defeated."
+    ],
+    "correct": "The soldiers set out in order to defeat the enemy.",
+    "explanation": "profectī sunt (they set out) + ut + subjunctive (superārent) is a purpose clause — it gives the reason/aim of setting out. Key distinction from result: purpose answers 'in order to' (aim); result answers 'so that as a result' (consequence). Here the defeat is the goal, not a consequence."
+  },
+  {
+    "id": "pur-07",
+    "sentence": "servī silentēs manēbant nē dominī īram excitārent.",
+    "blank_word": "",
+    "display": "servī silentēs manēbant nē dominī īram excitārent.",
+    "translation": "",
+    "options": [
+      "The slaves remained silent so as not to arouse the master's anger.",
+      "The slaves remained silent although they aroused the master's anger.",
+      "The slaves were so silent that they did not arouse the master's anger.",
+      "The slaves feared that they would arouse the master's anger."
+    ],
+    "correct": "The slaves remained silent so as not to arouse the master's anger.",
+    "explanation": "nē + subjunctive (excitārent) after manēbant silentēs expresses negative purpose — the aim of staying silent. Key distinction from result: there is no intensifying word (tam, ita, tantus) in the main clause. Compare: 'so silent that...' would need tam silentēs + ut."
+  },
+  {
+    "id": "pur-08",
+    "sentence": "custōdēs positī sunt ut cīvēs tūtī essent.",
+    "blank_word": "",
+    "display": "custōdēs positī sunt ut cīvēs tūtī essent.",
+    "translation": "",
+    "options": [
+      "Guards were posted so that the citizens would be safe.",
+      "Guards were posted because the citizens were safe.",
+      "Guards were so well posted that the citizens were safe.",
+      "Guards were posted although the citizens were safe."
+    ],
+    "correct": "Guards were posted so that the citizens would be safe.",
+    "explanation": "positī sunt (were posted) + ut + subjunctive (essent) expresses purpose — the aim of posting guards. The imperfect subjunctive essent follows sequence of tenses after the perfect passive main verb. No intensifying word in the main clause confirms this is purpose, not result."
+  },
+  {
+    "id": "pur-09",
+    "sentence": "nāvigāvimus ad īnsulam petendum.",
+    "blank_word": "",
+    "display": "nāvigāvimus ad īnsulam petendum.",
+    "translation": "",
+    "options": [
+      "We sailed in order to seek the island.",
+      "We sailed although we sought the island.",
+      "We sailed so that the island was sought.",
+      "We sailed because the island had been sought."
+    ],
+    "correct": "We sailed in order to seek the island.",
+    "explanation": "ad + gerund (petendum) expresses purpose — 'for the purpose of seeking'. This is the alternative purpose construction using the gerund. īnsulam is the object of petendum (seeking the island). Both ad + gerund and ut + subjunctive are valid purpose expressions."
+  },
+  {
+    "id": "pur-10",
+    "sentence": "rēgīna festīnāvit nē filium āmitteret.",
+    "blank_word": "",
+    "display": "rēgīna festīnāvit nē filium āmitteret.",
+    "translation": "",
+    "options": [
+      "The queen hurried so as not to lose her son.",
+      "The queen feared that she would lose her son.",
+      "The queen hurried because she had lost her son.",
+      "The queen hurried so that her son was lost."
+    ],
+    "correct": "The queen hurried so as not to lose her son.",
+    "explanation": "festīnāvit (she hurried) + nē + subjunctive (āmitteret) is negative purpose — the aim of hurrying was to avoid losing her son. Distinguish from fearing clauses: the main verb is festīnāvit (she hurried), not a verb of fearing. If it were timeō nē āmitteret, that would be a fearing clause."
+  }
+]

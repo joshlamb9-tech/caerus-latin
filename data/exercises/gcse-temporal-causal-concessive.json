@@ -1,0 +1,127 @@
+[
+  {
+    "id": "tcc-01",
+    "sentence": "cum Caesar advēnit, omnēs surrēxērunt.",
+    "blank_word": "",
+    "display": "cum Caesar advēnit, omnēs surrēxērunt.",
+    "translation": "When Caesar arrived, everyone stood up.",
+    "options": ["temporal clause", "causal clause", "concessive clause", "purpose clause"],
+    "correct": "temporal clause",
+    "explanation": "cum + perfect indicative (advēnit) is a temporal cum clause — 'when'. The key signal is the indicative mood after cum. cum with the indicative always expresses time (when). Compare: cum with the subjunctive imperfect or pluperfect signals causal or concessive meaning."
+  },
+  {
+    "id": "tcc-02",
+    "sentence": "cum servī labōrārent, dominus dormiēbat.",
+    "blank_word": "",
+    "display": "cum servī labōrārent, dominus dormiēbat.",
+    "translation": "Since/while the slaves were working, the master was sleeping.",
+    "options": ["causal clause", "temporal clause", "concessive clause", "result clause"],
+    "correct": "causal clause",
+    "explanation": "cum + imperfect subjunctive (labōrārent) is a causal or concessive cum clause. In context, since the master sleeping while slaves work implies an unfavourable contrast or explanation, this reads as causal ('since') or temporal-causal ('while, given that'). cum + subjunctive signals more than mere time."
+  },
+  {
+    "id": "tcc-03",
+    "sentence": "quamquam dēfessus erat, tamen labōrāvit.",
+    "blank_word": "",
+    "display": "quamquam dēfessus erat, tamen labōrāvit.",
+    "translation": "Although he was tired, he nevertheless worked.",
+    "options": ["concessive clause", "causal clause", "temporal clause", "purpose clause"],
+    "correct": "concessive clause",
+    "explanation": "quamquam (although) + indicative (erat) is a concessive clause — it acknowledges a condition that one might expect to prevent the main action, but does not. tamen (nevertheless) often pairs with concessive clauses. quamquam always takes the indicative, unlike cum concessive which takes the subjunctive."
+  },
+  {
+    "id": "tcc-04",
+    "sentence": "dum puerī lūdunt, magistra legit.",
+    "blank_word": "",
+    "display": "dum puerī lūdunt, magistra legit.",
+    "translation": "While the boys are playing, the teacher is reading.",
+    "options": ["temporal clause", "concessive clause", "causal clause", "indirect statement"],
+    "correct": "temporal clause",
+    "explanation": "dum (while) + present indicative (lūdunt) expresses contemporaneous duration — 'while X is happening, Y is also happening'. dum with the present indicative is always temporal. Note: dum meaning 'until' takes the subjunctive; dum meaning 'while' takes the present indicative even in past-tense narratives."
+  },
+  {
+    "id": "tcc-05",
+    "sentence": "cum multī amīcī adessent, Mārcus tamen sōlus sentiēbat.",
+    "blank_word": "",
+    "display": "cum multī amīcī adessent, Mārcus tamen sōlus sentiēbat.",
+    "translation": "Although many friends were present, Marcus nevertheless felt alone.",
+    "options": ["concessive clause", "causal clause", "temporal clause", "purpose clause"],
+    "correct": "concessive clause",
+    "explanation": "cum + imperfect subjunctive (adessent) + tamen in the main clause signals a concessive cum clause — 'although'. The friends' presence is an obstacle to loneliness, yet he felt lonely anyway. tamen (nevertheless) in the main clause is the key confirmation of concessive meaning."
+  },
+  {
+    "id": "tcc-06",
+    "sentence": "cum hostēs appropinquārent, cīvēs fugiēbant.",
+    "blank_word": "",
+    "display": "cum hostēs appropinquārent, cīvēs fugiēbant.",
+    "translation": "",
+    "options": [
+      "As the enemy were approaching, the citizens were fleeing.",
+      "Although the enemy were approaching, the citizens were fleeing.",
+      "Because the citizens were fleeing, the enemy approached.",
+      "When the enemy arrived, the citizens fled."
+    ],
+    "correct": "As the enemy were approaching, the citizens were fleeing.",
+    "explanation": "cum + imperfect subjunctive (appropinquārent) can be temporal-descriptive ('as/while') or causal. Here the two actions are simultaneous and logically connected — the approach caused the flight. In narrative context without tamen, this is best read as causal-temporal: 'as/because the enemy were approaching'."
+  },
+  {
+    "id": "tcc-07",
+    "sentence": "quamquam pluēbat, mīlitēs iter fēcērunt.",
+    "blank_word": "",
+    "display": "quamquam pluēbat, mīlitēs iter fēcērunt.",
+    "translation": "",
+    "options": [
+      "Although it was raining, the soldiers marched.",
+      "Because it was raining, the soldiers marched.",
+      "When it rained, the soldiers marched.",
+      "The soldiers marched so that it rained."
+    ],
+    "correct": "Although it was raining, the soldiers marched.",
+    "explanation": "quamquam (although) + indicative (pluēbat) is a concessive clause. Rain would normally prevent or discourage marching — the soldiers did it anyway. quamquam always takes the indicative (contrast with cum concessive which takes the subjunctive). iter facere = 'to make a march'."
+  },
+  {
+    "id": "tcc-08",
+    "sentence": "cum Rōmānī diū pugnāvissent, tandem pācem fēcērunt.",
+    "blank_word": "",
+    "display": "cum Rōmānī diū pugnāvissent, tandem pācem fēcērunt.",
+    "translation": "",
+    "options": [
+      "After the Romans had fought for a long time, they finally made peace.",
+      "Although the Romans had fought for a long time, they finally made peace.",
+      "Because the Romans were fighting, they finally made peace.",
+      "When the Romans fought, they made peace."
+    ],
+    "correct": "After the Romans had fought for a long time, they finally made peace.",
+    "explanation": "cum + pluperfect subjunctive (pugnāvissent) in narrative context is typically temporal (after) or causal. Without tamen, and with tandem (finally) signalling completion, this is temporal: 'after they had fought'. Pluperfect subjunctive after cum = action completed before the main verb."
+  },
+  {
+    "id": "tcc-09",
+    "sentence": "dum imperātor loquitur, omnēs audient.",
+    "blank_word": "",
+    "display": "dum imperātor loquitur, omnēs audient.",
+    "translation": "",
+    "options": [
+      "While the general is speaking, everyone will listen.",
+      "Until the general speaks, everyone will listen.",
+      "Although the general speaks, everyone will listen.",
+      "Because the general spoke, everyone listened."
+    ],
+    "correct": "While the general is speaking, everyone will listen.",
+    "explanation": "dum (while) + present indicative (loquitur) + future main verb (audient) is a temporal clause expressing duration. dum with the present indicative means 'while' even when the main verb is future. Note: dum meaning 'until' takes the subjunctive — the indicative here confirms 'while'."
+  },
+  {
+    "id": "tcc-10",
+    "sentence": "cum pater domi esset, fīliī melius sē gerēbant.",
+    "blank_word": "",
+    "display": "cum pater domi esset, fīliī melius sē gerēbant.",
+    "translation": "",
+    "options": [
+      "Whenever/since their father was at home, the sons behaved better.",
+      "Although their father was at home, the sons behaved better.",
+      "When their father arrived home, the sons behaved better.",
+      "The sons knew their father was at home."
+    ],
+    "correct": "Whenever/since their father was at home, the sons behaved better.",
+    "explanation": "cum + imperfect subjunctive (esset) without tamen can be causal ('since the father was at home') or iterative-temporal ('whenever the father was at home'). The imperfect subjunctive with cum in repeated past situations often carries both temporal and causal nuance. sē gerere = 'to behave/conduct oneself'."
+  }
+]

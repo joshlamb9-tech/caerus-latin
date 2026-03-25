@@ -1,0 +1,127 @@
+[
+  {
+    "id": "res-01",
+    "sentence": "tam fortis erat ut omnēs eum admīrārentur.",
+    "blank_word": "",
+    "display": "tam fortis erat ut omnēs eum admīrārentur.",
+    "translation": "He was so brave that everyone admired him.",
+    "options": ["result clause", "purpose clause", "temporal clause", "indirect statement"],
+    "correct": "result clause",
+    "explanation": "tam (so) in the main clause + ut + subjunctive (admīrārentur) signals a result clause. The key diagnostic is the intensifying word tam before the adjective. Ask: 'what happened as a result of his bravery?' → everyone admired him. Purpose would answer 'why?' not 'what happened?'."
+  },
+  {
+    "id": "res-02",
+    "sentence": "ita festīnāvit ut mox adveniret.",
+    "blank_word": "",
+    "display": "ita festīnāvit ut mox adveniret.",
+    "translation": "He hurried so much that he arrived soon.",
+    "options": ["result clause", "indirect command", "purpose clause", "causal clause"],
+    "correct": "result clause",
+    "explanation": "ita (so/in such a way) in the main clause + ut + subjunctive (adveniret) signals a result clause. ita modifies the verb (he hurried so much) rather than an adjective. The result clause describes the consequence — arriving soon — not the aim."
+  },
+  {
+    "id": "res-03",
+    "sentence": "adeo stultus erat ut omnia crēderet.",
+    "blank_word": "",
+    "display": "adeo stultus erat ut omnia crēderet.",
+    "translation": "He was so stupid that he believed everything.",
+    "options": ["result clause", "purpose clause", "indirect statement", "fearing clause"],
+    "correct": "result clause",
+    "explanation": "adeō (so very/to such a degree) before stultus + ut + subjunctive (crēderet) is the result clause pattern. adeō is a strong intensifier. The consequence — believing everything — follows from the degree of stupidity described in the main clause."
+  },
+  {
+    "id": "res-04",
+    "sentence": "tanta tempestās erat ut nāvēs mergerentur.",
+    "blank_word": "",
+    "display": "tanta tempestās erat ut nāvēs mergerentur.",
+    "translation": "The storm was so great that the ships were sunk.",
+    "options": ["result clause", "purpose clause", "temporal clause", "indirect command"],
+    "correct": "result clause",
+    "explanation": "tantus/tanta/tantum (so great) before the noun + ut + subjunctive (mergerentur) is the result clause pattern using a size/degree adjective. mergerentur is imperfect subjunctive passive (were being sunk). The ships' sinking is the consequence of the storm's greatness."
+  },
+  {
+    "id": "res-05",
+    "sentence": "tot mīlitēs aderant ut hostēs fugerent.",
+    "blank_word": "",
+    "display": "tot mīlitēs aderant ut hostēs fugerent.",
+    "translation": "So many soldiers were present that the enemy fled.",
+    "options": ["result clause", "purpose clause", "causal clause", "indirect statement"],
+    "correct": "result clause",
+    "explanation": "tot (so many) before the noun mīlitēs + ut + subjunctive (fugerent) signals a result clause. tot is the numeral intensifier (alongside tam, ita, adeō, tantus). The flight of the enemy is the consequence of having so many soldiers present."
+  },
+  {
+    "id": "res-06",
+    "sentence": "tam sapienter locūtus est ut omnēs tacerent.",
+    "blank_word": "",
+    "display": "tam sapienter locūtus est ut omnēs tacerent.",
+    "translation": "",
+    "options": [
+      "He spoke so wisely that everyone fell silent.",
+      "He spoke wisely in order that everyone would fall silent.",
+      "He spoke wisely because everyone had fallen silent.",
+      "He spoke so wisely that he knew everyone was silent."
+    ],
+    "correct": "He spoke so wisely that everyone fell silent.",
+    "explanation": "tam (so) before the adverb sapienter + ut + subjunctive (tacerent) is a result clause. Note that tam can intensify adverbs as well as adjectives. The result clause (everyone fell silent) is the consequence of speaking so wisely — it happened as a result, not as the aim."
+  },
+  {
+    "id": "res-07",
+    "sentence": "adeō mīrātī sumus ut verbum dīcere nōn possemus.",
+    "blank_word": "",
+    "display": "adeō mīrātī sumus ut verbum dīcere nōn possemus.",
+    "translation": "",
+    "options": [
+      "We were so amazed that we could not say a word.",
+      "We were amazed in order that we could say a word.",
+      "We were so amazed that we said not a word.",
+      "We were amazed because we could not say a word."
+    ],
+    "correct": "We were so amazed that we could not say a word.",
+    "explanation": "adeō (so very) + mīrātī sumus + ut + subjunctive (possemus) is a result clause. possemus is imperfect subjunctive of possum (to be able). The inability to speak is the consequence of the degree of amazement — it resulted from being so amazed."
+  },
+  {
+    "id": "res-08",
+    "sentence": "ita clāmāvit ut omnēs cīvēs perterritī sint.",
+    "blank_word": "",
+    "display": "ita clāmāvit ut omnēs cīvēs perterritī sint.",
+    "translation": "",
+    "options": [
+      "He shouted so loudly that all the citizens were terrified.",
+      "He shouted so that all the citizens would be terrified.",
+      "He shouted although all the citizens were terrified.",
+      "He shouted because all the citizens had been terrified."
+    ],
+    "correct": "He shouted so loudly that all the citizens were terrified.",
+    "explanation": "ita (in such a way/so much) + clāmāvit + ut + perfect subjunctive passive (perterritī sint) is a result clause. The perfect subjunctive in result clauses can indicate a vivid or realised result. The terror is the consequence of the shouting's intensity."
+  },
+  {
+    "id": "res-09",
+    "sentence": "tantum vīnum bibit ut sub mēnsā caderet.",
+    "blank_word": "",
+    "display": "tantum vīnum bibit ut sub mēnsā caderet.",
+    "translation": "",
+    "options": [
+      "He drank so much wine that he fell under the table.",
+      "He drank wine in order to fall under the table.",
+      "He drank such good wine that it fell under the table.",
+      "He feared that the wine would make him fall under the table."
+    ],
+    "correct": "He drank so much wine that he fell under the table.",
+    "explanation": "tantum (so much, accusative neuter of tantus) modifying vīnum + ut + subjunctive (caderet) is a result clause. The falling is the consequence of drinking so much wine. Purpose would require 'in order to fall' as the aim — here falling is clearly a result, not an intention."
+  },
+  {
+    "id": "res-10",
+    "sentence": "tam diu pugnāvērunt ut dēfessī essent.",
+    "blank_word": "",
+    "display": "tam diu pugnāvērunt ut dēfessī essent.",
+    "translation": "",
+    "options": [
+      "They fought for so long that they were exhausted.",
+      "They fought for a long time in order to become exhausted.",
+      "They fought for a long time although they were exhausted.",
+      "They knew they had fought so long that they were exhausted."
+    ],
+    "correct": "They fought for so long that they were exhausted.",
+    "explanation": "tam diū (for so long — tam intensifying the temporal adverb diū) + ut + subjunctive (essent) is a result clause. The exhaustion is the consequence of fighting for so long. The intensifier tam attached to a temporal adverb is a variant of the standard pattern."
+  }
+]
