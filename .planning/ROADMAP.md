@@ -119,6 +119,6 @@ Plans:
 | 2. Vocabulary | 2/2 | Complete   | 2026-03-23 |
 | 3. Grammar (Accidence) | 5/5 | Complete   | 2026-03-23 |
 | 4. Syntax | 3/3 | Complete   | 2026-03-25 |
-| 5. Translation Practice | 0/2 | Not started | - |
+| 5. Translation Practice | 1/2 | In Progress|  |
 | 6. Literature Tools | 0/TBD | Not started | - |
 | 7. Mock Papers | 0/TBD | Not started | - |

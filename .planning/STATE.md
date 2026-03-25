@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 5 context gathered
-last_updated: "2026-03-25T15:37:37.239Z"
+stopped_at: "Completed 05-01: Translation Practice data files (9 JSON files)"
+last_updated: "2026-03-25T15:51:32.400Z"
 last_activity: "2026-03-25 — Completed plan 04-03 (6 syntax pages: purpose, result, fearing, temporal-causal-concessive, conditionals, sequence-of-tenses + gcse/index.html updated)"
 progress:
   total_phases: 7
   completed_phases: 4
-  total_plans: 13
-  completed_plans: 13
+  total_plans: 15
+  completed_plans: 14
   percent: 24
 ---
 
@@ -59,6 +59,7 @@ Progress: [███░░░░░░░] 24%
 | Phase 04-syntax P01 | 6 | 2 tasks | 10 files |
 | Phase 04-syntax P03 | 20 | 2 tasks | 7 files |
 | Phase 04-syntax P02 | 11 | 2 tasks | 6 files |
+| Phase 05-translation-practice P01 | 5 | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -98,6 +99,9 @@ Progress: [███░░░░░░░] 24%
 - [Phase 04-syntax]: Syntax hub index uses tease-not-redirect; construction sub-pages use hard redirect on no-grant
 - [Phase 04-syntax]: Both Grammar and Syntax nav dropdown groups on all syntax pages — Syntax group lists all 11 constructions
 - [Phase 04-syntax]: iubeō exception (acc+inf not ut+subjunctive) documented in indirect-commands.html
+- [Phase 05-translation-practice]: Passage latin_text uses line-numbered array entries — mirrors J282 exam paper format
+- [Phase 05-translation-practice]: vocabulary_notes limited to non-DVL words only — mirrors exam paper glossary convention
+- [Phase 05-translation-practice]: key_phrases extracted as separate top-level array — UI can highlight mark-scoring phrases in model translation
 
 ### Pending Todos
 
@@ -109,6 +113,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-25T15:37:37.218Z
-Stopped at: Phase 5 context gathered
-Resume file: .planning/phases/05-translation-practice/05-CONTEXT.md
+Last session: 2026-03-25T15:51:32.398Z
+Stopped at: Completed 05-01: Translation Practice data files (9 JSON files)
+Resume file: None

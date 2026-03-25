@@ -86,8 +86,8 @@
 | GRAM-05 | Phase 3 | Complete |
 | GRAM-06 | Phase 3 | Complete |
 | SYN-01 | Phase 4 | Complete |
-| TRANS-01 | Phase 5 | Pending |
-| TRANS-02 | Phase 5 | Pending |
+| TRANS-01 | Phase 5 | Complete |
+| TRANS-02 | Phase 5 | Complete |
 | LIT-01 | Phase 6 | Pending |
 | LIT-02 | Phase 6 | Pending |
 | LIT-03 | Phase 6 | Pending |
