@@ -1,0 +1,212 @@
+[
+  {
+    "set_number": 1,
+    "topic": "Passive voice",
+    "sentences": [
+      {
+        "english": "The city was destroyed by the soldiers.",
+        "latin_answer": "urbs ā mīlitibus dēlēta est.",
+        "mark_scheme_note": "Requires perfect passive (dēlēta est) + agent expressed with ā/ab + ablative (ā mīlitibus)."
+      },
+      {
+        "english": "The letters were being carried to Rome.",
+        "latin_answer": "epistulae Rōmam ferēbantur.",
+        "mark_scheme_note": "Requires imperfect passive (ferēbantur) — action ongoing in the past. No agent needed as none is specified."
+      },
+      {
+        "english": "The slaves had been punished by the master before the guests arrived.",
+        "latin_answer": "servī ā dominō pūnītī erant antequam hospitēs advēnērunt.",
+        "mark_scheme_note": "Requires pluperfect passive (pūnītī erant) for the earlier action + agent (ā dominō) + temporal clause with antequam + perfect indicative."
+      }
+    ]
+  },
+  {
+    "set_number": 2,
+    "topic": "Ablative absolute",
+    "sentences": [
+      {
+        "english": "With the enemy defeated, the soldiers returned to Rome.",
+        "latin_answer": "hostibus victīs, mīlitēs Rōmam rediērunt.",
+        "mark_scheme_note": "Requires ablative absolute: noun + perfect passive participle, both in ablative (hostibus victīs). The noun must NOT be the subject of the main clause."
+      },
+      {
+        "english": "The general, having seen the signal, ordered the attack.",
+        "latin_answer": "duce signō vīsō, impetum imperāvit.",
+        "mark_scheme_note": "Ablative absolute using perfect passive participle (vīsō) agreeing with ablative noun (signō). Note: the general cannot be subject of both clauses — alternative: signō datō with different framing."
+      },
+      {
+        "english": "While Caesar was speaking, the senators began to whisper.",
+        "latin_answer": "Caesare dīcente, senātōrēs mussāre coepērunt.",
+        "mark_scheme_note": "Ablative absolute using present active participle (dīcente) agreeing with ablative proper noun (Caesare). Present participle indicates simultaneous action."
+      }
+    ]
+  },
+  {
+    "set_number": 3,
+    "topic": "Purpose clauses",
+    "sentences": [
+      {
+        "english": "The soldiers ran to the gate in order to defend the city.",
+        "latin_answer": "mīlitēs ad portam cucurrērunt ut urbem dēfenderent.",
+        "mark_scheme_note": "Requires purpose clause: ut + imperfect subjunctive (dēfenderent) because the main verb is past tense (sequence of tenses)."
+      },
+      {
+        "english": "The mother hid the food so that the children would not go hungry.",
+        "latin_answer": "māter cibum cēlāvit nē līberī ēsurirent.",
+        "mark_scheme_note": "Negative purpose clause requires nē (not ut nōn) + imperfect subjunctive (ēsurirent). nē is the standard negative purpose conjunction."
+      },
+      {
+        "english": "Caesar built a wall around the camp to prevent the enemy from escaping.",
+        "latin_answer": "Caesar mūrum circum castra exstruxit nē hostēs effugerent.",
+        "mark_scheme_note": "Negative purpose clause: nē + imperfect subjunctive (effugerent). A common exam pitfall — nē, not ut nōn, for negative purpose."
+      }
+    ]
+  },
+  {
+    "set_number": 4,
+    "topic": "Result clauses",
+    "sentences": [
+      {
+        "english": "The general was so brave that all the soldiers admired him.",
+        "latin_answer": "dux tam fortis erat ut omnēs mīlitēs eum admīrārentur.",
+        "mark_scheme_note": "Result clause: tam + adjective in main clause signals result; ut + imperfect subjunctive (admīrārentur) introduces the result clause."
+      },
+      {
+        "english": "The storm was so fierce that the ships could not leave the harbour.",
+        "latin_answer": "tempestās ita saeva erat ut nāvēs portum relinquere nōn possent.",
+        "mark_scheme_note": "Result clause with ita + adjective + ut + imperfect subjunctive (possent). Note nōn is used to negate result clauses (unlike purpose clauses which use nē)."
+      },
+      {
+        "english": "He spoke with such great skill that the judge freed the man.",
+        "latin_answer": "tantā arte dīxit ut iūdex virum līberāret.",
+        "mark_scheme_note": "Result clause introduced by tantā...ut. The degree expression (tantā arte) is in the main clause; ut + imperfect subjunctive (līberāret) gives the result."
+      }
+    ]
+  },
+  {
+    "set_number": 5,
+    "topic": "Indirect statement",
+    "sentences": [
+      {
+        "english": "The soldiers say that the king has arrived.",
+        "latin_answer": "mīlitēs rēgem advēnisse dīcunt.",
+        "mark_scheme_note": "Indirect statement after dīcunt: accusative subject (rēgem) + perfect active infinitive (advēnisse). Perfect infinitive because the arrival happened before the speaking."
+      },
+      {
+        "english": "I know that you are making a mistake.",
+        "latin_answer": "sciō tē errāre.",
+        "mark_scheme_note": "Indirect statement after sciō: accusative subject (tē, accusative of tū) + present active infinitive (errāre). Present infinitive = action simultaneous with main verb."
+      },
+      {
+        "english": "The general believed that the city had been captured.",
+        "latin_answer": "dux crēdēbat urbem captam esse.",
+        "mark_scheme_note": "Indirect statement after crēdēbat: accusative subject (urbem) + perfect passive infinitive (captam esse). The participle (captam) must agree with the accusative subject in gender and number."
+      }
+    ]
+  },
+  {
+    "set_number": 6,
+    "topic": "Indirect commands",
+    "sentences": [
+      {
+        "english": "The teacher ordered the students to be quiet.",
+        "latin_answer": "magister discipulīs imperāvit ut tacērent.",
+        "mark_scheme_note": "imperō takes dative + ut + subjunctive (not accusative + infinitive). Dative: discipulīs; ut + imperfect subjunctive: tacērent."
+      },
+      {
+        "english": "The general urged the soldiers not to flee.",
+        "latin_answer": "dux mīlitēs hortātus est nē fugerent.",
+        "mark_scheme_note": "hortātus est (deponent) + nē + imperfect subjunctive (fugerent) for negative indirect command. Note: hortōr takes accusative, not dative."
+      },
+      {
+        "english": "Caesar ordered the prisoners to be brought to Rome.",
+        "latin_answer": "Caesar iussit captīvōs Rōmam dūcī.",
+        "mark_scheme_note": "iubeō takes accusative + infinitive (not ut + subjunctive). captīvōs is accusative; dūcī is present passive infinitive. This is the standard iubeō exception."
+      }
+    ]
+  },
+  {
+    "set_number": 7,
+    "topic": "Temporal clauses",
+    "sentences": [
+      {
+        "english": "After the soldiers had returned, the citizens celebrated.",
+        "latin_answer": "postquam mīlitēs rediērunt, cīvēs celebrāvērunt.",
+        "mark_scheme_note": "postquam + perfect indicative (rediērunt) for completed past action. postquam takes the indicative, not the subjunctive."
+      },
+      {
+        "english": "When the enemy attacked, the guards sounded the alarm.",
+        "latin_answer": "ubi hostēs impetum fēcērunt, custōdēs signum dedērunt.",
+        "mark_scheme_note": "ubi + perfect indicative (fēcērunt) for a single completed past event. ubi with indicative = 'when' (factual); with subjunctive it would imply repeated action."
+      },
+      {
+        "english": "Whenever the teacher entered the room, the students fell silent.",
+        "latin_answer": "cum magister in cubiculum intrāret, discipulī silēbant.",
+        "mark_scheme_note": "cum + imperfect subjunctive (intrāret) expresses repeated past action ('whenever'). The imperfect in main clause (silēbant) reinforces the habitual aspect."
+      }
+    ]
+  },
+  {
+    "set_number": 8,
+    "topic": "Conditionals",
+    "sentences": [
+      {
+        "english": "If you work hard, you will succeed.",
+        "latin_answer": "sī dīligenter labōrābis, succēdēs.",
+        "mark_scheme_note": "Open conditional (future): sī + future indicative in both clauses. In Latin, both the condition and result use future (or future perfect + future) — unlike English which uses present in the 'if' clause."
+      },
+      {
+        "english": "If the soldiers were brave, they would defeat the enemy.",
+        "latin_answer": "sī mīlitēs fortēs essent, hostēs vincerent.",
+        "mark_scheme_note": "Unfulfilled conditional (present): sī + present subjunctive (essent) + present subjunctive in main clause (vincerent). Implies the soldiers are not in fact brave."
+      },
+      {
+        "english": "If the general had arrived earlier, the battle would have been won.",
+        "latin_answer": "sī dux mātūrius advēnisset, proelium victum esset.",
+        "mark_scheme_note": "Unfulfilled conditional (past): sī + pluperfect subjunctive (advēnisset) + pluperfect subjunctive in main clause (victum esset). Both conditions must be pluperfect subjunctive for past unfulfilled."
+      }
+    ]
+  },
+  {
+    "set_number": 9,
+    "topic": "Relative clauses",
+    "sentences": [
+      {
+        "english": "The woman who was standing at the door called out.",
+        "latin_answer": "fēmina quae ad iānuam stābat exclāmāvit.",
+        "mark_scheme_note": "Relative pronoun quae: feminine singular nominative — agrees with antecedent fēmina (feminine singular) in gender and number; nominative because it is the subject of the relative clause."
+      },
+      {
+        "english": "The soldiers whose weapons had been taken were captured.",
+        "latin_answer": "mīlitēs quōrum arma capta erant captī sunt.",
+        "mark_scheme_note": "Relative pronoun quōrum: masculine plural genitive — agrees with antecedent mīlitēs in gender and number; genitive because it expresses possession ('whose weapons')."
+      },
+      {
+        "english": "I saw the temple which the citizens had built in honour of the goddess.",
+        "latin_answer": "templum vīdī quod cīvēs in honōrem deae aedificāverant.",
+        "mark_scheme_note": "Relative pronoun quod: neuter singular accusative — agrees with antecedent templum (neuter) in gender and number; accusative because it is the object of aedificāverant within the relative clause."
+      }
+    ]
+  },
+  {
+    "set_number": 10,
+    "topic": "Mixed constructions",
+    "sentences": [
+      {
+        "english": "After the letter had been read, the general ordered his soldiers to set out at once.",
+        "latin_answer": "epistulā lectā, dux mīlitibus imperāvit ut statim proficīscerentur.",
+        "mark_scheme_note": "Combines (1) ablative absolute: epistulā lectā (letter having been read) + (2) indirect command: imperō + dative (mīlitibus) + ut + imperfect subjunctive (proficīscerentur)."
+      },
+      {
+        "english": "The soldiers ran so fast that the enemy, terrified, believed that a great army was approaching.",
+        "latin_answer": "mīlitēs tam celeriter cucurrērunt ut hostēs perterritī crēderent exercitum magnum appropinquāre.",
+        "mark_scheme_note": "Combines (1) result clause: tam...ut + imperfect subjunctive (crēderent) + (2) indirect statement after crēderent: accusative (exercitum) + present infinitive (appropinquāre)."
+      },
+      {
+        "english": "The queen, having learned that the enemy had entered the city, fled so that she would not be captured.",
+        "latin_answer": "rēgīna, cognōscēns hostēs urbem intrāvisse, fūgit nē caperētur.",
+        "mark_scheme_note": "Combines (1) present participle (cognōscēns) with indirect statement (hostēs...intrāvisse: perfect infinitive showing prior action) + (2) negative purpose clause: nē + imperfect subjunctive passive (caperētur)."
+      }
+    ]
+  }
+]
