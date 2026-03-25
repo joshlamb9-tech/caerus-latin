@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GCSE Latin English-to-Latin composition practice &mdash; 10 sets, 3 sentences each, organised by construction">
+  <meta name="theme-color" content="#1a2744">
+  <title>English to Latin &mdash; GCSE Translation &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .etl-hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .etl-hero h1 { font-size: 2rem; color: #1a2744; margin-bottom: 0.5rem; }
+    .etl-hero p { font-size: 1.1rem; color: #4a5568; max-width: 600px; margin: 0 auto; }
+
+    #etl-container { max-width: 800px; margin: 0 auto; padding: 1rem 1rem 3rem; }
+
+    .etl-set { margin-bottom: 1.25rem; border: 1px solid #e0dbd0; border-radius: 6px; overflow: hidden; }
+    .etl-set-header { padding: 1rem 1.25rem; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.15s ease; }
+    .etl-set-header:hover { background: #fafaf8; }
+    .etl-set-header h3 { margin: 0; font-size: 1rem; color: #1a2744; }
+    .etl-set-header .set-topic { font-size: 0.85rem; color: #4a5568; font-weight: 400; }
+    .etl-set-body { display: none; padding: 0 1.25rem 1.25rem; border-top: 1px solid #e0dbd0; }
+    .etl-set.open .etl-set-body { display: block; }
+    .etl-sentence { margin: 1rem 0; padding-bottom: 1rem; border-bottom: 1px solid #f0ede6; }
+    .etl-sentence:last-child { border-bottom: none; padding-bottom: 0; }
+    .etl-english { font-size: 1rem; color: #1a2744; margin-bottom: 0.5rem; }
+    .etl-reveal-btn { padding: 0.35rem 0.8rem; border: 1px solid #c9a84c; border-radius: 4px; background: #fff; color: #1a2744; font-size: 0.85rem; cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .etl-reveal-btn:hover { background: #c9a84c; color: #1a2744; }
+    .etl-answer { display: none; margin-top: 0.6rem; padding: 0.75rem 1rem; background: #fafaf8; border-left: 3px solid #c9a84c; border-radius: 0 4px 4px 0; }
+    .etl-answer.shown { display: block; }
+    .etl-latin { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-style: italic; margin-bottom: 0.3rem; }
+    .etl-note { font-size: 0.85rem; color: #4a5568; }
+    .etl-note::before { content: "Mark scheme: "; font-weight: 600; }
+
+    .etl-set-chevron { font-size: 0.8rem; color: #4a5568; transition: transform 0.15s ease; }
+    .etl-set.open .etl-set-chevron { transform: rotate(180deg); }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/translation/english-to-latin.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+
+            // Load exercises
+            loadExercises();
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">GCSE Home</a></li>
+          <li><a href="../vocabulary.html">Vocabulary</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Grammar <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../grammar/declensions.html">4th &amp; 5th Declension</a></li>
+              <li><a href="../grammar/passive.html">Passive Voice</a></li>
+              <li><a href="../grammar/subjunctive.html">Subjunctive</a></li>
+              <li><a href="../grammar/deponents.html">Deponent Verbs</a></li>
+              <li><a href="../grammar/gerunds.html">Gerund &amp; Gerundive</a></li>
+              <li><a href="../grammar/pronouns.html">Pronouns</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Syntax <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../syntax/participles.html">Participles</a></li>
+              <li><a href="../syntax/ablative-absolute.html">Ablative Absolute</a></li>
+              <li><a href="../syntax/indirect-statement.html">Indirect Statement</a></li>
+              <li><a href="../syntax/indirect-commands.html">Indirect Commands</a></li>
+              <li><a href="../syntax/indirect-questions.html">Indirect Questions</a></li>
+              <li><a href="../syntax/purpose.html">Purpose Clauses</a></li>
+              <li><a href="../syntax/result.html">Result Clauses</a></li>
+              <li><a href="../syntax/fearing.html">Fearing Clauses</a></li>
+              <li><a href="../syntax/temporal-causal-concessive.html">Temporal / Causal / Concessive</a></li>
+              <li><a href="../syntax/conditionals.html">Conditionals</a></li>
+              <li><a href="../syntax/sequence-of-tenses.html">Sequence of Tenses</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Translation <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="passages.html">Unseen Passages</a></li>
+              <li><a href="english-to-latin.html">English to Latin</a></li>
+            </ul>
+          </li>
+          <li><a href="../../index.html">CE Latin</a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="etl-hero">
+      <h1>English to Latin</h1>
+      <p>10 composition sets &mdash; 3 sentences each, organised by construction. Write your answer, then reveal the Latin and mark scheme.</p>
+    </section>
+
+    <div id="etl-container">
+      <p style="text-align:center; color:#4a5568; padding:2rem;">Loading exercises&hellip;</p>
+    </div>
+
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    function loadExercises() {
+      var container = document.getElementById('etl-container');
+
+      fetch('../../data/exercises/gcse-english-to-latin.json')
+        .then(function (r) { return r.json(); })
+        .then(function (sets) {
+          if (!sets || sets.length === 0) {
+            container.innerHTML = '<p style="text-align:center;color:#4a5568;">No exercises found.</p>';
+            return;
+          }
+
+          container.innerHTML = sets.map(function (set, setIdx) {
+            var sentences = (set.sentences || []).map(function (s, sIdx) {
+              var answerId = 'answer-' + setIdx + '-' + sIdx;
+              return '<div class="etl-sentence">'
+                + '<p class="etl-english">' + escapeHtml(s.english) + '</p>'
+                + '<button class="etl-reveal-btn" onclick="revealAnswer(\'' + answerId + '\', this)">Show answer</button>'
+                + '<div class="etl-answer" id="' + answerId + '">'
+                + '<p class="etl-latin">' + escapeHtml(s.latin_answer) + '</p>'
+                + '<p class="etl-note">' + escapeHtml(s.mark_scheme_note) + '</p>'
+                + '</div>'
+                + '</div>';
+            }).join('');
+
+            return '<div class="etl-set" id="set-' + setIdx + '">'
+              + '<div class="etl-set-header" onclick="toggleSet(' + setIdx + ')">'
+              + '<h3>Set ' + set.set_number + ' <span class="set-topic">&mdash; ' + escapeHtml(set.topic) + '</span></h3>'
+              + '<span class="etl-set-chevron">&#9660;</span>'
+              + '</div>'
+              + '<div class="etl-set-body">' + sentences + '</div>'
+              + '</div>';
+          }).join('');
+        })
+        .catch(function (err) {
+          container.innerHTML = '<p style="text-align:center;color:#4a5568;">Could not load exercises. Please try again.</p>';
+          console.error('Error loading exercises:', err);
+        });
+    }
+
+    function toggleSet(setIdx) {
+      var set = document.getElementById('set-' + setIdx);
+      if (set) set.classList.toggle('open');
+    }
+
+    function revealAnswer(answerId, btn) {
+      var answer = document.getElementById(answerId);
+      if (answer) {
+        answer.classList.add('shown');
+        btn.style.display = 'none';
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+  </script>
+
+</body>
+</html>
