@@ -1,0 +1,40 @@
+{
+  "id": "gcse-passage-04",
+  "title": "A Roman Wedding",
+  "difficulty": "Foundation",
+  "topics": ["daily life"],
+  "word_count": 62,
+  "description": "Claudia prepares for her wedding day and the celebrations that follow.",
+  "latin_text": [
+    { "line": 1, "text": "Claudia, puella Rōmāna, nūptūra erat. māter eam diu ōrnābat." },
+    { "line": 2, "text": "Claudia vestem albam gerēbat et corōnam flōrum in capite portābat." },
+    { "line": 3, "text": "sponsus nōmine Gaius domum advēnit cum amīcīs suīs." },
+    { "line": 4, "text": "sacerdōs verba sacra dīxit et signa fausta cēpit. omnēs gaudēbant." },
+    { "line": 5, "text": "post caerimōniam convīvium magnum erat. cibus et vīnum aderat." },
+    { "line": 6, "text": "noctū spōnsus Claudiam ad domum novam dūxit. amīcī cantābant et" },
+    { "line": 7, "text": "rīdēbant. 'fēlīciter!' clāmāvērunt." }
+  ],
+  "vocabulary_notes": [
+    { "word": "nūptūra erat", "meaning": "was about to get married (future participle of nūbō)" },
+    { "word": "corōnam flōrum", "meaning": "a wreath/crown of flowers" },
+    { "word": "sponsus", "meaning": "fiancé, husband-to-be" },
+    { "word": "sacerdōs", "meaning": "priest" },
+    { "word": "signa fausta", "meaning": "favourable omens" },
+    { "word": "caerimōniam", "meaning": "ceremony, ritual" },
+    { "word": "fēlīciter", "meaning": "good luck! congratulations! (adverb)" }
+  ],
+  "model_translation": [
+    { "paragraph": 1, "text": "Claudia, a Roman girl, was about to get married. Her mother had been dressing her for a long time. Claudia was wearing a white dress and carrying a crown of flowers on her head. Her fiancé named Gaius arrived at the house with his friends." },
+    { "paragraph": 2, "text": "A priest spoke the sacred words and took the favourable omens. Everyone was rejoicing. After the ceremony there was a great feast. There was food and wine. During the night the husband led Claudia to the new home. Friends were singing and laughing. 'Good luck!' they shouted." }
+  ],
+  "key_phrases": [
+    "was about to get married",
+    "wearing a white dress",
+    "carrying a crown of flowers on her head",
+    "arrived at the house with his friends",
+    "took the favourable omens",
+    "there was a great feast",
+    "led Claudia to the new home",
+    "Good luck!"
+  ]
+}

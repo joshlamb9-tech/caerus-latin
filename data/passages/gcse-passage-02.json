@@ -1,0 +1,38 @@
+{
+  "id": "gcse-passage-02",
+  "title": "A Day at the Baths",
+  "difficulty": "Foundation",
+  "topics": ["daily life"],
+  "word_count": 60,
+  "description": "Marcus visits the public baths and describes the noisy scenes he finds there.",
+  "latin_text": [
+    { "line": 1, "text": "Marcus thermās intrāvit. multī cīvēs ibi aderant; thermae semper plēnae erant." },
+    { "line": 2, "text": "in palestrā iuvenēs sē exercēbant et lūdēbant. Marcus eōs spectāvit." },
+    { "line": 3, "text": "deinde Marcus in tepidārium cucurrit et in aquam calidam dēscendit." },
+    { "line": 4, "text": "subitō clamōrem audīvit. mercātor in thermīs bona sua vendēbat et magnā vōce" },
+    { "line": 5, "text": "clāmābat. omnēs īrātī erant quod quiētem petēbant." },
+    { "line": 6, "text": "Marcus rīsit. 'thermae' inquit 'semper tumultuōsae sunt. sed mihi placent!'" }
+  ],
+  "vocabulary_notes": [
+    { "word": "thermās", "meaning": "the baths (public bathing complex)" },
+    { "word": "palestrā", "meaning": "exercise yard/gymnasium" },
+    { "word": "sē exercēbant", "meaning": "were exercising themselves" },
+    { "word": "tepidārium", "meaning": "warm room (of the baths)" },
+    { "word": "tumultuōsae", "meaning": "noisy, full of commotion" },
+    { "word": "quiētem", "meaning": "rest, quiet (accusative of quiēs)" }
+  ],
+  "model_translation": [
+    { "paragraph": 1, "text": "Marcus entered the baths. Many citizens were there; the baths were always full. In the exercise yard young men were exercising and playing games. Marcus watched them. Then Marcus ran into the warm room and got into the warm water." },
+    { "paragraph": 2, "text": "Suddenly he heard a shout. A merchant was selling his goods in the baths and was shouting in a loud voice. Everyone was angry because they were looking for quiet. Marcus laughed. 'The baths,' he said, 'are always noisy. But I like them!'" }
+  ],
+  "key_phrases": [
+    "Many citizens were there",
+    "were exercising and playing games",
+    "got into the warm water",
+    "Suddenly he heard a shout",
+    "was selling his goods in the baths",
+    "shouting in a loud voice",
+    "everyone was angry because they were looking for quiet",
+    "I like them"
+  ]
+}

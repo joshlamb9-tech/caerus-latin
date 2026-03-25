@@ -1,0 +1,46 @@
+{
+  "id": "gcse-passage-06",
+  "title": "Odysseus and the Cyclops",
+  "difficulty": "Higher",
+  "topics": ["mythology"],
+  "word_count": 88,
+  "description": "Odysseus blinds the Cyclops Polyphemus and escapes from his cave by a clever trick.",
+  "latin_text": [
+    { "line": 1, "text": "Ulixēs comitēsque suī in antrum Cyclōpis ingressī erant. Polyphēmus, ingēns" },
+    { "line": 2, "text": "mōnstrum, Ulixem rogāvit quis esset. 'Nēmō' inquit Ulixēs 'mihi nōmen est.'" },
+    { "line": 3, "text": "Polyphēmus, vīnō sōpītus, dormiēbat. Ulixēs, hāc occāsiōne ūsus, pālum" },
+    { "line": 4, "text": "igneum in oculum mōnstrī impulit. Polyphēmus clāmāvit ut alii Cyclōpēs" },
+    { "line": 5, "text": "adiuvārent. 'quis tē laedit?' rogāvērunt. 'Nēmō mē laedit!' respondit Polyphēmus." },
+    { "line": 6, "text": "itaque Cyclōpēs abiērunt putantēs nūllum periculum adesse." },
+    { "line": 7, "text": "postrīdiē Ulixēs suōs sub ovibus celāvit. Polyphēmo ovēs ēmittente, Graecī" },
+    { "line": 8, "text": "ēvāsērunt. Ulixēs gaudens nāvem cōnscendit." }
+  ],
+  "vocabulary_notes": [
+    { "word": "antrum", "meaning": "cave" },
+    { "word": "Cyclōpis", "meaning": "of the Cyclops (genitive singular)" },
+    { "word": "ingressī erant", "meaning": "had entered (pluperfect of ingredior, deponent)" },
+    { "word": "sōpītus", "meaning": "overcome, sent to sleep (participle of sōpiō)" },
+    { "word": "pālum igneum", "meaning": "a fiery/burning stake" },
+    { "word": "impulit", "meaning": "drove, thrust (perfect of impellō)" },
+    { "word": "nūllum periculum adesse", "meaning": "that no danger was present (indirect statement)" },
+    { "word": "ovibus", "meaning": "sheep (ablative plural of ovis)" },
+    { "word": "ēmittente", "meaning": "as he let out / sending out (participle of ēmittō)" }
+  ],
+  "model_translation": [
+    { "paragraph": 1, "text": "Ulysses and his companions had entered the cave of the Cyclops. Polyphemus, the huge monster, asked Ulysses who he was. 'Nobody is my name,' said Ulysses. Polyphemus, overcome by wine, was sleeping. Ulysses, making use of this opportunity, drove a burning stake into the eye of the monster." },
+    { "paragraph": 2, "text": "Polyphemus shouted so that the other Cyclopes would help him. 'Who is harming you?' they asked. 'Nobody is harming me!' replied Polyphemus. And so the Cyclopes left, thinking that no danger was present. The next day Ulysses hid his men under the sheep. As Polyphemus let out the sheep, the Greeks escaped. Ulysses rejoicing boarded the ship." }
+  ],
+  "key_phrases": [
+    "had entered the cave of the Cyclops",
+    "asked Ulysses who he was",
+    "Nobody is my name",
+    "overcome by wine",
+    "making use of this opportunity",
+    "drove a burning stake into the eye of the monster",
+    "shouted so that the other Cyclopes would help him",
+    "Nobody is harming me",
+    "thinking that no danger was present",
+    "hid his men under the sheep",
+    "As Polyphemus let out the sheep, the Greeks escaped"
+  ]
+}

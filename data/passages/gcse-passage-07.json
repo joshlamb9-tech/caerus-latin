@@ -1,0 +1,47 @@
+{
+  "id": "gcse-passage-07",
+  "title": "The Siege of Masada",
+  "difficulty": "Higher",
+  "topics": ["military"],
+  "word_count": 82,
+  "description": "The Roman general Silva besieges the Jewish fortress of Masada and discovers the defenders have chosen death over capture.",
+  "latin_text": [
+    { "line": 1, "text": "Flāvius Silva, lēgātus Rōmānus, arcem Masādam obsidēbat quam Iūdaeī tenēbant." },
+    { "line": 2, "text": "Silva, omnibus exitibus clausīs, iussit mīlitēs aggerem ingentem exstruere" },
+    { "line": 3, "text": "ut aries in mūrōs impellī posset. Iūdaeī, haec cernentēs, sciēbant sē" },
+    { "line": 4, "text": "nōn diū resistere posse. dux eōrum, Eleāzārus, suōs cohortātus est." },
+    { "line": 5, "text": "'melius est' inquit 'manu nostrā morī quam in servitūtem Rōmānam cadere.'" },
+    { "line": 6, "text": "Iūdaeī liberōs suōs interfēcērunt, deinde ipsī mortem sibi cōnscīvērunt." },
+    { "line": 7, "text": "Rōmānīs mūrum tandem rumpentibus, nūllum hostem invēnērunt nisi duās" },
+    { "line": 8, "text": "fēminās quae sē celāverant. Rōmānī silentiō perculsī stābant." }
+  ],
+  "vocabulary_notes": [
+    { "word": "lēgātus", "meaning": "general, commander (senior officer)" },
+    { "word": "arcem Masādam", "meaning": "the fortress of Masada (hilltop stronghold)" },
+    { "word": "Iūdaeī", "meaning": "Jews, Jewish rebels (Judeans)" },
+    { "word": "aggerem", "meaning": "siege ramp, earthwork mound" },
+    { "word": "aries", "meaning": "battering ram (literally 'ram')" },
+    { "word": "haec cernentēs", "meaning": "seeing these things (participle)" },
+    { "word": "Eleāzārus", "meaning": "Eleazar (leader of the Jewish defenders)" },
+    { "word": "servitūtem", "meaning": "slavery, servitude (accusative of servitūs)" },
+    { "word": "mortem sibi cōnscīvērunt", "meaning": "took their own lives / chose death for themselves" },
+    { "word": "perculsī", "meaning": "struck, stunned (participle of percellō)" }
+  ],
+  "model_translation": [
+    { "paragraph": 1, "text": "Flavius Silva, the Roman general, was besieging the fortress of Masada, which the Jews were holding. Silva, having closed all the exits, ordered the soldiers to build a huge siege ramp so that a battering ram could be driven against the walls. The Jews, seeing these things, knew that they could not resist for long. Their leader Eleazar encouraged his men." },
+    { "paragraph": 2, "text": "'It is better,' he said, 'to die by our own hand than to fall into Roman slavery.' The Jews killed their children, then chose death for themselves. When the Romans finally broke through the wall, they found no enemy except two women who had hidden themselves. The Romans stood struck silent with amazement." }
+  ],
+  "key_phrases": [
+    "was besieging the fortress of Masada",
+    "having closed all the exits",
+    "ordered the soldiers to build a huge siege ramp",
+    "so that a battering ram could be driven against the walls",
+    "knew that they could not resist for long",
+    "It is better to die by our own hand",
+    "than to fall into Roman slavery",
+    "The Jews killed their children",
+    "chose death for themselves",
+    "two women who had hidden themselves",
+    "stood struck silent with amazement"
+  ]
+}

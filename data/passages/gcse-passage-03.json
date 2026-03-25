@@ -1,0 +1,39 @@
+{
+  "id": "gcse-passage-03",
+  "title": "Hannibal Crosses the Alps",
+  "difficulty": "Foundation",
+  "topics": ["military"],
+  "word_count": 65,
+  "description": "Hannibal leads his army and war elephants through the Alps to attack Rome.",
+  "latin_text": [
+    { "line": 1, "text": "Hannibal, dux Carthāginiēnsium, exercitum suum per Alpēs dūcere cōnstituit." },
+    { "line": 2, "text": "iter difficile erat. mīlitēs fessī erant et frīgus erat maximum." },
+    { "line": 3, "text": "multī mīlitēs in montibus cecidērunt neque surgere poterant." },
+    { "line": 4, "text": "elephantī quoque viam difficillimam invenērunt. Hannibal tamen mīlitēs hortātus est." },
+    { "line": 5, "text": "'Itālia' inquit 'nōbīs est propinqua. mox in campīs Rōmānōrum pugnābimus.'" },
+    { "line": 6, "text": "tandem exercitus Alpēs trānsīvit. mīlitēs Rōmānī perterritī erant quod" },
+    { "line": 7, "text": "hostēs subitō in Itāliā aderant." }
+  ],
+  "vocabulary_notes": [
+    { "word": "Carthāginiēnsium", "meaning": "of the Carthaginians (genitive plural)" },
+    { "word": "Alpēs", "meaning": "the Alps (mountain range)" },
+    { "word": "frīgus", "meaning": "cold, frost (neuter noun)" },
+    { "word": "elephantī", "meaning": "elephants" },
+    { "word": "campīs", "meaning": "plains, flat lands (ablative of campus)" },
+    { "word": "propinqua", "meaning": "near, close (adjective)" }
+  ],
+  "model_translation": [
+    { "paragraph": 1, "text": "Hannibal, the leader of the Carthaginians, decided to lead his army through the Alps. The journey was difficult. The soldiers were tired and the cold was very great. Many soldiers fell in the mountains and were unable to get up. The elephants too found the road very difficult. However, Hannibal encouraged his soldiers." },
+    { "paragraph": 2, "text": "'Italy,' he said, 'is near to us. Soon we will fight on the plains of the Romans.' At last the army crossed the Alps. The Roman soldiers were terrified because the enemy were suddenly in Italy." }
+  ],
+  "key_phrases": [
+    "decided to lead his army through the Alps",
+    "The journey was difficult",
+    "fell in the mountains and were unable to get up",
+    "Hannibal encouraged his soldiers",
+    "Italy is near to us",
+    "Soon we will fight on the plains",
+    "the army crossed the Alps",
+    "the enemy were suddenly in Italy"
+  ]
+}

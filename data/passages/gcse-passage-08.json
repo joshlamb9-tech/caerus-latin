@@ -1,0 +1,45 @@
+{
+  "id": "gcse-passage-08",
+  "title": "The Vestal Virgins",
+  "difficulty": "Higher",
+  "topics": ["religion"],
+  "word_count": 79,
+  "description": "A Roman writer explains the sacred duties and privileges of the Vestal Virgins.",
+  "latin_text": [
+    { "line": 1, "text": "Vestālēs virginis sacrum ignem in templō Vestae custodiēbant. hic ignis" },
+    { "line": 2, "text": "numquam extinctus esse dēbēbat, quod Rōmānī crēdēbant salutem urbis ab" },
+    { "line": 3, "text": "eō pendēre. virginēs sex in ordinem lēctae erant, quae trīgintā annōs" },
+    { "line": 4, "text": "in templō manēbant officiaque sacra faciēbant." },
+    { "line": 5, "text": "multī honōrēs eīs datī sunt. in theātrō et in circō locīs honorātīs sedēbant." },
+    { "line": 6, "text": "sī Vestālis in viā occurrisset reō damnātō, ille statim līberābātur." },
+    { "line": 7, "text": "virgō autem quae ignem neglexisset aut castitātem violāvisset gravissimē" },
+    { "line": 8, "text": "pūniēbātur. vīva in terrā sepulta morerētur." }
+  ],
+  "vocabulary_notes": [
+    { "word": "Vestālēs virginēs", "meaning": "Vestal Virgins (priestesses of Vesta, goddess of the hearth)" },
+    { "word": "sacrum ignem", "meaning": "the sacred fire" },
+    { "word": "salutem urbis", "meaning": "the safety/welfare of the city (accusative of salūs)" },
+    { "word": "eō pendēre", "meaning": "depended on it (infinitive of pendeō, for indirect statement)" },
+    { "word": "in ordinem lēctae erant", "meaning": "had been chosen into the order/college" },
+    { "word": "reō damnātō", "meaning": "a condemned criminal (dative absolute construction)" },
+    { "word": "castitātem violāvisset", "meaning": "had violated her chastity (pluperfect subjunctive)" },
+    { "word": "vīva", "meaning": "alive (adjective agreeing with the Vestal)" },
+    { "word": "sepulta morerētur", "meaning": "would be buried alive and would die (imperfect subjunctive)" }
+  ],
+  "model_translation": [
+    { "paragraph": 1, "text": "The Vestal Virgins were guarding the sacred fire in the temple of Vesta. This fire was never supposed to be extinguished, because the Romans believed that the safety of the city depended on it. Six virgins had been chosen into the order, who remained in the temple for thirty years and performed sacred duties." },
+    { "paragraph": 2, "text": "Many honours were given to them. In the theatre and in the circus they sat in places of honour. If a Vestal were to encounter a condemned criminal on the road, he was immediately freed. However, a virgin who had neglected the fire or had violated her chastity was punished very severely. She would die buried alive in the ground." }
+  ],
+  "key_phrases": [
+    "were guarding the sacred fire",
+    "never supposed to be extinguished",
+    "the Romans believed that the safety of the city depended on it",
+    "had been chosen into the order",
+    "remained in the temple for thirty years",
+    "Many honours were given to them",
+    "If a Vestal were to encounter a condemned criminal",
+    "he was immediately freed",
+    "had neglected the fire or had violated her chastity",
+    "She would die buried alive in the ground"
+  ]
+}

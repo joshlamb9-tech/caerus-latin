@@ -1,0 +1,38 @@
+{
+  "id": "gcse-passage-01",
+  "title": "The Fall of Troy",
+  "difficulty": "Foundation",
+  "topics": ["mythology"],
+  "word_count": 63,
+  "description": "The Greeks use a wooden horse to enter Troy after ten years of war.",
+  "latin_text": [
+    { "line": 1, "text": "Graecī decem annōs Troiam oppugnāverant sed urbem capere nōn poterant." },
+    { "line": 2, "text": "tandem Ulixēs dōlum excōgitāvit. 'equum ligneum aedificēmus,' inquit, 'et mīlitēs" },
+    { "line": 3, "text": "optimōs intrā equum celēbimus. Troiānī equum in urbem trahent.'" },
+    { "line": 4, "text": "Graecī igitur equum magnum et ligneum fēcērunt mīlitēsque in eō celāvērunt." },
+    { "line": 5, "text": "Troiānī, equō vīsō, laetī erant. equum in urbem trāxērunt et dormiēbant." },
+    { "line": 6, "text": "media nocte mīlitēs Graecī ex equō exiērunt portāsque urbis aperuērunt." },
+    { "line": 7, "text": "exercitus Graecus urbem intravit. Troia tandem capta est et flammīs dēlēta est." }
+  ],
+  "vocabulary_notes": [
+    { "word": "dōlum excōgitāvit", "meaning": "thought up a trick/plan" },
+    { "word": "ligneum", "meaning": "wooden (adj.)" },
+    { "word": "celābimus", "meaning": "we will hide (future of cēlō)" },
+    { "word": "media nocte", "meaning": "in the middle of the night" },
+    { "word": "flammīs", "meaning": "with flames (ablative of flamma)" }
+  ],
+  "model_translation": [
+    { "paragraph": 1, "text": "The Greeks had attacked Troy for ten years but were unable to capture the city. At last Ulysses thought up a trick. 'Let us build a wooden horse,' he said, 'and we will hide our best soldiers inside the horse. The Trojans will drag the horse into the city.'" },
+    { "paragraph": 2, "text": "And so the Greeks made a large wooden horse and hid soldiers inside it. The Trojans, when they saw the horse, were delighted. They dragged the horse into the city and went to sleep. In the middle of the night the Greek soldiers came out from the horse and opened the gates of the city. The Greek army entered the city. Troy was at last captured and destroyed by flames." }
+  ],
+  "key_phrases": [
+    "had attacked Troy for ten years",
+    "were unable to capture the city",
+    "thought up a trick",
+    "Let us build a wooden horse",
+    "hide our best soldiers inside the horse",
+    "when they saw the horse",
+    "In the middle of the night",
+    "captured and destroyed by flames"
+  ]
+}

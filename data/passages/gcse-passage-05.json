@@ -1,0 +1,44 @@
+{
+  "id": "gcse-passage-05",
+  "title": "The Death of Caesar",
+  "difficulty": "Higher",
+  "topics": ["historical narrative"],
+  "word_count": 85,
+  "description": "Senators led by Brutus and Cassius assassinate Julius Caesar in the Senate house.",
+  "latin_text": [
+    { "line": 1, "text": "Iūlius Caesar, dictātor Rōmānus, postrīdiē Īdūs Mārtias in senātum intrāvit." },
+    { "line": 2, "text": "senātōrēs coniūrātī, ubi eum vīdērunt, togās suās aperiēbant ut tēla celāta" },
+    { "line": 3, "text": "ēdūcerent. Caesare vīsō, Brūtus et Cassius eum circumstetērunt." },
+    { "line": 4, "text": "Caesar rogāvit cūr senātōrēs tam prope stārent. subitō gladiīs petītus est." },
+    { "line": 5, "text": "trēs et vīgintī vulnera accēpit. Brūtō etiam percutiēnte, Caesar gemuit et" },
+    { "line": 6, "text": "togam suam super vultum trāxit nē moriens spectārētur." },
+    { "line": 7, "text": "corpus eius ad basim statuae Pompeiī cecidit. multī senātōrēs attonitī fugiēbant;" },
+    { "line": 8, "text": "aliqui crēdēbant rem publicam servātam esse." }
+  ],
+  "vocabulary_notes": [
+    { "word": "postrīdiē Īdūs Mārtias", "meaning": "on the day after the Ides of March (15th March)" },
+    { "word": "dictātor", "meaning": "dictator (title of absolute power at Rome)" },
+    { "word": "coniūrātī", "meaning": "conspirators" },
+    { "word": "circumstetērunt", "meaning": "surrounded, stood around (perfect of circumstō)" },
+    { "word": "trēs et vīgintī", "meaning": "twenty-three" },
+    { "word": "Pompeiī", "meaning": "of Pompey (genitive — former rival of Caesar)" },
+    { "word": "attonitī", "meaning": "stunned, astonished" },
+    { "word": "rem publicam", "meaning": "the state, the republic" }
+  ],
+  "model_translation": [
+    { "paragraph": 1, "text": "Julius Caesar, the Roman dictator, entered the Senate on the day after the Ides of March. The conspiratorial senators, when they saw him, were opening their togas in order to draw out hidden weapons. When Caesar had been seen, Brutus and Cassius surrounded him. Caesar asked why the senators were standing so close. Suddenly he was attacked with swords." },
+    { "paragraph": 2, "text": "He received twenty-three wounds. When even Brutus struck him, Caesar groaned and drew his toga over his face so that he would not be watched as he died. His body fell at the base of Pompey's statue. Many senators were fleeing in astonishment; some believed that the state had been saved." }
+  ],
+  "key_phrases": [
+    "entered the Senate on the day after the Ides of March",
+    "opening their togas in order to draw out hidden weapons",
+    "When Caesar had been seen",
+    "Brutus and Cassius surrounded him",
+    "why the senators were standing so close",
+    "he was attacked with swords",
+    "He received twenty-three wounds",
+    "drew his toga over his face so that he would not be watched as he died",
+    "fell at the base of Pompey's statue",
+    "some believed that the state had been saved"
+  ]
+}
