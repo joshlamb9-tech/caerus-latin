@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GCSE Latin Mock Paper 4 — OCR J282/01 Language — full paper with mark scheme">
+  <meta name="theme-color" content="#1a2744">
+  <title>Mock Paper 4 &mdash; GCSE Latin &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/mock-papers/paper-4.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+
+  <style>
+    /* Paper page styles */
+    .paper-banner {
+      background: #1a2744;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+    .paper-banner h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+      color: #fff;
+    }
+    .paper-banner .paper-meta {
+      font-size: 1rem;
+      color: #c9a84c;
+      margin-bottom: 0.5rem;
+    }
+    .paper-banner .paper-info {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+    }
+    .paper-banner .paper-info span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .paper-instructions {
+      max-width: 800px;
+      margin: 1.5rem auto 0;
+      padding: 0 1rem;
+      background: #f5f2eb;
+      border-radius: 6px;
+    }
+    .paper-instructions ul {
+      padding: 1rem 1rem 1rem 1.5rem;
+      margin: 0;
+      font-size: 0.9rem;
+      color: #4a5568;
+    }
+    .paper-instructions ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    .paper-section {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      padding: 0 1rem;
+    }
+    .section-header {
+      border-bottom: 2px solid #1a2744;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-header h2 {
+      font-size: 1.3rem;
+      color: #1a2744;
+      margin: 0 0 0.15rem;
+    }
+    .section-header .section-meta {
+      font-size: 0.9rem;
+      color: #4a5568;
+    }
+
+    .passage-block {
+      background: #fafaf8;
+      border: 1px solid #e0dbd0;
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .passage-block h3 {
+      font-size: 1rem;
+      color: #1a2744;
+      margin: 0 0 0.75rem;
+      font-style: italic;
+    }
+    .latin-text {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      margin: 0;
+    }
+    .latin-text .line-num {
+      display: inline-block;
+      width: 2rem;
+      color: #999;
+      font-size: 0.85rem;
+      user-select: none;
+    }
+
+    .question-block {
+      margin-bottom: 1.75rem;
+    }
+    .question-block .q-num {
+      font-weight: 700;
+      color: #1a2744;
+      font-size: 1rem;
+    }
+    .question-block .q-text {
+      margin: 0.3rem 0 0.5rem;
+      font-size: 0.95rem;
+      color: #2d3748;
+    }
+    .question-block .mark-allocation {
+      font-size: 0.85rem;
+      color: #4a5568;
+      font-style: italic;
+    }
+
+    .sub-question {
+      margin: 0.5rem 0 0.5rem 1.25rem;
+      font-size: 0.95rem;
+      color: #2d3748;
+    }
+    .sub-question .sq-label {
+      font-weight: 600;
+      margin-right: 0.3rem;
+    }
+
+    .answer-space {
+      margin: 0.5rem 0 0.5rem 1.25rem;
+      border-bottom: 1px solid #e0dbd0;
+      min-height: 1.5rem;
+    }
+
+    .vocab-help {
+      margin: 0.75rem 0;
+      padding: 0.6rem 0.9rem;
+      background: #f5f2eb;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #4a5568;
+    }
+    .vocab-help strong {
+      font-style: italic;
+    }
+
+    .mark-scheme {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background: #fafaf8;
+      border-left: 3px solid #c9a84c;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.9rem;
+    }
+    .mark-scheme.shown {
+      display: block;
+    }
+    .mark-scheme h3 {
+      font-size: 1rem;
+      color: #1a2744;
+      margin: 0 0 1rem;
+    }
+    .mark-scheme .ms-q {
+      margin-bottom: 1rem;
+    }
+    .mark-scheme .ms-q-label {
+      font-weight: 700;
+      color: #1a2744;
+    }
+    .mark-scheme .ms-answer {
+      margin: 0.25rem 0 0.25rem 1rem;
+      color: #2d3748;
+    }
+    .mark-scheme .ms-note {
+      font-size: 0.82rem;
+      color: #4a5568;
+      font-style: italic;
+      margin: 0.2rem 0 0.2rem 1rem;
+    }
+
+    .show-answers-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.55rem 1.25rem;
+      border: 1px solid #c9a84c;
+      border-radius: 4px;
+      background: #fff;
+      color: #1a2744;
+      font-size: 0.9rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .show-answers-btn:hover {
+      background: #c9a84c;
+    }
+
+    .exam-tip {
+      margin: 1rem 0;
+      padding: 0.75rem 1rem;
+      background: #e8f4fd;
+      border-left: 3px solid #1a73e8;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.88rem;
+      color: #1a2744;
+    }
+    .exam-tip strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-c-sentence {
+      margin-bottom: 1.5rem;
+    }
+    .section-c-sentence .english-prompt {
+      font-size: 1rem;
+      color: #2d3748;
+      margin-bottom: 0.4rem;
+    }
+    .section-c-sentence .answer-space-large {
+      border-bottom: 1px solid #e0dbd0;
+      min-height: 2rem;
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">GCSE Home</a></li>
+          <li><a href="../vocabulary.html">Vocabulary</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Grammar <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../grammar/declensions.html">4th &amp; 5th Declension</a></li>
+              <li><a href="../grammar/passive.html">Passive Voice</a></li>
+              <li><a href="../grammar/subjunctive.html">Subjunctive</a></li>
+              <li><a href="../grammar/deponents.html">Deponent Verbs</a></li>
+              <li><a href="../grammar/gerunds.html">Gerund &amp; Gerundive</a></li>
+              <li><a href="../grammar/pronouns.html">Pronouns</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Syntax <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../syntax/participles.html">Participles</a></li>
+              <li><a href="../syntax/ablative-absolute.html">Ablative Absolute</a></li>
+              <li><a href="../syntax/indirect-statement.html">Indirect Statement</a></li>
+              <li><a href="../syntax/indirect-commands.html">Indirect Commands</a></li>
+              <li><a href="../syntax/indirect-questions.html">Indirect Questions</a></li>
+              <li><a href="../syntax/purpose.html">Purpose Clauses</a></li>
+              <li><a href="../syntax/result.html">Result Clauses</a></li>
+              <li><a href="../syntax/fearing.html">Fearing Clauses</a></li>
+              <li><a href="../syntax/temporal-causal-concessive.html">Temporal / Causal / Concessive</a></li>
+              <li><a href="../syntax/conditionals.html">Conditionals</a></li>
+              <li><a href="../syntax/sequence-of-tenses.html">Sequence of Tenses</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Translation <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../translation/passages.html">Unseen Passages</a></li>
+              <li><a href="../translation/english-to-latin.html">English to Latin</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Literature <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../literature/pete.html">PETE Method</a></li>
+              <li><a href="../literature/mangoes.html">MANGOES Devices</a></li>
+              <li><a href="../literature/essay-skills.html">Essay Skills</a></li>
+              <li><a href="../literature/entertainment.html">Entertainment</a></li>
+              <li><a href="../literature/romans-in-britain.html">Romans in Britain</a></li>
+              <li><a href="../literature/myths-and-beliefs.html">Myths &amp; Beliefs</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Mock Papers <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="paper-1.html">Paper 1</a></li>
+              <li><a href="paper-2.html">Paper 2</a></li>
+              <li><a href="paper-3.html">Paper 3</a></li>
+              <li><a href="paper-4.html">Paper 4</a></li>
+            </ul>
+          </li>
+          <li><a href="../../index.html">CE Latin</a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Banner -->
+    <div class="paper-banner">
+      <h1>Mock Paper 4</h1>
+      <div class="paper-meta">OCR J282/01 &mdash; Latin Language</div>
+      <div class="paper-info">
+        <span>&#128336; 1 hour 30 minutes</span>
+        <span>&#9997; 100 marks</span>
+        <span>&#128214; Answer all questions</span>
+      </div>
+    </div>
+
+    <div class="paper-instructions">
+      <ul>
+        <li>Answer <strong>all</strong> questions in all three sections.</li>
+        <li>Write your answers in the spaces provided (or on separate paper in exam conditions).</li>
+        <li>Show answers section by section using the reveal buttons below each section.</li>
+        <li>The number of marks is given in brackets after each question.</li>
+      </ul>
+    </div>
+
+    <!-- ===== SECTION A ===== -->
+    <div class="paper-section">
+      <div class="section-header">
+        <h2>Section A &mdash; Comprehension and Translation</h2>
+        <div class="section-meta">50 marks &bull; Suggested time: 45 minutes</div>
+      </div>
+
+      <div class="exam-tip">
+        <strong>Exam Tip</strong>
+        Read both passages carefully before attempting the questions. Use the vocabulary help provided below each passage.
+      </div>
+
+      <!-- Passage A1 -->
+      <div class="passage-block">
+        <h3>Passage A1 &mdash; Pliny and the eruption of Vesuvius (about 85 words)</h3>
+        <p class="latin-text">
+          <span class="line-num">1</span>Plīnius maior, classī praefectus, nūntiō acceptō statim nāvem conscendit.<br>
+          <span class="line-num">2</span>frātrī suō scrīpsit sē ad montis Vesuviī ruīnās profectūrum esse. mīlitēs<br>
+          <span class="line-num">3</span>nāvigāre nōlēbant quod caelum igne plēnum erat et pulvis dēnsissimus<br>
+          <span class="line-num">4</span>undique cadēbat. Plīnius tamen, dum alīī fugiēbant, quam prōximus<br>
+          <span class="line-num">5</span>montī esse volēbat ut cīvēs servāret. gubernātor nāvem convertere<br>
+          <span class="line-num">6</span>iussus est sed undae tam magnae erant ut nāvigāre nōn posset.<br>
+          <span class="line-num">7</span>Plīnius in lītore mortuus inventus est, corpore suō intactō.
+        </p>
+
+        <div class="vocab-help">
+          <strong>classis</strong>, classis f. — fleet &bull;
+          <strong>praefectus</strong>, -ī m. — commander &bull;
+          <strong>conscendit</strong> — boarded (from <em>cōnscendō</em>) &bull;
+          <strong>profectūrum esse</strong> — was going to set out (future infinitive in indirect statement) &bull;
+          <strong>pulvis</strong>, pulveris m. — ash, dust &bull;
+          <strong>dēnsissimus</strong> — very thick, very dense &bull;
+          <strong>gubernātor</strong>, -ōris m. — helmsman, steersman &bull;
+          <strong>intactus</strong>, -a, -um — untouched, unharmed
+        </div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="question-block">
+        <div class="q-num">Question 1 <span class="mark-allocation">[10 marks]</span></div>
+        <div class="q-text">Answer the following questions on Passage A1.</div>
+
+        <div class="sub-question">
+          <span class="sq-label">(a)</span> What was Pliny&rsquo;s role, and what did he do immediately after receiving the message (line 1)? <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(b)</span> What did Pliny write to his nephew (lines 1&ndash;2)? <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(c)</span> Why did the soldiers not want to sail? Give two reasons (lines 3&ndash;4). <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(d)</span> What did Pliny want, and why (lines 4&ndash;5)? <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(e)</span> What happened to Pliny at the end (line 7)? Give two details. <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-block">
+        <div class="q-num">Question 2 <span class="mark-allocation">[6 marks]</span></div>
+        <div class="q-text">Identify the grammatical feature in each of the following, taken from Passage A1. Give the Latin word(s) and explain the construction.</div>
+
+        <div class="sub-question">
+          <span class="sq-label">(a)</span> <em>nūntiō acceptō</em> (line 1) — identify the construction. <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(b)</span> <em>sē ad montis Vesuviī ruīnās profectūrum esse</em> (line 2) — identify the construction and explain the form <em>profectūrum esse</em>. <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(c)</span> <em>tam magnae erant ut nāvigāre nōn posset</em> (lines 6) — identify the type of clause. <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-block">
+        <div class="q-num">Question 3 <span class="mark-allocation">[20 marks]</span></div>
+        <div class="q-text">Translate the following passage into English. Write your translation below.</div>
+        <div class="q-text"><em>Translate lines 1&ndash;5 of Passage A1 (</em>Plīnius maior &hellip; cīvēs servāret<em>).</em></div>
+        <div class="exam-tip">
+          <strong>Translation Tip</strong>
+          Note the indirect statement after <em>scrīpsit</em> (sē&hellip;profectūrum esse) and the purpose clause at line 5 (ut cīvēs servāret). Both constructions must be rendered clearly.
+        </div>
+        <div class="answer-space" style="min-height:8rem; border-bottom: 1px solid #e0dbd0;"></div>
+      </div>
+
+      <!-- Passage A2 -->
+      <div class="passage-block">
+        <h3>Passage A2 &mdash; A Roman religious ritual (about 40 words)</h3>
+        <p class="latin-text">
+          <span class="line-num">8</span>pontifex, togā candidā indūtus, ad āram prōcessit. victima ā sacerdōtibus<br>
+          <span class="line-num">9</span>adducta est ut deīs sacrificārētur. cīvēs in templō silentiō stābant.<br>
+          <span class="line-num">10</span>pontifex precātus est nē deī urbem vāstārent. tum sacrificium rite factum est.
+        </p>
+
+        <div class="vocab-help">
+          <strong>pontifex</strong>, pontificis m. — high priest &bull;
+          <strong>candidus</strong>, -a, -um — white &bull;
+          <strong>indūtus</strong> — having put on, dressed in (perf. part. of <em>induō</em>) &bull;
+          <strong>victima</strong>, -ae f. — sacrificial animal &bull;
+          <strong>sacrificārētur</strong> — might be sacrificed &bull;
+          <strong>precātus est</strong> — prayed (deponent: <em>precor</em>) &bull;
+          <strong>vāstārent</strong> — might lay waste &bull;
+          <strong>rite</strong> — duly, according to ritual
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-block">
+        <div class="q-num">Question 4 <span class="mark-allocation">[10 marks]</span></div>
+        <div class="q-text">Answer the following questions on Passage A2.</div>
+
+        <div class="sub-question">
+          <span class="sq-label">(a)</span> How is the priest described as he approached the altar? <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(b)</span> Why was the sacrificial animal brought (line 8&ndash;9)? What construction introduces this reason? <span class="mark-allocation">[2]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(c)</span> <em>precātus est</em> (line 10) — identify the verb form and explain why its form is unusual. <span class="mark-allocation">[3]</span>
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(d)</span> What did the priest pray for? <span class="mark-allocation">[3]</span>
+          <div class="answer-space"></div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question-block">
+        <div class="q-num">Question 5 <span class="mark-allocation">[4 marks]</span></div>
+        <div class="q-text">Translate the sentence <em>pontifex precātus est nē deī urbem vāstārent</em> (line 10) into English.</div>
+        <div class="answer-space" style="min-height:3rem;"></div>
+      </div>
+
+      <!-- Section A Mark Scheme -->
+      <button class="show-answers-btn" onclick="toggleAnswers('ms-section-a')">Show answers for Section A</button>
+      <div class="mark-scheme" id="ms-section-a">
+        <h3>Section A &mdash; Mark Scheme</h3>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q1 (a)</div>
+          <div class="ms-answer">He was <strong>commander of the fleet</strong> [1]; he immediately <strong>boarded a ship</strong> [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q1 (b)</div>
+          <div class="ms-answer">That he was going to <strong>set out to the ruins of Mount Vesuvius</strong> [2] (indirect statement with future infinitive; 1 mark: &lsquo;going to / would set out&rsquo;; 1 mark: &lsquo;to the ruins of Vesuvius&rsquo;)</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q1 (c)</div>
+          <div class="ms-answer">The sky was <strong>full of fire</strong> [1] and very thick <strong>ash/dust was falling everywhere</strong> [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q1 (d)</div>
+          <div class="ms-answer">He wanted to get <strong>as close as possible to the mountain</strong> [1] in order to <strong>save the citizens</strong> [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q1 (e)</div>
+          <div class="ms-answer">He was <strong>found dead on the shore</strong> [1] with his body <strong>untouched / unharmed</strong> [1]</div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q2 (a)</div>
+          <div class="ms-answer"><strong>Ablative absolute</strong> [1] &mdash; <em>nūntiō acceptō</em> = &lsquo;the message having been received&rsquo;; ablative noun + ablative perfect passive participle [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q2 (b)</div>
+          <div class="ms-answer"><strong>Indirect statement</strong> after <em>scrīpsit</em> [1] &mdash; <em>profectūrum esse</em> is the <strong>future active infinitive</strong> of <em>proficīscor</em>, expressing an action future relative to the main verb (&lsquo;was going to set out&rsquo;) [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q2 (c)</div>
+          <div class="ms-answer"><strong>Result clause</strong> [1] &mdash; <em>tam&hellip;ut</em> + subjunctive expresses the result of the waves being so large that sailing was impossible [1]</div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q3 &mdash; Translation (lines 1&ndash;5)</div>
+          <div class="ms-answer">Pliny the Elder, the commander of the fleet, immediately boarded a ship after receiving the message. He wrote to his nephew that he was going to set out to the ruins of Mount Vesuvius. The soldiers did not want to sail because the sky was full of fire and very thick dust was falling everywhere. Pliny, however, while the others were fleeing, wanted to be as close as possible to the mountain in order to save the citizens.</div>
+          <div class="ms-note">Mark by sense-groups. <strong>Ablative absolute</strong> (<em>nūntiō acceptō</em>) and <strong>indirect statement</strong> (<em>sē&hellip;profectūrum esse</em>) must be correctly rendered. Purpose clause (<em>ut cīvēs servāret</em>) requires &lsquo;in order to&rsquo; or equivalent.</div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q4 (a)</div>
+          <div class="ms-answer">He was <strong>dressed in a white toga</strong> [2] (1 mark: &lsquo;white&rsquo;; 1 mark: &lsquo;toga&rsquo; / &lsquo;dressed in&rsquo;)</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q4 (b)</div>
+          <div class="ms-answer">So that it might be sacrificed to the gods [1]; introduced by a <strong>purpose clause</strong> (<em>ut</em> + subjunctive) [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q4 (c)</div>
+          <div class="ms-answer"><em>precātus est</em>: <strong>perfect active</strong> meaning [1] &mdash; it is a <strong>deponent verb</strong> [1] &mdash; passive in form but active in meaning; from <em>precor</em>, &lsquo;to pray&rsquo; [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q4 (d)</div>
+          <div class="ms-answer">That the gods would <strong>not lay waste / devastate the city</strong> [3] (negative fearing clause: 1 mark for &lsquo;that&hellip;not&rsquo;; 1 mark for &lsquo;the gods&rsquo;; 1 mark for &lsquo;lay waste / devastate the city&rsquo;)</div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q5 &mdash; Translation</div>
+          <div class="ms-answer">The high priest prayed that the gods would not lay waste to the city. [4]</div>
+          <div class="ms-note">1 mark: <strong>pontifex precātus est</strong> (the priest prayed — deponent correctly rendered as active); 1 mark: <strong>nē</strong> (that&hellip;not); 1 mark: <strong>deī</strong> (the gods); 1 mark: <strong>urbem vāstārent</strong> (would lay waste to / devastate the city)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION B ===== -->
+    <div class="paper-section">
+      <div class="section-header">
+        <h2>Section B &mdash; Directed Writing and Grammar</h2>
+        <div class="section-meta">30 marks &bull; Suggested time: 25 minutes</div>
+      </div>
+
+      <!-- Passage B1 -->
+      <div class="passage-block">
+        <h3>Passage B1 &mdash; Roman politics (about 50 words)</h3>
+        <p class="latin-text">
+          <span class="line-num">11</span>senātōrēs in cūriā congregātī de bellō Gallicō dīsputābant. Caesarem,<br>
+          <span class="line-num">12</span>exercitū victōrī reductō, imperium novum petere cōnstābat. senātūs<br>
+          <span class="line-num">13</span>prīncipēs timēbant nē potestās Caesaris tanta fieret ut rem pūblicam<br>
+          <span class="line-num">14</span>gubernāre nōn possent. itaque lēgātōs mīsērunt quī Caesarem monērent.
+        </p>
+
+        <div class="vocab-help">
+          <strong>cūria</strong>, -ae f. — senate house &bull;
+          <strong>congregātī</strong> — having assembled (perf. part.) &bull;
+          <strong>cōnstābat</strong> — it was evident, it was agreed &bull;
+          <strong>potestās</strong>, -tātis f. — power, authority &bull;
+          <strong>tam&hellip;ut</strong> — so great&hellip;that (result clause) &bull;
+          <strong>rem pūblicam gubernāre</strong> — to govern the republic &bull;
+          <strong>lēgātī</strong>, -ōrum m. pl. — envoys, ambassadors
+        </div>
+      </div>
+
+      <!-- Passage B2 -->
+      <div class="passage-block">
+        <h3>Passage B2 &mdash; A Roman family (about 50 words)</h3>
+        <p class="latin-text">
+          <span class="line-num">15</span>pater familias, domum ingressus, fīliōs suōs convocāvit. "vōs," inquit,<br>
+          <span class="line-num">16</span>"nōbilī gente natī estis; oportet igitur vōs virōs fortēs esse." fīlius<br>
+          <span class="line-num">17</span>māior, patre laudātō, gaudēbat. fīlius minor rogāvit quid patrem maximum<br>
+          <span class="line-num">18</span>in vītā dēlectāret. pater respondit sē fīliōs bonōs habēre maximē gaudēre.
+        </p>
+
+        <div class="vocab-help">
+          <strong>domum ingressus</strong> — having entered the house (perf. part. of <em>ingredior</em>) &bull;
+          <strong>nōbilī gente natī estis</strong> — you have been born from a noble family &bull;
+          <strong>oportet</strong> — it is fitting, it is necessary &bull;
+          <strong>patre laudātō</strong> — his father having been praised (abl. abs.) &bull;
+          <strong>dēlectāret</strong> — delighted, pleased (subjunctive) &bull;
+          <strong>maximē gaudēre</strong> — to rejoice most greatly
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question-block">
+        <div class="q-num">Question 6 <span class="mark-allocation">[8 marks]</span></div>
+        <div class="q-text">Identify the grammatical construction in each of the following, taken from passages B1 and B2. Give the Latin words and explain the construction.</div>
+
+        <div class="sub-question">
+          <span class="sq-label">(a)</span> <em>exercitū victōrī reductō</em> (line 12) [2]
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(b)</span> <em>lēgātōs mīsērunt quī Caesarem monērent</em> (line 14) [2]
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(c)</span> <em>patre laudātō</em> (line 17) [2]
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(d)</span> <em>rogāvit quid patrem maximum in vītā dēlectāret</em> (lines 17&ndash;18) [2]
+          <div class="answer-space"></div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question-block">
+        <div class="q-num">Question 7 <span class="mark-allocation">[8 marks]</span></div>
+        <div class="q-text">Parse the following Latin words. For each, state: part of speech, person/number/gender/case/tense/voice/mood as appropriate.</div>
+
+        <div class="sub-question">
+          <span class="sq-label">(a)</span> <em>congregātī</em> (line 11) [2]
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(b)</span> <em>mīsērunt</em> (line 14) [2]
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(c)</span> <em>convocāvit</em> (line 15) [2]
+          <div class="answer-space"></div>
+        </div>
+        <div class="sub-question">
+          <span class="sq-label">(d)</span> <em>ingressus</em> (line 15) [2]
+          <div class="answer-space"></div>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question-block">
+        <div class="q-num">Question 8 <span class="mark-allocation">[10 marks]</span></div>
+        <div class="q-text">Translate Passage B2 (lines 15&ndash;18) into English.</div>
+        <div class="answer-space" style="min-height:6rem; border-bottom: 1px solid #e0dbd0;"></div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question-block">
+        <div class="q-num">Question 9 <span class="mark-allocation">[4 marks]</span></div>
+        <div class="q-text">Explain the construction <em>domum ingressus</em> (line 15). State: (i) the name and form of <em>ingressus</em>; (ii) why <em>ingressus</em> is passive in form but active in meaning; (iii) the case of <em>domum</em> and why this case is used; (iv) how you would translate the phrase into English.</div>
+        <div class="answer-space" style="min-height:4rem; border-bottom: 1px solid #e0dbd0;"></div>
+      </div>
+
+      <!-- Section B Mark Scheme -->
+      <button class="show-answers-btn" onclick="toggleAnswers('ms-section-b')">Show answers for Section B</button>
+      <div class="mark-scheme" id="ms-section-b">
+        <h3>Section B &mdash; Mark Scheme</h3>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q6 (a)</div>
+          <div class="ms-answer"><strong>Ablative absolute</strong> [1] &mdash; <em>exercitū reductō</em> with <em>victōrī</em> modifying <em>exercitū</em>; &lsquo;the victorious army having been led back&rsquo;; ablative noun + ablative perfect passive participle [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q6 (b)</div>
+          <div class="ms-answer"><strong>Relative clause of purpose</strong> [1] &mdash; <em>quī</em> + subjunctive (<em>monērent</em>) after a verb of sending expresses the purpose (&lsquo;envoys to warn Caesar&rsquo; / &lsquo;who were to warn Caesar&rsquo;) [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q6 (c)</div>
+          <div class="ms-answer"><strong>Ablative absolute</strong> [1] &mdash; <em>patre laudātō</em> = &lsquo;his father having been praised&rsquo;; ablative noun + ablative perfect passive participle [1]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q6 (d)</div>
+          <div class="ms-answer"><strong>Indirect question</strong> [1] &mdash; introduced by <em>quid</em> after <em>rogāvit</em>; subjunctive (<em>dēlectāret</em>) used in the subordinate clause of an indirect question [1]</div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q7 (a)</div>
+          <div class="ms-answer"><em>congregātī</em>: <strong>perfect passive participle</strong> [1] &mdash; masculine nominative plural [&frac12;], from <em>congregō</em>; agreeing with <em>senātōrēs</em> [&frac12;] [2 total]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q7 (b)</div>
+          <div class="ms-answer"><em>mīsērunt</em>: <strong>verb</strong> [&frac12;] &mdash; 3rd person plural [&frac12;], <strong>perfect</strong> tense [&frac12;], active voice [&frac12;]; from <em>mittō</em>, &lsquo;to send&rsquo; [2 total]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q7 (c)</div>
+          <div class="ms-answer"><em>convocāvit</em>: <strong>verb</strong> [&frac12;] &mdash; 3rd person singular [&frac12;], <strong>perfect</strong> tense [&frac12;], active voice [&frac12;]; from <em>convocō</em>, &lsquo;to summon&rsquo; [2 total]</div>
+        </div>
+        <div class="ms-q">
+          <div class="ms-q-label">Q7 (d)</div>
+          <div class="ms-answer"><em>ingressus</em>: <strong>perfect passive participle</strong> in form [&frac12;], but from a <strong>deponent</strong> verb (<em>ingredior</em>) so active in meaning [&frac12;]; masculine nominative singular [&frac12;], agreeing with <em>pater</em> [&frac12;] [2 total]</div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q8 &mdash; Translation (lines 15&ndash;18)</div>
+          <div class="ms-answer">The head of the household, having entered the house, summoned his sons. &ldquo;You,&rdquo; he said, &ldquo;have been born from a noble family; it is therefore fitting/necessary for you to be brave men.&rdquo; The elder son rejoiced, his father having been praised. The younger son asked what pleased his father most in life. The father replied that he was most glad to have good sons.</div>
+          <div class="ms-note">Mark by sense-groups (3+3+2+2). <strong>Ablative absolute</strong> (<em>patre laudātō</em>), <strong>indirect question</strong> (<em>rogāvit quid&hellip;dēlectāret</em>), and <strong>indirect statement</strong> (<em>sē&hellip;gaudēre</em>) must be correctly rendered. Deponent <em>ingressus</em> must be translated as active.</div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q9</div>
+          <div class="ms-answer">
+            (i) <em>ingressus</em>: <strong>perfect participle of the deponent verb</strong> <em>ingredior</em> [1]<br>
+            (ii) <strong>Deponent verbs</strong> are passive in form but active in meaning throughout — <em>ingressus</em> looks passive (perfect passive participle) but means &lsquo;having entered&rsquo; [1]<br>
+            (iii) <em>domum</em> is <strong>accusative</strong> &mdash; used here as an accusative of motion towards (&lsquo;into/to the house&rsquo;) [1]<br>
+            (iv) &lsquo;<strong>Having entered the house</strong>&rsquo; or &lsquo;when/after he had entered the house&rsquo; [1]
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION C ===== -->
+    <div class="paper-section">
+      <div class="section-header">
+        <h2>Section C &mdash; English into Latin</h2>
+        <div class="section-meta">20 marks &bull; Suggested time: 20 minutes</div>
+      </div>
+
+      <div class="exam-tip">
+        <strong>Exam Tip</strong>
+        Each sentence tests a specific construction. Identify the construction first, then apply it carefully. Pay attention to tense, voice, and mood.
+      </div>
+
+      <div class="question-block">
+        <div class="q-num">Question 10 <span class="mark-allocation">[20 marks]</span></div>
+        <div class="q-text">Translate each of the following sentences into Latin. [4 marks each]</div>
+
+        <div class="section-c-sentence">
+          <div class="q-num" style="font-size:0.9rem;">(a) <em>Indirect statement with future infinitive</em> [4]</div>
+          <div class="english-prompt">The messenger announced that the enemy would attack the city.</div>
+          <div class="answer-space-large"></div>
+          <div class="answer-space-large"></div>
+        </div>
+
+        <div class="section-c-sentence">
+          <div class="q-num" style="font-size:0.9rem;">(b) <em>Purpose clause with quī + subjunctive</em> [4]</div>
+          <div class="english-prompt">The consul sent soldiers to guard the gates.</div>
+          <div class="answer-space-large"></div>
+          <div class="answer-space-large"></div>
+        </div>
+
+        <div class="section-c-sentence">
+          <div class="q-num" style="font-size:0.9rem;">(c) <em>Ablative of agent with passive verb</em> [4]</div>
+          <div class="english-prompt">The letters were being read by the senator.</div>
+          <div class="answer-space-large"></div>
+          <div class="answer-space-large"></div>
+        </div>
+
+        <div class="section-c-sentence">
+          <div class="q-num" style="font-size:0.9rem;">(d) <em>Past unfulfilled conditional</em> [4]</div>
+          <div class="english-prompt">If the soldiers had not been brave, the enemy would have captured the city.</div>
+          <div class="answer-space-large"></div>
+          <div class="answer-space-large"></div>
+        </div>
+
+        <div class="section-c-sentence">
+          <div class="q-num" style="font-size:0.9rem;">(e) <em>Relative clause of characteristic</em> [4]</div>
+          <div class="english-prompt">There is no man who does not want to live well.</div>
+          <div class="answer-space-large"></div>
+          <div class="answer-space-large"></div>
+        </div>
+      </div>
+
+      <!-- Section C Mark Scheme -->
+      <button class="show-answers-btn" onclick="toggleAnswers('ms-section-c')">Show answers for Section C</button>
+      <div class="mark-scheme" id="ms-section-c">
+        <h3>Section C &mdash; Mark Scheme</h3>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q10 (a) — Indirect statement with future infinitive</div>
+          <div class="ms-answer"><strong>nūntius dēnūntiāvit hostēs urbem oppugnātūrōs esse.</strong></div>
+          <div class="ms-note">
+            1 mark: <strong>nūntius dēnūntiāvit</strong> (the messenger announced — perfect active)<br>
+            1 mark: <strong>hostēs</strong> (accusative subject of indirect statement)<br>
+            1 mark: <strong>oppugnātūrōs</strong> (future active participle agreeing with hostēs — masculine accusative plural)<br>
+            1 mark: <strong>esse</strong> (infinitive completing the future active infinitive construction)
+          </div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q10 (b) — Purpose clause with quī + subjunctive</div>
+          <div class="ms-answer"><strong>cōnsul mīlitēs mīsit quī portās custōdīrent.</strong></div>
+          <div class="ms-note">
+            1 mark: <strong>cōnsul mīsit</strong> (the consul sent — perfect active)<br>
+            1 mark: <strong>mīlitēs</strong> (accusative plural direct object)<br>
+            1 mark: <strong>quī</strong> (relative pronoun introducing relative clause of purpose)<br>
+            1 mark: <strong>portās custōdīrent</strong> (imperfect subjunctive — sequence after perfect main verb)
+          </div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q10 (c) — Ablative of agent with passive</div>
+          <div class="ms-answer"><strong>epistulae ā senātōre legēbantur.</strong></div>
+          <div class="ms-note">
+            1 mark: <strong>epistulae</strong> (nominative plural subject — letters)<br>
+            1 mark: <strong>legēbantur</strong> (imperfect passive, 3rd plural — were being read)<br>
+            1 mark: <strong>ā</strong> (preposition required for ablative of agent with passive verb)<br>
+            1 mark: <strong>senātōre</strong> (ablative singular — by the senator)
+          </div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q10 (d) — Past unfulfilled conditional</div>
+          <div class="ms-answer"><strong>sī mīlitēs fortēs nōn fuissent, hostēs urbem cēpissent.</strong></div>
+          <div class="ms-note">
+            1 mark: <strong>sī</strong> + pluperfect subjunctive in the <em>si</em>-clause<br>
+            1 mark: <strong>fuissent</strong> (pluperfect subjunctive of <em>esse</em>)<br>
+            1 mark: <strong>hostēs urbem</strong> (correct nouns in correct cases)<br>
+            1 mark: <strong>cēpissent</strong> (pluperfect subjunctive in main clause for past unfulfilled condition)
+          </div>
+        </div>
+
+        <div class="ms-q">
+          <div class="ms-q-label">Q10 (e) — Relative clause of characteristic</div>
+          <div class="ms-answer"><strong>nēmō est quī bene vīvere nōlit.</strong></div>
+          <div class="ms-note">
+            1 mark: <strong>nēmō est</strong> (there is no man — nēmō as subject)<br>
+            1 mark: <strong>quī</strong> (relative pronoun introducing the characteristic clause)<br>
+            1 mark: <strong>nōlit</strong> (present subjunctive &mdash; characteristic/generic clause uses subjunctive; <em>nōlō</em> = do not want)<br>
+            1 mark: <strong>bene vīvere</strong> (to live well — infinitive as object of <em>nōlit</em>)
+          </div>
+        </div>
+      </div>
+
+      <div style="margin: 2rem 0 3rem; text-align: center; color: #4a5568; font-size: 0.9rem;">
+        <strong>End of Mock Paper 4</strong>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleAnswers(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var btn = el.previousElementSibling;
+      if (el.classList.contains('shown')) {
+        el.classList.remove('shown');
+        if (btn) btn.textContent = btn.textContent.replace('Hide', 'Show');
+      } else {
+        el.classList.add('shown');
+        if (btn) btn.textContent = btn.textContent.replace('Show', 'Hide');
+      }
+    }
+
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
