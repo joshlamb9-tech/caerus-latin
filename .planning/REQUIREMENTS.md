@@ -92,4 +92,4 @@
 | LIT-02 | Phase 6 | Complete |
 | LIT-03 | Phase 6 | Complete |
 | MOCK-01 | Phase 7 | Complete |
-| MOCK-02 | Phase 7 | Pending |
+| MOCK-02 | Phase 7 | Complete |

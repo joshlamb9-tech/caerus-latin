@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coming from CE Latin? Find out what OCR J282 GCSE adds to your CE foundation and where to study each area.">
+  <meta name="theme-color" content="#1a2744">
+  <title>Coming from CE? &mdash; GCSE Latin &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../login.html?next=' + encodeURIComponent('gcse/coming-from-ce.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = 'index.html';
+              return;
+            }
+
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+
+  <style>
+    /* Coming from CE page styles */
+    .ce-hero {
+      text-align: center;
+      padding: 3rem 1rem 1.5rem;
+    }
+    .ce-hero h1 {
+      font-size: 2rem;
+      color: #1a2744;
+    }
+    .ce-hero p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .ce-intro {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
+      font-size: 1rem;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    .gap-section {
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      padding: 0 1rem;
+    }
+
+    .gap-section h2 {
+      font-size: 1.1rem;
+      color: #1a2744;
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e0dbd0;
+    }
+
+    .gap-card {
+      padding: 1.25rem;
+      background: #fff;
+      border: 1px solid #e0dbd0;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      transition: border-color 0.15s ease;
+    }
+    .gap-card:hover {
+      border-color: #c9a84c;
+    }
+    .gap-card h3 {
+      font-size: 1.05rem;
+      color: #1a2744;
+      margin: 0 0 0.3rem;
+    }
+    .gap-card .ce-knows {
+      font-size: 0.9rem;
+      color: #2e7d32;
+      margin: 0 0 0.2rem;
+    }
+    .gap-card .gcse-adds {
+      font-size: 0.9rem;
+      color: #e65100;
+      margin: 0 0 0.5rem;
+    }
+    .gap-card .gap-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: #1a2744;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid #c9a84c;
+      margin-right: 1rem;
+      margin-top: 0.1rem;
+    }
+    .gap-card .gap-link:hover {
+      color: #c9a84c;
+    }
+
+    .ce-knows::before {
+      content: "CE: ";
+      font-weight: 600;
+    }
+    .gcse-adds::before {
+      content: "GCSE adds: ";
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">GCSE Home</a></li>
+          <li><a href="vocabulary.html">Vocabulary</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Grammar <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="grammar/declensions.html">4th &amp; 5th Declension</a></li>
+              <li><a href="grammar/passive.html">Passive Voice</a></li>
+              <li><a href="grammar/subjunctive.html">Subjunctive</a></li>
+              <li><a href="grammar/deponents.html">Deponent Verbs</a></li>
+              <li><a href="grammar/gerunds.html">Gerund &amp; Gerundive</a></li>
+              <li><a href="grammar/pronouns.html">Pronouns</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Syntax <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="syntax/participles.html">Participles</a></li>
+              <li><a href="syntax/ablative-absolute.html">Ablative Absolute</a></li>
+              <li><a href="syntax/indirect-statement.html">Indirect Statement</a></li>
+              <li><a href="syntax/indirect-commands.html">Indirect Commands</a></li>
+              <li><a href="syntax/indirect-questions.html">Indirect Questions</a></li>
+              <li><a href="syntax/purpose.html">Purpose Clauses</a></li>
+              <li><a href="syntax/result.html">Result Clauses</a></li>
+              <li><a href="syntax/fearing.html">Fearing Clauses</a></li>
+              <li><a href="syntax/temporal-causal-concessive.html">Temporal / Causal / Concessive</a></li>
+              <li><a href="syntax/conditionals.html">Conditionals</a></li>
+              <li><a href="syntax/sequence-of-tenses.html">Sequence of Tenses</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Translation <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="translation/passages.html">Unseen Passages</a></li>
+              <li><a href="translation/english-to-latin.html">English to Latin</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Literature <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="literature/pete.html">PETE Method</a></li>
+              <li><a href="literature/mangoes.html">MANGOES Devices</a></li>
+              <li><a href="literature/essay-skills.html">Essay Skills</a></li>
+              <li><a href="literature/entertainment.html">Entertainment</a></li>
+              <li><a href="literature/romans-in-britain.html">Romans in Britain</a></li>
+              <li><a href="literature/myths-and-beliefs.html">Myths &amp; Beliefs</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Mock Papers <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="mock-papers/paper-1.html">Paper 1</a></li>
+              <li><a href="mock-papers/paper-2.html">Paper 2</a></li>
+              <li><a href="mock-papers/paper-3.html">Paper 3</a></li>
+              <li><a href="mock-papers/paper-4.html">Paper 4</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html">CE Latin</a></li>
+          <li><a href="../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="ce-hero">
+      <h1>Coming from CE?</h1>
+      <p>You already have a strong foundation. Here is what GCSE adds &mdash; and where to find it.</p>
+    </section>
+
+    <div class="ce-intro">
+      <p>If you have studied Common Entrance Latin, you already know the core vocabulary, the first three declensions, four conjugations in the active voice, and basic sentence structures. GCSE Latin (OCR J282) builds on everything you have learnt. The areas below show exactly what is new &mdash; click through to start revising each one.</p>
+    </div>
+
+    <div class="gap-section">
+
+      <!-- Gap 1: Passive Voice -->
+      <div class="gap-card">
+        <h3>Passive Voice</h3>
+        <div class="ce-knows">Active voice across all 4 conjugations and all tenses</div>
+        <div class="gcse-adds">Full passive voice paradigms &mdash; present, imperfect, future, perfect, pluperfect, and future perfect passive for all conjugations</div>
+        <a href="grammar/passive.html" class="gap-link">Study the passive voice &rarr;</a>
+      </div>
+
+      <!-- Gap 2: Subjunctive Mood -->
+      <div class="gap-card">
+        <h3>Subjunctive Mood</h3>
+        <div class="ce-knows">Indicative mood only</div>
+        <div class="gcse-adds">Present, imperfect, and pluperfect subjunctive &mdash; active and passive &mdash; used in purpose clauses, result clauses, indirect commands, and more</div>
+        <a href="grammar/subjunctive.html" class="gap-link">Study the subjunctive &rarr;</a>
+      </div>
+
+      <!-- Gap 3: Deponent Verbs -->
+      <div class="gap-card">
+        <h3>Deponent Verbs</h3>
+        <div class="ce-knows">Not covered at CE level</div>
+        <div class="gcse-adds">Verbs that are passive in form but active in meaning &mdash; conor, hortor, loquor, morior, proficiscor, and others on the DVL</div>
+        <a href="grammar/deponents.html" class="gap-link">Study deponent verbs &rarr;</a>
+      </div>
+
+      <!-- Gap 4: Gerunds and Gerundives -->
+      <div class="gap-card">
+        <h3>Gerunds and Gerundives</h3>
+        <div class="ce-knows">Not covered at CE level</div>
+        <div class="gcse-adds">The verbal noun (gerund) and verbal adjective (gerundive), including the gerundive of obligation construction</div>
+        <a href="grammar/gerunds.html" class="gap-link">Study gerunds &amp; gerundives &rarr;</a>
+      </div>
+
+      <!-- Gap 5: Extended Pronouns -->
+      <div class="gap-card">
+        <h3>Extended Pronouns</h3>
+        <div class="ce-knows">Basic personal pronouns (ego, tu, nos, vos) and is/ea/id</div>
+        <div class="gcse-adds">Full paradigms for hic/haec/hoc, ille/illa/illud, qui/quae/quod, and ipse/ipsa/ipsum</div>
+        <a href="grammar/pronouns.html" class="gap-link">Study pronouns &rarr;</a>
+      </div>
+
+      <!-- Gap 6: 4th and 5th Declension -->
+      <div class="gap-card">
+        <h3>4th and 5th Declension</h3>
+        <div class="ce-knows">1st, 2nd, and 3rd declension nouns</div>
+        <div class="gcse-adds">4th declension (-us, -us) and 5th declension (-es, -ei) noun paradigms</div>
+        <a href="grammar/declensions.html" class="gap-link">Study 4th &amp; 5th declension &rarr;</a>
+      </div>
+
+      <!-- Gap 7: Syntax Constructions -->
+      <div class="gap-card">
+        <h3>Syntax Constructions (10 types)</h3>
+        <div class="ce-knows">Simple sentence structures, basic subordinate clauses</div>
+        <div class="gcse-adds">Indirect statement, purpose clauses, result clauses, indirect commands, indirect questions, ablative absolute, temporal/causal/concessive clauses, conditionals, fearing clauses, and participle usage</div>
+        <a href="syntax/index.html" class="gap-link">Explore all 11 syntax pages &rarr;</a>
+      </div>
+
+      <!-- Gap 8: Translation Technique -->
+      <div class="gap-card">
+        <h3>Translation Technique</h3>
+        <div class="ce-knows">Short passage translation at CE level</div>
+        <div class="gcse-adds">Longer unseen passages at exam level, plus English-to-Latin composition</div>
+        <a href="translation/passages.html" class="gap-link">Practise unseen passages &rarr;</a>
+        <a href="translation/english-to-latin.html" class="gap-link">Practise English to Latin &rarr;</a>
+      </div>
+
+      <!-- Gap 9: Literature Analysis -->
+      <div class="gap-card">
+        <h3>Literature Analysis (PETE and MANGOES)</h3>
+        <div class="ce-knows">Basic comprehension of set texts</div>
+        <div class="gcse-adds">PETE analysis method, MANGOES literary devices, 10-mark essay technique, and three Literature &amp; Culture themes</div>
+        <a href="literature/pete.html" class="gap-link">Learn PETE method &rarr;</a>
+        <a href="literature/index.html" class="gap-link">All literature tools &rarr;</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
