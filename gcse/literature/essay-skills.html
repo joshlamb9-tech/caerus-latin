@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="10-mark essay skills for OCR J282 — writing template, paragraph structure, and model answer with examiner commentary">
+  <meta name="theme-color" content="#1a2744">
+  <title>Essay Skills &mdash; GCSE Literature &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .exam-tip {
+      border-left: 4px solid #c9a84c;
+      background: #fdf8ee;
+      padding: 0.85rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #3a3220;
+    }
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .grammar-table th, .grammar-table td {
+      border: 1px solid #e0dbd0;
+      padding: 0.45rem 0.7rem;
+      text-align: left;
+    }
+    .grammar-table th {
+      background: #f5f2eb;
+      font-weight: 600;
+      color: #1a2744;
+    }
+    .grammar-table tr:nth-child(even) td {
+      background: #fafaf8;
+    }
+    .template-box {
+      border: 2px solid #c9a84c;
+      background: #fdf8ee;
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin: 1rem 0 1.5rem;
+    }
+    .template-box ol {
+      margin: 0.5rem 0 0 1.25rem;
+      padding: 0;
+    }
+    .template-box li {
+      margin-bottom: 0.6rem;
+      line-height: 1.55;
+    }
+    .question-box {
+      border: 1px solid #1a2744;
+      background: #f0f3f8;
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    .question-box p {
+      margin: 0;
+      font-weight: 600;
+      color: #1a2744;
+    }
+    .passage-box {
+      background: #f8f7f4;
+      border: 1px solid #e0dbd0;
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+    .passage-box .line {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .passage-box .line-number {
+      font-style: normal;
+      font-weight: 600;
+      color: #4a5568;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      display: inline-block;
+      width: 1.5rem;
+      text-align: right;
+    }
+    .model-para {
+      border-left: 3px solid #1a2744;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      background: #f8f7f4;
+      border-radius: 0 4px 4px 0;
+    }
+    .model-para .para-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #4a5568;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/literature/essay-skills.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">GCSE Home</a></li>
+          <li><a href="../vocabulary.html">Vocabulary</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Grammar <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../grammar/declensions.html">4th &amp; 5th Declension</a></li>
+              <li><a href="../grammar/passive.html">Passive Voice</a></li>
+              <li><a href="../grammar/subjunctive.html">Subjunctive</a></li>
+              <li><a href="../grammar/deponents.html">Deponent Verbs</a></li>
+              <li><a href="../grammar/gerunds.html">Gerund &amp; Gerundive</a></li>
+              <li><a href="../grammar/pronouns.html">Pronouns</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Syntax <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../syntax/participles.html">Participles</a></li>
+              <li><a href="../syntax/ablative-absolute.html">Ablative Absolute</a></li>
+              <li><a href="../syntax/indirect-statement.html">Indirect Statement</a></li>
+              <li><a href="../syntax/indirect-commands.html">Indirect Commands</a></li>
+              <li><a href="../syntax/indirect-questions.html">Indirect Questions</a></li>
+              <li><a href="../syntax/purpose.html">Purpose Clauses</a></li>
+              <li><a href="../syntax/result.html">Result Clauses</a></li>
+              <li><a href="../syntax/fearing.html">Fearing Clauses</a></li>
+              <li><a href="../syntax/temporal-causal-concessive.html">Temporal / Causal / Concessive</a></li>
+              <li><a href="../syntax/conditionals.html">Conditionals</a></li>
+              <li><a href="../syntax/sequence-of-tenses.html">Sequence of Tenses</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Translation <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../translation/passages.html">Unseen Passages</a></li>
+              <li><a href="../translation/english-to-latin.html">English to Latin</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Literature <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="pete.html">PETE Method</a></li>
+              <li><a href="mangoes.html">MANGOES Devices</a></li>
+              <li><a href="essay-skills.html">Essay Skills</a></li>
+              <li><a href="entertainment.html">Entertainment</a></li>
+              <li><a href="romans-in-britain.html">Romans in Britain</a></li>
+              <li><a href="myths-and-beliefs.html">Myths and Beliefs</a></li>
+            </ul>
+          </li>
+          <li><a href="../../index.html">CE Latin</a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="grammar-page" style="max-width:800px; margin:0 auto; padding:1rem 1rem 3rem;">
+
+      <h1>10-Mark Essay Skills</h1>
+      <p class="page-intro">The 10-mark question in J282 asks you to analyse how an author achieves a particular effect. You typically have 20 minutes and should write 2&ndash;3 PETE paragraphs. This page gives you a writing template, mark scheme, and a complete model answer with examiner commentary.</p>
+
+      <section id="essay-template">
+        <h2>Writing Template</h2>
+        <p>Follow this structure for every 10-mark answer. The template gives you a reliable framework that works for any passage and any question.</p>
+        <div class="template-box">
+          <ol>
+            <li><strong>Opening sentence</strong> &mdash; Answer the question directly in one sentence. Do not start with &ldquo;In this passage...&rdquo; State your argument: &ldquo;The author creates a sense of [effect] through [technique 1] and [technique 2].&rdquo;</li>
+            <li><strong>PETE Paragraph 1</strong> &mdash; Your strongest point. Quote the Latin, translate it, then explain precisely how the language creates the effect. This paragraph should take about 6&ndash;8 minutes to write.</li>
+            <li><strong>PETE Paragraph 2</strong> &mdash; A second point using a different technique if possible (e.g., if paragraph 1 was word choice, paragraph 2 could be word order, tense, or imagery).</li>
+            <li><strong>PETE Paragraph 3 (if time)</strong> &mdash; A third point, or further development of paragraph 2. Do not start a new point you cannot finish. A partial third paragraph is worse than a fully developed second paragraph.</li>
+            <li><strong>Brief conclusion (optional)</strong> &mdash; One sentence only: &ldquo;Overall, the author combines [technique 1] and [technique 2] to create a powerful sense of [effect].&rdquo; Only write this if you have time left.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="mark-scheme">
+        <h2>Mark Scheme: What Examiners Want</h2>
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>Mark Range</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>9&ndash;10</strong></td>
+              <td>Detailed, perceptive analysis. Accurate Latin quotation with line references. Precise translation. Sophisticated explanation of HOW language creates effects — tense, word order, case, and device effects are all explored.</td>
+            </tr>
+            <tr>
+              <td><strong>7&ndash;8</strong></td>
+              <td>Sound analysis with relevant Latin evidence. Translation mostly accurate. Clear explanation of effects, though less nuanced. May miss implications of specific grammatical choices.</td>
+            </tr>
+            <tr>
+              <td><strong>5&ndash;6</strong></td>
+              <td>Some valid points with Latin evidence. Translation may have minor errors. Explanation tends toward description rather than analysis — says WHAT happens rather than HOW the author creates it.</td>
+            </tr>
+            <tr>
+              <td><strong>3&ndash;4</strong></td>
+              <td>Basic points with limited Latin evidence. Translation may be inaccurate. Little analysis of how language creates effects. Often retells the story.</td>
+            </tr>
+            <tr>
+              <td><strong>1&ndash;2</strong></td>
+              <td>Very limited response. Little or no Latin evidence. Description rather than analysis. Translation absent or significantly inaccurate.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="model-answer">
+        <h2>Model Answer</h2>
+
+        <div class="question-box">
+          <p>How does the author make this passage exciting? Support your answer with reference to the Latin text. [10 marks]</p>
+        </div>
+
+        <p><em>Passage: A Roman general rallies his troops before battle.</em></p>
+
+        <div class="passage-box">
+          <span class="line"><span class="line-number">(1)</span> &#8220;M&#299;lit&#275;s!&#8221; cl&#257;m&#257;vit dux magn&#257; v&#333;ce. &#8220;Host&#275;s</span>
+          <span class="line"><span class="line-number">(2)</span> ante port&#257;s stant. N&#333;l&#299;te tim&#275;re! Patria</span>
+          <span class="line"><span class="line-number">(3)</span> vestra v&#333;s vocat. Gladi&#333;s capite et m&#275;cum</span>
+          <span class="line"><span class="line-number">(4)</span> in proelium currite &mdash; aut vinc&#275;mus aut</span>
+          <span class="line"><span class="line-number">(5)</span> cum gl&#333;ri&#257; cad&#275;mus!&#8221;</span>
+        </div>
+
+        <div class="model-para">
+          <div class="para-label">Paragraph 1 &mdash; Direct speech and vocative</div>
+          <p>The author creates immediate excitement through the general&rsquo;s dramatic opening. The direct speech begins with the vocative <em>M&#299;lit&#275;s!</em> (Soldiers!, line 1), placed emphatically at the very start of the passage before any other word. The verb <em>cl&#257;m&#257;vit</em> (he shouted, line 1) combined with the ablative phrase <em>magn&#257; v&#333;ce</em> (with a great voice) conveys urgency and volume simultaneously. The short, punchy exclamation creates a sudden, energetic opening that thrusts the reader into the scene without preamble.</p>
+        </div>
+
+        <div class="model-para">
+          <div class="para-label">Paragraph 2 &mdash; Present tense and enjambment</div>
+          <p>The author builds tension by presenting the danger as immediate. <em>Host&#275;s ante port&#257;s stant</em> (The enemy stand before the gates, lines 1&ndash;2) uses the present tense <em>stant</em> to make the threat feel urgent rather than historical &mdash; the enemy are there <em>now</em>, not yesterday. The enjambment of <em>Host&#275;s</em> at the end of line 1 running into line 2 creates a sense of the enemy pressing forward across the line break, visually enacting their advance. The immediate imperative <em>N&#333;l&#299;te tim&#275;re!</em> (Do not be afraid!, line 2) acknowledges the soldiers&rsquo; fear while commanding courage &mdash; a rhetorical move that makes the danger feel real.</p>
+        </div>
+
+        <div class="model-para">
+          <div class="para-label">Paragraph 3 &mdash; Rhetorical structure and climax</div>
+          <p>Finally, the author creates a climactic ending through the rhetorical alternative <em>aut vinc&#275;mus aut... cad&#275;mus</em> (either we shall conquer or we shall fall, lines 4&ndash;5). The parallel structure of <em>aut...aut</em> presents only two outcomes &mdash; victory or glorious death &mdash; eliminating retreat as even a conceivable option. The phrase <em>cum gl&#333;ri&#257;</em> (with glory, line 5) transforms even death into something noble and desirable, leaving the reader with a rousing, heroic conclusion that mirrors the emotional arc of a real battle speech.</p>
+        </div>
+
+        <div class="exam-tip">
+          <strong>Examiner commentary:</strong> This model answer would score 9&ndash;10 marks. Each paragraph follows PETE clearly. The student quotes Latin accurately with line references, translates precisely, and analyses specific effects &mdash; word order, tense choice, enjambment, and rhetorical structure. Crucially, the Explanation in each paragraph explains HOW the language creates excitement, not just WHAT happens in the passage. Note how grammatical observations (the present tense <em>stant</em>, the ablative of manner <em>magn&#257; v&#333;ce</em>) feed directly into literary analysis.
+        </div>
+      </section>
+
+      <section id="common-mistakes">
+        <h2>Common Mistakes to Avoid</h2>
+        <ul>
+          <li><strong>Retelling the story instead of analysing the language.</strong> &ldquo;The general tells the soldiers the enemy are at the gate&rdquo; scores nothing. &ldquo;The present tense <em>stant</em> makes the threat feel immediate&rdquo; scores marks.</li>
+          <li><strong>Quoting Latin without translating it.</strong> Examiners cannot assume you understand the text. If you quote <em>cl&#257;m&#257;vit</em>, translate it: &ldquo;he shouted&rdquo;.</li>
+          <li><strong>Identifying a device without explaining its effect.</strong> &ldquo;This is alliteration&rdquo; scores no marks. &ldquo;The repeated &lsquo;s&rsquo; sounds create a hushed atmosphere&rdquo; scores marks.</li>
+          <li><strong>Writing about Roman culture or history instead of the author&rsquo;s technique.</strong> The question asks about language choices, not background knowledge.</li>
+          <li><strong>Starting a new PETE paragraph with only 2 minutes left.</strong> Finish the paragraph you are writing instead. An incomplete paragraph is worse than a fully developed one.</li>
+        </ul>
+      </section>
+
+      <section id="essay-seealso">
+        <h2>See Also</h2>
+        <ul>
+          <li><a href="pete.html">PETE Method</a> &mdash; the full four-step framework used in every paragraph above</li>
+          <li><a href="mangoes.html">MANGOES</a> &mdash; use MANGOES to identify literary devices for your Explanation step</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
