@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: "Completed 05-02: Translation Practice UI (3 HTML pages + gcse/index.html updated)"
-last_updated: "2026-03-25T16:01:19.452Z"
-last_activity: "2026-03-25 — Completed plan 04-03 (6 syntax pages: purpose, result, fearing, temporal-causal-concessive, conditionals, sequence-of-tenses + gcse/index.html updated)"
+stopped_at: Completed 06-01 (PETE, MANGOES, and essay-skills literature tool pages)
+last_updated: "2026-03-26T10:14:29.611Z"
+last_activity: 2026-03-26
 progress:
   total_phases: 7
   completed_phases: 5
-  total_plans: 15
-  completed_plans: 15
+  total_plans: 18
+  completed_plans: 16
   percent: 24
 ---
 
@@ -21,20 +21,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** A GCSE student can revise every examinable element of OCR J282 in one place — vocabulary, grammar, syntax, translation, and literature skills — without a tutor or textbook alongside it.
-**Current focus:** Phase 5 — Translation Practice
+**Current focus:** Phase 06 — literature-tools
 
 ## Current Position
 
-Phase: 4 of 7 (Syntax)
-Plan: 3 of 3 in current phase (complete)
-Status: In progress
-Last activity: 2026-03-25 — Completed plan 04-03 (6 syntax pages: purpose, result, fearing, temporal-causal-concessive, conditionals, sequence-of-tenses + gcse/index.html updated)
+Phase: 06 (literature-tools) — EXECUTING
+Plan: 2 of 3
+Status: Ready to execute
+Last activity: 2026-03-26
 
 Progress: [███░░░░░░░] 24%
 
 ## Performance Metrics
 
 **Velocity:**
+
 - Total plans completed: 2
 - Average duration: 10 min
 - Total execution time: 20 min
@@ -48,6 +49,7 @@ Progress: [███░░░░░░░] 24%
 | 03-grammar-accidence | 1 | 15 min | 15 min |
 
 **Recent Trend:**
+
 - Last 5 plans: 01-01 (10 min), 01-02 (10 min), 02-01 (25 min), 02-02 (3 min), 03-01 (15 min)
 - Trend: stable
 
@@ -61,6 +63,7 @@ Progress: [███░░░░░░░] 24%
 | Phase 04-syntax P02 | 11 | 2 tasks | 6 files |
 | Phase 05-translation-practice P01 | 5 | 2 tasks | 9 files |
 | Phase 05-translation-practice P02 | 12 | 2 tasks | 4 files |
+| Phase 06-literature-tools P01 | 4 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -105,6 +108,9 @@ Progress: [███░░░░░░░] 24%
 - [Phase 05-translation-practice]: key_phrases extracted as separate top-level array — UI can highlight mark-scoring phrases in model translation
 - [Phase 05-translation-practice]: Translation hub uses tease pattern (not hard-redirect) — consistent with syntax/index.html convention for hub pages
 - [Phase 05-translation-practice]: escapeHtml helper added inline to translation pages — JSON is author-controlled but defensive escaping is correct practice
+- [Phase 06-literature-tools]: Literature pages use hard-redirect auth (not tease) — subscribers only, same as syntax pages
+- [Phase 06-literature-tools]: Literature nav group includes all 6 planned pages from the start (pete, mangoes, essay-skills, entertainment, romans-in-britain, myths-and-beliefs) for consistent navigation
+- [Phase 06-literature-tools]: device-card layout in MANGOES provides better scanability — definition, boxed Latin example, then analysis tip per device
 
 ### Pending Todos
 
@@ -116,6 +122,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-25T15:58:13.216Z
-Stopped at: Completed 05-02: Translation Practice UI (3 HTML pages + gcse/index.html updated)
+Last session: 2026-03-26T10:14:29.609Z
+Stopped at: Completed 06-01 (PETE, MANGOES, and essay-skills literature tool pages)
 Resume file: None
