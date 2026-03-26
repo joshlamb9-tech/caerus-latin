@@ -28,14 +28,14 @@ A GCSE student using this site should be able to revise every examinable element
 - ✓ Gerund and gerundive page — Phase 3
 - ✓ Extended pronoun tables (hic/haec/hoc, ille/illa/illud, qui/quae/quod, ipse) — Phase 3
 - ✓ 10 syntax pages: indirect statement, purpose clauses, result clauses, indirect commands, indirect questions, ablative absolute, temporal/causal/concessive clauses, conditionals, fearing clauses, participles — Phase 4
+- ✓ English-to-Latin practice sets (10 sets × 3 sentences) — Phase 5
+- ✓ Practice passage library (6–8 tagged unseen passages) — Phase 5
+- ✓ PETE method + MANGOES literary devices page — Phase 6
+- ✓ 10-mark essay skills page with template and model — Phase 6
+- ✓ Literature & Culture pages for 3 themes (Entertainment, Romans in Britain, Myths and Beliefs) — Phase 6
 
 ### Active
 
-- [ ] English-to-Latin practice sets (10 sets × 3 sentences)
-- [ ] Practice passage library (6–8 tagged unseen passages)
-- [ ] PETE method + MANGOES literary devices page
-- [ ] 10-mark essay skills page with template and model
-- [ ] Literature & Culture pages for 3 themes (Entertainment, Romans in Britain, Myths and Beliefs)
 - [ ] 4 mock Language papers (J282/01) with mark schemes
 - [ ] "Coming from CE?" orientation page
 
@@ -76,4 +76,4 @@ A GCSE student using this site should be able to revise every examinable element
 | Sequence of tenses as reference-only page | Cross-cutting rule referenced by 6 constructions; no standalone exercises needed | ✓ Phase 4 |
 
 ---
-*Last updated: 2026-03-25 after Phase 4 (Syntax)*
+*Last updated: 2026-03-26 after Phase 6 (Literature Tools)*
