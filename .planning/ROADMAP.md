@@ -99,7 +99,12 @@ Plans:
   2. 10-mark essay skills page includes a writing template and at least one model answer
   3. Literature & Culture pages exist for all 3 themes (Entertainment, Romans in Britain, Myths and Beliefs)
   4. A student can navigate from the GCSE landing page to all literature content without hitting dead links
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — PETE method + MANGOES literary devices + essay skills pages (LIT-01, LIT-02)
+- [ ] 06-02-PLAN.md — Literature & Culture theme pages: Entertainment, Romans in Britain, Myths and Beliefs (LIT-03)
+- [ ] 06-03-PLAN.md — Literature hub index + GCSE hub card activation + Literature nav group (LIT-01, LIT-02, LIT-03)
 
 ### Phase 7: Mock Papers
 **Goal**: Students can attempt full-length mock exams under timed conditions and check against mark schemes
@@ -120,5 +125,5 @@ Plans:
 | 3. Grammar (Accidence) | 5/5 | Complete   | 2026-03-23 |
 | 4. Syntax | 3/3 | Complete   | 2026-03-25 |
 | 5. Translation Practice | 2/2 | Complete   | 2026-03-25 |
-| 6. Literature Tools | 0/TBD | Not started | - |
+| 6. Literature Tools | 0/3 | Not started | - |
 | 7. Mock Papers | 0/TBD | Not started | - |
