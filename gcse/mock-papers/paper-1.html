@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mock Paper 1 — OCR J282/01 Latin Language paper with mark scheme reveals">
+  <meta name="theme-color" content="#1a2744">
+  <title>Mock Paper 1 &mdash; J282/01 Language &mdash; Caerus Latin GCSE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .paper-banner {
+      text-align: center;
+      border-top: 4px solid #c9a84c;
+      padding: 1.5rem;
+      background: #fafaf8;
+      border-radius: 6px;
+      margin: 1.5rem auto;
+      max-width: 700px;
+    }
+    .paper-section {
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
+    }
+    .paper-section h2 {
+      font-size: 1.3rem;
+      color: #1a2744;
+      border-bottom: 2px solid #c9a84c;
+      padding-bottom: 0.5rem;
+    }
+    .question-block {
+      margin: 1.25rem 0;
+    }
+    .question-block .q-num {
+      font-weight: 700;
+      color: #1a2744;
+    }
+    .mark-allocation {
+      font-size: 0.85rem;
+      color: #4a5568;
+      font-style: italic;
+    }
+    .latin-text {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f5f2eb;
+      border-radius: 4px;
+    }
+    .latin-text .line-num {
+      display: inline-block;
+      width: 2rem;
+      color: #999;
+      font-size: 0.85rem;
+    }
+    .mark-scheme {
+      display: none;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #fafaf8;
+      border-left: 3px solid #c9a84c;
+      border-radius: 0 4px 4px 0;
+    }
+    .mark-scheme.shown {
+      display: block;
+    }
+    .mark-scheme strong {
+      color: #1a2744;
+    }
+    .show-answers-btn {
+      padding: 0.5rem 1.2rem;
+      border: 1px solid #c9a84c;
+      border-radius: 4px;
+      background: #fff;
+      color: #1a2744;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      margin-top: 0.75rem;
+    }
+    .show-answers-btn:hover {
+      background: #c9a84c;
+    }
+    .vocab-help {
+      background: #f5f2eb;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      margin: 0.75rem 0;
+    }
+    .vocab-help dt {
+      font-weight: 600;
+      font-style: italic;
+    }
+    .vocab-help dd {
+      margin: 0 0 0.4rem 1rem;
+    }
+    .exam-tip {
+      border-left: 4px solid #c9a84c;
+      background: #fdf8ee;
+      padding: 0.85rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #3a3220;
+    }
+    .sub-question {
+      margin: 0.6rem 0 0.6rem 1.5rem;
+    }
+    .paper-intro {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 1rem;
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .paper-intro ul {
+      margin: 0.5rem 0 0.5rem 1.5rem;
+    }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/mock-papers/paper-1.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">GCSE Home</a></li>
+          <li><a href="../vocabulary.html">Vocabulary</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Grammar <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../grammar/declensions.html">4th &amp; 5th Declension</a></li>
+              <li><a href="../grammar/passive.html">Passive Voice</a></li>
+              <li><a href="../grammar/subjunctive.html">Subjunctive</a></li>
+              <li><a href="../grammar/deponents.html">Deponent Verbs</a></li>
+              <li><a href="../grammar/gerunds.html">Gerund &amp; Gerundive</a></li>
+              <li><a href="../grammar/pronouns.html">Pronouns</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Syntax <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../syntax/participles.html">Participles</a></li>
+              <li><a href="../syntax/ablative-absolute.html">Ablative Absolute</a></li>
+              <li><a href="../syntax/indirect-statement.html">Indirect Statement</a></li>
+              <li><a href="../syntax/indirect-commands.html">Indirect Commands</a></li>
+              <li><a href="../syntax/indirect-questions.html">Indirect Questions</a></li>
+              <li><a href="../syntax/purpose.html">Purpose Clauses</a></li>
+              <li><a href="../syntax/result.html">Result Clauses</a></li>
+              <li><a href="../syntax/fearing.html">Fearing Clauses</a></li>
+              <li><a href="../syntax/temporal-causal-concessive.html">Temporal / Causal / Concessive</a></li>
+              <li><a href="../syntax/conditionals.html">Conditionals</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Translation <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../translation/passages.html">Unseen Passages</a></li>
+              <li><a href="../translation/english-to-latin.html">English to Latin</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Literature <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../literature/pete.html">PETE Method</a></li>
+              <li><a href="../literature/essay-skills.html">Essay Skills</a></li>
+              <li><a href="../literature/culture.html">Literature &amp; Culture</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Mock Papers <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="paper-1.html">Paper 1</a></li>
+              <li><a href="paper-2.html">Paper 2</a></li>
+              <li><a href="paper-3.html">Paper 3</a></li>
+              <li><a href="paper-4.html">Paper 4</a></li>
+            </ul>
+          </li>
+          <li><a href="../../index.html">CE Latin</a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="paper-banner">
+      <h1 style="font-size:1.6rem; margin-bottom:0.3rem;">Mock Paper 1</h1>
+      <p style="font-size:1.1rem; color:#4a5568; margin:0;">OCR J282/01 Latin Language</p>
+      <p style="font-size:0.95rem; color:#4a5568; margin:0.5rem 0 0;">Time allowed: <strong>1 hour 30 minutes</strong> &nbsp;|&nbsp; Total marks: <strong>100</strong></p>
+    </div>
+
+    <div class="paper-intro">
+      <p><strong>Instructions:</strong></p>
+      <ul>
+        <li>Answer <strong>all</strong> questions in all three sections.</li>
+        <li>Write your answers on paper or in a document — do not write in the browser.</li>
+        <li>Use the &ldquo;Show mark scheme&rdquo; buttons at the end of each section to check your work.</li>
+        <li>Spend approximately: Section A &mdash; 50 minutes; Section B &mdash; 25 minutes; Section C &mdash; 15 minutes.</li>
+      </ul>
+    </div>
+
+    <!-- SECTION A -->
+    <section class="paper-section">
+      <h2>Section A: Comprehension and Translation <span class="mark-allocation">(50 marks)</span></h2>
+
+      <p><strong>Passage 1</strong> &mdash; Read the following passage and answer the questions below.</p>
+
+      <p style="font-size:0.9rem; color:#4a5568; font-style:italic;">The centurion Marcus writes to his brother from the northern frontier.</p>
+
+      <div class="latin-text">
+        <div><span class="line-num">1</span> Marcus, centuriō legiōnis sextae, fr&#257;trī su&#333; sal&#363;tem d&#299;cit. ad castra nova</div>
+        <div><span class="line-num">2</span> tandem perv&#275;nimus, ubi hostēs cott&#299;di&#275; nōs terrent. heri d&#363;x noster m&#299;litēs</div>
+        <div><span class="line-num">3</span> in &#257;ciem d&#363;xit et hostēs, qui in collibus lat&#275;bant, superāvit. multī host&#275;s</div>
+        <div><span class="line-num">4</span> capt&#299; sunt; cēter&#299; in silvam fugi&#275;bant. ego ipse gladiō manum hostem</div>
+        <div><span class="line-num">5</span> vul<span>nerāv&#299;</span> et nōmen meum apud comit&#275;s magnum est. nunc in castr&#299;s</div>
+        <div><span class="line-num">6</span> manēmus ut vulnera cūr&#275;mus. fr&#363;mentum tamen dēest et m&#299;litēs validissim&#299;</div>
+        <div><span class="line-num">7</span> timēre incipiunt n&#275; hostēs redeant. val&#275; et dē nōbīs cōgitā.</div>
+      </div>
+
+      <div class="vocab-help">
+        <p><strong>Vocabulary (words not in the DVL):</strong></p>
+        <dl>
+          <dt>cott&#299;di&#275;</dt><dd>every day</dd>
+          <dt>&#257;ciēs, &#257;ciē&#299;</dt><dd>battle line</dd>
+          <dt>lat&#275;bant</dt><dd>were hiding (from lat&#275;re)</dd>
+          <dt>fr&#363;mentum, -&#299;</dt><dd>grain, food supply</dd>
+          <dt>dēest</dt><dd>is lacking, runs short</dd>
+        </dl>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q1. Answer the following questions on Passage 1. <span class="mark-allocation">[10 marks]</span></p>
+        <div class="sub-question">(a) What is Marcus&rsquo;s rank and which legion does he serve in? <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(b) From lines 2&ndash;3, what did the commander do yesterday, and with what result? <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(c) What happened to many of the enemy, and what did the rest do? (lines 3&ndash;4) <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(d) How did Marcus distinguish himself in battle? (lines 4&ndash;5) <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(e) Give <strong>two</strong> reasons why the situation at the camp is now difficult. (lines 6&ndash;7) <span class="mark-allocation">[2 marks]</span></div>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q2. Answer the following grammar questions on Passage 1. <span class="mark-allocation">[6 marks]</span></p>
+        <div class="sub-question">(a) <em>capt&#299; sunt</em> (line 4). Identify the voice and tense of this verb form, and translate it. <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(b) <em>qui in collibus lat&#275;bant</em> (line 3). What type of clause is this? Translate it. <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(c) <em>ut vulnera cūr&#275;mus</em> (line 6). What type of clause is this? Translate it. <span class="mark-allocation">[2 marks]</span></div>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q3. Translate the following section of Passage 1 into English. <span class="mark-allocation">[20 marks]</span></p>
+        <div class="latin-text" style="margin-top:0.5rem;">
+          <em>heri d&#363;x noster m&#299;litēs in &#257;ciem d&#363;xit et hostēs, qui in collibus lat&#275;bant, superāvit. multī host&#275;s capt&#299; sunt; cēter&#299; in silvam fugi&#275;bant. ego ipse gladiō manum hostem vulnerāv&#299; et nōmen meum apud comit&#275;s magnum est.</em>
+        </div>
+      </div>
+
+      <p><strong>Passage 2</strong> &mdash; Read the following shorter passage and answer the questions below.</p>
+
+      <p style="font-size:0.9rem; color:#4a5568; font-style:italic;">A Roman gentleman describes his household routine.</p>
+
+      <div class="latin-text">
+        <div><span class="line-num">1</span> Gaius, v&#299;r d&#299;ves, in magnā vill&#257; prope urbem habit&#257;bat. servī eius dom&#333; labōrābant</div>
+        <div><span class="line-num">2</span> diū; al&#299;&#299; cibum par&#257;bant, al&#299;&#299; hortum cūr&#257;bant. ipse Gaius post merīdiem</div>
+        <div><span class="line-num">3</span> in lect&#333; qu&#299;escēbat. vespere vir&#299; amīcī ven&#299;re solebant ut cēnārent et fābulās</div>
+        <div><span class="line-num">4</span> narrārent. ita vīta Gaiī iūcunda erat.</div>
+      </div>
+
+      <div class="vocab-help">
+        <p><strong>Vocabulary:</strong></p>
+        <dl>
+          <dt>post merīdiem</dt><dd>in the afternoon</dd>
+          <dt>lectus, -&#299;</dt><dd>couch, bed</dd>
+          <dt>vespere</dt><dd>in the evening</dd>
+          <dt>iūcundus, -a, -um</dt><dd>pleasant, enjoyable</dd>
+        </dl>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q4. Answer the following questions on Passage 2. <span class="mark-allocation">[10 marks]</span></p>
+        <div class="sub-question">(a) Where did Gaius live, and how is he described? <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(b) What were the slaves doing? Give <strong>two</strong> different tasks. (lines 1&ndash;2) <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(c) What did Gaius himself do in the afternoon? <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(d) <em>ut cēnārent et fābulās narrārent</em> (lines 3&ndash;4). What type of clause is this, and what does it tell us about why the friends came? <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(e) How is Gaius&rsquo;s life described at the end of the passage? <span class="mark-allocation">[2 marks]</span></div>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q5. Translate the phrase <em>vir&#299; amīcī ven&#299;re solebant ut cēnārent et fābulās narrārent</em> (lines 3&ndash;4) into English. <span class="mark-allocation">[4 marks]</span></p>
+      </div>
+
+      <button class="show-answers-btn" onclick="toggleAnswers('a')">Show mark scheme for Section A</button>
+      <div class="mark-scheme" id="answers-a">
+        <h3 style="margin-top:0; color:#1a2744;">Section A Mark Scheme</h3>
+
+        <p><strong>Q1. Comprehension [10 marks]</strong></p>
+        <p>(a) He is a <strong>centurion</strong> of the <strong>sixth legion</strong>. [1 mark each, max 2]</p>
+        <p>(b) The commander led the soldiers into battle / into the battle line [1]; and defeated / overcame the enemy [1]. [2 marks]</p>
+        <p>(c) Many enemies were <strong>captured</strong> [1]; the rest <strong>fled into the forest</strong> [1]. [2 marks]</p>
+        <p>(d) He <strong>wounded an enemy in the hand with his sword</strong> [1] / he himself wounded an enemy soldier with his sword [1]. [2 marks — accept any accurate rendering]</p>
+        <p>(e) Any two: <strong>grain/food is running short</strong> [1]; <strong>the soldiers fear the enemy will return</strong> [1]. [2 marks]</p>
+
+        <p><strong>Q2. Grammar [6 marks]</strong></p>
+        <p>(a) <strong>Passive</strong> voice [&frac12;], <strong>perfect</strong> tense [&frac12;]; translation: <strong>&ldquo;were captured&rdquo; / &ldquo;have been captured&rdquo;</strong> [1]. [2 marks]</p>
+        <p>(b) <strong>Relative clause</strong> [1]; <strong>&ldquo;who were hiding in the hills&rdquo;</strong> [1]. [2 marks]</p>
+        <p>(c) <strong>Purpose clause</strong> [1]; <strong>&ldquo;in order that we might treat / so that we could treat our wounds&rdquo;</strong> [1]. [2 marks]</p>
+
+        <p><strong>Q3. Translation [20 marks]</strong></p>
+        <p><em>Model translation:</em> <strong>&ldquo;Yesterday our commander led the soldiers into battle and defeated the enemy, who were hiding in the hills. Many of the enemy were captured; the rest were fleeing into the forest. I myself wounded an enemy in the hand with my sword and my name is great among my companions.&rdquo;</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Mark at 5 marks per sentence (4 sentences shown above). Award marks for each correctly rendered clause/phrase. Deduct for major errors. Accept reasonable alternatives; penalise only significant mistranslations.</p>
+
+        <p><strong>Q4. Comprehension [10 marks]</strong></p>
+        <p>(a) He lived in a <strong>large villa near the city</strong> [1]; he is described as <strong>wealthy/rich</strong> [1]. [2 marks]</p>
+        <p>(b) Any two of: <strong>preparing food</strong> [1]; <strong>tending the garden</strong> [1]. [2 marks]</p>
+        <p>(c) He <strong>rested on his couch</strong> / lay down. [2 marks]</p>
+        <p>(d) It is a <strong>purpose clause</strong> [1]; the friends came <strong>in order to dine and tell stories</strong> [1]. [2 marks]</p>
+        <p>(e) His life was <strong>pleasant / enjoyable</strong>. [2 marks]</p>
+
+        <p><strong>Q5. Translation [4 marks]</strong></p>
+        <p><strong>&ldquo;His male friends used to come in order to dine and tell stories.&rdquo;</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Award 1 mark each for: <strong>viri amici</strong> (male friends) [1]; <strong>venire solebant</strong> (used to come) [1]; <strong>ut cenarent</strong> (to/in order to dine) [1]; <strong>fabulas narrarent</strong> (tell stories) [1].</p>
+      </div>
+    </section>
+
+    <!-- SECTION B -->
+    <section class="paper-section">
+      <h2>Section B: Language Analysis <span class="mark-allocation">(30 marks)</span></h2>
+
+      <p><strong>Excerpt 1</strong> &mdash; A mythological passage about Orpheus.</p>
+
+      <div class="latin-text">
+        <div><span class="line-num">1</span> Orpheus, vir praeclārus, uxōrem suam Eurydicen valdē am&#257;bat. Eurydice autem</div>
+        <div><span class="line-num">2</span> ā serpente mors&#257; ad Inferos descendit. Orpheus cr&#275;d&#275;bat Eurydicen vīvere</div>
+        <div><span class="line-num">3</span> posse si ad Inferōs ipse ī ret. itaque l&#299;ram suam cep&#299;t et, cantandō,</div>
+        <div><span class="line-num">4</span> d&#275;ōs Inferōrum m&#333;vit ut uxōrem sibi redderent. sed deus eum monuit nē</div>
+        <div><span class="line-num">5</span> respiceret d&#363;m Eurydice sequ&#275;r&#275;tur.</div>
+      </div>
+
+      <div class="vocab-help">
+        <p><strong>Vocabulary:</strong></p>
+        <dl>
+          <dt>praeclārus, -a, -um</dt><dd>famous, illustrious</dd>
+          <dt>serpens, serpentis</dt><dd>snake</dd>
+          <dt>Inferi, -ōrum</dt><dd>the Underworld</dd>
+          <dt>l&#299;ra, -ae</dt><dd>lyre</dd>
+          <dt>cantandō</dt><dd>by singing (gerund, ablative)</dd>
+          <dt>respicere</dt><dd>to look back</dd>
+        </dl>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q6. Identify the following constructions in Excerpt 1. <span class="mark-allocation">[8 marks]</span></p>
+        <div class="sub-question">(a) <em>ā serpente mors&#257;</em> (line 2). What construction is this? What does it tell us? <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(b) <em>Eurydicen vīvere posse</em> (lines 2&ndash;3). What construction is this? Translate it. <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(c) <em>ut uxōrem sibi redderent</em> (line 4). What type of clause is this? Translate it. <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(d) <em>nē respiceret</em> (line 4). What type of clause is this? Translate it. <span class="mark-allocation">[2 marks]</span></div>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q7. Parse the following words from Excerpt 1. <span class="mark-allocation">[8 marks]</span></p>
+        <div class="sub-question">(a) <em>mors&#257;</em> (line 2) &mdash; give case, number, gender, and its function in the sentence. <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(b) <em>cr&#275;d&#275;bat</em> (line 2) &mdash; give person, number, tense, voice, and mood. <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(c) <em>ī ret</em> (line 3) &mdash; give person, number, tense, voice, and mood. <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(d) <em>m&#333;vit</em> (line 4) &mdash; give person, number, tense, voice, and mood. <span class="mark-allocation">[2 marks]</span></div>
+      </div>
+
+      <p><strong>Excerpt 2</strong> &mdash; A passage about Roman religion.</p>
+
+      <div class="latin-text">
+        <div><span class="line-num">1</span> R&#333;mān&#299; multōs deōs colēbant. templum, quod in forō positum erat, ā pontific&#299;bus</div>
+        <div><span class="line-num">2</span> diligenter cūr&#257;b&#257;tur. sacrificia quotann&#299;s fiēbant n&#275; d&#299; &#299;r&#257;t&#299; essent.</div>
+        <div><span class="line-num">3</span> sacerdōtēs ōrābant ut pāx in terrīs manēret.</div>
+      </div>
+
+      <div class="vocab-help">
+        <p><strong>Vocabulary:</strong></p>
+        <dl>
+          <dt>pontifex, pontificis</dt><dd>priest, pontiff</dd>
+          <dt>diligenter</dt><dd>carefully</dd>
+          <dt>sacrificium, -&#299;</dt><dd>sacrifice</dd>
+          <dt>quotann&#299;s</dt><dd>every year, annually</dd>
+        </dl>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q8. Translate Excerpt 2 into English. <span class="mark-allocation">[10 marks]</span></p>
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q9. <em>templum, quod in forō positum erat</em> (line 1). <span class="mark-allocation">[4 marks]</span></p>
+        <div class="sub-question">(a) <em>positum erat</em> — what tense and voice is this verb? <span class="mark-allocation">[2 marks]</span></div>
+        <div class="sub-question">(b) What type of clause is <em>quod in forō positum erat</em>? Explain its function in the sentence. <span class="mark-allocation">[2 marks]</span></div>
+      </div>
+
+      <button class="show-answers-btn" onclick="toggleAnswers('b')">Show mark scheme for Section B</button>
+      <div class="mark-scheme" id="answers-b">
+        <h3 style="margin-top:0; color:#1a2744;">Section B Mark Scheme</h3>
+
+        <p><strong>Q6. Constructions [8 marks]</strong></p>
+        <p>(a) <strong>Ablative absolute</strong> [1]; it tells us <strong>Eurydice had been bitten by a snake</strong> (as a circumstance prior to her descent) [1]. [2 marks]</p>
+        <p>(b) <strong>Indirect statement (accusative + infinitive)</strong> [1]; <strong>&ldquo;that Eurydice was able to live / could live&rdquo;</strong> [1]. [2 marks]</p>
+        <p>(c) <strong>Purpose clause</strong> [1]; <strong>&ldquo;so that they would return his wife to him&rdquo;</strong> [1]. [2 marks]</p>
+        <p>(d) <strong>Indirect command / negative purpose clause after verb of warning</strong> [1]; <strong>&ldquo;not to look back&rdquo; / &ldquo;that he should not look back&rdquo;</strong> [1]. [2 marks]</p>
+
+        <p><strong>Q7. Parsing [8 marks]</strong></p>
+        <p>(a) <strong>mors&#257;</strong>: ablative [&frac12;], singular [&frac12;], feminine [&frac12;]; it is a <strong>perfect passive participle agreeing with serpente</strong> in the ablative absolute [&frac12;]. [2 marks]</p>
+        <p>(b) <strong>cr&#275;d&#275;bat</strong>: 3rd person [&frac12;], singular [&frac12;], imperfect tense [&frac12;], active voice [&frac12;], indicative mood [0 — awarded in package]. [2 marks — any 4 correct features]</p>
+        <p>(c) <strong>&#299;ret</strong>: 3rd person [&frac12;], singular [&frac12;], imperfect tense [&frac12;], active voice [&frac12;], <strong>subjunctive</strong> mood [&frac12;]. [2 marks — any 4 correct features]</p>
+        <p>(d) <strong>m&#333;vit</strong>: 3rd person [&frac12;], singular [&frac12;], <strong>perfect</strong> tense [&frac12;], active voice [&frac12;], indicative mood [0 — awarded in package]. [2 marks — any 4 correct features]</p>
+
+        <p><strong>Q8. Translation of Excerpt 2 [10 marks]</strong></p>
+        <p><em>Model translation:</em> <strong>&ldquo;The Romans used to worship many gods. The temple, which had been placed/built in the forum, was carefully looked after by the priests. Sacrifices were made every year so that the gods would not be angry. The priests prayed that peace might remain on earth.&rdquo;</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Mark at approximately 2&ndash;3 marks per sentence. Reward accurate rendering of passive constructions and subordinate clauses.</p>
+
+        <p><strong>Q9. Grammar [4 marks]</strong></p>
+        <p>(a) <strong>Pluperfect tense</strong> [1], <strong>passive voice</strong> [1]. [2 marks]</p>
+        <p>(b) It is a <strong>relative clause</strong> [1]; it <strong>describes/identifies the temple</strong> (gives additional information about which temple is meant) [1]. [2 marks]</p>
+      </div>
+    </section>
+
+    <!-- SECTION C -->
+    <section class="paper-section">
+      <h2>Section C: English to Latin <span class="mark-allocation">(20 marks)</span></h2>
+
+      <div class="exam-tip">
+        <strong>Exam technique:</strong> Each sentence is worth 4 marks. Write out the full Latin sentence. Pay attention to verb tense, agreement of adjectives, and case endings. Check subjunctive forms carefully.
+      </div>
+
+      <div class="question-block">
+        <p class="q-num">Q10. Translate the following sentences into Latin. <span class="mark-allocation">[20 marks &mdash; 4 marks each]</span></p>
+        <div class="sub-question">(a) The soldiers know that the commander is brave. <em>(Use an accusative + infinitive construction.)</em></div>
+        <div class="sub-question">(b) The citizens ran into the forum in order to see the procession. <em>(Use ut + subjunctive.)</em></div>
+        <div class="sub-question">(c) The enemy having been defeated, the general returned to Rome. <em>(Use an ablative absolute.)</em></div>
+        <div class="sub-question">(d) The letter was written by the senator. <em>(Use the passive voice.)</em></div>
+        <div class="sub-question">(e) The girl who had been praised by the teacher was happy. <em>(Use a relative clause.)</em></div>
+      </div>
+
+      <button class="show-answers-btn" onclick="toggleAnswers('c')">Show mark scheme for Section C</button>
+      <div class="mark-scheme" id="answers-c">
+        <h3 style="margin-top:0; color:#1a2744;">Section C Mark Scheme</h3>
+
+        <p><strong>Q10. English to Latin [20 marks &mdash; 4 marks each]</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Award marks as follows: 4 = fully correct; 3 = one minor error; 2 = correct structure with errors; 1 = partially correct; 0 = wrong construction or unintelligible.</p>
+
+        <p>(a) <strong>M&#299;litēs sciunt d&#363;cem fortem esse.</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Key features: <strong>accusative dūcem</strong> [1]; <strong>infinitive esse</strong> [1]; <strong>fortem agreeing with dūcem (acc.)</strong> [1]; overall sense [1].</p>
+
+        <p>(b) <strong>C&#299;vēs in forum cucurrērunt ut pompam spectārent.</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Key features: <strong>in forum</strong> (accusative of motion towards) [1]; <strong>ut + subjunctive spectārent</strong> [1]; imperfect subjunctive after a historic main verb [1]; overall sense [1].</p>
+
+        <p>(c) <strong>Hostibus superāt&#299;s, imperātor Rōmam rediit.</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Key features: <strong>hostibus</strong> (ablative) [1]; <strong>superātis</strong> (perfect passive participle, ablative plural) [1]; <strong>Rōmam</strong> (accusative, place to which) [1]; overall sense [1].</p>
+
+        <p>(d) <strong>Epistula ā senātōre scripta est.</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Key features: <strong>epistula</strong> (nominative subject) [1]; <strong>ā senātōre</strong> (ablative of agent) [1]; <strong>scripta est</strong> (perfect passive) [1]; overall sense [1].</p>
+
+        <p>(e) <strong>Puella, quae ā magistr&#333; laudāta erat, laeta erat.</strong></p>
+        <p style="font-size:0.85rem; color:#4a5568;">Key features: <strong>quae</strong> (relative pronoun, nominative feminine singular) [1]; <strong>ā magistrō</strong> (ablative of agent) [1]; <strong>laudāta erat</strong> (pluperfect passive) [1]; overall sense [1].</p>
+      </div>
+    </section>
+
+    <div style="max-width:700px; margin:2rem auto; padding:1rem; text-align:center; color:#4a5568; font-size:0.9rem; border-top:1px solid #e0dbd0;">
+      <p><strong>End of Paper 1</strong></p>
+      <p><a href="paper-2.html" style="color:#1a2744;">Continue to Mock Paper 2 &rarr;</a></p>
+    </div>
+
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    function toggleAnswers(section) {
+      var el = document.getElementById('answers-' + section);
+      if (!el) return;
+      var isShown = el.classList.toggle('shown');
+      var btn = el.previousElementSibling;
+      if (btn && btn.classList.contains('show-answers-btn')) {
+        btn.textContent = isShown
+          ? 'Hide mark scheme for Section ' + section.toUpperCase()
+          : 'Show mark scheme for Section ' + section.toUpperCase();
+      }
+    }
+  </script>
+
+</body>
+</html>
