@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roman myths and beliefs for OCR J282 — religion, household gods, temples, foundation myths, and the afterlife">
+  <meta name="theme-color" content="#1a2744">
+  <title>Myths &amp; Beliefs &mdash; GCSE Literature &amp; Culture &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .exam-tip {
+      border-left: 4px solid #c9a84c;
+      background: #fdf8ee;
+      padding: 0.85rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #3a3220;
+    }
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .grammar-table th, .grammar-table td {
+      border: 1px solid #e0dbd0;
+      padding: 0.45rem 0.7rem;
+      text-align: left;
+    }
+    .grammar-table th {
+      background: #f5f2eb;
+      font-weight: 600;
+      color: #1a2744;
+    }
+    .grammar-table tr:nth-child(even) td {
+      background: #fafaf8;
+    }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/literature/myths-and-beliefs.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">GCSE Home</a></li>
+          <li><a href="../vocabulary.html">Vocabulary</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Grammar <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../grammar/declensions.html">4th &amp; 5th Declension</a></li>
+              <li><a href="../grammar/passive.html">Passive Voice</a></li>
+              <li><a href="../grammar/subjunctive.html">Subjunctive</a></li>
+              <li><a href="../grammar/deponents.html">Deponent Verbs</a></li>
+              <li><a href="../grammar/gerunds.html">Gerund &amp; Gerundive</a></li>
+              <li><a href="../grammar/pronouns.html">Pronouns</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Syntax <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../syntax/participles.html">Participles</a></li>
+              <li><a href="../syntax/ablative-absolute.html">Ablative Absolute</a></li>
+              <li><a href="../syntax/indirect-statement.html">Indirect Statement</a></li>
+              <li><a href="../syntax/indirect-commands.html">Indirect Commands</a></li>
+              <li><a href="../syntax/indirect-questions.html">Indirect Questions</a></li>
+              <li><a href="../syntax/purpose.html">Purpose Clauses</a></li>
+              <li><a href="../syntax/result.html">Result Clauses</a></li>
+              <li><a href="../syntax/fearing.html">Fearing Clauses</a></li>
+              <li><a href="../syntax/temporal-causal-concessive.html">Temporal / Causal / Concessive</a></li>
+              <li><a href="../syntax/conditionals.html">Conditionals</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Translation <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../translation/index.html">Translation Hub</a></li>
+              <li><a href="../translation/english-to-latin.html">English to Latin</a></li>
+              <li><a href="../translation/passages.html">Passage Library</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Literature <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="pete.html">PETE Method</a></li>
+              <li><a href="mangoes.html">MANGOES Devices</a></li>
+              <li><a href="essay-skills.html">Essay Skills</a></li>
+              <li><a href="entertainment.html">Entertainment</a></li>
+              <li><a href="romans-in-britain.html">Romans in Britain</a></li>
+              <li><a href="myths-and-beliefs.html">Myths &amp; Beliefs</a></li>
+            </ul>
+          </li>
+          <li><a href="../../index.html">CE Latin</a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="grammar-page" style="max-width:800px; margin:0 auto; padding:1rem 1rem 3rem;">
+
+      <h1>Myths and Beliefs</h1>
+      <p class="page-intro">Religion was woven into every aspect of Roman life — from household rituals to state ceremonies. This theme covers the beliefs, myths, and religious practices examined in J282.</p>
+
+      <section id="roman-religion">
+        <h2>Roman Religion: Key Features</h2>
+        <p>Roman religion was <strong>polytheistic</strong> — Romans worshipped many gods, each with a specific domain over nature or human affairs. The major gods, borrowed and adapted from Greek mythology, formed the <em>dī Rōmānī</em> (Roman gods).</p>
+
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>Latin Name</th>
+              <th>Greek Equivalent</th>
+              <th>Domain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Jupiter</td><td>Zeus</td><td>King of the gods, sky, thunder, justice</td></tr>
+            <tr><td>Juno</td><td>Hera</td><td>Queen of the gods, marriage, women</td></tr>
+            <tr><td>Mars</td><td>Ares</td><td>War</td></tr>
+            <tr><td>Venus</td><td>Aphrodite</td><td>Love, beauty, desire</td></tr>
+            <tr><td>Mercury</td><td>Hermes</td><td>Messengers, trade, travellers</td></tr>
+            <tr><td>Neptune</td><td>Poseidon</td><td>Sea, earthquakes, horses</td></tr>
+            <tr><td>Minerva</td><td>Athena</td><td>Wisdom, crafts, strategy</td></tr>
+            <tr><td>Apollo</td><td>Apollo</td><td>Sun, music, prophecy, healing</td></tr>
+            <tr><td>Diana</td><td>Artemis</td><td>Hunting, the moon, childbirth</td></tr>
+            <tr><td>Bacchus</td><td>Dionysus</td><td>Wine, festivals, ecstasy</td></tr>
+            <tr><td>Vulcan</td><td>Hephaestus</td><td>Fire, the forge, craftsmen</td></tr>
+            <tr><td>Ceres</td><td>Demeter</td><td>Grain, harvest, fertility of the earth</td></tr>
+          </tbody>
+        </table>
+
+        <p><strong>Reciprocal religion — <em>d&#333; ut d&#275;s</em>:</strong> Roman religion was transactional. The principle of "I give so that you may give" meant worshippers offered sacrifices, vows, and gifts to the gods in exchange for divine favour — a good harvest, victory in battle, recovery from illness. It was not based on personal faith or devotion as in Christianity.</p>
+        <div class="exam-tip">
+          <strong>Exam tip:</strong> The concept of <em>d&#333; ut d&#275;s</em> is central to understanding Roman religion. It was transactional, not devotional. This explains why Romans could worship many gods simultaneously and why emperor worship was accepted — it was simply another transaction with a powerful being.
+        </div>
+      </section>
+
+      <section id="household-religion">
+        <h2>Household Religion (sacra prīvāta)</h2>
+        <p>Religion was not confined to public temples — it was a daily presence in the Roman home.</p>
+        <p><strong>Lar&#257;rium:</strong> The household shrine, usually located in the atrium or kitchen. It typically contained small statues of the household gods and a space for offerings.</p>
+        <p><strong>The household gods:</strong></p>
+        <ul>
+          <li><strong>Lar&#275;s</strong> — guardian spirits of the household and the crossroads (<em>compit&#257;l&#275;s</em>). Usually depicted as dancing figures in a toga, holding a drinking horn.</li>
+          <li><strong>Pen&#257;t&#275;s</strong> — gods of the storeroom (<em>pen&#275;tus</em> = inner room). They protected the household's food supply and prosperity.</li>
+          <li><strong>Genius</strong> — the spirit or divine force of the <em>paterfamili&#257;s</em> (head of household). The family offered incense and wine at the <em>lar&#257;rium</em> on his birthday and at major life events.</li>
+        </ul>
+        <p><strong>Daily rituals:</strong> Offerings of food (honey cakes, fruit), wine, and incense at the lararium; prayers before meals; invocations before important decisions.</p>
+        <div class="exam-tip">
+          <strong>Exam tip:</strong> Household religion shows that Roman religion was DAILY and PERSONAL, not just a matter of public festivals. Source questions may show an image of a lararium — know what the figures represent (Lares, Genius, Penates) and what activities took place there.
+        </div>
+      </section>
+
+      <section id="temples-priests">
+        <h2>Temples and Priests</h2>
+        <p><strong>Temple structure:</strong> Roman temples differed from Greek ones in being raised on a high podium with steps only at the front. The deep porch (<em>pronaos</em>) led to the inner chamber (<em>cella</em>) housing the cult statue of the deity. Crucially, sacrifice took place OUTSIDE on an altar in front of the temple — the interior was the god's house, not a congregation space.</p>
+        <p><strong>Priests (<em>sacerd&#333;t&#275;s</em>):</strong> Priests were not a separate religious class in Rome. Senators and magistrates held priesthoods as part of their public careers, combining religious and political roles.</p>
+        <p><strong>Key priesthoods:</strong></p>
+        <ul>
+          <li><strong>Pontifex Maximus</strong> — chief priest, overseer of all religious affairs; later taken by emperors (Augustus held it from 12 BC)</li>
+          <li><strong>Augur&#275;s</strong> — read omens from the flight and behaviour of birds (<em>auspicium</em>) to determine whether the gods favoured a proposed action</li>
+          <li><strong>Haruspic&#275;s</strong> — examined the entrails (<em>exta</em>) of sacrificed animals, especially the liver, for signs of divine approval or warning</li>
+          <li><strong>Vest&#257;l&#275;s</strong> (Vestal Virgins) — six priestesses who tended the sacred flame of Vesta in the Forum; served for 30 years; severe penalties (live burial) for breaking the vow of chastity</li>
+        </ul>
+        <p><strong>Sacrifice:</strong> The standard offering was the <em>suovetaurilia</em> — a pig, sheep, and ox sacrificed together. Libations (wine poured), incense burning, and examination of entrails followed.</p>
+        <div class="exam-tip">
+          <strong>Exam tip:</strong> The overlap of religion and politics is a key exam theme. Holding the role of Pontifex Maximus gave enormous political authority — it was another way Roman religion served political purposes. Augustus's assumption of the title in 12 BC reinforced his position as the centre of Roman life.
+        </div>
+      </section>
+
+      <section id="foundation-myths">
+        <h2>Foundation Myths</h2>
+        <p><strong>Romulus and Remus:</strong></p>
+        <ul>
+          <li>Twin sons of the war god Mars and the Vestal Virgin Rhea Silvia</li>
+          <li>Their great-uncle Amulius, usurper of the throne of Alba Longa, ordered them drowned in the Tiber</li>
+          <li>The basket ran aground; a she-wolf (<em>lupa</em>) suckled the twins; the shepherd Faustulus found and raised them</li>
+          <li>They overthrew Amulius and decided to found a new city; a dispute over which hill to build on led Romulus to kill Remus</li>
+          <li>Romulus founded Rome on the Palatine Hill on 21 April 753 BC (traditional date) and became its first king</li>
+        </ul>
+        <p><strong>Aeneas:</strong></p>
+        <ul>
+          <li>Trojan prince, son of the goddess Venus and the mortal Anchises</li>
+          <li>When Troy fell to the Greeks, Aeneas carried his elderly father on his back and led the surviving Trojans out of the burning city, also saving the Penates (household gods of Troy)</li>
+          <li>After years of wandering (narrated in Virgil's <em>Aeneid</em>), he visited the underworld where his father's ghost revealed Rome's future greatness (Book 6)</li>
+          <li>He settled in Italy, founding Lavinium; his son Ascanius (also called Iulus) founded Alba Longa</li>
+          <li>Romulus and Remus were descended from Aeneas through the kings of Alba Longa</li>
+        </ul>
+        <p><strong>Political significance:</strong> Augustus claimed descent from Aeneas (and therefore from Venus) through the Julian family — <em>Iulus</em> (Ascanius) being the ancestor of the <em>gens Iulia</em>. Virgil wrote the Aeneid in part to present Augustus as the destined fulfiller of Rome's divine mission.</p>
+        <div class="exam-tip">
+          <strong>Exam tip:</strong> Aeneas's defining virtue is <em>pietas</em> — duty to the gods, to family, and to country. This was the Roman ideal, and Augustus deliberately cast himself as the new Aeneas: pious, dutiful, and fated to bring peace. Questions on the Aeneid often ask about Aeneas's character — always link to <em>pietas</em>.
+        </div>
+      </section>
+
+      <section id="afterlife">
+        <h2>The Afterlife and the Underworld</h2>
+        <p><strong>The journey of the dead:</strong> Romans believed the soul (<em>umbra</em>, shade) descended to the underworld. To cross the River Styx, the dead paid the ferryman Charon with a coin — placed in the mouth or on the eyes at burial. The unburied could not cross and wandered for a hundred years.</p>
+        <p><strong>Underworld geography:</strong></p>
+        <ul>
+          <li><strong>Cerberus</strong> — the three-headed dog guarding the entrance, allowing the dead in but none out</li>
+          <li><strong>Asphodel Fields</strong> — where ordinary souls spent eternity, neither happy nor punished</li>
+          <li><strong>Elysium / Elysian Fields</strong> — paradise for the virtuous and heroic dead</li>
+          <li><strong>Tartarus</strong> — the deepest pit, reserved for the wicked and those who offended the gods, with eternal punishments</li>
+        </ul>
+        <p><strong>Famous punishments in Tartarus:</strong> Tantalus — food and water always just out of reach (giving us "to tantalise"); Sisyphus — rolling a boulder up a hill only for it to roll back, forever; the Danaids — filling leaking jars eternally.</p>
+        <p><strong>Funeral practices:</strong> Cremation was most common in the Republic and early Empire; the body was washed, anointed, and placed on a funeral pyre; ashes collected in an urn. Wealthy families held processions with actors wearing ancestor masks (<em>im&#257;gin&#275;s</em>).</p>
+        <p><strong><em>D&#299;s Manibus</em> (DM):</strong> "To the spirits (shades) of the dead" — inscribed on Roman tombstones as a dedication to the deceased. The dead were honoured at the festival of <em>Parent&#257;lia</em> (February) and <em>L&#275;muria</em> (May).</p>
+        <div class="exam-tip">
+          <strong>Exam tip:</strong> Aeneas's visit to the underworld (Aeneid Book 6) is a key source text for exam questions. Know the geography — Charon, Cerberus, the Asphodel Fields, Elysium, Tartarus — as these names appear in comprehension and translation passages. The visit also lets Anchises reveal Rome's future, making the underworld politically significant.
+        </div>
+      </section>
+
+      <section id="emperor-worship">
+        <h2>Emperor Worship and Religious Change</h2>
+        <p><strong>Deification:</strong> After death, emperors could be declared gods (<em>d&#299;vus</em>) by the Senate. Julius Caesar was the first to be deified (Divus Iulius) — his adopted son Augustus used this to call himself "son of the divine" (<em>d&#299;v&#299; f&#299;lius</em>), elevating his own status enormously.</p>
+        <p><strong>The imperial cult:</strong> Altars and temples to the living or deceased emperor were established across the provinces. Participating in the cult was a loyalty test — refusal could be seen as political dissent as much as religious nonconformity.</p>
+        <p><strong>Religious tolerance:</strong> Rome generally accepted foreign gods — Isis (Egyptian), Mithras (Persian), Cybele (Anatolian) — as long as worshippers also participated in Roman state religion. This syncretism helped integrate conquered peoples.</p>
+        <p><strong>Christianity:</strong> Initially persecuted under various emperors because Christians refused to sacrifice to the emperor (a political act as much as a religious one). Legalised by Constantine (AD 313, Edict of Milan); became the state religion under Theodosius I (AD 380, Edict of Thessalonica).</p>
+        <div class="exam-tip">
+          <strong>Exam tip:</strong> Emperor worship is the clearest example of religion as a political tool. Questions may ask why Christians were persecuted — the answer is primarily political (refusal to perform the loyalty test of sacrificing to the emperor) rather than theological. Contrast this with Rome's general tolerance of other religions to show the nuance.
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

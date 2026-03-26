@@ -111,6 +111,8 @@ Progress: [███░░░░░░░] 24%
 - [Phase 06-literature-tools]: Literature pages use hard-redirect auth (not tease) — subscribers only, same as syntax pages
 - [Phase 06-literature-tools]: Literature nav group includes all 6 planned pages from the start (pete, mangoes, essay-skills, entertainment, romans-in-britain, myths-and-beliefs) for consistent navigation
 - [Phase 06-literature-tools]: device-card layout in MANGOES provides better scanability — definition, boxed Latin example, then analysis tip per device
+- [Phase 06-literature-tools]: All three Literature & Culture theme pages use hard-redirect auth (not tease pattern) — consistent with grammar/syntax GCSE pages
+- [Phase 06-literature-tools]: Literature nav group includes all 6 literature pages on every page — established in Plan 02 for full navigation coverage
 
 ### Pending Todos
 
