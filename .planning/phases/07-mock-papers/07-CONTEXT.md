@@ -40,7 +40,7 @@ Build 4 full-length mock Language papers (J282/01) as HTML pages with per-sectio
 
 ### Hub integration
 - **D-18:** GCSE hub (`gcse/index.html`) Mock Papers card activated (remove coming-soon, link to mock-papers/index.html or directly to paper list)
-- **D-19:** Mock Papers nav group added to nav on all GCSE pages (matching Grammar, Syntax, Translation, Literature pattern)
+- **D-19:** Mock Papers nav group added to nav on the new mock-papers pages, coming-from-ce.html, and the GCSE hub (gcse/index.html). Existing grammar/syntax/translation/literature pages are NOT updated in this phase — retroactive nav injection across ~30 pages is out of scope for the final phase.
 - **D-20:** "Coming from CE?" gets its own link in the nav or a card on the GCSE hub
 
 ### Claude's Discretion
