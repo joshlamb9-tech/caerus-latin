@@ -112,4 +112,4 @@ Plans:
 | 4. Syntax | 0/TBD | Not started | - |
 | 5. Translation Practice | 0/TBD | Not started | - |
 | 6. Literature Tools | 0/TBD | Not started | - |
-| 7. Mock Papers | 0/TBD | Not started | - |
+| 7. Mock Papers | 1/3 | In progress | - |

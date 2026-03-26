@@ -91,5 +91,5 @@
 | LIT-01 | Phase 6 | Pending |
 | LIT-02 | Phase 6 | Pending |
 | LIT-03 | Phase 6 | Pending |
-| MOCK-01 | Phase 7 | Pending |
+| MOCK-01 | Phase 7 | Complete |
 | MOCK-02 | Phase 7 | Pending |
