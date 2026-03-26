@@ -96,6 +96,12 @@ None - no external service configuration required.
 - Principal parts arrays enable principal-parts drill mode in the UI
 - All 124 verbs have complete arrays; 217 GCSE-only words are tagged and levelled correctly
 
+## Self-Check: PASSED
+
+- `data/vocabulary/all.json` — FOUND
+- `02-01-SUMMARY.md` — FOUND
+- Commit `d3e3704` — FOUND
+
 ---
 *Phase: 02-vocabulary*
 *Completed: 2026-03-23*
