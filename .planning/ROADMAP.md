@@ -114,7 +114,12 @@ Plans:
   1. 4 complete J282/01 mock Language papers are available as printable or on-screen PDFs/pages with mark schemes
   2. A student who passes the "Coming from CE?" orientation page understands what J282 adds to CE
   3. The "Coming from CE?" page links to the relevant GCSE pages for each gap area
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 07-01-PLAN.md — Mock Papers 1 and 2: full J282/01 Language papers with per-section mark scheme reveals (MOCK-01)
+- [ ] 07-02-PLAN.md — Mock Papers 3 and 4 + "Coming from CE?" orientation page (MOCK-01, MOCK-02)
+- [ ] 07-03-PLAN.md — Hub integration: activate Mock Papers card, add Coming from CE card, Mock Papers nav group (MOCK-01, MOCK-02)
 
 ## Progress
 
@@ -126,4 +131,4 @@ Plans:
 | 4. Syntax | 3/3 | Complete   | 2026-03-25 |
 | 5. Translation Practice | 2/2 | Complete   | 2026-03-25 |
 | 6. Literature Tools | 1/3 | In Progress|  |
-| 7. Mock Papers | 0/TBD | Not started | - |
+| 7. Mock Papers | 0/3 | Not started | - |
