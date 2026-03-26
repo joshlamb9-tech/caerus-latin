@@ -103,8 +103,8 @@ Plans:
 
 Plans:
 - [x] 06-01-PLAN.md — PETE method + MANGOES literary devices + essay skills pages (LIT-01, LIT-02)
-- [ ] 06-02-PLAN.md — Literature & Culture theme pages: Entertainment, Romans in Britain, Myths and Beliefs (LIT-03)
-- [ ] 06-03-PLAN.md — Literature hub index + GCSE hub card activation + Literature nav group (LIT-01, LIT-02, LIT-03)
+- [x] 06-02-PLAN.md — Literature & Culture theme pages: Entertainment, Romans in Britain, Myths and Beliefs (LIT-03)
+- [x] 06-03-PLAN.md — Literature hub index + GCSE hub card activation + Literature nav group (LIT-01, LIT-02, LIT-03)
 
 ### Phase 7: Mock Papers
 **Goal**: Students can attempt full-length mock exams under timed conditions and check against mark schemes
