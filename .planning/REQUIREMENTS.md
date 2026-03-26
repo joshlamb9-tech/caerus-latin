@@ -90,6 +90,6 @@
 | TRANS-02 | Phase 5 | Pending |
 | LIT-01 | Phase 6 | Pending |
 | LIT-02 | Phase 6 | Pending |
-| LIT-03 | Phase 6 | Pending |
+| LIT-03 | Phase 6 | Complete |
 | MOCK-01 | Phase 7 | Pending |
 | MOCK-02 | Phase 7 | Pending |
