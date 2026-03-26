@@ -34,10 +34,12 @@ A GCSE student using this site should be able to revise every examinable element
 - ✓ 10-mark essay skills page with template and model — Phase 6
 - ✓ Literature & Culture pages for 3 themes (Entertainment, Romans in Britain, Myths and Beliefs) — Phase 6
 
+- ✓ 4 mock Language papers (J282/01) with mark schemes — Phase 7
+- ✓ "Coming from CE?" orientation page — Phase 7
+
 ### Active
 
-- [ ] 4 mock Language papers (J282/01) with mark schemes
-- [ ] "Coming from CE?" orientation page
+All v1.0 requirements complete. No active requirements remain.
 
 ### Out of Scope
 
@@ -76,4 +78,4 @@ A GCSE student using this site should be able to revise every examinable element
 | Sequence of tenses as reference-only page | Cross-cutting rule referenced by 6 constructions; no standalone exercises needed | ✓ Phase 4 |
 
 ---
-*Last updated: 2026-03-26 after Phase 6 (Literature Tools)*
+*Last updated: 2026-03-26 after Phase 7 (Mock Papers) — v1.0 MILESTONE COMPLETE*
