@@ -12,7 +12,7 @@ This roadmap builds the OCR J282 GCSE Latin section on top of the existing Caeru
 - [x] **Phase 4: Syntax** - 11 construction pages covering the full J282 syntax syllabus (completed 2026-03-25)
 - [x] **Phase 5: Translation Practice** - Unseen passage library and English-to-Latin sets (completed 2026-03-25)
 - [ ] **Phase 6: Literature Tools** - PETE, MANGOES, essay skills, Literature & Culture
-- [ ] **Phase 7: Mock Papers** - 4 full J282/01 papers + "Coming from CE?" orientation
+- [x] **Phase 7: Mock Papers** - 4 full J282/01 papers + "Coming from CE?" orientation (completed 2026-03-26)
 
 ## Phase Details
 
@@ -117,9 +117,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — Mock Papers 1 and 2: full J282/01 Language papers with per-section mark scheme reveals (MOCK-01)
-- [ ] 07-02-PLAN.md — Mock Papers 3 and 4 + "Coming from CE?" orientation page (MOCK-01, MOCK-02)
-- [ ] 07-03-PLAN.md — Hub integration: activate Mock Papers card, add Coming from CE card, Mock Papers nav group (MOCK-01, MOCK-02)
+- [x] 07-01-PLAN.md — Mock Papers 1 and 2: full J282/01 Language papers with per-section mark scheme reveals (MOCK-01)
+- [x] 07-02-PLAN.md — Mock Papers 3 and 4 + "Coming from CE?" orientation page (MOCK-01, MOCK-02)
+- [x] 07-03-PLAN.md — Hub integration: activate Mock Papers card, add Coming from CE card, Mock Papers nav group (MOCK-01, MOCK-02)
 
 ## Progress
 
@@ -131,4 +131,4 @@ Plans:
 | 4. Syntax | 3/3 | Complete   | 2026-03-25 |
 | 5. Translation Practice | 2/2 | Complete   | 2026-03-25 |
 | 6. Literature Tools | 1/3 | In Progress|  |
-| 7. Mock Papers | 0/3 | Not started | - |
+| 7. Mock Papers | 3/3 | Complete   | 2026-03-26 |
