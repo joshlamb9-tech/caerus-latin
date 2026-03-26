@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MANGOES mnemonic for Latin literary devices — Metaphor, Alliteration, Noun clusters, Graphic language, Onomatopoeia, Enjambment, Simile">
+  <meta name="theme-color" content="#1a2744">
+  <title>MANGOES Literary Devices &mdash; GCSE Literature &mdash; Caerus Latin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Auth guard: hide body until session + latin-gcse grant confirmed -->
+  <style id="auth-guard">body { visibility: hidden !important; }</style>
+  <style>
+    .exam-tip {
+      border-left: 4px solid #c9a84c;
+      background: #fdf8ee;
+      padding: 0.85rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #3a3220;
+    }
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .grammar-table th, .grammar-table td {
+      border: 1px solid #e0dbd0;
+      padding: 0.45rem 0.7rem;
+      text-align: left;
+    }
+    .grammar-table th {
+      background: #f5f2eb;
+      font-weight: 600;
+      color: #1a2744;
+    }
+    .grammar-table tr:nth-child(even) td {
+      background: #fafaf8;
+    }
+    .device-card {
+      border: 1px solid #e0dbd0;
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1.25rem 0;
+      background: #fff;
+    }
+    .device-card .device-label {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 0.5rem;
+    }
+    .device-card .device-definition {
+      color: #4a5568;
+      margin-bottom: 0.75rem;
+    }
+    .device-card .latin-example {
+      font-style: italic;
+      background: #f8f7f4;
+      border-left: 3px solid #c9a84c;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0 3px 3px 0;
+      margin: 0.5rem 0;
+    }
+    .device-card .analysis-tip {
+      font-size: 0.9rem;
+      color: #3a3220;
+      margin-top: 0.5rem;
+    }
+    .analysis-tip strong {
+      color: #1a2744;
+    }
+  </style>
+  <script>
+    (function () {
+      var SUPABASE_URL  = 'https://dlcseuejvducbsjhqvze.supabase.co';
+      var SUPABASE_ANON = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      client.auth.getSession().then(function (result) {
+        var session = result.data.session;
+        if (!session) {
+          window.location.href = '../../login.html?next=' + encodeURIComponent('gcse/literature/mangoes.html');
+          return;
+        }
+
+        client.from('access_grants')
+          .select('id')
+          .eq('user_id', session.user.id)
+          .eq('product', 'latin-gcse')
+          .gt('valid_until', new Date().toISOString())
+          .limit(1)
+          .then(function (gr) {
+            if (!gr.data || gr.data.length === 0) {
+              window.location.href = '../index.html';
+              return;
+            }
+
+            // Grant confirmed — reveal page
+            window.CR_AUTH = { client: client, userId: session.user.id };
+            var guard = document.getElementById('auth-guard');
+            if (guard) guard.remove();
+
+            // Inject sign-out link into nav
+            var nav = document.getElementById('site-nav');
+            if (nav) {
+              var ul = nav.querySelector('ul');
+              if (ul) {
+                var li = document.createElement('li');
+                var a  = document.createElement('a');
+                a.href = '#';
+                a.textContent = 'Sign out';
+                a.style.opacity = '0.65';
+                a.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  client.auth.signOut().then(function () { window.location.href = '../../login.html'; });
+                });
+                li.appendChild(a);
+                ul.appendChild(li);
+              }
+            }
+          });
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="site-title">Caerus Latin</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">GCSE Home</a></li>
+          <li><a href="../vocabulary.html">Vocabulary</a></li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Grammar <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../grammar/declensions.html">4th &amp; 5th Declension</a></li>
+              <li><a href="../grammar/passive.html">Passive Voice</a></li>
+              <li><a href="../grammar/subjunctive.html">Subjunctive</a></li>
+              <li><a href="../grammar/deponents.html">Deponent Verbs</a></li>
+              <li><a href="../grammar/gerunds.html">Gerund &amp; Gerundive</a></li>
+              <li><a href="../grammar/pronouns.html">Pronouns</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Syntax <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../syntax/participles.html">Participles</a></li>
+              <li><a href="../syntax/ablative-absolute.html">Ablative Absolute</a></li>
+              <li><a href="../syntax/indirect-statement.html">Indirect Statement</a></li>
+              <li><a href="../syntax/indirect-commands.html">Indirect Commands</a></li>
+              <li><a href="../syntax/indirect-questions.html">Indirect Questions</a></li>
+              <li><a href="../syntax/purpose.html">Purpose Clauses</a></li>
+              <li><a href="../syntax/result.html">Result Clauses</a></li>
+              <li><a href="../syntax/fearing.html">Fearing Clauses</a></li>
+              <li><a href="../syntax/temporal-causal-concessive.html">Temporal / Causal / Concessive</a></li>
+              <li><a href="../syntax/conditionals.html">Conditionals</a></li>
+              <li><a href="../syntax/sequence-of-tenses.html">Sequence of Tenses</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Translation <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="../translation/passages.html">Unseen Passages</a></li>
+              <li><a href="../translation/english-to-latin.html">English to Latin</a></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <a href="#" class="nav-group-toggle">Literature <svg class="nav-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+            <ul class="nav-group-menu">
+              <li><a href="pete.html">PETE Method</a></li>
+              <li><a href="mangoes.html">MANGOES Devices</a></li>
+              <li><a href="essay-skills.html">Essay Skills</a></li>
+              <li><a href="entertainment.html">Entertainment</a></li>
+              <li><a href="romans-in-britain.html">Romans in Britain</a></li>
+              <li><a href="myths-and-beliefs.html">Myths and Beliefs</a></li>
+            </ul>
+          </li>
+          <li><a href="../../index.html">CE Latin</a></li>
+          <li><a href="../../account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="grammar-page" style="max-width:800px; margin:0 auto; padding:1rem 1rem 3rem;">
+
+      <h1>MANGOES &mdash; Literary Devices</h1>
+      <p class="page-intro">MANGOES is a mnemonic for the seven key literary devices you need to identify and analyse in OCR J282 literature questions. For each device: identify it, translate the Latin, then explain the effect it creates.</p>
+
+      <section id="mangoes-metaphor">
+        <h2>M &mdash; Metaphor</h2>
+        <div class="device-card">
+          <div class="device-label">Metaphor</div>
+          <p class="device-definition">Describing something as if it <em>were</em> something else, without using &ldquo;like&rdquo; or &ldquo;as&rdquo;. The comparison is stated directly.</p>
+          <div class="latin-example">
+            <strong>Latin:</strong> <em>R&#333;ma est caput mund&#299;</em><br>
+            <strong>Translation:</strong> Rome is the head of the world.
+          </div>
+          <p class="analysis-tip"><strong>Analysis tip:</strong> &ldquo;The metaphor <em>caput</em> elevates Rome from a city to the controlling mind of civilisation &mdash; it implies that the world cannot function without Rome, just as a body cannot function without its head.&rdquo;</p>
+        </div>
+      </section>
+
+      <section id="mangoes-alliteration">
+        <h2>A &mdash; Alliteration</h2>
+        <div class="device-card">
+          <div class="device-label">Alliteration</div>
+          <p class="device-definition">Repetition of the same initial consonant sound across several words. In Latin, pay attention to sound patterns even across word boundaries.</p>
+          <div class="latin-example">
+            <strong>Latin:</strong> <em>Saepe senex s&#275;cr&#275;t&#333; susp&#299;r&#257;bat</em><br>
+            <strong>Translation:</strong> Often the old man sighed secretly.
+          </div>
+          <p class="analysis-tip"><strong>Analysis tip:</strong> &ldquo;The repeated &lsquo;s&rsquo; sounds create a hushed, secretive atmosphere &mdash; the soft sibilance mirrors the quietness of the old man&rsquo;s private grief and makes the reader feel they are overhearing something intimate.&rdquo;</p>
+        </div>
+      </section>
+
+      <section id="mangoes-noun-clusters">
+        <h2>N &mdash; Noun clusters</h2>
+        <div class="device-card">
+          <div class="device-label">Noun clusters</div>
+          <p class="device-definition">Groups of nouns (often with no conjunctions &mdash; called <em>asyndeton</em>) listed together for cumulative effect. The rapid accumulation overwhelms the reader.</p>
+          <div class="latin-example">
+            <strong>Latin:</strong> <em>Flammae, cl&#257;m&#333;r&#275;s, lacrimae, sanguis &mdash; omnia terr&#275;bant</em><br>
+            <strong>Translation:</strong> Flames, shouts, tears, blood &mdash; everything terrified.
+          </div>
+          <p class="analysis-tip"><strong>Analysis tip:</strong> &ldquo;The four-noun asyndeton (no conjunctions) creates a rapid, overwhelming catalogue of horrors. Each noun hits in quick succession, mirroring the chaos of the scene and preventing the reader from pausing between images.&rdquo;</p>
+        </div>
+      </section>
+
+      <section id="mangoes-graphic">
+        <h2>G &mdash; Graphic / vivid language</h2>
+        <div class="device-card">
+          <div class="device-label">Graphic / vivid language</div>
+          <p class="device-definition">Specific, visual, or sensory vocabulary that makes a scene feel immediate and real. Often achieved through precise adjective choice or visceral verbs.</p>
+          <div class="latin-example">
+            <strong>Latin:</strong> <em>Gladius per pectus tr&#257;ns&#299;it; sanguis &#257;ter effl&#363;&#275;bat</em><br>
+            <strong>Translation:</strong> The sword passed through his chest; dark blood flowed out.
+          </div>
+          <p class="analysis-tip"><strong>Analysis tip:</strong> &ldquo;The adjective <em>&#257;ter</em> (dark/black) makes the blood visceral and unsettling &mdash; more powerful than simply <em>sanguis</em> alone. The specific word choice forces the reader to picture the darkness of the wound, making the violence tangible rather than abstract.&rdquo;</p>
+        </div>
+      </section>
+
+      <section id="mangoes-onomatopoeia">
+        <h2>O &mdash; Onomatopoeia</h2>
+        <div class="device-card">
+          <div class="device-label">Onomatopoeia</div>
+          <p class="device-definition">Words that sound like the thing they describe. In Latin, this often involves hard consonants (c, g, r) for violence or crashing sounds, and soft sounds (s, l) for calm or flowing water.</p>
+          <div class="latin-example">
+            <strong>Latin:</strong> <em>Unda frag&#333;sa ru&#275;bat</em><br>
+            <strong>Translation:</strong> The crashing wave rushed down.
+          </div>
+          <p class="analysis-tip"><strong>Analysis tip:</strong> &ldquo;<em>Frag&#333;sa</em> mimics the crash and break of waves &mdash; the hard &lsquo;g&rsquo; and rolling &lsquo;r&rsquo; are audibly violent. The sound of the word enacts what it describes, making the experience of the wave physical rather than merely visual.&rdquo;</p>
+        </div>
+      </section>
+
+      <section id="mangoes-enjambment">
+        <h2>E &mdash; Enjambment</h2>
+        <div class="device-card">
+          <div class="device-label">Enjambment</div>
+          <p class="device-definition">A sentence or clause that runs over a line break rather than stopping at the end of a line. In Latin verse, this creates emphasis, suspense, or a rushing forward motion.</p>
+          <div class="latin-example">
+            <strong>Latin:</strong> <em>&hellip;et magn&#257; / v&#333;ce cl&#257;m&#257;vit</em><br>
+            <strong>Translation:</strong> &hellip;and with a great voice he shouted (line break after <em>magn&#257;</em>).
+          </div>
+          <p class="analysis-tip"><strong>Analysis tip:</strong> &ldquo;The enjambment delays the noun <em>v&#333;ce</em> that <em>magn&#257;</em> agrees with, creating a moment of suspension &mdash; the reader does not yet know what is &lsquo;great&rsquo;. This mirrors the intake of breath before the shout. When <em>v&#333;ce</em> and then <em>cl&#257;m&#257;vit</em> arrive on the next line, the effect is sudden and powerful.&rdquo;</p>
+        </div>
+      </section>
+
+      <section id="mangoes-simile">
+        <h2>S &mdash; Simile</h2>
+        <div class="device-card">
+          <div class="device-label">Simile</div>
+          <p class="device-definition">A direct comparison using &ldquo;like&rdquo; or &ldquo;as&rdquo;. In Latin, look for: <em>velut</em>, <em>s&#299;cut</em>, <em>tamquam</em>, <em>quasi</em>, or <em>ut</em> in a comparative context.</p>
+          <div class="latin-example">
+            <strong>Latin:</strong> <em>M&#299;lit&#275;s velut le&#333;n&#275;s pugn&#257;bant</em><br>
+            <strong>Translation:</strong> The soldiers were fighting like lions.
+          </div>
+          <p class="analysis-tip"><strong>Analysis tip:</strong> &ldquo;The simile <em>velut le&#333;n&#275;s</em> immediately conveys ferocity and bravery without lengthy description. Lions carry associations of courage, aggression, and raw power &mdash; the comparison transfers all of these qualities to the soldiers in a single compact image.&rdquo;</p>
+        </div>
+      </section>
+
+      <div class="exam-tip">
+        <strong>Exam tip:</strong> You do not need to find all seven devices in every passage. Identify 2&ndash;3 that are genuinely present and analyse them in depth using PETE. Examiners reward quality of analysis over quantity of devices spotted. Naming a device without explaining its effect scores no marks.
+      </div>
+
+      <section id="mangoes-seealso">
+        <h2>See Also</h2>
+        <ul>
+          <li><a href="pete.html">PETE Method</a> &mdash; use PETE to structure your analysis of each device</li>
+          <li><a href="essay-skills.html">Essay Skills</a> &mdash; see a complete 10-mark model answer using MANGOES devices</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Nav toggle (hamburger)
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      nav.querySelectorAll('.nav-group-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
