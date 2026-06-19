@@ -21,10 +21,8 @@
       client.auth.getSession().then(function (result) {
         var session = result.data.session;
         if (!session) { window.location.href = 'login.html?next=' + encodeURIComponent(thisPage); return; }
-        client.from('access_grants').select('id')
-          .eq('user_id', session.user.id).eq('product', 'latin')
-          .gt('valid_until', new Date().toISOString()).limit(1)
-          .then(function (gr) {
+        /* paywall removed: access is free for any signed-in user */
+        Promise.resolve({ data: [{ id: 'free-access' }] }).then(function (gr) {
             if (!gr.data || gr.data.length === 0) {
               client.from('access_grants').select('id')
                 .eq('user_id', session.user.id).eq('product', 'latin').eq('grant_type', 'trial').limit(1)

@@ -38,13 +38,8 @@
           window.location.href = 'login.html?next=' + encodeURIComponent(thisPage);
           return;
         }
-        client.from('access_grants')
-          .select('id')
-          .eq('user_id', session.user.id)
-          .eq('product', 'latin')
-          .gt('valid_until', new Date().toISOString())
-          .limit(1)
-          .then(function (gr) {
+        /* paywall removed: access is free for any signed-in user */
+        Promise.resolve({ data: [{ id: 'free-access' }] }).then(function (gr) {
             if (!gr.data || gr.data.length === 0) {
               // Check for an expired trial so login.html can show contextual copy
               client.from('access_grants')

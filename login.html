@@ -511,21 +511,20 @@
   <!-- ── View 1: Authentication ── -->
   <div id="view-auth" class="card hidden">
     <div class="card-header">
-      <h1 id="auth-header-h1">Try Caerus Latin free</h1>
-      <p id="auth-header-p">Vocabulary, grammar, and practice for ISEB Common Entrance &mdash; 7 days free, no card required.</p>
+      <h1 id="auth-header-h1">Sign in to Caerus Latin</h1>
+      <p id="auth-header-p">Vocabulary, grammar, and practice for ISEB Common Entrance &mdash; free.</p>
     </div>
     <div class="card-body">
 
       <div class="tab-row">
-        <button class="tab-btn" id="tab-signin" onclick="switchTab('signin')">Sign in</button>
+        <button class="tab-btn active" id="tab-signin" onclick="switchTab('signin')">Sign in</button>
         <button class="tab-btn" id="tab-signup" onclick="switchTab('signup')">Create account</button>
-        <button class="tab-btn active" id="tab-trial" onclick="switchTab('trial')">Free trial <span class="tab-trial-badge">7 days</span></button>
       </div>
 
       <div id="msg-auth" class="msg hidden"></div>
 
       <!-- Sign in form -->
-      <form id="form-signin" class="hidden" onsubmit="handleSignIn(event)">
+      <form id="form-signin" onsubmit="handleSignIn(event)">
         <div class="form-group">
           <label for="si-email">Email address</label>
           <input type="email" id="si-email" required placeholder="you@example.com" autocomplete="email">
@@ -549,35 +548,6 @@
         </div>
         <button type="submit" class="btn-primary" id="btn-signup">Create account &rarr;</button>
       </form>
-
-      <!-- Free trial form -->
-      <div id="form-trial">
-        <div id="trial-ended-banner" class="trial-ended-banner hidden">
-          <strong>Your free trial has ended</strong>
-          Subscribe below to keep your progress and access everything.
-        </div>
-
-        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Try everything free for 7 days &mdash; no card required.</p>
-        <ul class="trial-features">
-          <li>Full vocabulary list &mdash; browse, search, and test</li>
-          <li>Complete grammar tables and quick-check exercises</li>
-          <li>Flashcards, quizzes, and speed recall</li>
-          <li>Original practice papers at all three levels</li>
-        </ul>
-
-        <form id="form-trial-inner" onsubmit="handleStartTrial(event)">
-          <div class="form-group">
-            <label for="tr-email">Email address</label>
-            <input type="email" id="tr-email" required placeholder="you@example.com" autocomplete="email">
-          </div>
-          <div class="form-group">
-            <label for="tr-password">Choose a password</label>
-            <input type="password" id="tr-password" required placeholder="At least 8 characters" minlength="8" autocomplete="new-password">
-          </div>
-          <button type="submit" class="btn-primary" id="btn-trial">Start free trial &rarr;</button>
-        </form>
-        <p class="trial-note">After 7 days you can subscribe for &pound;49.99/year to keep going.</p>
-      </div>
 
     </div>
   </div>
@@ -689,29 +659,9 @@
   });
 
   function checkAccess(user, token) {
-    client.from('access_grants')
-      .select('id, valid_until')
-      .eq('user_id', user.id)
-      .eq('product', 'latin')
-      .gt('valid_until', new Date().toISOString())
-      .limit(1)
-      .then(function(result) {
-        if (result.data && result.data.length > 0) {
-          window.location.href = nextPage;
-        } else {
-          var emailEl = document.getElementById('checkout-email');
-          if (emailEl) emailEl.textContent = user.email;
-          // If we know their trial ended, update checkout header copy
-          if (trialEnded) {
-            var h1 = document.querySelector('#view-checkout .card-header h1');
-            var p  = document.querySelector('#view-checkout .card-header p');
-            if (h1) h1.textContent = 'Your trial has ended';
-            if (p)  p.textContent  = 'Subscribe below to keep your progress and full access.';
-          }
-          show('view-checkout');
-          initStripeCheckout(token);
-        }
-      });
+    // Paywall removed: any authenticated user gets full access.
+    // No access_grants / Stripe checkout check — go straight to the app.
+    window.location.href = nextPage;
   }
 
   document.getElementById('checkout-signout').addEventListener('click', function(e) {
@@ -724,17 +674,15 @@
   /* ─── Tab switching ─── */
   var headerCopy = {
     signin:  { h1: 'Sign in to Caerus Latin',   p: 'Access your vocabulary, grammar, exercises, and practice papers.' },
-    signup:  { h1: 'Create your account',        p: 'Set up your account to access Caerus Latin.' },
-    trial:   { h1: 'Try Caerus Latin free',      p: 'Vocabulary, grammar, and practice for ISEB Common Entrance \u2014 7 days free, no card required.' },
+    signup:  { h1: 'Create your account',        p: 'Set up your free account to access Caerus Latin.' },
   };
 
   function switchTab(tab) {
+    if (tab !== 'signin' && tab !== 'signup') { tab = 'signin'; }
     document.getElementById('form-signin').classList.toggle('hidden', tab !== 'signin');
     document.getElementById('form-signup').classList.toggle('hidden', tab !== 'signup');
-    document.getElementById('form-trial').classList.toggle('hidden', tab !== 'trial');
     document.getElementById('tab-signin').classList.toggle('active', tab === 'signin');
     document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
-    document.getElementById('tab-trial').classList.toggle('active', tab === 'trial');
     var copy = headerCopy[tab];
     if (copy) {
       var h1 = document.getElementById('auth-header-h1');

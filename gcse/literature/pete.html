@@ -77,13 +77,8 @@
           return;
         }
 
-        client.from('access_grants')
-          .select('id')
-          .eq('user_id', session.user.id)
-          .eq('product', 'latin-gcse')
-          .gt('valid_until', new Date().toISOString())
-          .limit(1)
-          .then(function (gr) {
+        /* paywall removed: access is free for any signed-in user */
+        Promise.resolve({ data: [{ id: 'free-access' }] }).then(function (gr) {
             if (!gr.data || gr.data.length === 0) {
               window.location.href = '../index.html';
               return;
