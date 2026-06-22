@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <script src="https://js.stripe.com/v3/"></script>
   <style>
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -113,19 +112,6 @@
       font-family: var(--font-b);
     }
 
-    .checkout-account {
-      font-size: 0.82rem !important;
-      margin-top: 0.75rem !important;
-      color: rgba(250,248,243,0.45) !important;
-    }
-
-    .checkout-account a {
-      color: var(--gold-l);
-      text-decoration: none;
-      opacity: 0.8;
-    }
-
-    .checkout-account a:hover { opacity: 1; }
 
     .card-body {
       padding: 2rem;
@@ -157,71 +143,6 @@
       color: var(--navy);
       border-bottom-color: var(--gold);
       font-weight: 600;
-    }
-
-    /* ── Trial badge on tab ── */
-    .tab-trial-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 0.1rem 0.4rem;
-      border-radius: 2px;
-      margin-left: 0.35rem;
-      vertical-align: middle;
-      line-height: 1.4;
-    }
-
-    /* ── Trial ended banner ── */
-    .trial-ended-banner {
-      background: #fffbeb;
-      border: 1.5px solid #f59e0b;
-      border-radius: 3px;
-      padding: 0.9rem 1rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.9rem;
-      color: #92400e;
-    }
-
-    .trial-ended-banner strong {
-      display: block;
-      margin-bottom: 0.2rem;
-      font-size: 0.95rem;
-      color: #78350f;
-    }
-
-    /* ── Trial features list ── */
-    .trial-features {
-      list-style: none;
-      margin: 1rem 0 1.25rem;
-      padding: 0;
-    }
-
-    .trial-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.88rem;
-      color: var(--muted);
-      padding: 0.25rem 0;
-    }
-
-    .trial-features li::before {
-      content: '\2714';
-      color: var(--gold);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 0.05rem;
-    }
-
-    .trial-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.75rem;
-      text-align: center;
     }
 
     /* ── Form ── */
@@ -300,93 +221,6 @@
       border-left: 3px solid #22c55e;
     }
 
-    /* ── Checkout view ── */
-    .checkout-card {
-      width: 100%;
-      max-width: 820px;
-    }
-
-    .checkout-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 400px;
-    }
-
-    @media (max-width: 640px) {
-      .checkout-layout { grid-template-columns: 1fr; }
-    }
-
-    .checkout-info {
-      background: var(--navy-d);
-      padding: 2.5rem 2rem;
-      border-right: 1px solid rgba(201,168,76,0.25);
-    }
-
-    .checkout-info h2 {
-      font-family: var(--font-d);
-      font-size: 1.4rem;
-      color: var(--cream);
-      margin-bottom: 0.5rem;
-    }
-
-    .checkout-info .price {
-      font-size: 2.2rem;
-      font-family: var(--font-d);
-      font-weight: 700;
-      color: var(--gold);
-      margin: 0.75rem 0 0.25rem;
-    }
-
-    .checkout-info .price-sub {
-      font-size: 0.85rem;
-      color: rgba(250,248,243,0.5);
-      margin-bottom: 1.75rem;
-    }
-
-    .feature-list {
-      list-style: none;
-      margin-top: 1rem;
-    }
-
-    .feature-list li {
-      padding: 0.45rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      font-size: 0.95rem;
-      color: rgba(250,248,243,0.85);
-      border-bottom: 1px solid rgba(201,168,76,0.12);
-    }
-
-    .feature-list li:last-child { border-bottom: none; }
-
-    .feature-check {
-      color: var(--gold);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 0.05rem;
-    }
-
-    .checkout-form-wrap {
-      background: #fff;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-    }
-
-    #stripe-checkout {
-      flex: 1;
-    }
-
-    .checkout-loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 1;
-      color: var(--muted);
-      font-size: 0.9rem;
-      gap: 0.5rem;
-    }
 
     .spinner {
       width: 18px;
@@ -455,40 +289,6 @@
         padding: 0.55rem 0.35rem;
         letter-spacing: -0.01em;
       }
-
-      .tab-trial-badge {
-        font-size: 0.55rem;
-        padding: 0.08rem 0.28rem;
-        margin-left: 0.2rem;
-      }
-
-      .trial-features li {
-        font-size: 0.82rem;
-      }
-
-      /* Checkout stacked on mobile */
-      .checkout-info {
-        padding: 1.5rem 1.25rem;
-        border-right: none;
-        border-bottom: 1px solid rgba(201,168,76,0.25);
-      }
-
-      .checkout-info h2 {
-        font-size: 1.2rem;
-      }
-
-      .checkout-info .price {
-        font-size: 1.8rem;
-      }
-
-      .checkout-form-wrap {
-        padding: 1.25rem;
-      }
-
-      .feature-list li {
-        font-size: 0.85rem;
-        padding: 0.35rem 0;
-      }
     }
   </style>
 </head>
@@ -552,65 +352,8 @@
     </div>
   </div>
 
-  <!-- ── View 2: Checkout (no active access) ── -->
-  <div id="view-checkout" class="card checkout-card hidden">
-    <div class="card-header">
-      <h1>Enrol in Caerus Latin</h1>
-      <p>Annual access &mdash; one payment, full year</p>
-      <p class="checkout-account">Signed in as <strong id="checkout-email"></strong> &middot; <a href="#" id="checkout-signout">Not you? Sign out</a></p>
-    </div>
-    <div class="checkout-layout">
-
-      <!-- Left: product info -->
-      <div class="checkout-info">
-        <h2>What&rsquo;s included</h2>
-        <div class="price">&pound;49.99</div>
-        <div class="price-sub">Annual access &middot; one payment</div>
-
-        <ul class="feature-list">
-          <li>
-            <span class="feature-check">&#10003;</span>
-            <span>Full ISEB CE vocabulary list — browse, search, and test</span>
-          </li>
-          <li>
-            <span class="feature-check">&#10003;</span>
-            <span>Complete grammar tables — all declensions and conjugations</span>
-          </li>
-          <li>
-            <span class="feature-check">&#10003;</span>
-            <span>Interactive exercises — flashcards, quizzes, and translation drills</span>
-          </li>
-          <li>
-            <span class="feature-check">&#10003;</span>
-            <span>Original practice papers at Levels 1 and 2 with mark schemes</span>
-          </li>
-          <li>
-            <span class="feature-check">&#10003;</span>
-            <span>Works offline — install as an app on any device</span>
-          </li>
-          <li>
-            <span class="feature-check">&#10003;</span>
-            <span>Reviewed by Heads of Classics</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Right: Stripe embedded checkout -->
-      <div class="checkout-form-wrap">
-        <div class="checkout-loading" id="checkout-loading">
-          <div class="spinner"></div>
-          <span>Loading secure checkout&hellip;</span>
-        </div>
-        <div id="stripe-checkout"></div>
-      </div>
-
-    </div>
-  </div>
-
   <footer class="page-footer">
     <a href="https://caerusrevision.co.uk">caerusrevision.co.uk</a>
-    &nbsp;&middot;&nbsp;
-    Payments secured by Stripe
     &nbsp;&middot;&nbsp;
     <a href="index.html">Back to site</a>
   </footer>
@@ -620,19 +363,12 @@
 <script>
   var SUPABASE_URL        = 'https://dlcseuejvducbsjhqvze.supabase.co';
   var SUPABASE_ANON       = 'sb_publishable_k_59EUPnHNnJ534tF0vMvQ_Ams9wV9L';
-  var STRIPE_PK           = 'pk_live_51T6r9sCqtyvkC5sKLwSdNNFDwnwIx0xMZRLee5FIYzvJCuAsDvCXlcP7duYMxyY67hXrj4ilaYnCzVodvVfk1C3100ERU4cs6Y';
-  var EDGE_FN_URL         = SUPABASE_URL + '/functions/v1/create-checkout';
-  var TRIAL_FN_URL        = SUPABASE_URL + '/functions/v1/start-trial';
 
   var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
-  var stripeInstance = Stripe(STRIPE_PK);
 
-  // Where to redirect after successful login/purchase
+  // Where to redirect after successful login
   var params     = new URLSearchParams(location.search);
   var nextPage   = params.get('next') || 'index.html';
-  var trialEnded = params.get('trial_ended') === '1';
-  var tabParam   = params.get('tab');
-  if (tabParam === 'trial') { switchTab('trial'); }
 
   /* ─── Boot: check auth state ─── */
   // Safety net: if getSession hangs, show the auth form after 5s
@@ -643,13 +379,6 @@
     var session = result.data.session;
     if (!session) {
       show('view-auth');
-      // If returning from an expired trial, switch to sign-in tab with contextual copy
-      if (trialEnded) {
-        switchTab('signin');
-        document.getElementById('auth-header-h1').textContent = 'Your trial has ended';
-        document.getElementById('auth-header-p').textContent = 'Sign in to subscribe and keep your progress.';
-        showMsg('Your 7-day trial has ended. Sign in below to subscribe for \u00a349.99/year.', 'error');
-      }
       return;
     }
     checkAccess(session.user, session.access_token);
@@ -660,16 +389,9 @@
 
   function checkAccess(user, token) {
     // Paywall removed: any authenticated user gets full access.
-    // No access_grants / Stripe checkout check — go straight to the app.
     window.location.href = nextPage;
   }
 
-  document.getElementById('checkout-signout').addEventListener('click', function(e) {
-    e.preventDefault();
-    client.auth.signOut().then(function() {
-      show('view-auth');
-    });
-  });
 
   /* ─── Tab switching ─── */
   var headerCopy = {
@@ -745,129 +467,10 @@
       });
   }
 
-  /* ─── Start Free Trial ─── */
-  function handleStartTrial(e) {
-    e.preventDefault();
-    var btn = document.getElementById('btn-trial');
-    btn.disabled = true;
-    btn.textContent = 'Starting trial\u2026';
-    clearMsg();
-
-    var email    = document.getElementById('tr-email').value.trim().toLowerCase();
-    var password = document.getElementById('tr-password').value;
-
-    fetch(TRIAL_FN_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + SUPABASE_ANON,
-      },
-      body: JSON.stringify({ email: email, password: password }),
-    })
-    .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, status: r.status, data: d }; }); })
-    .then(function(res) {
-      btn.disabled = false;
-      btn.textContent = 'Start free trial \u2192';
-
-      if (!res.ok) {
-        var err = res.data.error || 'Could not start trial. Please try again.';
-
-        // Handle specific known errors gracefully
-        if (err === 'trial_expired') {
-          // They already had a trial — nudge to the checkout
-          showMsg('Your free trial has ended. Sign in below to subscribe.', 'error');
-          switchTab('signin');
-          return;
-        }
-        if (err === 'trial_active') {
-          showMsg('You already have an active trial. Please sign in.', 'error');
-          switchTab('signin');
-          return;
-        }
-        if (err === 'already_paid') {
-          showMsg('You already have a subscription. Please sign in.', 'error');
-          switchTab('signin');
-          return;
-        }
-        if (err === 'email_taken') {
-          showMsg('An account with this email already exists. Please sign in.', 'error');
-          switchTab('signin');
-          return;
-        }
-
-        showMsg(res.data.message || err, 'error');
-        return;
-      }
-
-      // Success — restore the session in the Supabase client, then redirect
-      var accessToken  = res.data.access_token;
-      var refreshToken = res.data.refresh_token;
-
-      if (!accessToken) {
-        showMsg('Trial started! Please sign in with your new account.', 'success');
-        switchTab('signin');
-        return;
-      }
-
-      client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken })
-        .then(function(sessionRes) {
-          if (sessionRes.error) {
-            // Session restore failed — just send them to sign in
-            showMsg('Trial started! Please sign in to continue.', 'success');
-            switchTab('signin');
-            return;
-          }
-          window.location.href = nextPage;
-        });
-    })
-    .catch(function(err) {
-      btn.disabled = false;
-      btn.textContent = 'Start free trial \u2192';
-      showMsg('Network error. Please check your connection and try again.', 'error');
-      console.error(err);
-    });
-  }
-
-  /* ─── Stripe Embedded Checkout ─── */
-  function initStripeCheckout(token) {
-    var mounted = false;
-
-    stripeInstance.initEmbeddedCheckout({
-      fetchClientSecret: function() {
-        return fetch(EDGE_FN_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token,
-          },
-        })
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-          if (data.alreadyGranted) {
-            window.location.href = nextPage;
-            return '';
-          }
-          if (!data.clientSecret) {
-            throw new Error(data.error || 'Could not load checkout');
-          }
-          return data.clientSecret;
-        });
-      },
-    }).then(function(checkout) {
-      document.getElementById('checkout-loading').style.display = 'none';
-      checkout.mount('#stripe-checkout');
-      mounted = true;
-    }).catch(function(err) {
-      document.getElementById('checkout-loading').innerHTML =
-        '<span style="color:#d63031">Could not load checkout. Please refresh or <a href="https://caerusrevision.co.uk#contact" style="color:#d63031">contact us</a>.</span>';
-      console.error(err);
-    });
-  }
-
   /* ─── Helpers ─── */
   function show(id) {
     document.getElementById('checking').classList.add('hidden');
-    ['view-auth', 'view-checkout'].forEach(function(v) {
+    ['view-auth'].forEach(function(v) {
       document.getElementById(v).classList.toggle('hidden', v !== id);
     });
   }

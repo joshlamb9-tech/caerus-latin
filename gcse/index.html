@@ -51,37 +51,9 @@
           }
         }
 
-        // Check for latin-gcse grant
-        /* paywall removed: access is free for any signed-in user */
-        Promise.resolve({ data: [{ id: 'free-access' }] }).then(function (gr) {
-            if (gr.data && gr.data.length > 0) {
-              // Subscriber hub view
-              window.CR_GCSE_ACCESS = true;
-              document.getElementById('gcse-teaser').style.display   = 'none';
-              document.getElementById('gcse-hub').style.display      = 'block';
-            } else {
-              // Teaser view — check for CE subscription to customise copy
-              window.CR_GCSE_ACCESS = false;
-              document.getElementById('gcse-hub').style.display = 'none';
-              client.from('access_grants')
-                .select('id')
-                .eq('user_id', session.user.id)
-                .eq('product', 'latin')
-                .gt('valid_until', new Date().toISOString())
-                .limit(1)
-                .then(function (ce) {
-                  var hasCE = ce.data && ce.data.length > 0;
-                  var teaser = document.getElementById('gcse-teaser');
-                  teaser.style.display = 'block';
-                  if (hasCE) {
-                    document.getElementById('teaser-headline').textContent =
-                      'You have CE Latin \u2014 upgrade to GCSE';
-                    document.getElementById('teaser-sub').textContent =
-                      'Add the full OCR J282 revision suite for \u00a349.99/year.';
-                  }
-                });
-            }
-          });
+        // Free for any signed-in user — show the hub
+        window.CR_GCSE_ACCESS = true;
+        document.getElementById('gcse-hub').style.display = 'block';
       });
     })();
   </script>
@@ -289,12 +261,6 @@
       <p>Everything for OCR J282 in one place &mdash; vocabulary, grammar, syntax, translation, literature, and mock papers.</p>
     </section>
 
-    <!-- Teaser: shown to non-subscribers -->
-    <div id="gcse-teaser">
-      <h2 id="teaser-headline">Unlock GCSE Latin</h2>
-      <p id="teaser-sub">Everything you need for OCR J282 &mdash; vocabulary, grammar, syntax, translation, literature, and mock papers &mdash; for &pound;49.99/year.</p>
-      <a href="STRIPE_CHECKOUT_URL_PLACEHOLDER" class="gcse-unlock-btn" id="gcse-unlock-cta">Get GCSE Latin &mdash; &pound;49.99/year</a>
-    </div>
 
     <!-- Hub: shown to latin-gcse subscribers -->
     <div id="gcse-hub">

@@ -146,12 +146,8 @@
           return;
         }
 
-        /* paywall removed: access is free for any signed-in user */
-        Promise.resolve({ data: [{ id: 'free-access' }] }).then(function (gr) {
-            if (!gr.data || gr.data.length === 0) {
-              window.location.href = '../index.html';
-              return;
-            }
+                /* free access for any signed-in user */
+        Promise.resolve().then(function () {
 
             // Grant confirmed — reveal page
             window.CR_AUTH = { client: client, userId: session.user.id };
